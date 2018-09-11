@@ -14,11 +14,11 @@ final class LoginViewController: BaseViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var forgotPasswordButton: UIButton!
-    @IBOutlet weak var registerButton: UIButton!
 
     var viewModel = LoginViewModel()
 
     override func setupUI() {
+        forgotPasswordButton.underline()
     }
 
     // MARK: - Private function

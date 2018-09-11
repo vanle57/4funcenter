@@ -39,6 +39,7 @@
 		B374DB88214783C0005C1FE2 /* Heebo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B374DB81214783BF005C1FE2 /* Heebo-Light.ttf */; };
 		B374DB89214783C0005C1FE2 /* Heebo-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B374DB82214783C0005C1FE2 /* Heebo-Medium.ttf */; };
 		B374DB8A214783C0005C1FE2 /* Heebo-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B374DB83214783C0005C1FE2 /* Heebo-Black.ttf */; };
+		B374DB8C2147A1E1005C1FE2 /* UIButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B374DB8B2147A1E1005C1FE2 /* UIButtonExt.swift */; };
 		B3CF75EE211ACE8E001497F7 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CF75ED211ACE8E001497F7 /* Question.swift */; };
 		B3D3564521227A2100D29B1A /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D3564421227A2100D29B1A /* Session.swift */; };
 		B3D3564721227A9E00D29B1A /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D3564621227A9E00D29B1A /* Key.swift */; };
@@ -135,6 +136,7 @@
 		B374DB81214783BF005C1FE2 /* Heebo-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Heebo-Light.ttf"; sourceTree = "<group>"; };
 		B374DB82214783C0005C1FE2 /* Heebo-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Heebo-Medium.ttf"; sourceTree = "<group>"; };
 		B374DB83214783C0005C1FE2 /* Heebo-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Heebo-Black.ttf"; sourceTree = "<group>"; };
+		B374DB8B2147A1E1005C1FE2 /* UIButtonExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExt.swift; sourceTree = "<group>"; };
 		B3CF75ED211ACE8E001497F7 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		B3D3564421227A2100D29B1A /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		B3D3564621227A9E00D29B1A /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
@@ -528,6 +530,7 @@
 				ECEC0C5D1ED44D7700F6760A /* MapperExt.swift */,
 				ECF23AC21E9B9264008C23C1 /* StringExt.swift */,
 				ECEC0C591ED44D4100F6760A /* UIViewControllerExt.swift */,
+				B374DB8B2147A1E1005C1FE2 /* UIButtonExt.swift */,
 			);
 			path = Ext;
 			sourceTree = "<group>";
@@ -833,6 +836,7 @@
 				B374DB652147681B005C1FE2 /* RegisterViewController.swift in Sources */,
 				6252A17721195647009F6F43 /* Vocabulary.swift in Sources */,
 				B374DB74214775BE005C1FE2 /* BlogViewController.swift in Sources */,
+				B374DB8C2147A1E1005C1FE2 /* UIButtonExt.swift in Sources */,
 				6252A1A7211E9B5E009F6F43 /* FlashCardSetting.swift in Sources */,
 				EC5337C11EF7939C00ACE038 /* TableCell.swift in Sources */,
 				ECF23AC31E9B9264008C23C1 /* StringExt.swift in Sources */,
