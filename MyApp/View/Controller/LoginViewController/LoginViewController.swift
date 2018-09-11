@@ -13,7 +13,13 @@ final class LoginViewController: BaseViewController {
     // MARK: - Outlets
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var forgotPasswordButton: UIButton!
+    @IBOutlet weak var registerButton: UIButton!
+
     var viewModel = LoginViewModel()
+
+    override func setupUI() {
+    }
 
     // MARK: - Private function
     private func login() {
@@ -24,7 +30,10 @@ final class LoginViewController: BaseViewController {
         login()
     }
 
-    @IBAction func signUpButtonTouchUpInside(_ sender: Any) {
+    @IBAction func loginWithFacebookButtonTouchUpInside(_ sender: Any) {
+    }
+
+    @IBAction func loginWithGoogleButtonTouchUpInside(_ sender: Any) {
     }
 
     @IBAction func forgotPasswordButtonTouchUpInside(_ sender: Any) {
