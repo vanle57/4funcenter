@@ -12,7 +12,7 @@ import SwiftUtils
 extension UIViewController {
 
     func alert(error: Error) {
-        alert(title: "LỖI", msg: error.localizedDescription, buttons: ["Đồng ý"], handler: nil)
+        alert(title: "ERROR", msg: error.localizedDescription, buttons: ["Agree"], handler: nil)
     }
 
     func alert(title: String? = nil, msg: String, buttons: [String], handler: ((UIAlertAction) -> Void)?) {

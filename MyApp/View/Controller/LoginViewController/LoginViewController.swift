@@ -11,7 +11,7 @@ import UIKit
 final class LoginViewController: BaseViewController {
 
     // MARK: - Outlets
-    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var forgotPasswordButton: UIButton!
 
@@ -23,10 +23,24 @@ final class LoginViewController: BaseViewController {
 
     // MARK: - Private function
     private func login() {
+        guard let email = emailTextField.text, let password = passwordTextField.text else {
+            alert(error: App.Error.emptyFieldError)
+            return
+        }
+        viewModel.email = email
+        viewModel.password = password
+        viewModel.login { (result) in
+            switch result {
+            case .success:
+                print("sucess")
+            case .failure(let error):
+                self.alert(error: error)
+            }
+        }
     }
 
     // MARK: - IBAction
-    @IBAction func signInButtonTouchUpInside(_ sender: Any) {
+    @IBAction func loginButtonTouchUpInside(_ sender: Any) {
         login()
     }
 
