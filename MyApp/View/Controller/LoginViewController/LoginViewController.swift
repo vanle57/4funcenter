@@ -21,6 +21,11 @@ final class LoginViewController: BaseViewController {
         forgotPasswordButton.underline()
     }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+    }
+
     // MARK: - Private function
     private func login() {
         guard let email = emailTextField.text, let password = passwordTextField.text else {
@@ -45,6 +50,16 @@ final class LoginViewController: BaseViewController {
     }
 
     @IBAction func loginWithFacebookButtonTouchUpInside(_ sender: Any) {
+        viewModel.login { (result) in
+            switch result {
+            case .success:
+                print("sucess")
+            case .canceled:
+                break
+            case .failure(let error):
+                self.alert(error: error)
+            }
+        }
     }
 
     @IBAction func loginWithGoogleButtonTouchUpInside(_ sender: Any) {

@@ -7,13 +7,18 @@
 //
 
 import RealmSwift
+import FacebookCore
+import FacebookLogin
 
 final class LoginViewModel {
     // MARK: - enum
     enum LoginResult {
         case success
+        case cancelled
         case failure(Error)
     }
+    typealias LoginCompletion = (LoginResult) -> Void
+
 
     // MARK: - Properties
     var email = ""
@@ -25,7 +30,7 @@ final class LoginViewModel {
     /// first, check email and password if it is empty, then validate them. finally, call api
     ///
     /// - Parameter completion: return closure for view controller
-    func login(_ completion: @escaping (LoginResult) -> Void) {
+    func login(_ completion: @escaping LoginCompletion) {
 
         if email.isEmpty || password.isEmpty {
             completion(.failure(App.Error.emptyFieldError))
@@ -49,7 +54,6 @@ final class LoginViewModel {
     /// - Returns: return true if it is valid email, otherwise return false
     func isValidEmail() -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: email)
     }
@@ -61,5 +65,19 @@ final class LoginViewModel {
     func isValidPassword() -> Bool {
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{8,}")
         return passwordTest.evaluate(with: password)
+    }
+
+    func loginToFacebook(_ completion: @escaping LoginCompletion) throws {
+        let loginManager = LoginManager()
+        loginManager.logIn([ .publicProfile ], viewController: self) { loginResult in
+            switch loginResult {
+            case .Failed(let error):
+                completion(.failure(error))
+            case .Cancelled:
+                completion(.cancelled)
+            case .Success(let grantedPermissions, let declinedPermissions, let accessToken):
+                completion(.success)
+            }
+        }
     }
 }
