@@ -30,7 +30,6 @@ PODS:
   - SwifterSwift/SpriteKit (4.4.0)
   - SwifterSwift/SwiftStdlib (4.4.0)
   - SwifterSwift/UIKit (4.4.0)
-  - SwiftGifOrigin (1.6.1)
   - SwiftLint (0.25.0)
   - SwiftUtils (4.0.1)
 
@@ -45,7 +44,6 @@ DEPENDENCIES:
   - SkyFloatingLabelTextField (~> 3.0)
   - SVProgressHUD
   - SwifterSwift
-  - SwiftGifOrigin
   - SwiftLint (= 0.25.0)
   - SwiftUtils (= 4.0.1)
 
@@ -61,10 +59,9 @@ SPEC CHECKSUMS:
   SkyFloatingLabelTextField: 4cbeece9c3aae97c6019d8fae511cb5b755874f7
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwifterSwift: 1ce0e31801ddd3a2bd3256626275425adb01067a
-  SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
   SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
   SwiftUtils: b009d391fb2e285392f114238f8b55d2750b80f0
 
-PODFILE CHECKSUM: d1342f29eeeeb88eb78dcc6bdb97bedcea2593f2
+PODFILE CHECKSUM: bd7bb5503063919a4c99917dc71c0bffd9bb7862
 
 COCOAPODS: 1.4.0

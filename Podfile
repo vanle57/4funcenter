@@ -37,7 +37,6 @@ target 'MyApp' do
 
     # Crash reporting & beta deployment
 
-    pod 'SwiftGifOrigin'
     pod 'SwifterSwift'
     pod 'RealmSwift'
     pod 'Kingfisher'
