@@ -1,2 +1,5 @@
-# intern12_final_project_PhongVanNhi
-iOS intern - Khoá 12 - Final Project - Lê Hồng Phong &amp; Lê Hồng Vân &amp; Kiều Hoàng Nhi
+# 4funCenter
+Đồ án công nghệ phần mềm
+Đề tài: Quản lý trung tâm tiếng anh
+Nhóm: cnpm02
+Người thực hiện: Lê Hồng Vân
