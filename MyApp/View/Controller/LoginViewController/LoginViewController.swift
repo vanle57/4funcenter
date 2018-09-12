@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FacebookCore
+import FacebookLogin
 
 final class LoginViewController: BaseViewController {
 
@@ -50,14 +52,15 @@ final class LoginViewController: BaseViewController {
     }
 
     @IBAction func loginWithFacebookButtonTouchUpInside(_ sender: Any) {
-        viewModel.login { (result) in
-            switch result {
-            case .success:
-                print("sucess")
-            case .canceled:
-                break
-            case .failure(let error):
+        let loginManager = LoginManager()
+        loginManager.logIn(readPermissions: [ .email, .userBirthday, .userGender, .userHometown, .userLocation, .userPhotos ], viewController: self) { loginResult in
+            switch loginResult {
+            case .failed(let error):
                 self.alert(error: error)
+            case .cancelled:
+                break
+            case .success( _, _, let accessToken):
+                Session.share.accessToken = accessToken.userId
             }
         }
     }

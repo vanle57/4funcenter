@@ -50,6 +50,10 @@
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
 
+    <key>FacebookAppID</key>
+    <string>540240129734693</string>
+    <key>FacebookDisplayName</key>
+    <string>{your-app-name}</string>
     <key>CFBundleURLTypes</key>
     <array>
         <dict>
@@ -59,11 +63,6 @@
             </array>
         </dict>
     </array>
-    <key>FacebookAppID</key>
-    <string>540240129734693</string>
-    <key>FacebookDisplayName</key>
-    <string>4funCenter</string>
-
 
     <key>LSApplicationQueriesSchemes</key>
     <array>

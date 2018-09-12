@@ -7,18 +7,14 @@
 //
 
 import RealmSwift
-import FacebookCore
-import FacebookLogin
 
 final class LoginViewModel {
     // MARK: - enum
     enum LoginResult {
         case success
-        case cancelled
         case failure(Error)
     }
     typealias LoginCompletion = (LoginResult) -> Void
-
 
     // MARK: - Properties
     var email = ""
@@ -54,7 +50,7 @@ final class LoginViewModel {
     /// - Returns: return true if it is valid email, otherwise return false
     func isValidEmail() -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: email)
     }
 
@@ -67,17 +63,17 @@ final class LoginViewModel {
         return passwordTest.evaluate(with: password)
     }
 
-    func loginToFacebook(_ completion: @escaping LoginCompletion) throws {
-        let loginManager = LoginManager()
-        loginManager.logIn([ .publicProfile ], viewController: self) { loginResult in
-            switch loginResult {
-            case .Failed(let error):
-                completion(.failure(error))
-            case .Cancelled:
-                completion(.cancelled)
-            case .Success(let grantedPermissions, let declinedPermissions, let accessToken):
-                completion(.success)
-            }
-        }
-    }
+//    func loginToFacebook(_ completion: @escaping LoginCompletion) throws {
+//        let loginManager = LoginManager()
+//        loginManager.logIn(readPermissions: [ .publicProfile ], viewController: self) { loginResult in
+//            switch loginResult {
+//            case .Failed(let error):
+//                completion(.failure(error))
+//            case .Cancelled:
+//                completion(.cancelled)
+//            case .Success(let grantedPermissions, let declinedPermissions, let accessToken):
+//                completion(.success)
+//            }
+//        }
+//    }
 }

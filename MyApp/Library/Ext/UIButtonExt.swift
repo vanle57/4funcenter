@@ -18,4 +18,3 @@ extension UIButton {
         self.setAttributedTitle(attributedString, for: .normal)
     }
 }
-
