@@ -7,8 +7,14 @@
 //
 
 import UIKit
+import SkyFloatingLabelTextField
 
 class RegisterController: BaseViewController {
+
+    @IBOutlet weak var fullnameTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var emailOrPhoneTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var passwordTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var confirmPasswordTextField: SkyFloatingLabelTextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
