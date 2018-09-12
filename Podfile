@@ -42,6 +42,12 @@ target 'MyApp' do
     pod 'Kingfisher'
     pod 'SkyFloatingLabelTextField', '~> 3.0'
     pod 'SVProgressHUD'
+    pod 'FBSDKCoreKit'
+    pod 'FBSDKLoginKit'
+    pod 'FBSDKShareKit'
+    pod 'FacebookCore'
+    pod 'FacebookLogin'
+    pod 'FacebookShare'
 
 target 'MyAppTests' do
     inherit! :complete

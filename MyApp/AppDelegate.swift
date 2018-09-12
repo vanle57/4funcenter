@@ -8,6 +8,9 @@
 
 import UIKit
 import AlamofireNetworkActivityIndicator
+import IQKeyboardManagerSwift
+import FBSDKCoreKit
+import FacebookCore
 
 @UIApplicationMain
 final class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,13 +31,31 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
+        configIQKeyBoardManager()
         configNetwork()
-        let loginVC = LoginViewController()
-        let navi = BaseNavigationController(rootViewController: loginVC)
-        window?.rootViewController = navi
+        if App.userDefault.string(forKey: App.KeyUserDefault.accessToken) != nil {
+            let homeVC = HomeViewController()
+            let navi = BaseNavigationController(rootViewController: homeVC)
+            window?.rootViewController = navi
+        } else {
+            let loginVC = LoginViewController()
+            let navi = BaseNavigationController(rootViewController: loginVC)
+            window?.rootViewController = navi
+        }
         window?.makeKeyAndVisible()
         return true
     }
+
+    func configIQKeyBoardManager() {
+        IQKeyboardManager.sharedManager().enable = true
+        IQKeyboardManager.sharedManager().enableAutoToolbar = false
+        IQKeyboardManager.sharedManager().canAdjustAdditionalSafeAreaInsets = true
+    }
+
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey: Any] = [:]) -> Bool {
+        return SDKApplicationDelegate.shared.application(app, open: url, options: options)
+    }
+
 }
 
 extension AppDelegate {

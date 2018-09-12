@@ -11,34 +11,10 @@ import ObjectMapper
 import Realm
 
 @objcMembers class User: Object, Mappable {
-    // MARK: - enum
-    enum Gender {
-        case male
-        case female
-        case other
-
-        var name: String {
-            switch self {
-            case .male:
-                return "Nam"
-            case .female:
-                return "Nữ"
-            case .other:
-                return "Khác"
-            }
-        }
-    }
 
     // MARK: - Properties
-    dynamic var id = 0
-    dynamic var username = ""
-    dynamic var password = ""
-    dynamic var accesToken = ""
-    dynamic var avatarUrl = ""
-    dynamic var birthday: Date = Date()
-    dynamic var gender: User.Gender = .other
     dynamic var email = ""
-    dynamic var idLevel = 1
+    dynamic var password = ""
 
     // MARK: - init
     override static func primaryKey() -> String? {
@@ -46,13 +22,7 @@ import Realm
     }
 
     func mapping(map: Map) {
-        username <- map["name"]
-        accesToken <- map["token"]
         email <- map["email"]
-        avatarUrl <- map["avatarUrl"]
-        var level = Level()
-        level <- map["level"]
-        idLevel = level.id
     }
 
     required convenience init?(map: Map) {

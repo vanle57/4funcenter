@@ -23,10 +23,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Nix-XE-1fd">
-                                <rect key="frame" x="127" y="230.5" width="120" height="139"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Nix-XE-1fd">
+                                <rect key="frame" x="87" y="246.5" width="200" height="107"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Nix-XE-1fd" secondAttribute="height" multiplier="25:29" id="2Qf-5c-glM"/>
+                                    <constraint firstAttribute="width" secondItem="Nix-XE-1fd" secondAttribute="height" multiplier="15:8" id="2Qf-5c-glM"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -34,7 +34,7 @@
                         <constraints>
                             <constraint firstItem="Nix-XE-1fd" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="0.9" id="2Sp-Js-1EP"/>
                             <constraint firstItem="Nix-XE-1fd" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="NkC-YO-WFx"/>
-                            <constraint firstItem="Nix-XE-1fd" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="120:375" id="UYA-3w-rST"/>
+                            <constraint firstItem="Nix-XE-1fd" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="200:375" id="UYA-3w-rST"/>
                         </constraints>
                     </view>
                 </viewController>
