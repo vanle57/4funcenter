@@ -33,15 +33,18 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         configIQKeyBoardManager()
         configNetwork()
-        if App.userDefault.string(forKey: App.KeyUserDefault.accessToken) != nil {
-            let homeVC = HomeViewController()
-            let navi = BaseNavigationController(rootViewController: homeVC)
-            window?.rootViewController = navi
-        } else {
-            let loginVC = LoginViewController()
-            let navi = BaseNavigationController(rootViewController: loginVC)
-            window?.rootViewController = navi
-        }
+        let loginVC = LoginViewController()
+        let navi = BaseNavigationController(rootViewController: loginVC)
+        window?.rootViewController = navi
+//        if App.userDefault.string(forKey: App.KeyUserDefault.accessToken) != nil {
+//            let homeVC = HomeViewController()
+//            let navi = BaseNavigationController(rootViewController: homeVC)
+//            window?.rootViewController = navi
+//        } else {
+//            let loginVC = LoginViewController()
+//            let navi = BaseNavigationController(rootViewController: loginVC)
+//            window?.rootViewController = navi
+//        }
         window?.makeKeyAndVisible()
         return true
     }
@@ -49,7 +52,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     func configIQKeyBoardManager() {
         IQKeyboardManager.sharedManager().enable = true
         IQKeyboardManager.sharedManager().enableAutoToolbar = false
-        IQKeyboardManager.sharedManager().canAdjustAdditionalSafeAreaInsets = true
+        IQKeyboardManager.sharedManager().canAdjustAdditionalSafeAreaInsets = false
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey: Any] = [:]) -> Bool {

@@ -11,11 +11,13 @@ import SkyFloatingLabelTextField
 
 class RegisterViewController: BaseViewController {
 
-    @IBOutlet weak var fullnameTextField: SkyFloatingLabelTextField!
-    @IBOutlet weak var emailOrPhoneNumberTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var usernameTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var emailTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var passwordTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var confirmPasswordTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var checkButton: UIButton!
+
+    var viewModel = RegisterViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,20 +26,41 @@ class RegisterViewController: BaseViewController {
     }
 
     override func setupUI() {
-        fullnameTextField.delegate = self
-        emailOrPhoneNumberTextField.delegate = self
+        usernameTextField.delegate = self
+        emailTextField.delegate = self
         passwordTextField.delegate = self
         confirmPasswordTextField.delegate = self
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        fullnameTextField.resignFirstResponder()
-        emailOrPhoneNumberTextField.resignFirstResponder()
+        usernameTextField.resignFirstResponder()
+        emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
         confirmPasswordTextField.resignFirstResponder()
     }
 
     private func register() {
+        guard let username = usernameTextField.text,
+            let email = emailTextField.text,
+            let password = passwordTextField.text,
+            let confirmPassword = confirmPasswordTextField.text else {
+            alert(error: App.Error.emptyFieldError)
+            return
+        }
+        viewModel = RegisterViewModel(username: username, email: email, password: password, confirmPassword: confirmPassword)
+        viewModel.register { [weak self] (result) in
+            guard let this = self else { return }
+            switch result {
+            case .success:
+                print("success")
+            case .failure(let error):
+                guard let error = error as? RegisterViewModel.RegisterError else {
+                    this.alert(error: App.Error.unknownError)
+                    return
+                }
+                this.alert(title: "ERROR", msg: error.localizedDescription, buttons: ["Agree"], handler: nil)
+            }
+        }
     }
 
     @IBAction func cameraButtonTouchUpInside(_ sender: Any) {
@@ -47,6 +70,7 @@ class RegisterViewController: BaseViewController {
     }
 
     @IBAction func registerButtonTouchUpInside(_ sender: Any) {
+        register()
     }
 
     @IBAction func loginButtonTouchUpInside(_ sender: Any) {
@@ -55,11 +79,11 @@ class RegisterViewController: BaseViewController {
 
 extension RegisterViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == fullnameTextField {
-            emailOrPhoneNumberTextField.becomeFirstResponder()
+        if textField == usernameTextField {
+            emailTextField.becomeFirstResponder()
             return true
         }
-        if textField == emailOrPhoneNumberTextField {
+        if textField == emailTextField {
             passwordTextField.becomeFirstResponder()
             return true
         }
