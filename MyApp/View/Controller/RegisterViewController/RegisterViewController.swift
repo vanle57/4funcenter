@@ -112,7 +112,7 @@ extension RegisterViewController: UITextFieldDelegate {
 
 // MARK: - Pick picture
 extension RegisterViewController {
-    func showPickAvatarAlert() {
+    private func showPickAvatarAlert() {
         let libraryAction: (UIAlertAction) -> Void = { (action) in
             self.pickPictureFromLibrary()
         }
@@ -122,14 +122,24 @@ extension RegisterViewController {
         alertManyActions(title: Define.pickPictureAlert, msg: "", buttons: [Define.libraryAction, Define.cameraAction, Define.cancelAction], handler: [libraryAction, cameraAction, nil])
     }
 
-    func pickPictureFromLibrary() {
+    private func pickPictureFromLibrary() {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         imagePickerController.sourceType = .photoLibrary
         navigationController?.present(imagePickerController, animated: true, completion: nil)
     }
 
-    func pickPictureFromCamera() {
+    private func pickPictureFromCamera() {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let imagePickerController = UIImagePickerController()
+            imagePickerController.delegate = self
+            imagePickerController.sourceType = .camera
+            imagePickerController.cameraCaptureMode = .photo
+            imagePickerController.modalPresentationStyle = .fullScreen
+            present(imagePickerController, animated: true, completion: nil)
+        } else {
+            alert(msg: Define.noCameraAlert, buttons: [Define.agreeAction], handler: nil)
+        }
     }
 }
 
@@ -158,7 +168,9 @@ extension RegisterViewController {
         static let libraryAction = "Library"
         static let cameraAction = "Camera"
         static let cancelAction = "Cancel"
+        static let agreeAction = "Ok"
         static let editedImage = "UIImagePickerControllerEditedImage"
         static let originalImage = "UIImagePickerControllerOriginalImage"
+        static let noCameraAlert = "Sorry, this device not have camera"
     }
 }
