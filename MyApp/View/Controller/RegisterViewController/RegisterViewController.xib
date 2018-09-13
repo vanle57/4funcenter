@@ -43,7 +43,7 @@
                             <color key="tintColor" red="0.41568627450000001" green="0.1058823529" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
                                     <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -72,7 +72,7 @@
                             <color key="tintColor" red="0.41568627450000001" green="0.1058823529" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
                                     <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -97,11 +97,11 @@
                             </userDefinedRuntimeAttributes>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x1v-34-fZE" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                            <rect key="frame" x="30" y="339" width="315" height="49.5"/>
+                            <rect key="frame" x="30" y="332" width="315" height="49.5"/>
                             <color key="tintColor" red="0.41568627450000001" green="0.1058823529" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
                                     <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -130,7 +130,7 @@
                             <color key="tintColor" red="0.41568627450000001" green="0.1058823529" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
                                     <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -190,7 +190,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9vG-TH-eni">
-                            <rect key="frame" x="30.5" y="418.5" width="315" height="25"/>
+                            <rect key="frame" x="30.5" y="411.5" width="315" height="25"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I agree with 4fun terms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrU-io-bgg">
                                     <rect key="frame" x="35" y="3" width="133" height="19.5"/>
@@ -219,7 +219,7 @@
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybb-ud-FXB">
-                            <rect key="frame" x="30" y="473.5" width="315" height="36"/>
+                            <rect key="frame" x="30" y="466.5" width="315" height="36"/>
                             <color key="backgroundColor" red="0.1647058824" green="0.16862745100000001" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="Heebo-Bold" family="Heebo" pointSize="16"/>
                             <state key="normal" title="R E G I S T E R">
@@ -245,7 +245,7 @@
                         <constraint firstItem="NU8-9t-Z59" firstAttribute="centerX" secondItem="egR-pi-cfX" secondAttribute="centerX" id="KCs-U0-j0v"/>
                         <constraint firstItem="9vG-TH-eni" firstAttribute="height" secondItem="x1v-34-fZE" secondAttribute="height" multiplier="1:2" id="KJz-fj-Xsu"/>
                         <constraint firstItem="ZKd-v5-eDj" firstAttribute="centerX" secondItem="egR-pi-cfX" secondAttribute="centerX" id="KTf-eZ-psX"/>
-                        <constraint firstItem="x1v-34-fZE" firstAttribute="top" secondItem="NU8-9t-Z59" secondAttribute="bottom" constant="15" id="LxU-l8-D4M"/>
+                        <constraint firstItem="x1v-34-fZE" firstAttribute="top" secondItem="NU8-9t-Z59" secondAttribute="bottom" constant="8" id="LxU-l8-D4M"/>
                         <constraint firstItem="ybb-ud-FXB" firstAttribute="width" secondItem="k2T-JO-WaL" secondAttribute="width" id="SPa-hM-7ke"/>
                         <constraint firstItem="ZKd-v5-eDj" firstAttribute="top" secondItem="egR-pi-cfX" secondAttribute="top" constant="40" id="WFm-IP-sti"/>
                         <constraint firstItem="Mnc-AK-LjT" firstAttribute="centerX" secondItem="egR-pi-cfX" secondAttribute="centerX" id="Xea-Q8-4mh"/>
