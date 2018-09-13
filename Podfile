@@ -44,10 +44,10 @@ target 'MyApp' do
     pod 'SVProgressHUD'
     pod 'FBSDKCoreKit'
     pod 'FBSDKLoginKit'
-    pod 'FBSDKShareKit'
+    #pod 'FBSDKShareKit'
     pod 'FacebookCore'
     pod 'FacebookLogin'
-    pod 'FacebookShare'
+    #pod 'FacebookShare'
 
 target 'MyAppTests' do
     inherit! :complete
