@@ -10,7 +10,8 @@ import UIKit
 import SkyFloatingLabelTextField
 
 class RegisterViewController: BaseViewController {
-    // MARIK: - Outlets
+    // MARK: - Outlets
+    @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var usernameTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var emailTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var passwordTextField: SkyFloatingLabelTextField!
@@ -42,7 +43,7 @@ class RegisterViewController: BaseViewController {
             alert(error: App.Error.emptyFieldError)
             return
         }
-        viewModel = RegisterViewModel(username: username, email: email, password: password, confirmPassword: confirmPassword, isChecked: viewModel.isChecked)
+        viewModel = RegisterViewModel(avatar: viewModel.avatar, username: username, email: email, password: password, confirmPassword: confirmPassword, isChecked: viewModel.isChecked)
         viewModel.register { [weak self] (result) in
             guard let this = self else { return }
             switch result {
@@ -68,6 +69,7 @@ class RegisterViewController: BaseViewController {
 
     // MARK: - Actions
     @IBAction func cameraButtonTouchUpInside(_ sender: Any) {
+        showPickAvatarAlert()
     }
 
     @IBAction func checkButtonTouchUpInside(_ sender: Any) {
@@ -105,5 +107,58 @@ extension RegisterViewController: UITextFieldDelegate {
             return true
         }
         return true
+    }
+}
+
+// MARK: - Pick picture
+extension RegisterViewController {
+    func showPickAvatarAlert() {
+        let libraryAction: (UIAlertAction) -> Void = { (action) in
+            self.pickPictureFromLibrary()
+        }
+        let cameraAction: (UIAlertAction) -> Void = { (action) in
+            self.pickPictureFromCamera()
+        }
+        alertManyActions(title: Define.pickPictureAlert, msg: "", buttons: [Define.libraryAction, Define.cameraAction, Define.cancelAction], handler: [libraryAction, cameraAction, nil])
+    }
+
+    func pickPictureFromLibrary() {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = .photoLibrary
+        navigationController?.present(imagePickerController, animated: true, completion: nil)
+    }
+
+    func pickPictureFromCamera() {
+    }
+}
+
+// MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
+extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
+        var newImage: UIImage
+        if let possibleImage = info[Define.editedImage] as? UIImage {
+            newImage = possibleImage
+        } else if let possibleImage = info[Define.originalImage] as? UIImage {
+            newImage = possibleImage
+        } else {
+            return
+        }
+        dismiss(animated: true)
+        viewModel.avatar = newImage
+        avatarImageView.contentMode = .scaleToFill
+        avatarImageView.image = newImage
+    }
+}
+
+// MARK: - Define
+extension RegisterViewController {
+    struct Define {
+        static let pickPictureAlert = "Choose picture from"
+        static let libraryAction = "Library"
+        static let cameraAction = "Camera"
+        static let cancelAction = "Cancel"
+        static let editedImage = "UIImagePickerControllerEditedImage"
+        static let originalImage = "UIImagePickerControllerOriginalImage"
     }
 }

@@ -43,7 +43,7 @@ class RegisterViewModel {
     typealias RegisterCompletion = (RegisterResult) -> Void
 
     // MARK: - Properties
-    var avatar: UIImage = UIImage()
+    var avatar: UIImage = #imageLiteral(resourceName: "img_no_avatar")
     var username = ""
     var email = ""
     var password = ""
@@ -51,12 +51,15 @@ class RegisterViewModel {
     var isChecked = false
 
     init() { }
-    init(username: String, email: String, password: String, confirmPassword: String, isChecked: Bool) {
+    init(avatar: UIImage?, username: String, email: String, password: String, confirmPassword: String, isChecked: Bool) {
         self.username = username
         self.email = email
         self.password = password
         self.confirmPassword = confirmPassword
         self.isChecked = isChecked
+        if let avatar = avatar {
+            self.avatar = avatar
+        }
     }
 
     func register(_ completion: @escaping RegisterCompletion) {
