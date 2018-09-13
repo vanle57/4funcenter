@@ -16,6 +16,7 @@ class RegisterViewModel {
         case invalidEmail
         case invalidPassword
         case confirmPasswordNotMatch
+        case notAgreeWith4FunTerms
 
         var localizedDescription: String {
             switch self {
@@ -29,6 +30,8 @@ class RegisterViewModel {
                 return App.Error.invalidPasswordError.localizedDescription
             case .confirmPasswordNotMatch:
                 return "Password and confirm password does not match"
+            case .notAgreeWith4FunTerms:
+                return "Did you agree with 4fun terms?"
             }
         }
     }
@@ -45,13 +48,15 @@ class RegisterViewModel {
     var email = ""
     var password = ""
     var confirmPassword = ""
+    var isChecked = false
 
     init() { }
-    init(username: String, email: String, password: String, confirmPassword: String) {
+    init(username: String, email: String, password: String, confirmPassword: String, isChecked: Bool) {
         self.username = username
         self.email = email
         self.password = password
         self.confirmPassword = confirmPassword
+        self.isChecked = isChecked
     }
 
     func register(_ completion: @escaping RegisterCompletion) {
@@ -88,6 +93,10 @@ class RegisterViewModel {
 
         if confirmPassword != password {
             throw RegisterError.confirmPasswordNotMatch
+        }
+
+        if !isChecked {
+            throw RegisterError.notAgreeWith4FunTerms
         }
     }
 }

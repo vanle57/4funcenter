@@ -192,8 +192,8 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9vG-TH-eni">
                             <rect key="frame" x="30.5" y="413.5" width="315" height="25"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I agree with 4fun terms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrU-io-bgg">
-                                    <rect key="frame" x="35" y="3" width="133" height="19.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I agree with 4fun terms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GrU-io-bgg">
+                                    <rect key="frame" x="35" y="3" width="133.5" height="19.5"/>
                                     <fontDescription key="fontDescription" name="Heebo-Regular" family="Heebo" pointSize="13"/>
                                     <color key="textColor" red="0.1647058824" green="0.16862745100000001" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -216,6 +216,7 @@
                                 <constraint firstItem="GrU-io-bgg" firstAttribute="leading" secondItem="Voh-tK-2fX" secondAttribute="trailing" constant="10" id="UYc-5f-aDD"/>
                                 <constraint firstItem="Voh-tK-2fX" firstAttribute="leading" secondItem="9vG-TH-eni" secondAttribute="leading" id="aG0-Cd-pm2"/>
                                 <constraint firstItem="Voh-tK-2fX" firstAttribute="height" secondItem="9vG-TH-eni" secondAttribute="height" id="pga-o8-5e9"/>
+                                <constraint firstAttribute="trailing" secondItem="GrU-io-bgg" secondAttribute="trailing" constant="146.5" id="z1X-do-mCT"/>
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybb-ud-FXB">

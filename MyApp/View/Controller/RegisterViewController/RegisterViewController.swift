@@ -19,12 +19,6 @@ class RegisterViewController: BaseViewController {
 
     var viewModel = RegisterViewModel()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
     override func setupUI() {
         usernameTextField.delegate = self
         emailTextField.delegate = self
@@ -47,7 +41,7 @@ class RegisterViewController: BaseViewController {
             alert(error: App.Error.emptyFieldError)
             return
         }
-        viewModel = RegisterViewModel(username: username, email: email, password: password, confirmPassword: confirmPassword)
+        viewModel = RegisterViewModel(username: username, email: email, password: password, confirmPassword: confirmPassword, isChecked: viewModel.isChecked)
         viewModel.register { [weak self] (result) in
             guard let this = self else { return }
             switch result {
@@ -63,10 +57,20 @@ class RegisterViewController: BaseViewController {
         }
     }
 
+    private func updateCheckButtonUI() {
+        if viewModel.isChecked {
+            checkButton.setImage(#imageLiteral(resourceName: "ic_check"), for: .normal)
+        } else {
+            checkButton.setImage(#imageLiteral(resourceName: "ic_uncheck"), for: .normal)
+        }
+    }
+
     @IBAction func cameraButtonTouchUpInside(_ sender: Any) {
     }
 
     @IBAction func checkButtonTouchUpInside(_ sender: Any) {
+        viewModel.isChecked = !viewModel.isChecked
+        updateCheckButtonUI()
     }
 
     @IBAction func registerButtonTouchUpInside(_ sender: Any) {
@@ -92,6 +96,7 @@ extension RegisterViewController: UITextFieldDelegate {
             return true
         }
         if textField == confirmPasswordTextField {
+            updateCheckButtonUI()
             register()
             return true
         }
