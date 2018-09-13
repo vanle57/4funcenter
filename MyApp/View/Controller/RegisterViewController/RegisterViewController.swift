@@ -10,7 +10,7 @@ import UIKit
 import SkyFloatingLabelTextField
 
 class RegisterViewController: BaseViewController {
-
+    // MARIK: - Outlets
     @IBOutlet weak var usernameTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var emailTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var passwordTextField: SkyFloatingLabelTextField!
@@ -33,6 +33,7 @@ class RegisterViewController: BaseViewController {
         confirmPasswordTextField.resignFirstResponder()
     }
 
+    // MARK: - Private functions
     private func register() {
         guard let username = usernameTextField.text,
             let email = emailTextField.text,
@@ -65,6 +66,7 @@ class RegisterViewController: BaseViewController {
         }
     }
 
+    // MARK: - Actions
     @IBAction func cameraButtonTouchUpInside(_ sender: Any) {
     }
 
@@ -78,9 +80,11 @@ class RegisterViewController: BaseViewController {
     }
 
     @IBAction func loginButtonTouchUpInside(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
 }
 
+// MARK: - UITextFieldDelegate
 extension RegisterViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == usernameTextField {
