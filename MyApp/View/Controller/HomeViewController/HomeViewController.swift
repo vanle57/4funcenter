@@ -7,19 +7,16 @@
 //
 
 import UIKit
+import LGSideMenuController
 
 class HomeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
     override func setupUI() {
+        super.setupUI()
         title = "Home"
-    }
-
-    override func setupData() {
-
     }
 }

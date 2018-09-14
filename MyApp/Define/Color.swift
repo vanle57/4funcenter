@@ -17,8 +17,8 @@ extension App {
     struct Color {
         static let navigationGradientColors = [UIColor.RGB(138, 181, 243), UIColor.RGB(110, 126, 227), UIColor.RGB(104, 86, 226), UIColor.RGB(126, 64, 224), UIColor.RGB(161, 42, 218)]
 
-        static let navigationTittleColor = UIColor.white
-        static let navigationBarTintColor = UIColor.white
+        static let navigationTittleColor = UIColor.black
+        static let navigationBarTintColor = UIColor.red
         static let tabBarTintColor = UIColor.RGB(103, 26, 151)
         static let tabBarBarTintColor = UIColor.white
         static let tabBarBackgroudColor = UIColor.gray
