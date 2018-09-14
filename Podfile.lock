@@ -48,7 +48,6 @@ DEPENDENCIES:
   - FacebookCore
   - FacebookLogin
   - FacebookShare
-  - FBSDKLoginKit
   - FBSDKShareKit
   - IQKeyboardManagerSwift
   - Kingfisher
@@ -83,6 +82,6 @@ SPEC CHECKSUMS:
   SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
   SwiftUtils: b009d391fb2e285392f114238f8b55d2750b80f0
 
-PODFILE CHECKSUM: 4f665e2f31385728cd9bc4c77ffc2528812a36e1
+PODFILE CHECKSUM: ff0f3bfe9b0e01ffd2fd4bb4792fce2a0cf5993f
 
 COCOAPODS: 1.4.0
