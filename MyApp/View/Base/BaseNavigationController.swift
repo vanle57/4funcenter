@@ -12,9 +12,8 @@ class BaseNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: App.Color.navigationTittleColor]
-        navigationBar.tintColor = App.Color.navigationBarTintColor
+        navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: App.Color.blackColor]
+        navigationBar.tintColor = App.Color.blackColor
         navigationBar.isTranslucent = false
-        navigationBar.shadowImage = UIImage()
     }
 }
