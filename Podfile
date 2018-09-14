@@ -13,12 +13,15 @@ target 'MyApp' do
     pod 'MVVM-Swift', '1.1.0' # MVVM Architect for iOS Application.
 
     # UI
-    # pod 'SVProgressHUD', '2.2.5' # A clean and lightweight progress HUD for your iOS and tvOS app.
+    pod 'SVProgressHUD', '2.2.5' # A clean and lightweight progress HUD for your iOS and tvOS app.
     pod 'IQKeyboardManagerSwift' # Codeless drop-in universal library allows to prevent issues of keyboard sliding up and cover UITextField/UITextView. Neither need to write any code nor any setup required and much more.
-    # pod 'LGSideMenuController', '2.1.1' # iOS view controller, shows left and right views by pressing button or gesture.
+    pod 'LGSideMenuController', '2.1.1' # iOS view controller, shows left and right views by pressing button or gesture.
+    pod 'SkyFloatingLabelTextField', '~> 3.0'
+    pod 'Kingfisher'
 
     # Data
     pod 'ObjectMapper', '3.1.0' # Simple JSON Object mapping written in Swift. Please fix this version to 2.2.6 now.
+    pod 'RealmSwift'
     # pod 'SwiftyJSON', '4.0.0' # The better way to deal with JSON data in Swift.
 
     # Network
@@ -37,13 +40,8 @@ target 'MyApp' do
 
     # Crash reporting & beta deployment
 
-    pod 'SwifterSwift'
-    pod 'RealmSwift'
-    pod 'Kingfisher'
-    pod 'SkyFloatingLabelTextField', '~> 3.0'
-    pod 'SVProgressHUD'
-    pod 'FBSDKCoreKit'
-    pod 'FBSDKLoginKit'
+    # pod 'FBSDKCoreKit'
+    # pod 'FBSDKLoginKit'
     pod 'FBSDKShareKit'
     pod 'FacebookCore'
     pod 'FacebookLogin'

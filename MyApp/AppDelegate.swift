@@ -9,7 +9,6 @@
 import UIKit
 import AlamofireNetworkActivityIndicator
 import IQKeyboardManagerSwift
-import FBSDKCoreKit
 import FacebookCore
 
 @UIApplicationMain

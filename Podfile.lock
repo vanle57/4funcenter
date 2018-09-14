@@ -29,6 +29,7 @@ PODS:
     - FBSDKCoreKit (~> 4.34.0)
   - IQKeyboardManagerSwift (5.0.7)
   - Kingfisher (4.8.0)
+  - LGSideMenuController (2.1.1)
   - MVVM-Swift (1.1.0)
   - ObjectMapper (3.1.0)
   - Realm (3.7.4):
@@ -38,23 +39,6 @@ PODS:
     - Realm (= 3.7.4)
   - SkyFloatingLabelTextField (3.5.1)
   - SVProgressHUD (2.2.5)
-  - SwifterSwift (4.4.0):
-    - SwifterSwift/AppKit (= 4.4.0)
-    - SwifterSwift/CoreGraphics (= 4.4.0)
-    - SwifterSwift/CoreLocation (= 4.4.0)
-    - SwifterSwift/Foundation (= 4.4.0)
-    - SwifterSwift/MapKit (= 4.4.0)
-    - SwifterSwift/SpriteKit (= 4.4.0)
-    - SwifterSwift/SwiftStdlib (= 4.4.0)
-    - SwifterSwift/UIKit (= 4.4.0)
-  - SwifterSwift/AppKit (4.4.0)
-  - SwifterSwift/CoreGraphics (4.4.0)
-  - SwifterSwift/CoreLocation (4.4.0)
-  - SwifterSwift/Foundation (4.4.0)
-  - SwifterSwift/MapKit (4.4.0)
-  - SwifterSwift/SpriteKit (4.4.0)
-  - SwifterSwift/SwiftStdlib (4.4.0)
-  - SwifterSwift/UIKit (4.4.0)
   - SwiftLint (0.25.0)
   - SwiftUtils (4.0.1)
 
@@ -64,17 +48,16 @@ DEPENDENCIES:
   - FacebookCore
   - FacebookLogin
   - FacebookShare
-  - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
   - IQKeyboardManagerSwift
   - Kingfisher
+  - LGSideMenuController (= 2.1.1)
   - MVVM-Swift (= 1.1.0)
   - ObjectMapper (= 3.1.0)
   - RealmSwift
   - SkyFloatingLabelTextField (~> 3.0)
-  - SVProgressHUD
-  - SwifterSwift
+  - SVProgressHUD (= 2.2.5)
   - SwiftLint (= 0.25.0)
   - SwiftUtils (= 4.0.1)
 
@@ -90,16 +73,16 @@ SPEC CHECKSUMS:
   FBSDKShareKit: 511d1dfc71204c0a8d69e6c5e3c964dcf0d4f3d9
   IQKeyboardManagerSwift: 30fb3a61de1af53a95e02b80fb54ed0a19d5ede5
   Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
+  LGSideMenuController: ae40c80983ab8b8801c7cef0a6804d43aaa72d45
   MVVM-Swift: 54749cc12bb30af41632f30a2c576a18bf9e4bc8
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   Realm: a469bb59e33f9926102ccaea4349822c53b9117e
   RealmSwift: a45861b21c180f5cf0f122144b9759fa8dde3e9e
   SkyFloatingLabelTextField: 4cbeece9c3aae97c6019d8fae511cb5b755874f7
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  SwifterSwift: 1ce0e31801ddd3a2bd3256626275425adb01067a
   SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
   SwiftUtils: b009d391fb2e285392f114238f8b55d2750b80f0
 
-PODFILE CHECKSUM: ddf33b9c029366178a08869508a5f04f142fcc4b
+PODFILE CHECKSUM: 4f665e2f31385728cd9bc4c77ffc2528812a36e1
 
 COCOAPODS: 1.4.0
