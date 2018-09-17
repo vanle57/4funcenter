@@ -36,4 +36,22 @@ extension String {
     mutating func capitalizeFirstLetter() {
         self = self.capitalizingFirstLetter()
     }
+
+    /// this function is used to validate email.
+    ///
+    /// - Returns: return true if it is valid email, otherwise return false
+    func isValidEmail() -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: self)
+    }
+
+    /// this function is used to validate password
+    /// the password must have at least 1 uppercase, 1 digit, 1 lowercase, 8 characters total
+    ///
+    /// - Returns: return true if it is valid password, otherwise return false
+    func isValidPassword() -> Bool {
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{8,}")
+        return passwordTest.evaluate(with: self)
+    }
 }
