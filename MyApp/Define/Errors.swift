@@ -9,6 +9,9 @@ import Foundation
 
 extension App {
     struct Error {
+        static let indexOutOfBound = NSError(domain: "",
+                                             code: 9,
+                                             userInfo: [NSLocalizedDescriptionKey:  "Index out or range!"])
         static let realmError = NSError(domain: "",
                                         code: 10,
                                         userInfo: [NSLocalizedDescriptionKey: "Realm Error"])

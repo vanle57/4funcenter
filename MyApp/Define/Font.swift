@@ -39,5 +39,9 @@ extension App {
         static var questionTextLabel: UIFont {
             return .boldSystemFont(ofSize: 18)
         }
+
+        static var heeboBoldFont = UIFont(name: "Heebo-Medium", size: 15)
+        
+        static var heeboRegularFont = UIFont(name: "Heebo-Regular", size: 15)
     }
 }

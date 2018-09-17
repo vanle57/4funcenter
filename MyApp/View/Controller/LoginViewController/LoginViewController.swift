@@ -39,7 +39,7 @@ final class LoginViewController: BaseViewController {
         viewModel.login { (result) in
             switch result {
             case .success:
-                print("sucess")
+                AppDelegate.shared.switchRoot(rootType: .logined)
             case .failure(let error):
                 self.alert(error: error)
             }
@@ -61,6 +61,7 @@ final class LoginViewController: BaseViewController {
                 break
             case .success( _, _, let accessToken):
                 Session.share.accessToken = accessToken.userId
+                AppDelegate.shared.switchRoot(rootType: .logined)
             }
         }
     }

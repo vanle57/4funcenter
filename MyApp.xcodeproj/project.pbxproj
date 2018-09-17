@@ -13,11 +13,17 @@
 		625DF8902111BB8B007958F6 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625DF88F2111BB8B007958F6 /* LoginViewModel.swift */; };
 		629E064E2126EE05004D29E0 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629E064D2126EE05004D29E0 /* Errors.swift */; };
 		6C392FC5AF0C61509011C30D /* Pods_MyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E8000CCB9AE328B83764288 /* Pods_MyApp.framework */; };
-		ACB04584210F01F100159503 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB04583210F01F100159503 /* BaseTabBarController.swift */; };
 		ACB045A3210F0CEB00159503 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB045A2210F0CEB00159503 /* BaseNavigationController.swift */; };
 		B317621A2148CB65005C9D25 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31762192148CB65005C9D25 /* RegisterViewModel.swift */; };
 		B317621D2149F39F005C9D25 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B317621B2149F39F005C9D25 /* RegisterViewController.swift */; };
 		B317621E2149F39F005C9D25 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B317621C2149F39F005C9D25 /* RegisterViewController.xib */; };
+		B33ABC9A214B5D2900F7FF48 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33ABC99214B5D2900F7FF48 /* MainViewController.swift */; };
+		B33ABCA4214B989400F7FF48 /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33ABCA2214B989400F7FF48 /* SideMenuCell.swift */; };
+		B33ABCA5214B989400F7FF48 /* SideMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B33ABCA3214B989400F7FF48 /* SideMenuCell.xib */; };
+		B33ABCA8214B98FD00F7FF48 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33ABCA6214B98FD00F7FF48 /* SideMenuViewController.swift */; };
+		B33ABCA9214B98FD00F7FF48 /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B33ABCA7214B98FD00F7FF48 /* SideMenuViewController.xib */; };
+		B33ABCB0214F53B100F7FF48 /* SideMenuCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33ABCAF214F53B100F7FF48 /* SideMenuCellViewModel.swift */; };
+		B33ABCB2214F566500F7FF48 /* SideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33ABCB1214F566500F7FF48 /* SideMenuViewModel.swift */; };
 		B358301A2115624500E3E419 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35830192115624500E3E419 /* User.swift */; };
 		B374DB5E2147681B005C1FE2 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B374DB4A21476819005C1FE2 /* HomeViewController.xib */; };
 		B374DB5F2147681B005C1FE2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B374DB4B21476819005C1FE2 /* HomeViewController.swift */; };
@@ -103,11 +109,17 @@
 		625DF88F2111BB8B007958F6 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		629E064D2126EE05004D29E0 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		7E8000CCB9AE328B83764288 /* Pods_MyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ACB04583210F01F100159503 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		ACB045A2210F0CEB00159503 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		B31762192148CB65005C9D25 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		B317621B2149F39F005C9D25 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		B317621C2149F39F005C9D25 /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		B33ABC99214B5D2900F7FF48 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B33ABCA2214B989400F7FF48 /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
+		B33ABCA3214B989400F7FF48 /* SideMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuCell.xib; sourceTree = "<group>"; };
+		B33ABCA6214B98FD00F7FF48 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		B33ABCA7214B98FD00F7FF48 /* SideMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
+		B33ABCAF214F53B100F7FF48 /* SideMenuCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCellViewModel.swift; sourceTree = "<group>"; };
+		B33ABCB1214F566500F7FF48 /* SideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewModel.swift; sourceTree = "<group>"; };
 		B35830192115624500E3E419 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B374DB4A21476819005C1FE2 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		B374DB4B21476819005C1FE2 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -217,6 +229,9 @@
 		ACB04582210EFF4400159503 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B33ABCAA214BA7FC00F7FF48 /* Cell */,
+				B33ABC9B214B5E3C00F7FF48 /* SideMenuController */,
+				B33ABC98214B5D0800F7FF48 /* MainViewController */,
 				B374DB4921476819005C1FE2 /* HomeViewController */,
 				B374DB4F2147681A005C1FE2 /* CoursesViewController */,
 				B374DB552147681A005C1FE2 /* ProfileVIewController */,
@@ -226,6 +241,34 @@
 				6238ADD521116D37003D4B8E /* LoginViewController */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		B33ABC98214B5D0800F7FF48 /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B33ABC99214B5D2900F7FF48 /* MainViewController.swift */,
+			);
+			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		B33ABC9B214B5E3C00F7FF48 /* SideMenuController */ = {
+			isa = PBXGroup;
+			children = (
+				B33ABCA6214B98FD00F7FF48 /* SideMenuViewController.swift */,
+				B33ABCA7214B98FD00F7FF48 /* SideMenuViewController.xib */,
+				B33ABCB1214F566500F7FF48 /* SideMenuViewModel.swift */,
+			);
+			path = SideMenuController;
+			sourceTree = "<group>";
+		};
+		B33ABCAA214BA7FC00F7FF48 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B33ABCA2214B989400F7FF48 /* SideMenuCell.swift */,
+				B33ABCA3214B989400F7FF48 /* SideMenuCell.xib */,
+				B33ABCAF214F53B100F7FF48 /* SideMenuCellViewModel.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		B374DB4921476819005C1FE2 /* HomeViewController */ = {
@@ -397,7 +440,6 @@
 				EC5337C01EF7939C00ACE038 /* TableCell.swift */,
 				EC5337C21EF793B100ACE038 /* CollectionCell.swift */,
 				ECC5B2CC1EF906CA001A97BC /* BaseViewController.swift */,
-				ACB04583210F01F100159503 /* BaseTabBarController.swift */,
 				ACB045A2210F0CEB00159503 /* BaseNavigationController.swift */,
 			);
 			path = Base;
@@ -620,6 +662,7 @@
 				EC0105521E8F8AE000CE013D /* Assets.xcassets in Resources */,
 				B374DB88214783C0005C1FE2 /* Heebo-Light.ttf in Resources */,
 				B374DB71214775AC005C1FE2 /* AboutViewController.xib in Resources */,
+				B33ABCA5214B989400F7FF48 /* SideMenuCell.xib in Resources */,
 				CDE9EE1121194B9B00298DD0 /* gif_eye_vocab.gif in Resources */,
 				EC5337BA1EF78E4D00ACE038 /* Localizable.strings in Resources */,
 				F1C6352C1EF141F300D0A1A0 /* LaunchScreen.storyboard in Resources */,
@@ -629,6 +672,7 @@
 				B374DB8A214783C0005C1FE2 /* Heebo-Black.ttf in Resources */,
 				B374DB79214775D0005C1FE2 /* CoursesViewController.xib in Resources */,
 				B374DB84214783C0005C1FE2 /* Heebo-Thin.ttf in Resources */,
+				B33ABCA9214B98FD00F7FF48 /* SideMenuViewController.xib in Resources */,
 				B317621E2149F39F005C9D25 /* RegisterViewController.xib in Resources */,
 				B374DB89214783C0005C1FE2 /* Heebo-Medium.ttf in Resources */,
 				B374DB75214775BE005C1FE2 /* BlogViewController.xib in Resources */,
@@ -727,6 +771,7 @@
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/LGSideMenuController/LGSideMenuController.framework",
 				"${BUILT_PRODUCTS_DIR}/MVVM-Swift/MVVM.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
@@ -734,7 +779,6 @@
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftUtils/SwiftUtils.framework",
-				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -747,6 +791,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LGSideMenuController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MVVM.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
@@ -754,7 +799,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftUtils.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -777,6 +821,7 @@
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/LGSideMenuController/LGSideMenuController.framework",
 				"${BUILT_PRODUCTS_DIR}/MVVM-Swift/MVVM.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
@@ -784,7 +829,6 @@
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftUtils/SwiftUtils.framework",
-				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -797,6 +841,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LGSideMenuController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MVVM.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
@@ -804,7 +849,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftUtils.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -836,8 +880,8 @@
 				B374DB8C2147A1E1005C1FE2 /* UIButtonExt.swift in Sources */,
 				EC5337C11EF7939C00ACE038 /* TableCell.swift in Sources */,
 				ECF23AC31E9B9264008C23C1 /* StringExt.swift in Sources */,
-				ACB04584210F01F100159503 /* BaseTabBarController.swift in Sources */,
 				B374DB78214775D0005C1FE2 /* CoursesViewController.swift in Sources */,
+				B33ABC9A214B5D2900F7FF48 /* MainViewController.swift in Sources */,
 				B374DB672147681B005C1FE2 /* ProfileViewController.swift in Sources */,
 				ECEC0C5E1ED44D7700F6760A /* MapperExt.swift in Sources */,
 				B317621A2148CB65005C9D25 /* RegisterViewModel.swift in Sources */,
@@ -848,13 +892,17 @@
 				B317621D2149F39F005C9D25 /* RegisterViewController.swift in Sources */,
 				ECC5B2CD1EF906CA001A97BC /* BaseViewController.swift in Sources */,
 				EC5337C31EF793B100ACE038 /* CollectionCell.swift in Sources */,
+				B33ABCA8214B98FD00F7FF48 /* SideMenuViewController.swift in Sources */,
 				ECF23ABA1E9B89B2008C23C1 /* RequestSerializer.swift in Sources */,
 				B3D3564521227A2100D29B1A /* Session.swift in Sources */,
 				6238ADED21116D38003D4B8E /* LoginViewController.swift in Sources */,
 				EC0105541E8F8AE000CE013D /* AppDelegate.swift in Sources */,
+				B33ABCB0214F53B100F7FF48 /* SideMenuCellViewModel.swift in Sources */,
+				B33ABCB2214F566500F7FF48 /* SideMenuViewModel.swift in Sources */,
 				B358301A2115624500E3E419 /* User.swift in Sources */,
 				EC332A481EA0A8CB0011DF1E /* Api.swift in Sources */,
 				ECD1C29B1EA725B1000EC989 /* InputViewExt.swift in Sources */,
+				B33ABCA4214B989400F7FF48 /* SideMenuCell.swift in Sources */,
 				ECF23AB41E9B869B008C23C1 /* ApiManager.swift in Sources */,
 				ECEC0C5A1ED44D4100F6760A /* UIViewControllerExt.swift in Sources */,
 				B374DB70214775AC005C1FE2 /* AboutViewController.swift in Sources */,

@@ -9,8 +9,8 @@
 import UIKit
 import AlamofireNetworkActivityIndicator
 import IQKeyboardManagerSwift
-import FBSDKCoreKit
 import FacebookCore
+import LGSideMenuController
 
 @UIApplicationMain
 final class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,8 +18,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     enum RootViewController {
-        case login
-        case logout
+        case logined
+        case notLogin
     }
 
     static let shared: AppDelegate = {
@@ -33,18 +33,11 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         configIQKeyBoardManager()
         configNetwork()
-        let loginVC = LoginViewController()
-        let navi = BaseNavigationController(rootViewController: loginVC)
-        window?.rootViewController = navi
-//        if App.userDefault.string(forKey: App.KeyUserDefault.accessToken) != nil {
-//            let homeVC = HomeViewController()
-//            let navi = BaseNavigationController(rootViewController: homeVC)
-//            window?.rootViewController = navi
-//        } else {
-//            let loginVC = LoginViewController()
-//            let navi = BaseNavigationController(rootViewController: loginVC)
-//            window?.rootViewController = navi
-//        }
+        if App.userDefault.string(forKey: App.KeyUserDefault.accessToken) != nil {
+            switchRoot(rootType: .logined)
+        } else {
+            switchRoot(rootType: .notLogin)
+        }
         window?.makeKeyAndVisible()
         return true
     }
@@ -59,6 +52,20 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         return SDKApplicationDelegate.shared.application(app, open: url, options: options)
     }
 
+    func switchRoot(rootType: RootViewController) {
+        switch rootType {
+        case .logined:
+            let homeNC = BaseNavigationController(rootViewController: HomeViewController())
+            let mainViewController = MainViewController()
+            mainViewController.rootViewController = homeNC
+            mainViewController.setup()
+            window?.rootViewController = mainViewController
+        case .notLogin:
+            let loginVC = LoginViewController()
+            let navi = BaseNavigationController(rootViewController: loginVC)
+            window?.rootViewController = navi
+        }
+    }
 }
 
 extension AppDelegate {
