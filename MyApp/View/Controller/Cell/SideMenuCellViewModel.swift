@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SideMenuCellViewModel {
+final class SideMenuCellViewModel {
 
     // MARK: - Properties
     var title = ""

@@ -24,6 +24,18 @@
 		B33ABCA9214B98FD00F7FF48 /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B33ABCA7214B98FD00F7FF48 /* SideMenuViewController.xib */; };
 		B33ABCB0214F53B100F7FF48 /* SideMenuCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33ABCAF214F53B100F7FF48 /* SideMenuCellViewModel.swift */; };
 		B33ABCB2214F566500F7FF48 /* SideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33ABCB1214F566500F7FF48 /* SideMenuViewModel.swift */; };
+		B356BA10214F8A38002955B9 /* PlayfairDisplaySC-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B356BA04214F8A36002955B9 /* PlayfairDisplaySC-Italic.otf */; };
+		B356BA11214F8A38002955B9 /* PlayfairDisplaySC-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B356BA05214F8A36002955B9 /* PlayfairDisplaySC-Bold.otf */; };
+		B356BA12214F8A38002955B9 /* PlayfairDisplay-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B356BA06214F8A36002955B9 /* PlayfairDisplay-BlackItalic.otf */; };
+		B356BA13214F8A38002955B9 /* PlayfairDisplay-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B356BA07214F8A37002955B9 /* PlayfairDisplay-BoldItalic.otf */; };
+		B356BA14214F8A38002955B9 /* PlayfairDisplaySC-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B356BA08214F8A37002955B9 /* PlayfairDisplaySC-BoldItalic.otf */; };
+		B356BA15214F8A38002955B9 /* PlayfairDisplaySC-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B356BA09214F8A37002955B9 /* PlayfairDisplaySC-Regular.otf */; };
+		B356BA16214F8A38002955B9 /* PlayfairDisplaySC-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = B356BA0A214F8A37002955B9 /* PlayfairDisplaySC-Black.otf */; };
+		B356BA17214F8A38002955B9 /* PlayfairDisplay-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B356BA0B214F8A37002955B9 /* PlayfairDisplay-Regular.otf */; };
+		B356BA18214F8A38002955B9 /* PlayfairDisplay-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B356BA0C214F8A37002955B9 /* PlayfairDisplay-Bold.otf */; };
+		B356BA19214F8A38002955B9 /* PlayfairDisplay-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B356BA0D214F8A37002955B9 /* PlayfairDisplay-Italic.otf */; };
+		B356BA1A214F8A38002955B9 /* PlayfairDisplaySC-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B356BA0E214F8A37002955B9 /* PlayfairDisplaySC-BlackItalic.otf */; };
+		B356BA1B214F8A38002955B9 /* PlayfairDisplay-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = B356BA0F214F8A38002955B9 /* PlayfairDisplay-Black.otf */; };
 		B358301A2115624500E3E419 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35830192115624500E3E419 /* User.swift */; };
 		B374DB5E2147681B005C1FE2 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B374DB4A21476819005C1FE2 /* HomeViewController.xib */; };
 		B374DB5F2147681B005C1FE2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B374DB4B21476819005C1FE2 /* HomeViewController.swift */; };
@@ -120,6 +132,18 @@
 		B33ABCA7214B98FD00F7FF48 /* SideMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
 		B33ABCAF214F53B100F7FF48 /* SideMenuCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCellViewModel.swift; sourceTree = "<group>"; };
 		B33ABCB1214F566500F7FF48 /* SideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewModel.swift; sourceTree = "<group>"; };
+		B356BA04214F8A36002955B9 /* PlayfairDisplaySC-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplaySC-Italic.otf"; sourceTree = "<group>"; };
+		B356BA05214F8A36002955B9 /* PlayfairDisplaySC-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplaySC-Bold.otf"; sourceTree = "<group>"; };
+		B356BA06214F8A36002955B9 /* PlayfairDisplay-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-BlackItalic.otf"; sourceTree = "<group>"; };
+		B356BA07214F8A37002955B9 /* PlayfairDisplay-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-BoldItalic.otf"; sourceTree = "<group>"; };
+		B356BA08214F8A37002955B9 /* PlayfairDisplaySC-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplaySC-BoldItalic.otf"; sourceTree = "<group>"; };
+		B356BA09214F8A37002955B9 /* PlayfairDisplaySC-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplaySC-Regular.otf"; sourceTree = "<group>"; };
+		B356BA0A214F8A37002955B9 /* PlayfairDisplaySC-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplaySC-Black.otf"; sourceTree = "<group>"; };
+		B356BA0B214F8A37002955B9 /* PlayfairDisplay-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Regular.otf"; sourceTree = "<group>"; };
+		B356BA0C214F8A37002955B9 /* PlayfairDisplay-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Bold.otf"; sourceTree = "<group>"; };
+		B356BA0D214F8A37002955B9 /* PlayfairDisplay-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Italic.otf"; sourceTree = "<group>"; };
+		B356BA0E214F8A37002955B9 /* PlayfairDisplaySC-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplaySC-BlackItalic.otf"; sourceTree = "<group>"; };
+		B356BA0F214F8A38002955B9 /* PlayfairDisplay-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Black.otf"; sourceTree = "<group>"; };
 		B35830192115624500E3E419 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B374DB4A21476819005C1FE2 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		B374DB4B21476819005C1FE2 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -271,6 +295,25 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		B356B9F7214F89D2002955B9 /* Playfair Display */ = {
+			isa = PBXGroup;
+			children = (
+				B356BA0F214F8A38002955B9 /* PlayfairDisplay-Black.otf */,
+				B356BA06214F8A36002955B9 /* PlayfairDisplay-BlackItalic.otf */,
+				B356BA0C214F8A37002955B9 /* PlayfairDisplay-Bold.otf */,
+				B356BA07214F8A37002955B9 /* PlayfairDisplay-BoldItalic.otf */,
+				B356BA0D214F8A37002955B9 /* PlayfairDisplay-Italic.otf */,
+				B356BA0B214F8A37002955B9 /* PlayfairDisplay-Regular.otf */,
+				B356BA0A214F8A37002955B9 /* PlayfairDisplaySC-Black.otf */,
+				B356BA0E214F8A37002955B9 /* PlayfairDisplaySC-BlackItalic.otf */,
+				B356BA05214F8A36002955B9 /* PlayfairDisplaySC-Bold.otf */,
+				B356BA08214F8A37002955B9 /* PlayfairDisplaySC-BoldItalic.otf */,
+				B356BA04214F8A36002955B9 /* PlayfairDisplaySC-Italic.otf */,
+				B356BA09214F8A37002955B9 /* PlayfairDisplaySC-Regular.otf */,
+			);
+			path = "Playfair Display";
+			sourceTree = "<group>";
+		};
 		B374DB4921476819005C1FE2 /* HomeViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +372,7 @@
 		B374DB7B21478357005C1FE2 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				B356B9F7214F89D2002955B9 /* Playfair Display */,
 				B374DB7C21478363005C1FE2 /* Heebo */,
 			);
 			path = Fonts;
@@ -655,10 +699,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B356BA14214F8A38002955B9 /* PlayfairDisplaySC-BoldItalic.otf in Resources */,
 				6238ADEC21116D38003D4B8E /* LoginViewController.xib in Resources */,
+				B356BA1B214F8A38002955B9 /* PlayfairDisplay-Black.otf in Resources */,
 				CDE9EE1221194B9B00298DD0 /* gif_social_vocab.gif in Resources */,
 				B374DB85214783C0005C1FE2 /* Heebo-ExtraBold.ttf in Resources */,
 				B374DB662147681B005C1FE2 /* ProfileViewController.xib in Resources */,
+				B356BA12214F8A38002955B9 /* PlayfairDisplay-BlackItalic.otf in Resources */,
+				B356BA11214F8A38002955B9 /* PlayfairDisplaySC-Bold.otf in Resources */,
 				EC0105521E8F8AE000CE013D /* Assets.xcassets in Resources */,
 				B374DB88214783C0005C1FE2 /* Heebo-Light.ttf in Resources */,
 				B374DB71214775AC005C1FE2 /* AboutViewController.xib in Resources */,
@@ -667,12 +715,20 @@
 				EC5337BA1EF78E4D00ACE038 /* Localizable.strings in Resources */,
 				F1C6352C1EF141F300D0A1A0 /* LaunchScreen.storyboard in Resources */,
 				B374DB5E2147681B005C1FE2 /* HomeViewController.xib in Resources */,
+				B356BA19214F8A38002955B9 /* PlayfairDisplay-Italic.otf in Resources */,
 				B374DB86214783C0005C1FE2 /* Heebo-Regular.ttf in Resources */,
+				B356BA16214F8A38002955B9 /* PlayfairDisplaySC-Black.otf in Resources */,
 				B374DB87214783C0005C1FE2 /* Heebo-Bold.ttf in Resources */,
 				B374DB8A214783C0005C1FE2 /* Heebo-Black.ttf in Resources */,
+				B356BA1A214F8A38002955B9 /* PlayfairDisplaySC-BlackItalic.otf in Resources */,
+				B356BA13214F8A38002955B9 /* PlayfairDisplay-BoldItalic.otf in Resources */,
+				B356BA15214F8A38002955B9 /* PlayfairDisplaySC-Regular.otf in Resources */,
 				B374DB79214775D0005C1FE2 /* CoursesViewController.xib in Resources */,
 				B374DB84214783C0005C1FE2 /* Heebo-Thin.ttf in Resources */,
+				B356BA18214F8A38002955B9 /* PlayfairDisplay-Bold.otf in Resources */,
+				B356BA17214F8A38002955B9 /* PlayfairDisplay-Regular.otf in Resources */,
 				B33ABCA9214B98FD00F7FF48 /* SideMenuViewController.xib in Resources */,
+				B356BA10214F8A38002955B9 /* PlayfairDisplaySC-Italic.otf in Resources */,
 				B317621E2149F39F005C9D25 /* RegisterViewController.xib in Resources */,
 				B374DB89214783C0005C1FE2 /* Heebo-Medium.ttf in Resources */,
 				B374DB75214775BE005C1FE2 /* BlogViewController.xib in Resources */,

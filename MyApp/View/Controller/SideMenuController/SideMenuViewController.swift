@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SideMenuViewController: UIViewController {
+final class SideMenuViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet weak var avatarImageView: UIImageView!
@@ -20,10 +20,10 @@ class SideMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configTableView()
-        usernameButton.underline()
     }
 
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         avatarImageView.circle()
     }
 
@@ -36,6 +36,7 @@ class SideMenuViewController: UIViewController {
     }
 }
 
+// MARK: - UITableViewDataSource, UITableViewDelegate
 extension SideMenuViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.numberOfSections()

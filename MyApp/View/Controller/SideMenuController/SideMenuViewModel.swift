@@ -9,7 +9,7 @@
 import Foundation
 import MVVM
 
-class SideMenuViewModel: MVVM.ViewModel {
+final class SideMenuViewModel: MVVM.ViewModel {
     // MARK: - enum
     enum SectionType {
         case main

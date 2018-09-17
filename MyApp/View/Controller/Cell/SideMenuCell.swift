@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SideMenuCell: TableCell {
+final class SideMenuCell: TableCell {
 
     // MARK: - Properties
     @IBOutlet weak var itemLabel: UILabel!
