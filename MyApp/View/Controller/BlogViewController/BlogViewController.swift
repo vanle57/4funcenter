@@ -8,12 +8,14 @@
 
 import UIKit
 
-class BlogViewController: BaseViewController {
+final class BlogViewController: BaseViewController {
 
-    // MARK: - Properties
+    // MARK: - Outlets
     @IBOutlet weak var pageController: UIPageControl!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
+
+    var viewModel = BlogViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +25,7 @@ class BlogViewController: BaseViewController {
 
     override func setupUI() {
         super.setupUI()
-        title = "Blog"
+        title = Define.title
     }
 
     // MARK: - Private functions
@@ -34,5 +36,29 @@ class BlogViewController: BaseViewController {
 
     private func configTableView() {
         tableView.register(BlogCell.self)
+        tableView.dataSource = self
+    }
+}
+
+// MARK: - UITableViewDataSource
+extension BlogViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.numberOfItems(inSection: section)
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let viewModel = try? viewModel.viewModelForItem(at: indexPath) {
+            let cell = tableView.dequeue(BlogCell.self)
+            cell.viewModel = viewModel
+            return cell
+        }
+        return TableCell()
+    }
+}
+
+// MARK: - Define
+extension BlogViewController {
+    struct Define {
+        static let title = "Blog"
     }
 }
