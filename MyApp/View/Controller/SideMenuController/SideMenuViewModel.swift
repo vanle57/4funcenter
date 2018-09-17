@@ -16,10 +16,24 @@ final class SideMenuViewModel: MVVM.ViewModel {
         case profileItem
     }
 
+    enum CategoryRowType: String {
+        case blog = "blog"
+        case course = "courses"
+        case teacher = "teacher"
+        case about = "about"
+    }
+
+    enum ProfileItemRowType: String {
+        case myCourses = "my courses"
+        case results = "results"
+        case me = "me"
+        case logout = "log out"
+    }
+
     // MARK: - Properties
     var sections: [SectionType] = [.main, .profileItem]
-    var categories = Define.categories
-    var profileItem = Define.profileItem
+    var categories: [CategoryRowType] = [.blog, .course, .teacher, .about]
+    var profileItem: [ProfileItemRowType] = [.myCourses, .results, .me, .logout]
 }
 
 // MARK: - Table view
@@ -51,23 +65,24 @@ extension SideMenuViewModel {
                 throw App.Error.indexOutOfBound
             }
             let category = categories[index]
-            let viewModel = SideMenuCellViewModel(title: category, isNotMain: false)
+            let viewModel = SideMenuCellViewModel(title: category.rawValue, isNotMain: false)
             return viewModel
         case .profileItem:
             guard index < profileItem.count else {
                 throw App.Error.indexOutOfBound
             }
             let item = profileItem[index]
-            let viewModel = SideMenuCellViewModel(title: item, isNotMain: true)
+            let viewModel = SideMenuCellViewModel(title: item.rawValue, isNotMain: true)
             return viewModel
         }
     }
-}
 
-// MARK: - Define
-extension SideMenuViewModel {
-    struct Define {
-        static let categories = ["Courses", "Blog", "Teacher", "About"]
-        static let profileItem = ["My Courses", "Results", "Me"]
+    func didSelectRow(at indexPath: IndexPath) throws -> SectionType {
+        let section = indexPath.section
+        guard section < sections.count else {
+            throw App.Error.indexOutOfBound
+        }
+        let sectionType = sections[section]
+        return sectionType
     }
 }

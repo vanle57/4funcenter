@@ -34,6 +34,41 @@ final class SideMenuViewController: UIViewController {
         tableView.delegate = self
         tableView.tableFooterView = UIView()
     }
+
+    private func logout() {
+    }
+
+    // MARK: - Public functions
+    func switchToViewController(at index: Int) {
+        guard index < viewModel.categories.count else { return }
+        let rowType = viewModel.categories[index]
+        var vc = UIViewController()
+        guard let mainViewController = sideMenuController else { return }
+        let navigationController = mainViewController.rootViewController as? UINavigationController
+        switch rowType {
+        case .blog:
+            vc = BlogViewController()
+        case .course:
+            vc = CoursesViewController()
+        case .about:
+            vc = AboutViewController()
+        case .teacher:
+            vc = TeacherViewController()
+        }
+        mainViewController.hideLeftView()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+
+    func switchToProfileItemOrLogout(at index: Int) {
+        guard index < viewModel.profileItem.count else { return }
+        let rowType = viewModel.profileItem[index]
+        switch rowType {
+        case .me, .myCourses, .results:
+            navigationController?.pushViewController(ProfileViewController(), animated: true)
+        case .logout:
+            logout()
+        }
+    }
 }
 
 // MARK: - UITableViewDataSource, UITableViewDelegate
@@ -58,5 +93,13 @@ extension SideMenuViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
         cell?.contentView.backgroundColor = App.Color.lightYellowColor
+        if let sectionType = try? viewModel.didSelectRow(at: indexPath) {
+            switch sectionType {
+            case .main:
+                switchToViewController(at: indexPath.row)
+            case .profileItem:
+                switchToProfileItemOrLogout(at: indexPath.row)
+            }
+        }
     }
 }
