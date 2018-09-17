@@ -21,7 +21,6 @@
             <connections>
                 <outlet property="avatarImageView" destination="xMC-bB-8PR" id="qh6-Go-89T"/>
                 <outlet property="tableView" destination="obf-wa-DY1" id="Wvl-qn-Wdu"/>
-                <outlet property="usernameButton" destination="EUF-kl-pnH" id="7En-5t-QC1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

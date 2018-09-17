@@ -38,6 +38,8 @@
 		B356BA1B214F8A38002955B9 /* PlayfairDisplay-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = B356BA0F214F8A38002955B9 /* PlayfairDisplay-Black.otf */; };
 		B356BA1F214F95FA002955B9 /* TeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B356BA1D214F95FA002955B9 /* TeacherViewController.swift */; };
 		B356BA20214F95FA002955B9 /* TeacherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B356BA1E214F95FA002955B9 /* TeacherViewController.xib */; };
+		B356BA25214FA6F3002955B9 /* BlogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B356BA23214FA6F3002955B9 /* BlogCell.swift */; };
+		B356BA26214FA6F3002955B9 /* BlogCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B356BA24214FA6F3002955B9 /* BlogCell.xib */; };
 		B358301A2115624500E3E419 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35830192115624500E3E419 /* User.swift */; };
 		B374DB5E2147681B005C1FE2 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B374DB4A21476819005C1FE2 /* HomeViewController.xib */; };
 		B374DB5F2147681B005C1FE2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B374DB4B21476819005C1FE2 /* HomeViewController.swift */; };
@@ -148,6 +150,8 @@
 		B356BA0F214F8A38002955B9 /* PlayfairDisplay-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Black.otf"; sourceTree = "<group>"; };
 		B356BA1D214F95FA002955B9 /* TeacherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherViewController.swift; sourceTree = "<group>"; };
 		B356BA1E214F95FA002955B9 /* TeacherViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeacherViewController.xib; sourceTree = "<group>"; };
+		B356BA23214FA6F3002955B9 /* BlogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogCell.swift; sourceTree = "<group>"; };
+		B356BA24214FA6F3002955B9 /* BlogCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlogCell.xib; sourceTree = "<group>"; };
 		B35830192115624500E3E419 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B374DB4A21476819005C1FE2 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		B374DB4B21476819005C1FE2 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -257,8 +261,8 @@
 		ACB04582210EFF4400159503 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B356BA1C214F95CE002955B9 /* TeachersViewController */,
 				B33ABCAA214BA7FC00F7FF48 /* Cell */,
+				B356BA1C214F95CE002955B9 /* TeachersViewController */,
 				B33ABC9B214B5E3C00F7FF48 /* SideMenuController */,
 				B33ABC98214B5D0800F7FF48 /* MainViewController */,
 				B374DB4921476819005C1FE2 /* HomeViewController */,
@@ -293,9 +297,8 @@
 		B33ABCAA214BA7FC00F7FF48 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				B33ABCA2214B989400F7FF48 /* SideMenuCell.swift */,
-				B33ABCA3214B989400F7FF48 /* SideMenuCell.xib */,
-				B33ABCAF214F53B100F7FF48 /* SideMenuCellViewModel.swift */,
+				B356BA22214FA6AE002955B9 /* Blog */,
+				B356BA21214FA69C002955B9 /* SideMenu */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -326,6 +329,25 @@
 				B356BA1E214F95FA002955B9 /* TeacherViewController.xib */,
 			);
 			path = TeachersViewController;
+			sourceTree = "<group>";
+		};
+		B356BA21214FA69C002955B9 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				B33ABCA2214B989400F7FF48 /* SideMenuCell.swift */,
+				B33ABCA3214B989400F7FF48 /* SideMenuCell.xib */,
+				B33ABCAF214F53B100F7FF48 /* SideMenuCellViewModel.swift */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		B356BA22214FA6AE002955B9 /* Blog */ = {
+			isa = PBXGroup;
+			children = (
+				B356BA23214FA6F3002955B9 /* BlogCell.swift */,
+				B356BA24214FA6F3002955B9 /* BlogCell.xib */,
+			);
+			path = Blog;
 			sourceTree = "<group>";
 		};
 		B374DB4921476819005C1FE2 /* HomeViewController */ = {
@@ -714,6 +736,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B356BA14214F8A38002955B9 /* PlayfairDisplaySC-BoldItalic.otf in Resources */,
+				B356BA26214FA6F3002955B9 /* BlogCell.xib in Resources */,
 				6238ADEC21116D38003D4B8E /* LoginViewController.xib in Resources */,
 				B356BA1B214F8A38002955B9 /* PlayfairDisplay-Black.otf in Resources */,
 				CDE9EE1221194B9B00298DD0 /* gif_social_vocab.gif in Resources */,
@@ -960,6 +983,7 @@
 				EC5337B71EF78CD800ACE038 /* App.swift in Sources */,
 				B374DB5F2147681B005C1FE2 /* HomeViewController.swift in Sources */,
 				625DF8902111BB8B007958F6 /* LoginViewModel.swift in Sources */,
+				B356BA25214FA6F3002955B9 /* BlogCell.swift in Sources */,
 				B317621D2149F39F005C9D25 /* RegisterViewController.swift in Sources */,
 				ECC5B2CD1EF906CA001A97BC /* BaseViewController.swift in Sources */,
 				EC5337C31EF793B100ACE038 /* CollectionCell.swift in Sources */,
