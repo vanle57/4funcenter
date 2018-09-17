@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Heebo-Medium.ttf">
+            <string>Heebo-Medium</string>
+        </array>
+        <array key="PlayfairDisplay-Bold.otf">
+            <string>PlayfairDisplay-Bold</string>
+        </array>
+        <array key="PlayfairDisplay-Regular.otf">
+            <string>PlayfairDisplay-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="489" id="KGk-i7-Jjw" customClass="BlogCell" customModule="MyApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="504" height="489"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="504" height="488.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_blog_background" translatesAutoresizingMaskIntoConstraints="NO" id="5ZQ-Cq-sEM">
+                        <rect key="frame" x="0.0" y="20" width="504" height="244.5"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z4I-xt-nuZ">
+                        <rect key="frame" x="0.0" y="274.5" width="504" height="25.5"/>
+                        <fontDescription key="fontDescription" name="PlayfairDisplay-Bold" family="Playfair Display" pointSize="19"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="M8U-Cb-U2v">
+                        <rect key="frame" x="0.0" y="305" width="504" height="138.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+                        <fontDescription key="fontDescription" name="PlayfairDisplay-Regular" family="Playfair Display" pointSize="15"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author name -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12u-KR-FAf">
+                        <rect key="frame" x="0.0" y="453.5" width="83" height="20"/>
+                        <fontDescription key="fontDescription" name="Heebo-Medium" family="Heebo" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 dec, 2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKl-G8-asJ">
+                        <rect key="frame" x="88" y="453" width="70" height="18"/>
+                        <fontDescription key="fontDescription" name="PlayfairDisplay-Regular" family="Playfair Display" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="5ZQ-Cq-sEM" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="1:2" id="4Vd-m0-XJD"/>
+                    <constraint firstAttribute="trailing" secondItem="5ZQ-Cq-sEM" secondAttribute="trailing" id="BRL-rv-dyX"/>
+                    <constraint firstItem="pKl-G8-asJ" firstAttribute="leading" secondItem="12u-KR-FAf" secondAttribute="trailing" constant="5" id="Btb-uP-pTQ"/>
+                    <constraint firstItem="pKl-G8-asJ" firstAttribute="top" secondItem="12u-KR-FAf" secondAttribute="top" id="Eu7-f5-HR7"/>
+                    <constraint firstAttribute="bottom" secondItem="12u-KR-FAf" secondAttribute="bottom" constant="15" id="Hg9-4Y-Nyh"/>
+                    <constraint firstItem="12u-KR-FAf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="KD4-7g-G7j"/>
+                    <constraint firstItem="z4I-xt-nuZ" firstAttribute="top" secondItem="5ZQ-Cq-sEM" secondAttribute="bottom" constant="10" id="LJc-cm-6Vn"/>
+                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="pKl-G8-asJ" secondAttribute="trailing" id="Qc4-vZ-NY9"/>
+                    <constraint firstAttribute="trailing" secondItem="z4I-xt-nuZ" secondAttribute="trailing" id="VWB-t6-tJl"/>
+                    <constraint firstItem="5ZQ-Cq-sEM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="YX3-a5-vgW"/>
+                    <constraint firstItem="M8U-Cb-U2v" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="eOA-uu-OqQ"/>
+                    <constraint firstItem="12u-KR-FAf" firstAttribute="top" secondItem="M8U-Cb-U2v" secondAttribute="bottom" constant="10" id="ivj-Kl-5PJ"/>
+                    <constraint firstItem="5ZQ-Cq-sEM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="kAl-ZV-ofm"/>
+                    <constraint firstItem="z4I-xt-nuZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="nzA-y3-lkz"/>
+                    <constraint firstItem="M8U-Cb-U2v" firstAttribute="top" secondItem="z4I-xt-nuZ" secondAttribute="bottom" constant="5" id="qFL-Dy-2G1"/>
+                    <constraint firstAttribute="trailing" secondItem="M8U-Cb-U2v" secondAttribute="trailing" id="uNL-5G-x0h"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="authorNameLabel" destination="12u-KR-FAf" id="7h3-8c-jrM"/>
+                <outlet property="contentTextView" destination="M8U-Cb-U2v" id="Xpg-J1-Nkj"/>
+                <outlet property="dateCreateLabel" destination="pKl-G8-asJ" id="XIG-ab-zCP"/>
+                <outlet property="entryTitleLabel" destination="z4I-xt-nuZ" id="dQN-pr-LJo"/>
+                <outlet property="imageView" destination="5ZQ-Cq-sEM" id="d1B-oh-VwK"/>
+            </connections>
+            <point key="canvasLocation" x="117" y="274.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="img_blog_background" width="505" height="332"/>
+    </resources>
+</document>
