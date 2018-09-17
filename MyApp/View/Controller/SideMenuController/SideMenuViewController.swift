@@ -15,44 +15,47 @@ class SideMenuViewController: UIViewController {
     @IBOutlet weak var usernameButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
 
+    var viewModel = SideMenuViewModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configTableView()
+        usernameButton.underline()
+    }
+
+    override func viewDidLayoutSubviews() {
+        avatarImageView.circle()
     }
 
     // MARK: - Private function
     private func configTableView() {
         tableView.register(SideMenuCell.self)
-        tableView.register(ProfileCell.self)
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.tableFooterView = UIView()
     }
 }
 
 extension SideMenuViewController: UITableViewDataSource, UITableViewDelegate {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.numberOfSections()
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return viewModel.numberOfItems(inSection: section)
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row {
-        case 0..<3:
+        if let viewModel = try? viewModel.viewModelForItem(at: indexPath) {
             let cell = tableView.dequeue(SideMenuCell.self)
-            cell.itemLabel.text = "MAIN".capitalizingFirstLetter()
-            cell.itemLabel.font = UIFont(name: "Heebo-Bold", size: UIFont.labelFontSize)
+            cell.viewModel = viewModel
             return cell
-        case 3..<5:
-            let cell = tableView.dequeue(SideMenuCell.self)
-            cell.itemLabel.text = "ITEM".capitalizingFirstLetter()
-            cell.itemLabel.font = UIFont(name: "Heebo-Regular", size: UIFont.labelFontSize)
-            return cell
-        default:
-            return TableCell()
         }
+        return TableCell()
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
-        cell?.contentView.backgroundColor = App.Color.yellowColor
+        cell?.contentView.backgroundColor = App.Color.lightYellowColor
     }
 }

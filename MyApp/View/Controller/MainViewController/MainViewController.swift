@@ -16,7 +16,7 @@ class MainViewController: LGSideMenuController {
 
             leftViewWidth = 280.0
             leftViewBackgroundBlurEffect = UIBlurEffect(style: .light)
-            leftViewBackgroundColor = UIColor.white
+            leftViewBackgroundColor = App.Color.yellowColor
             leftViewPresentationStyle = .slideAbove
     }
 
