@@ -83,8 +83,8 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="authorNameLabel" destination="12u-KR-FAf" id="7h3-8c-jrM"/>
-                <outlet property="contentTextView" destination="M8U-Cb-U2v" id="Xpg-J1-Nkj"/>
                 <outlet property="dateCreateLabel" destination="pKl-G8-asJ" id="XIG-ab-zCP"/>
+                <outlet property="descriptionTextView" destination="M8U-Cb-U2v" id="o8Z-RH-hcw"/>
                 <outlet property="entryTitleLabel" destination="z4I-xt-nuZ" id="dQN-pr-LJo"/>
                 <outlet property="imageView" destination="5ZQ-Cq-sEM" id="d1B-oh-VwK"/>
             </connections>

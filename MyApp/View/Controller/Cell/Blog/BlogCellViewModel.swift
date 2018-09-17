@@ -7,3 +7,22 @@
 //
 
 import Foundation
+
+class BlogCellViewModel {
+
+    // MARK: - Properties
+    var imageUrl = ""
+    var title = ""
+    var authorName = ""
+    var description = ""
+    var dateCreated = ""
+
+    // MARK: - init
+    init(entry: Entry) {
+        imageUrl = entry.imageUrl
+        title = entry.title
+        authorName = entry.authorName
+        description = entry.description
+        dateCreated = entry.dateCreated.string()
+    }
+}

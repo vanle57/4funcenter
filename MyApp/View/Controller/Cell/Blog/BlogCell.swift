@@ -8,19 +8,28 @@
 
 import UIKit
 
-class BlogCell: TableCell {
+final class BlogCell: TableCell {
 
     // MARK: - Outlets
     @IBOutlet weak var entryImageView: UIImageView!
     @IBOutlet weak var entryTitleLabel: UILabel!
-    @IBOutlet weak var contentTextView: UITextView!
+    @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var authorNameLabel: UILabel!
     @IBOutlet weak var dateCreateLabel: UILabel!
 
+    var viewModel: BlogCellViewModel? {
+        didSet {
+            guard let viewModel = viewModel else { return }
+            entryTitleLabel.text = viewModel.title
+            descriptionTextView.text = viewModel.description
+            authorNameLabel.text = viewModel.authorName
+            dateCreateLabel.text = viewModel.dateCreated
+        }
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        contentTextView.textContainerInset = UIEdgeInsets.zero
-        contentTextView.textContainer.lineFragmentPadding = 0
+        descriptionTextView.textContainerInset = UIEdgeInsets.zero
+        descriptionTextView.textContainer.lineFragmentPadding = 0
     }
-    
 }
