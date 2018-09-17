@@ -35,6 +35,8 @@ class BaseViewController: UIViewController, MVVM.View {
     func configBackButton() {
         let menuButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_menu"), style: .plain, target: self, action: #selector(showLeftView))
         navigationItem.leftBarButtonItem = menuButton
+        let notificationButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_notification"), style: .plain, target: self, action: nil)
+        navigationItem.rightBarButtonItem = notificationButton
     }
 
     @objc func showLeftView(sender: AnyObject?) {
