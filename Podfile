@@ -40,12 +40,8 @@ target 'MyApp' do
 
     # Crash reporting & beta deployment
 
-    # pod 'FBSDKCoreKit'
-    # pod 'FBSDKLoginKit'
-    pod 'FBSDKShareKit'
     pod 'FacebookCore'
     pod 'FacebookLogin'
-    pod 'FacebookShare'
 
 target 'MyAppTests' do
     inherit! :complete

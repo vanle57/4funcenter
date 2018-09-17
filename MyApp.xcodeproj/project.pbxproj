@@ -14,6 +14,9 @@
 		629E064E2126EE05004D29E0 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629E064D2126EE05004D29E0 /* Errors.swift */; };
 		6C392FC5AF0C61509011C30D /* Pods_MyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E8000CCB9AE328B83764288 /* Pods_MyApp.framework */; };
 		ACB045A3210F0CEB00159503 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB045A2210F0CEB00159503 /* BaseNavigationController.swift */; };
+		B317621A2148CB65005C9D25 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31762192148CB65005C9D25 /* RegisterViewModel.swift */; };
+		B317621D2149F39F005C9D25 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B317621B2149F39F005C9D25 /* RegisterViewController.swift */; };
+		B317621E2149F39F005C9D25 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B317621C2149F39F005C9D25 /* RegisterViewController.xib */; };
 		B33ABC9A214B5D2900F7FF48 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33ABC99214B5D2900F7FF48 /* MainViewController.swift */; };
 		B33ABCA4214B989400F7FF48 /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33ABCA2214B989400F7FF48 /* SideMenuCell.swift */; };
 		B33ABCA5214B989400F7FF48 /* SideMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B33ABCA3214B989400F7FF48 /* SideMenuCell.xib */; };
@@ -24,8 +27,6 @@
 		B358301A2115624500E3E419 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35830192115624500E3E419 /* User.swift */; };
 		B374DB5E2147681B005C1FE2 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B374DB4A21476819005C1FE2 /* HomeViewController.xib */; };
 		B374DB5F2147681B005C1FE2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B374DB4B21476819005C1FE2 /* HomeViewController.swift */; };
-		B374DB642147681B005C1FE2 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B374DB532147681A005C1FE2 /* RegisterViewController.xib */; };
-		B374DB652147681B005C1FE2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B374DB542147681A005C1FE2 /* RegisterViewController.swift */; };
 		B374DB662147681B005C1FE2 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B374DB562147681A005C1FE2 /* ProfileViewController.xib */; };
 		B374DB672147681B005C1FE2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B374DB572147681A005C1FE2 /* ProfileViewController.swift */; };
 		B374DB70214775AC005C1FE2 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B374DB6E214775AC005C1FE2 /* AboutViewController.swift */; };
@@ -109,6 +110,9 @@
 		629E064D2126EE05004D29E0 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		7E8000CCB9AE328B83764288 /* Pods_MyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB045A2210F0CEB00159503 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		B31762192148CB65005C9D25 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		B317621B2149F39F005C9D25 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		B317621C2149F39F005C9D25 /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		B33ABC99214B5D2900F7FF48 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B33ABCA2214B989400F7FF48 /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
 		B33ABCA3214B989400F7FF48 /* SideMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuCell.xib; sourceTree = "<group>"; };
@@ -119,8 +123,6 @@
 		B35830192115624500E3E419 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B374DB4A21476819005C1FE2 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		B374DB4B21476819005C1FE2 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		B374DB532147681A005C1FE2 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
-		B374DB542147681A005C1FE2 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		B374DB562147681A005C1FE2 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		B374DB572147681A005C1FE2 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B374DB6E214775AC005C1FE2 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -290,8 +292,9 @@
 		B374DB522147681A005C1FE2 /* RegisterViewController */ = {
 			isa = PBXGroup;
 			children = (
-				B374DB532147681A005C1FE2 /* RegisterViewController.xib */,
-				B374DB542147681A005C1FE2 /* RegisterViewController.swift */,
+				B31762192148CB65005C9D25 /* RegisterViewModel.swift */,
+				B317621B2149F39F005C9D25 /* RegisterViewController.swift */,
+				B317621C2149F39F005C9D25 /* RegisterViewController.xib */,
 			);
 			path = RegisterViewController;
 			sourceTree = "<group>";
@@ -670,8 +673,8 @@
 				B374DB79214775D0005C1FE2 /* CoursesViewController.xib in Resources */,
 				B374DB84214783C0005C1FE2 /* Heebo-Thin.ttf in Resources */,
 				B33ABCA9214B98FD00F7FF48 /* SideMenuViewController.xib in Resources */,
+				B317621E2149F39F005C9D25 /* RegisterViewController.xib in Resources */,
 				B374DB89214783C0005C1FE2 /* Heebo-Medium.ttf in Resources */,
-				B374DB642147681B005C1FE2 /* RegisterViewController.xib in Resources */,
 				B374DB75214775BE005C1FE2 /* BlogViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -764,10 +767,8 @@
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
-				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/LGSideMenuController/LGSideMenuController.framework",
@@ -786,10 +787,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LGSideMenuController.framework",
@@ -818,10 +817,8 @@
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
-				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/LGSideMenuController/LGSideMenuController.framework",
@@ -840,10 +837,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LGSideMenuController.framework",
@@ -881,7 +876,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B374DB652147681B005C1FE2 /* RegisterViewController.swift in Sources */,
 				B374DB74214775BE005C1FE2 /* BlogViewController.swift in Sources */,
 				B374DB8C2147A1E1005C1FE2 /* UIButtonExt.swift in Sources */,
 				EC5337C11EF7939C00ACE038 /* TableCell.swift in Sources */,
@@ -890,10 +884,12 @@
 				B33ABC9A214B5D2900F7FF48 /* MainViewController.swift in Sources */,
 				B374DB672147681B005C1FE2 /* ProfileViewController.swift in Sources */,
 				ECEC0C5E1ED44D7700F6760A /* MapperExt.swift in Sources */,
+				B317621A2148CB65005C9D25 /* RegisterViewModel.swift in Sources */,
 				629E064E2126EE05004D29E0 /* Errors.swift in Sources */,
 				EC5337B71EF78CD800ACE038 /* App.swift in Sources */,
 				B374DB5F2147681B005C1FE2 /* HomeViewController.swift in Sources */,
 				625DF8902111BB8B007958F6 /* LoginViewModel.swift in Sources */,
+				B317621D2149F39F005C9D25 /* RegisterViewController.swift in Sources */,
 				ECC5B2CD1EF906CA001A97BC /* BaseViewController.swift in Sources */,
 				EC5337C31EF793B100ACE038 /* CollectionCell.swift in Sources */,
 				B33ABCA8214B98FD00F7FF48 /* SideMenuViewController.swift in Sources */,

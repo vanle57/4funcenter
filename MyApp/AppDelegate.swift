@@ -45,7 +45,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     func configIQKeyBoardManager() {
         IQKeyboardManager.sharedManager().enable = true
         IQKeyboardManager.sharedManager().enableAutoToolbar = false
-        IQKeyboardManager.sharedManager().canAdjustAdditionalSafeAreaInsets = true
+        IQKeyboardManager.sharedManager().canAdjustAdditionalSafeAreaInsets = false
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey: Any] = [:]) -> Bool {
