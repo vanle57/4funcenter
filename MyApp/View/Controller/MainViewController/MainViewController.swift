@@ -12,16 +12,12 @@ class MainViewController: LGSideMenuController {
 
     func setup() {
 
-            leftViewController = UITableViewController()
+            leftViewController = SideMenuViewController()
 
-            leftViewWidth = 250.0
-            leftViewBackgroundImage = UIImage(named: "imageLeft")
-            leftViewBackgroundColor = UIColor(red: 0.5, green: 0.65, blue: 0.5, alpha: 0.95)
-//            rootViewCoverColorForLeftView = UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 0.05)
-
-        // -----
-
-        leftViewPresentationStyle = .slideBelow
+            leftViewWidth = 280.0
+            leftViewBackgroundBlurEffect = UIBlurEffect(style: .light)
+            leftViewBackgroundColor = UIColor.white
+            leftViewPresentationStyle = .slideAbove
     }
 
     override func leftViewWillLayoutSubviews(with size: CGSize) {
@@ -34,7 +30,6 @@ class MainViewController: LGSideMenuController {
 
     override var isLeftViewStatusBarHidden: Bool {
         get {
-
             return super.isLeftViewStatusBarHidden
         }
 
@@ -46,5 +41,4 @@ class MainViewController: LGSideMenuController {
     deinit {
         print("MainViewController deinitialized")
     }
-
 }
