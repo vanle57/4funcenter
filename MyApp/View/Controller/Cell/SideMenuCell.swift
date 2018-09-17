@@ -8,19 +8,18 @@
 
 import UIKit
 
-class SideMenuCell: UITableViewCell {
+class SideMenuCell: TableCell {
 
+    // MARK: - Properties
     @IBOutlet weak var itemLabel: UILabel!
+    @IBOutlet weak var moreButton: UIButton!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    var viewModel: SideMenuCellViewModel? {
+        didSet {
+            guard let viewModel = viewModel else { return }
+            itemLabel.text = viewModel.title
+            moreButton.isHidden = viewModel.isHidden
+        }
     }
 
     @IBAction func moreButtonTouchUpInside(_ sender: Any) {
