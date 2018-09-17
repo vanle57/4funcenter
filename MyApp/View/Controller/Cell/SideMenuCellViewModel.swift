@@ -6,17 +6,23 @@
 //  Copyright © 2018 Asian Tech Co., Ltd. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class SideMenuCellViewModel {
 
     // MARK: - Properties
     var title = ""
-    var isHidden = false
+    var isNotMain = false
+    var font: UIFont? = App.Font.tableCellTextLabel
 
     // MARK: - init
-    init(title: String, isHidden: Bool) {
-        self.title = title
-        self.isHidden = isHidden
+    init(title: String, isNotMain: Bool) {
+        self.title = title.uppercased()
+        self.isNotMain = isNotMain
+        if isNotMain {
+            font = App.Font.heeboRegularFont
+        } else {
+            font = App.Font.heeboBoldFont
+        }
     }
 }

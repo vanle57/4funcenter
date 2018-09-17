@@ -18,7 +18,8 @@ class SideMenuCell: TableCell {
         didSet {
             guard let viewModel = viewModel else { return }
             itemLabel.text = viewModel.title
-            moreButton.isHidden = viewModel.isHidden
+            itemLabel.font = viewModel.font
+            moreButton.isHidden = viewModel.isNotMain
         }
     }
 
