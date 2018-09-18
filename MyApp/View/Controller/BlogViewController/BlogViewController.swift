@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUtils
 
 final class BlogViewController: BaseViewController {
 
@@ -37,6 +38,7 @@ final class BlogViewController: BaseViewController {
     private func configTableView() {
         tableView.register(BlogCell.self)
         tableView.dataSource = self
+        tableView.rowHeight = 150 * ratio
     }
 }
 

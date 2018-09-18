@@ -13,7 +13,7 @@ final class BlogCell: TableCell {
     // MARK: - Outlets
     @IBOutlet weak var entryImageView: UIImageView!
     @IBOutlet weak var entryTitleLabel: UILabel!
-    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var authorNameLabel: UILabel!
     @IBOutlet weak var dateCreateLabel: UILabel!
 
@@ -21,15 +21,13 @@ final class BlogCell: TableCell {
         didSet {
             guard let viewModel = viewModel else { return }
             entryTitleLabel.text = viewModel.title
-            descriptionTextView.text = viewModel.description
+            descriptionLabel.text = viewModel.description
             authorNameLabel.text = viewModel.authorName
             dateCreateLabel.text = viewModel.dateCreated
         }
     }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        descriptionTextView.textContainerInset = UIEdgeInsets.zero
-        descriptionTextView.textContainer.lineFragmentPadding = 0
-    }
+    //override func prepareForReuse() {
+        //super.prepareForReuse()
+      //  entryImageView.image = nil
+    //}
 }

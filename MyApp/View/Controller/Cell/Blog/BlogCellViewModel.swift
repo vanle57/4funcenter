@@ -21,7 +21,7 @@ class BlogCellViewModel {
     init(entry: Entry) {
         imageUrl = entry.imageUrl
         title = entry.title
-        authorName = entry.authorName
+        authorName = "\(entry.authorName) -"
         description = entry.description
         dateCreated = entry.dateCreated.string()
     }
