@@ -38,6 +38,8 @@
 		B356BA1B214F8A38002955B9 /* PlayfairDisplay-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = B356BA0F214F8A38002955B9 /* PlayfairDisplay-Black.otf */; };
 		B356BA1F214F95FA002955B9 /* TeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B356BA1D214F95FA002955B9 /* TeacherViewController.swift */; };
 		B356BA20214F95FA002955B9 /* TeacherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B356BA1E214F95FA002955B9 /* TeacherViewController.xib */; };
+		B356BA3F2150E602002955B9 /* RegisterSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B356BA3D2150E602002955B9 /* RegisterSuccessViewController.swift */; };
+		B356BA402150E602002955B9 /* RegisterSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B356BA3E2150E602002955B9 /* RegisterSuccessViewController.xib */; };
 		B358301A2115624500E3E419 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35830192115624500E3E419 /* User.swift */; };
 		B374DB5E2147681B005C1FE2 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B374DB4A21476819005C1FE2 /* HomeViewController.xib */; };
 		B374DB5F2147681B005C1FE2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B374DB4B21476819005C1FE2 /* HomeViewController.swift */; };
@@ -148,6 +150,8 @@
 		B356BA0F214F8A38002955B9 /* PlayfairDisplay-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Black.otf"; sourceTree = "<group>"; };
 		B356BA1D214F95FA002955B9 /* TeacherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherViewController.swift; sourceTree = "<group>"; };
 		B356BA1E214F95FA002955B9 /* TeacherViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeacherViewController.xib; sourceTree = "<group>"; };
+		B356BA3D2150E602002955B9 /* RegisterSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSuccessViewController.swift; sourceTree = "<group>"; };
+		B356BA3E2150E602002955B9 /* RegisterSuccessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterSuccessViewController.xib; sourceTree = "<group>"; };
 		B35830192115624500E3E419 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B374DB4A21476819005C1FE2 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		B374DB4B21476819005C1FE2 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -328,6 +332,15 @@
 			path = TeachersViewController;
 			sourceTree = "<group>";
 		};
+		B356BA3C2150E5C4002955B9 /* RegisterSucessViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B356BA3D2150E602002955B9 /* RegisterSuccessViewController.swift */,
+				B356BA3E2150E602002955B9 /* RegisterSuccessViewController.xib */,
+			);
+			path = RegisterSucessViewController;
+			sourceTree = "<group>";
+		};
 		B374DB4921476819005C1FE2 /* HomeViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,6 +362,7 @@
 		B374DB522147681A005C1FE2 /* RegisterViewController */ = {
 			isa = PBXGroup;
 			children = (
+				B356BA3C2150E5C4002955B9 /* RegisterSucessViewController */,
 				B31762192148CB65005C9D25 /* RegisterViewModel.swift */,
 				B317621B2149F39F005C9D25 /* RegisterViewController.swift */,
 				B317621C2149F39F005C9D25 /* RegisterViewController.xib */,
@@ -727,6 +741,7 @@
 				B356BA20214F95FA002955B9 /* TeacherViewController.xib in Resources */,
 				B33ABCA5214B989400F7FF48 /* SideMenuCell.xib in Resources */,
 				CDE9EE1121194B9B00298DD0 /* gif_eye_vocab.gif in Resources */,
+				B356BA402150E602002955B9 /* RegisterSuccessViewController.xib in Resources */,
 				EC5337BA1EF78E4D00ACE038 /* Localizable.strings in Resources */,
 				F1C6352C1EF141F300D0A1A0 /* LaunchScreen.storyboard in Resources */,
 				B374DB5E2147681B005C1FE2 /* HomeViewController.xib in Resources */,
@@ -974,6 +989,7 @@
 				EC332A481EA0A8CB0011DF1E /* Api.swift in Sources */,
 				ECD1C29B1EA725B1000EC989 /* InputViewExt.swift in Sources */,
 				B33ABCA4214B989400F7FF48 /* SideMenuCell.swift in Sources */,
+				B356BA3F2150E602002955B9 /* RegisterSuccessViewController.swift in Sources */,
 				ECF23AB41E9B869B008C23C1 /* ApiManager.swift in Sources */,
 				ECEC0C5A1ED44D4100F6760A /* UIViewControllerExt.swift in Sources */,
 				B374DB70214775AC005C1FE2 /* AboutViewController.swift in Sources */,
