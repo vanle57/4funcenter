@@ -9,7 +9,8 @@
 import UIKit
 import SkyFloatingLabelTextField
 
-class RegisterViewController: BaseViewController {
+final class RegisterViewController: BaseViewController {
+
     // MARK: - Outlets
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var usernameTextField: SkyFloatingLabelTextField!
@@ -21,10 +22,17 @@ class RegisterViewController: BaseViewController {
     var viewModel = RegisterViewModel()
 
     override func setupUI() {
+        super.setupUI()
+        navigationController?.isNavigationBarHidden = true
         usernameTextField.delegate = self
         emailTextField.delegate = self
         passwordTextField.delegate = self
         confirmPasswordTextField.delegate = self
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        navigationController?.isNavigationBarHidden = true
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -48,7 +56,7 @@ class RegisterViewController: BaseViewController {
             guard let this = self else { return }
             switch result {
             case .success:
-                print("success")
+                self?.navigationController?.pushViewController(RegisterSuccessViewController(), animated: true)
             case .failure(let error):
                 guard let error = error as? RegisterViewModel.RegisterError else {
                     this.alert(error: App.Error.unknownError)

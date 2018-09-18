@@ -8,7 +8,8 @@
 
 import UIKit
 
-class RegisterViewModel {
+final class RegisterViewModel {
+
     // MARK: - enum
     enum RegisterError: Error {
         case emptyField
@@ -67,6 +68,7 @@ class RegisterViewModel {
             try validate()
 
             // TODO: query api to register
+            Session.share.accessToken = "accessTokenOfUser"
             completion(.success)
         } catch let error {
             completion(.failure(error))
