@@ -46,6 +46,9 @@
 		B356BA2E214FB47A002955B9 /* DateExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B356BA2D214FB47A002955B9 /* DateExt.swift */; };
 		B356BA30214FB527002955B9 /* BlogCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B356BA2F214FB527002955B9 /* BlogCellViewModel.swift */; };
 		B356BA3421509160002955B9 /* UIScreenExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B356BA3321509160002955B9 /* UIScreenExt.swift */; };
+		B356BA382150959C002955B9 /* SlideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B356BA362150959C002955B9 /* SlideCell.swift */; };
+		B356BA392150959C002955B9 /* SlideCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B356BA372150959C002955B9 /* SlideCell.xib */; };
+		B356BA3B2150DFB6002955B9 /* SlideCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B356BA3A2150DFB6002955B9 /* SlideCellViewModel.swift */; };
 		B358301A2115624500E3E419 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35830192115624500E3E419 /* User.swift */; };
 		B374DB5E2147681B005C1FE2 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B374DB4A21476819005C1FE2 /* HomeViewController.xib */; };
 		B374DB5F2147681B005C1FE2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B374DB4B21476819005C1FE2 /* HomeViewController.swift */; };
@@ -164,6 +167,9 @@
 		B356BA2D214FB47A002955B9 /* DateExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExt.swift; sourceTree = "<group>"; };
 		B356BA2F214FB527002955B9 /* BlogCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogCellViewModel.swift; sourceTree = "<group>"; };
 		B356BA3321509160002955B9 /* UIScreenExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreenExt.swift; sourceTree = "<group>"; };
+		B356BA362150959C002955B9 /* SlideCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideCell.swift; sourceTree = "<group>"; };
+		B356BA372150959C002955B9 /* SlideCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideCell.xib; sourceTree = "<group>"; };
+		B356BA3A2150DFB6002955B9 /* SlideCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideCellViewModel.swift; sourceTree = "<group>"; };
 		B35830192115624500E3E419 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B374DB4A21476819005C1FE2 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		B374DB4B21476819005C1FE2 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -310,6 +316,7 @@
 		B33ABCAA214BA7FC00F7FF48 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				B356BA352150957C002955B9 /* SlideCell */,
 				B356BA22214FA6AE002955B9 /* Blog */,
 				B356BA21214FA69C002955B9 /* SideMenu */,
 			);
@@ -362,6 +369,16 @@
 				B356BA2F214FB527002955B9 /* BlogCellViewModel.swift */,
 			);
 			path = Blog;
+			sourceTree = "<group>";
+		};
+		B356BA352150957C002955B9 /* SlideCell */ = {
+			isa = PBXGroup;
+			children = (
+				B356BA362150959C002955B9 /* SlideCell.swift */,
+				B356BA372150959C002955B9 /* SlideCell.xib */,
+				B356BA3A2150DFB6002955B9 /* SlideCellViewModel.swift */,
+			);
+			path = SlideCell;
 			sourceTree = "<group>";
 		};
 		B374DB4921476819005C1FE2 /* HomeViewController */ = {
@@ -760,6 +777,7 @@
 				CDE9EE1221194B9B00298DD0 /* gif_social_vocab.gif in Resources */,
 				B374DB85214783C0005C1FE2 /* Heebo-ExtraBold.ttf in Resources */,
 				B374DB662147681B005C1FE2 /* ProfileViewController.xib in Resources */,
+				B356BA392150959C002955B9 /* SlideCell.xib in Resources */,
 				B356BA12214F8A38002955B9 /* PlayfairDisplay-BlackItalic.otf in Resources */,
 				B356BA11214F8A38002955B9 /* PlayfairDisplaySC-Bold.otf in Resources */,
 				EC0105521E8F8AE000CE013D /* Assets.xcassets in Resources */,
@@ -995,6 +1013,7 @@
 				ECF23AC31E9B9264008C23C1 /* StringExt.swift in Sources */,
 				B374DB78214775D0005C1FE2 /* CoursesViewController.swift in Sources */,
 				B33ABC9A214B5D2900F7FF48 /* MainViewController.swift in Sources */,
+				B356BA382150959C002955B9 /* SlideCell.swift in Sources */,
 				B374DB672147681B005C1FE2 /* ProfileViewController.swift in Sources */,
 				ECEC0C5E1ED44D7700F6760A /* MapperExt.swift in Sources */,
 				B317621A2148CB65005C9D25 /* RegisterViewModel.swift in Sources */,
@@ -1019,6 +1038,7 @@
 				B358301A2115624500E3E419 /* User.swift in Sources */,
 				EC332A481EA0A8CB0011DF1E /* Api.swift in Sources */,
 				ECD1C29B1EA725B1000EC989 /* InputViewExt.swift in Sources */,
+				B356BA3B2150DFB6002955B9 /* SlideCellViewModel.swift in Sources */,
 				B33ABCA4214B989400F7FF48 /* SideMenuCell.swift in Sources */,
 				B356BA28214FAFF9002955B9 /* BlogViewModel.swift in Sources */,
 				ECF23AB41E9B869B008C23C1 /* ApiManager.swift in Sources */,

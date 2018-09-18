@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import MVVM
 
-class BlogCellViewModel {
+class BlogCellViewModel: ViewModel {
 
     // MARK: - Properties
     var imageUrl = ""
