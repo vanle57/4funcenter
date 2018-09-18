@@ -8,28 +8,32 @@
 
 import UIKit
 
-class RegisterSuccessViewController: UIViewController {
+final class RegisterSuccessViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        configNavigationBar()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = false
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func configNavigationBar() {
+        let cancelButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_cancel"), style: .plain, target: self, action: #selector(cancelAction))
+        navigationItem.leftBarButtonItem = cancelButton
     }
-    */
 
+    @objc func cancelAction() {
+        navigationController?.popViewController(animated: true)
+    }
+
+    @IBAction func continueButtonTouchUpInside(_ sender: Any) {
+        if App.userDefault.string(forKey: App.KeyUserDefault.accessToken) != nil {
+            AppDelegate.shared.switchRoot(rootType: .logined)
+        } else {
+            AppDelegate.shared.switchRoot(rootType: .notLogin)
+        }
+    }
 }
