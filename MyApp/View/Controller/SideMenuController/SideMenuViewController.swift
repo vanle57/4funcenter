@@ -12,7 +12,6 @@ final class SideMenuViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet weak var avatarImageView: UIImageView!
-    @IBOutlet weak var usernameButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
 
     var viewModel = SideMenuViewModel()
