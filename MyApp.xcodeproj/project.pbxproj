@@ -40,6 +40,9 @@
 		B356BA20214F95FA002955B9 /* TeacherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B356BA1E214F95FA002955B9 /* TeacherViewController.xib */; };
 		B356BA3F2150E602002955B9 /* RegisterSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B356BA3D2150E602002955B9 /* RegisterSuccessViewController.swift */; };
 		B356BA402150E602002955B9 /* RegisterSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B356BA3E2150E602002955B9 /* RegisterSuccessViewController.xib */; };
+		B356BA502151FD87002955B9 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = B356BA4F2151FD87002955B9 /* Course.swift */; };
+		B356BA5421520C9E002955B9 /* CoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B356BA5221520C9E002955B9 /* CoverCell.swift */; };
+		B356BA5521520C9E002955B9 /* CoverCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B356BA5321520C9E002955B9 /* CoverCell.xib */; };
 		B358301A2115624500E3E419 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35830192115624500E3E419 /* User.swift */; };
 		B374DB5E2147681B005C1FE2 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B374DB4A21476819005C1FE2 /* HomeViewController.xib */; };
 		B374DB5F2147681B005C1FE2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B374DB4B21476819005C1FE2 /* HomeViewController.swift */; };
@@ -152,6 +155,9 @@
 		B356BA1E214F95FA002955B9 /* TeacherViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeacherViewController.xib; sourceTree = "<group>"; };
 		B356BA3D2150E602002955B9 /* RegisterSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSuccessViewController.swift; sourceTree = "<group>"; };
 		B356BA3E2150E602002955B9 /* RegisterSuccessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterSuccessViewController.xib; sourceTree = "<group>"; };
+		B356BA4F2151FD87002955B9 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		B356BA5221520C9E002955B9 /* CoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverCell.swift; sourceTree = "<group>"; };
+		B356BA5321520C9E002955B9 /* CoverCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoverCell.xib; sourceTree = "<group>"; };
 		B35830192115624500E3E419 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B374DB4A21476819005C1FE2 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		B374DB4B21476819005C1FE2 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -263,7 +269,7 @@
 			children = (
 				B356BA1C214F95CE002955B9 /* TeachersViewController */,
 				B33ABCAA214BA7FC00F7FF48 /* Cell */,
-				B33ABC9B214B5E3C00F7FF48 /* SideMenuController */,
+				B33ABC9B214B5E3C00F7FF48 /* SideMenuViewController */,
 				B33ABC98214B5D0800F7FF48 /* MainViewController */,
 				B374DB4921476819005C1FE2 /* HomeViewController */,
 				B374DB4F2147681A005C1FE2 /* CoursesViewController */,
@@ -284,19 +290,20 @@
 			path = MainViewController;
 			sourceTree = "<group>";
 		};
-		B33ABC9B214B5E3C00F7FF48 /* SideMenuController */ = {
+		B33ABC9B214B5E3C00F7FF48 /* SideMenuViewController */ = {
 			isa = PBXGroup;
 			children = (
 				B33ABCA6214B98FD00F7FF48 /* SideMenuViewController.swift */,
 				B33ABCA7214B98FD00F7FF48 /* SideMenuViewController.xib */,
 				B33ABCB1214F566500F7FF48 /* SideMenuViewModel.swift */,
 			);
-			path = SideMenuController;
+			path = SideMenuViewController;
 			sourceTree = "<group>";
 		};
 		B33ABCAA214BA7FC00F7FF48 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				B356BA5121520C6E002955B9 /* CoverCell */,
 				B33ABCA2214B989400F7FF48 /* SideMenuCell.swift */,
 				B33ABCA3214B989400F7FF48 /* SideMenuCell.xib */,
 				B33ABCAF214F53B100F7FF48 /* SideMenuCellViewModel.swift */,
@@ -339,6 +346,15 @@
 				B356BA3E2150E602002955B9 /* RegisterSuccessViewController.xib */,
 			);
 			path = RegisterSucessViewController;
+			sourceTree = "<group>";
+		};
+		B356BA5121520C6E002955B9 /* CoverCell */ = {
+			isa = PBXGroup;
+			children = (
+				B356BA5221520C9E002955B9 /* CoverCell.swift */,
+				B356BA5321520C9E002955B9 /* CoverCell.xib */,
+			);
+			path = CoverCell;
 			sourceTree = "<group>";
 		};
 		B374DB4921476819005C1FE2 /* HomeViewController */ = {
@@ -582,6 +598,7 @@
 			isa = PBXGroup;
 			children = (
 				B35830192115624500E3E419 /* User.swift */,
+				B356BA4F2151FD87002955B9 /* Course.swift */,
 			);
 			path = Schema;
 			sourceTree = "<group>";
@@ -736,6 +753,7 @@
 				B356BA12214F8A38002955B9 /* PlayfairDisplay-BlackItalic.otf in Resources */,
 				B356BA11214F8A38002955B9 /* PlayfairDisplaySC-Bold.otf in Resources */,
 				EC0105521E8F8AE000CE013D /* Assets.xcassets in Resources */,
+				B356BA5521520C9E002955B9 /* CoverCell.xib in Resources */,
 				B374DB88214783C0005C1FE2 /* Heebo-Light.ttf in Resources */,
 				B374DB71214775AC005C1FE2 /* AboutViewController.xib in Resources */,
 				B356BA20214F95FA002955B9 /* TeacherViewController.xib in Resources */,
@@ -963,6 +981,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B374DB74214775BE005C1FE2 /* BlogViewController.swift in Sources */,
+				B356BA5421520C9E002955B9 /* CoverCell.swift in Sources */,
 				B374DB8C2147A1E1005C1FE2 /* UIButtonExt.swift in Sources */,
 				EC5337C11EF7939C00ACE038 /* TableCell.swift in Sources */,
 				ECF23AC31E9B9264008C23C1 /* StringExt.swift in Sources */,
@@ -986,6 +1005,7 @@
 				B33ABCB0214F53B100F7FF48 /* SideMenuCellViewModel.swift in Sources */,
 				B33ABCB2214F566500F7FF48 /* SideMenuViewModel.swift in Sources */,
 				B358301A2115624500E3E419 /* User.swift in Sources */,
+				B356BA502151FD87002955B9 /* Course.swift in Sources */,
 				EC332A481EA0A8CB0011DF1E /* Api.swift in Sources */,
 				ECD1C29B1EA725B1000EC989 /* InputViewExt.swift in Sources */,
 				B33ABCA4214B989400F7FF48 /* SideMenuCell.swift in Sources */,
