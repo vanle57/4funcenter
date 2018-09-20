@@ -20,7 +20,13 @@ final class LoginViewController: BaseViewController {
     var viewModel = LoginViewModel()
 
     override func setupUI() {
+        super.setupUI()
         forgotPasswordButton.underline()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+         navigationController?.isNavigationBarHidden = true
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

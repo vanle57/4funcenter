@@ -13,10 +13,16 @@ class HomeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configNavigationBar()
     }
 
     override func setupUI() {
         super.setupUI()
         title = "Home"
+    }
+
+    private func configNavigationBar() {
+        let notificationButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_notification"), style: .plain, target: self, action: nil)
+        navigationItem.rightBarButtonItem = notificationButton
     }
 }
