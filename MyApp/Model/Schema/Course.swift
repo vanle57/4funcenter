@@ -14,16 +14,16 @@ class Course {
     var id = 0
     var name = ""
     var numberOfView = 0
-    var numberOfRegister = 0
+    var numberOfComment = 0
     var imageUrl = ""
     var description = ""
     var detail = ""
 
     // MARK: init
-    init(name: String, numberOfView: Int, numberOfRegister: Int, description: String, detail: String) {
+    init(name: String, numberOfView: Int, numberOfComment: Int, description: String, detail: String) {
         self.name = name
         self.numberOfView = numberOfView
-        self.numberOfRegister = numberOfRegister
+        self.numberOfComment = numberOfComment
         self.description = description
         self.detail = detail
     }
