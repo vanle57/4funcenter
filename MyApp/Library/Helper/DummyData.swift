@@ -15,4 +15,10 @@ final class DummyData {
         let entry2 = Entry(imageUrl: "", title: "Mindfulness", description: "Mindfulness’ is a word we hear a lot these days, but what exactly does it mean?", authorName: "Kirk Clean", content: "", dateCreated: Date())
         return [entry1, entry1, entry1, entry2]
     }
+
+    static func fetchCourses() -> [Course] {
+        let course1 = Course(name: "Basic Communication", numberOfView: 50, numberOfComment: 100, description: "Help anyone who don't known anything about English", detail: "")
+        let course2 = Course(name: "English online", numberOfView: 50, numberOfComment: 100, description: "Learn English online using our high-quality resources to quickly improve your English. Our website for adult learners, is brought to you by the British Council, the world's English teaching experts. ", detail: "")
+        return [course1, course1, course1, course2]
+    }
 }
