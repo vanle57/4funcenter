@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Heebo-Medium.ttf">
+            <string>Heebo-Medium</string>
+        </array>
+        <array key="PlayfairDisplay-Bold.otf">
+            <string>PlayfairDisplay-Bold</string>
+        </array>
+        <array key="PlayfairDisplay-Regular.otf">
+            <string>PlayfairDisplay-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="303" id="WdB-yK-9PE" userLabel="Blog Cell" customClass="BlogCell" customModule="MyApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="303"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WdB-yK-9PE" id="0wt-e9-bWU">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="302.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_blog_background" translatesAutoresizingMaskIntoConstraints="NO" id="Fu2-nx-6MD">
+                        <rect key="frame" x="21" y="21" width="278" height="150"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="150" id="1EL-IS-9On"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5fv-kj-c0Z">
+                        <rect key="frame" x="21" y="179" width="278" height="113"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koT-7j-0Be">
+                                <rect key="frame" x="0.0" y="10" width="278" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="pVA-XE-s0h"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PlayfairDisplay-Bold" family="Playfair Display" pointSize="18"/>
+                                <color key="textColor" red="0.16470588235294117" green="0.16862745098039217" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SLU-Yf-p4U">
+                                <rect key="frame" x="0.0" y="85.5" width="278" height="17.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asdasdasdsaas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coN-wI-mmc">
+                                        <rect key="frame" x="0.0" y="0.0" width="203" height="17.5"/>
+                                        <fontDescription key="fontDescription" name="Heebo-Medium" family="Heebo" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 18-09-2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXa-bn-FvA">
+                                        <rect key="frame" x="203" y="0.0" width="75" height="17.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="75" id="uB2-sf-quu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="PlayfairDisplay-Regular" family="Playfair Display" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4uu-xx-kwt">
+                                <rect key="frame" x="0.0" y="41" width="278" height="29.5"/>
+                                <string key="text">ashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfja</string>
+                                <fontDescription key="fontDescription" name="PlayfairDisplay-Regular" family="Playfair Display" pointSize="14"/>
+                                <color key="textColor" red="0.1647058824" green="0.16862745100000001" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="4uu-xx-kwt" secondAttribute="trailing" id="5hE-1Q-AbE"/>
+                            <constraint firstItem="4uu-xx-kwt" firstAttribute="leading" secondItem="5fv-kj-c0Z" secondAttribute="leading" id="9bL-IS-yCx"/>
+                            <constraint firstAttribute="trailing" secondItem="SLU-Yf-p4U" secondAttribute="trailing" id="AnK-17-dAF"/>
+                            <constraint firstAttribute="trailing" secondItem="koT-7j-0Be" secondAttribute="trailing" id="CSk-0W-wFD"/>
+                            <constraint firstItem="SLU-Yf-p4U" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4uu-xx-kwt" secondAttribute="bottom" constant="15" id="Dks-UD-dRs"/>
+                            <constraint firstItem="4uu-xx-kwt" firstAttribute="top" secondItem="koT-7j-0Be" secondAttribute="bottom" constant="10" id="JfF-hy-Sd7"/>
+                            <constraint firstItem="koT-7j-0Be" firstAttribute="leading" secondItem="5fv-kj-c0Z" secondAttribute="leading" id="TaZ-dh-toU"/>
+                            <constraint firstItem="SLU-Yf-p4U" firstAttribute="leading" secondItem="5fv-kj-c0Z" secondAttribute="leading" id="V0p-sf-gtx"/>
+                            <constraint firstAttribute="bottom" secondItem="SLU-Yf-p4U" secondAttribute="bottom" constant="10" id="VUN-rb-evW"/>
+                            <constraint firstItem="koT-7j-0Be" firstAttribute="top" secondItem="5fv-kj-c0Z" secondAttribute="top" constant="10" id="k2U-W4-xvB"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="Fu2-nx-6MD" firstAttribute="centerX" secondItem="0wt-e9-bWU" secondAttribute="centerX" id="4v9-BS-baL"/>
+                    <constraint firstItem="5fv-kj-c0Z" firstAttribute="leading" secondItem="Fu2-nx-6MD" secondAttribute="leading" id="9HT-Bg-p5w"/>
+                    <constraint firstItem="Fu2-nx-6MD" firstAttribute="top" secondItem="0wt-e9-bWU" secondAttribute="topMargin" constant="10" id="CNK-fl-nwk"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Fu2-nx-6MD" secondAttribute="trailing" constant="5" id="CNN-42-cGt"/>
+                    <constraint firstItem="5fv-kj-c0Z" firstAttribute="trailing" secondItem="Fu2-nx-6MD" secondAttribute="trailing" id="MLO-HV-LlG"/>
+                    <constraint firstItem="5fv-kj-c0Z" firstAttribute="bottom" secondItem="0wt-e9-bWU" secondAttribute="bottomMargin" id="XWN-1c-6XI"/>
+                    <constraint firstItem="Fu2-nx-6MD" firstAttribute="leading" secondItem="0wt-e9-bWU" secondAttribute="leadingMargin" constant="5" id="oGy-6K-CWy"/>
+                    <constraint firstItem="5fv-kj-c0Z" firstAttribute="centerX" secondItem="Fu2-nx-6MD" secondAttribute="centerX" id="sae-u2-XWm"/>
+                    <constraint firstItem="5fv-kj-c0Z" firstAttribute="top" secondItem="Fu2-nx-6MD" secondAttribute="bottom" constant="8" id="x7N-mK-W8t"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="wVU-3E-B6j"/>
+            <connections>
+                <outlet property="authorNameLabel" destination="coN-wI-mmc" id="qIF-fw-Nx0"/>
+                <outlet property="dateCreateLabel" destination="EXa-bn-FvA" id="KIQ-rr-QLS"/>
+                <outlet property="descriptionLabel" destination="4uu-xx-kwt" id="lCZ-ZF-aTe"/>
+                <outlet property="entryImageView" destination="Fu2-nx-6MD" id="bYm-bN-gLj"/>
+                <outlet property="entryTitleLabel" destination="koT-7j-0Be" id="VDV-Ls-7D4"/>
+            </connections>
+            <point key="canvasLocation" x="860" y="58"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="img_blog_background" width="128" height="84"/>
+    </resources>
+</document>
