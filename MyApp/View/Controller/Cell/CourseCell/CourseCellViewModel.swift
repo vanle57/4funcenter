@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import MVVM
 
-final class CourseCellViewModel {
+final class CourseCellViewModel: ViewModel {
 
     // MARK: - Properties
     var imageUrl = ""
