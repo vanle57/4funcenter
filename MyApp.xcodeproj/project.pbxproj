@@ -73,6 +73,10 @@
 		B3D26DBA215333570093FE42 /* SlideCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D26DB1215333570093FE42 /* SlideCell.xib */; };
 		B3D26DBB215333570093FE42 /* SlideCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26DB2215333570093FE42 /* SlideCellViewModel.swift */; };
 		B3D26DBD215333A70093FE42 /* BlogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26DBC215333A70093FE42 /* BlogViewModel.swift */; };
+		B3D26DC3215345AD0093FE42 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26DC1215345AD0093FE42 /* CourseCell.swift */; };
+		B3D26DC4215345AD0093FE42 /* CourseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D26DC2215345AD0093FE42 /* CourseCell.xib */; };
+		B3D26DCB21535AED0093FE42 /* CoursesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26DCA21535AED0093FE42 /* CoursesViewModel.swift */; };
+		B3D26DCD21535C580093FE42 /* CourseCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26DCC21535C580093FE42 /* CourseCellViewModel.swift */; };
 		B3D3564521227A2100D29B1A /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D3564421227A2100D29B1A /* Session.swift */; };
 		B3D3564721227A9E00D29B1A /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D3564621227A9E00D29B1A /* Key.swift */; };
 		CDE9EE1121194B9B00298DD0 /* gif_eye_vocab.gif in Resources */ = {isa = PBXBuildFile; fileRef = CDE9EE0F21194B9B00298DD0 /* gif_eye_vocab.gif */; };
@@ -199,6 +203,10 @@
 		B3D26DB1215333570093FE42 /* SlideCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideCell.xib; sourceTree = "<group>"; };
 		B3D26DB2215333570093FE42 /* SlideCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideCellViewModel.swift; sourceTree = "<group>"; };
 		B3D26DBC215333A70093FE42 /* BlogViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogViewModel.swift; sourceTree = "<group>"; };
+		B3D26DC1215345AD0093FE42 /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
+		B3D26DC2215345AD0093FE42 /* CourseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseCell.xib; sourceTree = "<group>"; };
+		B3D26DCA21535AED0093FE42 /* CoursesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewModel.swift; sourceTree = "<group>"; };
+		B3D26DCC21535C580093FE42 /* CourseCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCellViewModel.swift; sourceTree = "<group>"; };
 		B3D3564421227A2100D29B1A /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		B3D3564621227A9E00D29B1A /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		CDE9EE0F21194B9B00298DD0 /* gif_eye_vocab.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gif_eye_vocab.gif; sourceTree = "<group>"; };
@@ -326,10 +334,8 @@
 		B33ABCAA214BA7FC00F7FF48 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				B3D26DC0215344B70093FE42 /* CourseCell */,
 				B356BA5121520C6E002955B9 /* CoverCell */,
-				B33ABCA2214B989400F7FF48 /* SideMenuCell.swift */,
-				B33ABCA3214B989400F7FF48 /* SideMenuCell.xib */,
-				B33ABCAF214F53B100F7FF48 /* SideMenuCellViewModel.swift */,
 				B3D26DAB215333570093FE42 /* Blog */,
 				B3D26DA7215333570093FE42 /* SideMenu */,
 				B3D26DAF215333570093FE42 /* SlideCell */,
@@ -397,6 +403,7 @@
 			children = (
 				B374DB76214775D0005C1FE2 /* CoursesViewController.swift */,
 				B374DB77214775D0005C1FE2 /* CoursesViewController.xib */,
+				B3D26DCA21535AED0093FE42 /* CoursesViewModel.swift */,
 			);
 			path = CoursesViewController;
 			sourceTree = "<group>";
@@ -491,6 +498,16 @@
 				B3D26DB2215333570093FE42 /* SlideCellViewModel.swift */,
 			);
 			path = SlideCell;
+			sourceTree = "<group>";
+		};
+		B3D26DC0215344B70093FE42 /* CourseCell */ = {
+			isa = PBXGroup;
+			children = (
+				B3D26DC1215345AD0093FE42 /* CourseCell.swift */,
+				B3D26DC2215345AD0093FE42 /* CourseCell.xib */,
+				B3D26DCC21535C580093FE42 /* CourseCellViewModel.swift */,
+			);
+			path = CourseCell;
 			sourceTree = "<group>";
 		};
 		CDE9EE0E21194B9B00298DD0 /* Gif */ = {
@@ -839,6 +856,7 @@
 				B356BA17214F8A38002955B9 /* PlayfairDisplay-Regular.otf in Resources */,
 				B33ABCA9214B98FD00F7FF48 /* SideMenuViewController.xib in Resources */,
 				B356BA10214F8A38002955B9 /* PlayfairDisplaySC-Italic.otf in Resources */,
+				B3D26DC4215345AD0093FE42 /* CourseCell.xib in Resources */,
 				B317621E2149F39F005C9D25 /* RegisterViewController.xib in Resources */,
 				B374DB89214783C0005C1FE2 /* Heebo-Medium.ttf in Resources */,
 				B374DB75214775BE005C1FE2 /* BlogViewController.xib in Resources */,
@@ -1046,6 +1064,7 @@
 				B356BA5421520C9E002955B9 /* CoverCell.swift in Sources */,
 				B374DB8C2147A1E1005C1FE2 /* UIButtonExt.swift in Sources */,
 				B3D26DB8215333570093FE42 /* BlogCellViewModel.swift in Sources */,
+				B3D26DC3215345AD0093FE42 /* CourseCell.swift in Sources */,
 				B3D26DBD215333A70093FE42 /* BlogViewModel.swift in Sources */,
 				EC5337C11EF7939C00ACE038 /* TableCell.swift in Sources */,
 				ECF23AC31E9B9264008C23C1 /* StringExt.swift in Sources */,
@@ -1062,6 +1081,7 @@
 				ECC5B2CD1EF906CA001A97BC /* BaseViewController.swift in Sources */,
 				EC5337C31EF793B100ACE038 /* CollectionCell.swift in Sources */,
 				B33ABCA8214B98FD00F7FF48 /* SideMenuViewController.swift in Sources */,
+				B3D26DCD21535C580093FE42 /* CourseCellViewModel.swift in Sources */,
 				ECF23ABA1E9B89B2008C23C1 /* RequestSerializer.swift in Sources */,
 				B3D3564521227A2100D29B1A /* Session.swift in Sources */,
 				6238ADED21116D38003D4B8E /* LoginViewController.swift in Sources */,
@@ -1081,6 +1101,7 @@
 				ECEC0C5A1ED44D4100F6760A /* UIViewControllerExt.swift in Sources */,
 				B374DB70214775AC005C1FE2 /* AboutViewController.swift in Sources */,
 				ECEC0C581ED44C5D00F6760A /* String.swift in Sources */,
+				B3D26DCB21535AED0093FE42 /* CoursesViewModel.swift in Sources */,
 				B3D26DBB215333570093FE42 /* SlideCellViewModel.swift in Sources */,
 				B3D26DB6215333570093FE42 /* BlogCell.swift in Sources */,
 				EC5337BE1EF78FEA00ACE038 /* Font.swift in Sources */,
