@@ -45,7 +45,7 @@ extension BlogViewModel {
 
     func viewModelForItem(at indexPath: IndexPath) throws -> ViewModel {
         let section = indexPath.section
-        
+
         guard section < sections.count else {
             throw App.Error.indexOutOfBound
         }
