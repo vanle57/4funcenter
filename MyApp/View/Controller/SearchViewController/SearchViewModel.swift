@@ -27,7 +27,7 @@ final class SearchViewModel: ViewModel {
     var type: SearchType = .entry
     var entries: [Entry] = []
     var courses: [Course] = []
-    var histories: [String] = []
+    var histories: [HistorySearch] = []
 
     func search(keyword: String, _ completion: SearchCompletion) {
 
@@ -83,6 +83,6 @@ extension SearchViewModel {
         }
 
         let history = histories[index]
-        return HistorySearchCellViewModel(title: history)
+        return HistorySearchCellViewModel(history: history)
     }
 }

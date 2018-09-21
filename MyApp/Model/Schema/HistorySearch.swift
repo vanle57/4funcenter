@@ -23,13 +23,16 @@ import RealmSwift
         return "id"
     }
 
-    static func saveHistoryToRealm(history: [HistorySearch], completion: Completion<Bool>) {
+    static func saveHistoryToRealm(history: HistorySearch, completion: Completion<Bool>) {
         do {
             let realm = try Realm()
-            try realm.write {
-                realm.add(history)
+            let historyExisted = realm.objects(HistorySearch.self).filter("id = %@", history.id)
+            if historyExisted != history {
+                try realm.write {
+                    realm.add(history)
+                }
+                completion(.success(true))
             }
-            completion(.success(true))
         } catch {
             completion(.failure(App.Error.realmError))
         }
