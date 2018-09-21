@@ -8,17 +8,14 @@
 
 import UIKit
 
-class HistorySearchCell: UITableViewCell {
+final class HistorySearchCell: TableCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    // MARK: - Outlet
+    @IBOutlet weak var titleLabel: UILabel!
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
+    var viewModel: HistorySearchCellViewModel? {
+        didSet {
+            titleLabel.text = viewModel?.title
+        }
+    }  
 }
