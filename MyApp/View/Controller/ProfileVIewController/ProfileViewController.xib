@@ -6,12 +6,26 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Heebo-Regular.ttf">
+            <string>Heebo-Regular</string>
+        </array>
+        <array key="PlayfairDisplay-Regular.otf">
+            <string>PlayfairDisplay-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="MyApp" customModuleProvider="target">
             <connections>
+                <outlet property="cameraButton" destination="V5U-Xb-0JE" id="SMv-vB-MuL"/>
+                <outlet property="image" destination="LxI-w7-OzT" id="yJj-8X-Sg5"/>
+                <outlet property="nameLabel" destination="fPN-Uo-kUk" id="gwJ-EJ-8BY"/>
+                <outlet property="tableView" destination="wlM-cC-ReS" id="71j-D4-NLy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,8 +33,77 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="40" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wlM-cC-ReS">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <view key="tableHeaderView" contentMode="scaleToFill" id="WBS-fh-p4A">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="177"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_background" translatesAutoresizingMaskIntoConstraints="NO" id="LxI-w7-OzT">
+                                <rect key="frame" x="133.5" y="10" width="107" height="107"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="LxI-w7-OzT" secondAttribute="height" id="O0x-l1-OMO"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Annabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPN-Uo-kUk">
+                                <rect key="frame" x="133.5" y="117" width="107" height="50"/>
+                                <fontDescription key="fontDescription" name="PlayfairDisplay-Regular" family="Playfair Display" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5U-Xb-0JE">
+                                <rect key="frame" x="204.5" y="81" width="36" height="36"/>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.91764705879999997" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="V5U-Xb-0JE" secondAttribute="height" id="v4R-64-e3I"/>
+                                </constraints>
+                                <state key="normal" image="ic_cam"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="V5U-Xb-0JE" firstAttribute="trailing" secondItem="LxI-w7-OzT" secondAttribute="trailing" id="4iQ-r7-TzC"/>
+                            <constraint firstItem="LxI-w7-OzT" firstAttribute="centerX" secondItem="WBS-fh-p4A" secondAttribute="centerX" id="4n5-qS-KKt"/>
+                            <constraint firstItem="fPN-Uo-kUk" firstAttribute="centerX" secondItem="WBS-fh-p4A" secondAttribute="centerX" id="LgG-Z5-lio"/>
+                            <constraint firstItem="V5U-Xb-0JE" firstAttribute="bottom" secondItem="LxI-w7-OzT" secondAttribute="bottom" id="Ozh-a5-DnL"/>
+                            <constraint firstItem="fPN-Uo-kUk" firstAttribute="width" secondItem="LxI-w7-OzT" secondAttribute="width" id="Rp5-m0-hVj"/>
+                            <constraint firstItem="LxI-w7-OzT" firstAttribute="width" secondItem="WBS-fh-p4A" secondAttribute="width" multiplier="107/375" id="ScY-p1-a1U"/>
+                            <constraint firstItem="LxI-w7-OzT" firstAttribute="top" secondItem="WBS-fh-p4A" secondAttribute="top" constant="10" id="W2Z-1b-wxc"/>
+                            <constraint firstItem="fPN-Uo-kUk" firstAttribute="top" secondItem="LxI-w7-OzT" secondAttribute="bottom" id="Wxf-oH-FEE"/>
+                            <constraint firstAttribute="bottom" secondItem="fPN-Uo-kUk" secondAttribute="bottom" constant="10" id="fng-No-zh9"/>
+                            <constraint firstItem="V5U-Xb-0JE" firstAttribute="width" secondItem="LxI-w7-OzT" secondAttribute="width" multiplier="36/107" id="ycP-ci-sJE"/>
+                        </constraints>
+                    </view>
+                    <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="M2d-FR-ib0">
+                        <rect key="frame" x="0.0" y="1041" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" name="Heebo-Regular" family="Heebo" pointSize="17"/>
+                        <state key="normal" title="LOG OUT">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="2v4-jP-PSe"/>
+                        <outlet property="delegate" destination="-1" id="zP2-PF-LJ6"/>
+                    </connections>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wlM-cC-ReS" secondAttribute="trailing" id="6Wb-cx-pbn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="wlM-cC-ReS" secondAttribute="bottom" id="J6n-pR-N5c"/>
+                <constraint firstItem="wlM-cC-ReS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Zkd-MZ-zbk"/>
+                <constraint firstItem="wlM-cC-ReS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nhb-nv-U2i"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="25.5" y="51.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="ic_cam" width="16" height="16"/>
+        <image name="img_background" width="282" height="501"/>
+    </resources>
 </document>

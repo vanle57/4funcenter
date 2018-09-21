@@ -60,9 +60,12 @@ final class SideMenuViewController: UIViewController {
 
     func switchToProfileItemOrLogout(at index: Int) {
         guard index < viewModel.profileItem.count else { return }
+        guard let mainViewController = sideMenuController else { return }
+        let navigationController = mainViewController.rootViewController as? UINavigationController
         let rowType = viewModel.profileItem[index]
         switch rowType {
         case .me, .myCourses, .results:
+            mainViewController.hideLeftView()
             navigationController?.pushViewController(ProfileViewController(), animated: true)
         case .logout:
             logout()
