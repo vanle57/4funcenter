@@ -30,6 +30,7 @@
                         </collectionViewFlowLayout>
                     </collectionView>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="c1T-2x-M4f" firstAttribute="top" secondItem="7gf-8f-4KU" secondAttribute="top" id="BGU-Kf-Bpo"/>
                     <constraint firstItem="c1T-2x-M4f" firstAttribute="centerX" secondItem="7gf-8f-4KU" secondAttribute="centerX" id="ZlA-Iq-FrE"/>
@@ -37,6 +38,7 @@
                     <constraint firstItem="c1T-2x-M4f" firstAttribute="centerY" secondItem="7gf-8f-4KU" secondAttribute="centerY" id="q8X-Sq-6Qt"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="izm-1H-YfP"/>
             <connections>
                 <outlet property="collectionView" destination="c1T-2x-M4f" id="TJb-MV-QcJ"/>

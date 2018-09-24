@@ -6,42 +6,79 @@
 //  Copyright © 2018 Asian Tech Co., Ltd. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import MVVM
 
-enum TypeOfSecction {
-    case teacher
-    case blog
-    case course
-}
+final class HomeViewModel: ViewModel {
 
-final class HomeViewModel {
-    let images: [UIImage] = [#imageLiteral(resourceName: "image3"), #imageLiteral(resourceName: "image4"), #imageLiteral(resourceName: "image5"), #imageLiteral(resourceName: "image7"), #imageLiteral(resourceName: "image8")]
-    let teacher1 = Teacher(name: "Hoa", image: #imageLiteral(resourceName: "image7"))
-    let teacher2 = Teacher(name: "Lan", image: #imageLiteral(resourceName: "image2"))
-    let teacher3 = Teacher(name: "Mai", image: #imageLiteral(resourceName: "ic_high_beginner"))
-    var teachers: [Teacher] {
-        return [teacher1, teacher2, teacher3, teacher3, teacher3]
+    enum SectionType {
+        case teacher
+        case blog
+        case course
+
+        var title: String {
+            switch self {
+            case .teacher:
+                return "Teacher"
+            case .blog:
+                return "Blog"
+            case .course:
+                return "Course"
+            }
+        }
     }
+
+    var sections: [SectionType] = [.blog, .course, .teacher]
+
+    let images: [UIImage] = [#imageLiteral(resourceName: "slide1"), #imageLiteral(resourceName: "slide2"), #imageLiteral(resourceName: "slide3")]
+    var teachers = DummyData.fetchTeachers()
 
     func viewModelForCollectionViewCell(indexPath: IndexPath) -> UIImage {
         return images[indexPath.row]
     }
+}
 
-    // - Returns: 3: Blog, Course, Teacher
-    func numberOfSection() -> Int {
-        return 3
+extension HomeViewModel {
+    func numberOfSections() -> Int {
+        return sections.count
     }
 
-    // 1 table view cell for 1 section
-    func numberItemOfSection(in section: Int) -> Int {
-        return 1
+    func numberOfItems(inSection section: Int) -> Int {
+        return Config.numberOfRow
     }
 
-    func viewModelForTableViewCell(indexPath: IndexPath) -> HomeTableCellModel {
+    func viewModelForItem(at indexPath: IndexPath) throws -> HomeTableCellModel {
+        let section = indexPath.section
+
+        guard section < sections.count else {
+            throw App.Error.indexOutOfBound
+        }
+
         let cellModel = HomeTableCellModel()
-        cellModel.teachers = self.teachers
+        cellModel.teachers = teachers
         return cellModel
     }
 
+    func viewModelForHeader(inSection section: Int) throws -> HeaderViewModel {
+        guard section < sections.count else {
+            throw App.Error.indexOutOfBound
+        }
+
+        let sectionType = sections[section]
+
+        switch sectionType {
+        case .blog:
+            return HeaderViewModel(title: sectionType.title)
+        case .course:
+            return HeaderViewModel(title: sectionType.title)
+        case .teacher:
+            return HeaderViewModel(title: sectionType.title)
+        }
+    }
+}
+
+extension HomeViewModel {
+    struct Config {
+        static let numberOfRow = 1
+    }
 }

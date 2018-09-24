@@ -25,22 +25,22 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="40" sectionFooterHeight="40" translatesAutoresizingMaskIntoConstraints="NO" id="XFN-HH-A8Y">
-                    <rect key="frame" x="0.0" y="262.5" width="375" height="404.5"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <color key="sectionIndexBackgroundColor" red="0.95686274510000002" green="0.91764705879999997" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="40" sectionFooterHeight="40" translatesAutoresizingMaskIntoConstraints="NO" id="XFN-HH-A8Y">
+                    <rect key="frame" x="0.0" y="173.5" width="375" height="493.5"/>
+                    <color key="backgroundColor" red="0.95686274510000002" green="0.91764705879999997" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="49s-Ob-bgX"/>
                         <outlet property="delegate" destination="-1" id="YhQ-qK-Iyy"/>
                     </connections>
                 </tableView>
-                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="Tx5-EX-L8x">
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Tx5-EX-L8x">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                    <color key="backgroundColor" red="0.95686274510000002" green="0.91764705879999997" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <color key="pageIndicatorTintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <color key="currentPageIndicatorTintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                 </pageControl>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="cck-BD-3i2" customClass="BJAutoScrollingCollectionView" customModule="MyApp" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="40" width="375" height="222.5"/>
+                    <rect key="frame" x="0.0" y="40" width="375" height="133.5"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="WP3-QW-bKS">
                         <size key="itemSize" width="50" height="50"/>
@@ -54,7 +54,6 @@
                     </connections>
                 </collectionView>
             </subviews>
-            <color key="backgroundColor" red="0.95686274510000002" green="0.91764705879999997" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="cck-BD-3i2" firstAttribute="leading" secondItem="nVu-Xw-rye" secondAttribute="leading" id="MOI-cb-euM"/>
                 <constraint firstItem="Tx5-EX-L8x" firstAttribute="top" secondItem="07H-sR-BMi" secondAttribute="top" id="Qww-Wm-E4Z"/>
@@ -67,7 +66,7 @@
                 <constraint firstItem="XFN-HH-A8Y" firstAttribute="top" secondItem="cck-BD-3i2" secondAttribute="bottom" id="l8d-Rk-zz4"/>
                 <constraint firstItem="Tx5-EX-L8x" firstAttribute="trailing" secondItem="nVu-Xw-rye" secondAttribute="trailing" id="sVn-a3-L3E"/>
                 <constraint firstItem="XFN-HH-A8Y" firstAttribute="bottom" secondItem="nVu-Xw-rye" secondAttribute="bottom" id="vWg-rG-VeM"/>
-                <constraint firstItem="cck-BD-3i2" firstAttribute="height" secondItem="07H-sR-BMi" secondAttribute="height" multiplier="1/3" id="wp8-Fh-aWr"/>
+                <constraint firstItem="cck-BD-3i2" firstAttribute="height" secondItem="07H-sR-BMi" secondAttribute="height" multiplier="1:5" id="wp8-Fh-aWr"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="nVu-Xw-rye"/>
             <point key="canvasLocation" x="24.5" y="51.5"/>
