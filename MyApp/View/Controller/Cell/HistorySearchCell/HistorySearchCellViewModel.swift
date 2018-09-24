@@ -14,7 +14,7 @@ final class HistorySearchCellViewModel {
     var title = ""
 
     // MARK: - init
-    init(history: HistorySearch) {
-        title = history.content
+    init(history: String) {
+        title = history
     }
 }

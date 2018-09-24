@@ -25,12 +25,34 @@ final class SearchViewModel: ViewModel {
     typealias SearchCompletion = (SearchResult) -> Void
 
     var type: SearchType = .entry
-    var entries: [Entry] = []
+    var entries: [Entry] = DummyData.fetchEntries()
     var courses: [Course] = []
-    var histories: [HistorySearch] = []
+    var histories: [String]?
+
+    init() { }
+
+    init(type: SearchType) {
+        self.type = type
+    }
+
+    func loadHistory() {
+        histories = App.userDefault.array(forKey: App.KeyUserDefault.historySearch) as? [String]
+    }
+
+    func saveHistory(keyword: String) {
+        histories = App.userDefault.array(forKey: App.KeyUserDefault.historySearch) as? [String]
+        guard var histories = histories else {
+            App.userDefault.set([keyword], forKey: App.KeyUserDefault.historySearch)
+            return
+        }
+        histories.append(keyword)
+        App.userDefault.set(histories, forKey: App.KeyUserDefault.historySearch)
+    }
 
     func search(keyword: String, _ completion: SearchCompletion) {
-
+        saveHistory(keyword: keyword)
+        // TODO: query api to search
+        completion(.success)
     }
 }
 
@@ -72,10 +94,15 @@ extension SearchViewModel {
 extension SearchViewModel {
 
     func numberOfHistoryItems(inSection section: Int) -> Int {
+        guard let histories = histories else { return 0 }
         return histories.count
     }
 
     func viewModelForHistoryItem(at indexPath: IndexPath) throws -> HistorySearchCellViewModel {
+        guard let histories = histories else {
+            throw App.Error.unknownError
+        }
+
         let index = indexPath.row
 
         guard index < histories.count else {

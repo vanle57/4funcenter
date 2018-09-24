@@ -77,6 +77,12 @@
 		B3D26DC4215345AD0093FE42 /* CourseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D26DC2215345AD0093FE42 /* CourseCell.xib */; };
 		B3D26DCB21535AED0093FE42 /* CoursesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26DCA21535AED0093FE42 /* CoursesViewModel.swift */; };
 		B3D26DCD21535C580093FE42 /* CourseCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26DCC21535C580093FE42 /* CourseCellViewModel.swift */; };
+		B3D26DD12153B05F0093FE42 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26DCF2153B05F0093FE42 /* SearchViewController.swift */; };
+		B3D26DD22153B05F0093FE42 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D26DD02153B05F0093FE42 /* SearchViewController.xib */; };
+		B3D26E00215483060093FE42 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26DFF215483060093FE42 /* SearchViewModel.swift */; };
+		B3D26E042154910B0093FE42 /* HistorySearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26E022154910B0093FE42 /* HistorySearchCell.swift */; };
+		B3D26E052154910B0093FE42 /* HistorySearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D26E032154910B0093FE42 /* HistorySearchCell.xib */; };
+		B3D26E07215494750093FE42 /* HistorySearchCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26E06215494750093FE42 /* HistorySearchCellViewModel.swift */; };
 		B3D3564521227A2100D29B1A /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D3564421227A2100D29B1A /* Session.swift */; };
 		B3D3564721227A9E00D29B1A /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D3564621227A9E00D29B1A /* Key.swift */; };
 		CDE9EE1121194B9B00298DD0 /* gif_eye_vocab.gif in Resources */ = {isa = PBXBuildFile; fileRef = CDE9EE0F21194B9B00298DD0 /* gif_eye_vocab.gif */; };
@@ -207,6 +213,12 @@
 		B3D26DC2215345AD0093FE42 /* CourseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseCell.xib; sourceTree = "<group>"; };
 		B3D26DCA21535AED0093FE42 /* CoursesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewModel.swift; sourceTree = "<group>"; };
 		B3D26DCC21535C580093FE42 /* CourseCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCellViewModel.swift; sourceTree = "<group>"; };
+		B3D26DCF2153B05F0093FE42 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		B3D26DD02153B05F0093FE42 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		B3D26DFF215483060093FE42 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		B3D26E022154910B0093FE42 /* HistorySearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorySearchCell.swift; sourceTree = "<group>"; };
+		B3D26E032154910B0093FE42 /* HistorySearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistorySearchCell.xib; sourceTree = "<group>"; };
+		B3D26E06215494750093FE42 /* HistorySearchCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorySearchCellViewModel.swift; sourceTree = "<group>"; };
 		B3D3564421227A2100D29B1A /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		B3D3564621227A9E00D29B1A /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		CDE9EE0F21194B9B00298DD0 /* gif_eye_vocab.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gif_eye_vocab.gif; sourceTree = "<group>"; };
@@ -298,6 +310,7 @@
 		ACB04582210EFF4400159503 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B3D26DCE2153B0370093FE42 /* SearchViewController */,
 				B356BA1C214F95CE002955B9 /* TeachersViewController */,
 				B33ABCAA214BA7FC00F7FF48 /* Cell */,
 				B33ABC9B214B5E3C00F7FF48 /* SideMenuViewController */,
@@ -334,6 +347,7 @@
 		B33ABCAA214BA7FC00F7FF48 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				B3D26E01215490DC0093FE42 /* HistorySearchCell */,
 				B3D26DC0215344B70093FE42 /* CourseCell */,
 				B356BA5121520C6E002955B9 /* CoverCell */,
 				B3D26DAB215333570093FE42 /* Blog */,
@@ -508,6 +522,26 @@
 				B3D26DCC21535C580093FE42 /* CourseCellViewModel.swift */,
 			);
 			path = CourseCell;
+			sourceTree = "<group>";
+		};
+		B3D26DCE2153B0370093FE42 /* SearchViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B3D26DCF2153B05F0093FE42 /* SearchViewController.swift */,
+				B3D26DD02153B05F0093FE42 /* SearchViewController.xib */,
+				B3D26DFF215483060093FE42 /* SearchViewModel.swift */,
+			);
+			path = SearchViewController;
+			sourceTree = "<group>";
+		};
+		B3D26E01215490DC0093FE42 /* HistorySearchCell */ = {
+			isa = PBXGroup;
+			children = (
+				B3D26E022154910B0093FE42 /* HistorySearchCell.swift */,
+				B3D26E032154910B0093FE42 /* HistorySearchCell.xib */,
+				B3D26E06215494750093FE42 /* HistorySearchCellViewModel.swift */,
+			);
+			path = HistorySearchCell;
 			sourceTree = "<group>";
 		};
 		CDE9EE0E21194B9B00298DD0 /* Gif */ = {
@@ -848,6 +882,7 @@
 				B374DB87214783C0005C1FE2 /* Heebo-Bold.ttf in Resources */,
 				B374DB8A214783C0005C1FE2 /* Heebo-Black.ttf in Resources */,
 				B356BA1A214F8A38002955B9 /* PlayfairDisplaySC-BlackItalic.otf in Resources */,
+				B3D26E052154910B0093FE42 /* HistorySearchCell.xib in Resources */,
 				B356BA13214F8A38002955B9 /* PlayfairDisplay-BoldItalic.otf in Resources */,
 				B356BA15214F8A38002955B9 /* PlayfairDisplaySC-Regular.otf in Resources */,
 				B374DB79214775D0005C1FE2 /* CoursesViewController.xib in Resources */,
@@ -859,6 +894,7 @@
 				B3D26DC4215345AD0093FE42 /* CourseCell.xib in Resources */,
 				B317621E2149F39F005C9D25 /* RegisterViewController.xib in Resources */,
 				B374DB89214783C0005C1FE2 /* Heebo-Medium.ttf in Resources */,
+				B3D26DD22153B05F0093FE42 /* SearchViewController.xib in Resources */,
 				B374DB75214775BE005C1FE2 /* BlogViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1069,6 +1105,7 @@
 				EC5337C11EF7939C00ACE038 /* TableCell.swift in Sources */,
 				ECF23AC31E9B9264008C23C1 /* StringExt.swift in Sources */,
 				B374DB78214775D0005C1FE2 /* CoursesViewController.swift in Sources */,
+				B3D26E042154910B0093FE42 /* HistorySearchCell.swift in Sources */,
 				B33ABC9A214B5D2900F7FF48 /* MainViewController.swift in Sources */,
 				B374DB672147681B005C1FE2 /* ProfileViewController.swift in Sources */,
 				ECEC0C5E1ED44D7700F6760A /* MapperExt.swift in Sources */,
@@ -1092,6 +1129,7 @@
 				B358301A2115624500E3E419 /* User.swift in Sources */,
 				B356BA502151FD87002955B9 /* Course.swift in Sources */,
 				EC332A481EA0A8CB0011DF1E /* Api.swift in Sources */,
+				B3D26E07215494750093FE42 /* HistorySearchCellViewModel.swift in Sources */,
 				ECD1C29B1EA725B1000EC989 /* InputViewExt.swift in Sources */,
 				B3D26DA6215333200093FE42 /* Entry.swift in Sources */,
 				B3D26DB5215333570093FE42 /* SideMenuCellViewModel.swift in Sources */,
@@ -1105,10 +1143,12 @@
 				B3D26DBB215333570093FE42 /* SlideCellViewModel.swift in Sources */,
 				B3D26DB6215333570093FE42 /* BlogCell.swift in Sources */,
 				EC5337BE1EF78FEA00ACE038 /* Font.swift in Sources */,
+				B3D26DD12153B05F0093FE42 /* SearchViewController.swift in Sources */,
 				ECF23ABB1E9B89B2008C23C1 /* ResponseSerializer.swift in Sources */,
 				ECF23ABE1E9B8A6A008C23C1 /* Error.swift in Sources */,
 				ACB045A3210F0CEB00159503 /* BaseNavigationController.swift in Sources */,
 				EC5337B51EF7845700ACE038 /* Color.swift in Sources */,
+				B3D26E00215483060093FE42 /* SearchViewModel.swift in Sources */,
 				B3D3564721227A9E00D29B1A /* Key.swift in Sources */,
 				B3D26DB4215333570093FE42 /* SideMenuCell.swift in Sources */,
 				6252A17621195647009F6F43 /* Speaker.swift in Sources */,

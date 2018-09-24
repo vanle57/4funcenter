@@ -15,20 +15,18 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var historyTableView: UITableView!
     @IBOutlet weak var resultTableView: UITableView!
 
-    var viewModel: SearchViewModel? {
-        didSet {
-
-        }
-    }
+    var viewModel = SearchViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configNavigationBar()
+        configTableView()
         searchBar.delegate = self
     }
 
+    // MARK: - Private functions
     private func configNavigationBar() {
-        let backButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_back"), style: .plain, target: self, action: nil)
+        let backButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_back"), style: .plain, target: self, action: #selector(backAction))
         navigationItem.leftBarButtonItem = backButton
     }
 
@@ -36,8 +34,6 @@ class SearchViewController: UIViewController {
         historyTableView.register(HistorySearchCell.self)
         resultTableView.register(BlogCell.self)
         resultTableView.register(CourseCell.self)
-        historyTableView.dataSource = self
-        resultTableView.dataSource = self
     }
 
     private func hiddenHistorySearchView(_ status: Bool = true) {
@@ -45,9 +41,21 @@ class SearchViewController: UIViewController {
     }
 
     private func search(keyword: String) {
-
+        viewModel.search(keyword: keyword) { [weak self] (result) in
+            guard let this = self else { return }
+            switch result {
+            case .success:
+                this.resultTableView.reloadData()
+            case .failure(let error):
+                this.alert(error: error)
+            }
+        }
     }
-    
+
+    @objc func backAction() {
+        navigationController?.popViewController(animated: true)
+    }
+
     @IBAction func trashButtonTouchUpInside(_ sender: Any) {
     }
 }
@@ -55,8 +63,6 @@ class SearchViewController: UIViewController {
 // MARK: - UITableViewDataSource
 extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let viewModel = viewModel else { return 0 }
-
         if tableView == historyTableView {
             return viewModel.numberOfHistoryItems(inSection: section)
         } else {
@@ -65,7 +71,6 @@ extension SearchViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let viewModel = viewModel else { return TableCell() }
 
         if tableView == historyTableView {
             guard let viewModel = try? viewModel.viewModelForHistoryItem(at: indexPath) else {
@@ -106,6 +111,8 @@ extension SearchViewController: UITableViewDataSource {
 extension SearchViewController: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.showsCancelButton = true
+        viewModel.loadHistory()
+        historyTableView.reloadData()
         hiddenHistorySearchView(false)
     }
 
