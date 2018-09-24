@@ -30,7 +30,7 @@ final class HomeViewModel: ViewModel {
 
     var sections: [SectionType] = [.blog, .course, .teacher]
 
-    let images: [UIImage] = [#imageLiteral(resourceName: "image3"), #imageLiteral(resourceName: "image4"), #imageLiteral(resourceName: "image5"), #imageLiteral(resourceName: "image7"), #imageLiteral(resourceName: "image8")]
+    let images: [UIImage] = [#imageLiteral(resourceName: "slide1"), #imageLiteral(resourceName: "slide2"), #imageLiteral(resourceName: "slide3")]
     var teachers = DummyData.fetchTeachers()
 
     func viewModelForCollectionViewCell(indexPath: IndexPath) -> UIImage {
@@ -60,9 +60,9 @@ extension HomeViewModel {
     }
 
     func viewModelForHeader(inSection section: Int) throws -> HeaderViewModel {
-//        guard section < sections.count else {
-//            throw App.Error.indexOutOfBound
-//        }
+        guard section < sections.count else {
+            throw App.Error.indexOutOfBound
+        }
 
         let sectionType = sections[section]
 

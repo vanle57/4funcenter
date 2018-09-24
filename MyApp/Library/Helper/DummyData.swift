@@ -23,9 +23,10 @@ final class DummyData {
     }
 
     static func fetchTeachers() -> [Teacher] {
-        let teacher1 = Teacher(name: "Hoa", image: #imageLiteral(resourceName: "image7"))
-        let teacher2 = Teacher(name: "Lan", image: #imageLiteral(resourceName: "image2"))
-        let teacher3 = Teacher(name: "Mai", image: #imageLiteral(resourceName: "ic_high_beginner"))
-        return [teacher1, teacher2, teacher3, teacher3, teacher3]
+        let teacher1 = Teacher(name: "Dr.Tom", image: #imageLiteral(resourceName: "teacher1"))
+        let teacher2 = Teacher(name: "Ms.Hoa", image: #imageLiteral(resourceName: "teahcer2"))
+        let teacher3 = Teacher(name: "Ms.Mai", image: #imageLiteral(resourceName: "teacher3"))
+        let teacher4 = Teacher(name: "Mr.Hung", image: #imageLiteral(resourceName: "teacher4"))
+        return [teacher1, teacher2, teacher3, teacher4, teacher4, teacher4]
     }
 }

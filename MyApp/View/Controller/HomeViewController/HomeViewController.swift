@@ -29,6 +29,7 @@ final class HomeViewController: BaseViewController {
     override func setupUI() {
         super.setupUI()
         title = Define.title
+        pageControl.numberOfPages = viewModel.images.count
         collectionView.register(HomeCollectionViewCell.self)
         configTableView()
     }
@@ -47,13 +48,14 @@ final class HomeViewController: BaseViewController {
         tableView.register(HomeTableViewCell.self)
         tableView.register(HeaderView.self)
         tableView.rowHeight = Config.rowHeight * ratio
+        tableView.tableFooterView = UIView()
+        tableView.tableHeaderView?.backgroundColor = App.Color.yellowColor
     }
 
     /// Set page control folow collection View
     private func setCurrentPage() {
-        guard let cell = collectionView.visibleCells.first,
-            let indexPath = collectionView.indexPath(for: cell) else { return }
-        pageControl.currentPage = indexPath.row
+        let pageWidth = collectionView.frame.width
+        pageControl.currentPage = Int(collectionView.contentOffset.x / pageWidth)
     }
 }
 
