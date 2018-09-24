@@ -15,6 +15,5 @@ class HomeCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        imageView.corner = 5
     }
 }
