@@ -42,7 +42,7 @@ extension HomeTableViewCell: UICollectionViewDataSource {
 extension HomeTableViewCell: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.height * 105 / 150, height: collectionView.frame.height)
+        return CGSize(width: collectionView.frame.height * 0.7, height: collectionView.frame.height)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

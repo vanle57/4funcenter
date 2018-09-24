@@ -21,4 +21,11 @@ final class DummyData {
         let course2 = Course(name: "English online", numberOfView: 50, numberOfComment: 100, description: "Learn English online using our high-quality resources to quickly improve your English. Our website for adult learners, is brought to you by the British Council, the world's English teaching experts. ", detail: "")
         return [course1, course1, course1, course2]
     }
+
+    static func fetchTeachers() -> [Teacher] {
+        let teacher1 = Teacher(name: "Hoa", image: #imageLiteral(resourceName: "image7"))
+        let teacher2 = Teacher(name: "Lan", image: #imageLiteral(resourceName: "image2"))
+        let teacher3 = Teacher(name: "Mai", image: #imageLiteral(resourceName: "ic_high_beginner"))
+        return [teacher1, teacher2, teacher3, teacher3, teacher3]
+    }
 }

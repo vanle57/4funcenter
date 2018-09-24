@@ -30,8 +30,7 @@ final class HomeViewController: BaseViewController {
         super.setupUI()
         title = Define.title
         collectionView.register(HomeCollectionViewCell.self)
-        tableView.register(HomeTableViewCell.self)
-        tableView.rowHeight = 150
+        configTableView()
     }
 
     // MARK: - Setup Data
@@ -44,17 +43,17 @@ final class HomeViewController: BaseViewController {
         collectionView.startScrolling()
     }
 
+    private func configTableView() {
+        tableView.register(HomeTableViewCell.self)
+        tableView.register(HeaderView.self)
+        tableView.rowHeight = Config.rowHeight * ratio
+    }
 
     /// Set page control folow collection View
     private func setCurrentPage() {
         guard let cell = collectionView.visibleCells.first,
             let indexPath = collectionView.indexPath(for: cell) else { return }
         pageControl.currentPage = indexPath.row
-    }
-
-    // insert action for each 'seeMore' button
-    @objc private func seeMoreButtonTapped() {
-        print("SeeMore Tapped")
     }
 }
 
@@ -74,6 +73,7 @@ extension HomeViewController: UICollectionViewDataSource {
 
 }
 
+// MARK: - UICollectionViewDelegate
 extension HomeViewController: UICollectionViewDelegate {
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         setCurrentPage()
@@ -88,6 +88,7 @@ extension HomeViewController: UICollectionViewDelegate {
     }
 }
 
+// MARK: UICollectionViewDelegateFlowLayout
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
@@ -99,16 +100,21 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 // MARK: - UITableViewDataSource
 extension HomeViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel.numberOfSection()
+        return viewModel.numberOfSections()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberItemOfSection(in: section)
+        return viewModel.numberOfItems(inSection: section)
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        guard let viewModel = try? viewModel.viewModelForItem(at: indexPath) else {
+            return TableCell()
+        }
+
         let cell = tableView.dequeue(HomeTableViewCell.self)
-        cell.viewModel = viewModel.viewModelForTableViewCell(indexPath: indexPath)
+        cell.viewModel = viewModel
         return cell
     }
 }
@@ -116,43 +122,29 @@ extension HomeViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView(frame: CGRect(x: 0,
-                                              y: 0,
-                                              width: tableView.frame.width,
-                                              height: tableView.sectionHeaderHeight))
-        let seeMoreButton = UIButton(frame: CGRect(x: headerView.frame.width * 3 / 4,
-                                                   y: 0,
-                                                   width: headerView.frame.width / 4,
-                                                   height: headerView.frame.height))
-        let titleLable = UILabel(frame: CGRect(x: 10,
-                                               y: 0,
-                                               width: headerView.frame.width * 3 / 4,
-                                               height: headerView.frame.height))
-        switch section {
-        case 0:
-            titleLable.text = "Blog"
-        case 1:
-            titleLable.text = "Course"
-        default:
-            titleLable.text = "Teacher"
+
+        guard let viewModel = try? viewModel.viewModelForHeader(inSection: section) else {
+            return UITableViewHeaderFooterView()
         }
 
-        titleLable.textColor = .black
-        seeMoreButton.setTitle("More >", for: .normal)
-        seeMoreButton.titleLabel?.font = UIFont(name: "heebo", size: 13.0)
-        seeMoreButton.setTitleColor(.black, for: .normal)
-        seeMoreButton.addTarget(self,
-                                action: #selector(seeMoreButtonTapped),
-                                for: .touchUpInside)
-        headerView.addSubview(titleLable)
-        headerView.addSubview(seeMoreButton)
-        headerView.backgroundColor = App.Color.yellowColor
+        let headerView = tableView.dequeue(HeaderView.self)
+        headerView.viewModel = viewModel
         return headerView
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return Config.headerHeight * ratio
     }
 }
 
+// MARK: - Define
 extension HomeViewController {
     struct Define {
         static let title = "Home"
+    }
+
+    struct Config {
+        static let rowHeight: CGFloat = 100
+        static let headerHeight: CGFloat = 40
     }
 }

@@ -77,6 +77,9 @@
 		B3D26DC4215345AD0093FE42 /* CourseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D26DC2215345AD0093FE42 /* CourseCell.xib */; };
 		B3D26DCB21535AED0093FE42 /* CoursesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26DCA21535AED0093FE42 /* CoursesViewModel.swift */; };
 		B3D26DCD21535C580093FE42 /* CourseCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26DCC21535C580093FE42 /* CourseCellViewModel.swift */; };
+		B3D26E1021589D2D0093FE42 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26E0F21589D2D0093FE42 /* HeaderView.swift */; };
+		B3D26E1221589D400093FE42 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D26E1121589D400093FE42 /* HeaderView.xib */; };
+		B3D26E142158A0C80093FE42 /* HeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26E132158A0C80093FE42 /* HeaderViewModel.swift */; };
 		B3D3564521227A2100D29B1A /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D3564421227A2100D29B1A /* Session.swift */; };
 		B3D3564721227A9E00D29B1A /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D3564621227A9E00D29B1A /* Key.swift */; };
 		CDE9EE1121194B9B00298DD0 /* gif_eye_vocab.gif in Resources */ = {isa = PBXBuildFile; fileRef = CDE9EE0F21194B9B00298DD0 /* gif_eye_vocab.gif */; };
@@ -218,6 +221,9 @@
 		B3D26DC2215345AD0093FE42 /* CourseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseCell.xib; sourceTree = "<group>"; };
 		B3D26DCA21535AED0093FE42 /* CoursesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewModel.swift; sourceTree = "<group>"; };
 		B3D26DCC21535C580093FE42 /* CourseCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCellViewModel.swift; sourceTree = "<group>"; };
+		B3D26E0F21589D2D0093FE42 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		B3D26E1121589D400093FE42 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		B3D26E132158A0C80093FE42 /* HeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewModel.swift; sourceTree = "<group>"; };
 		B3D3564421227A2100D29B1A /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		B3D3564621227A9E00D29B1A /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		CDE9EE0F21194B9B00298DD0 /* gif_eye_vocab.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gif_eye_vocab.gif; sourceTree = "<group>"; };
@@ -414,6 +420,7 @@
 		B374DB4921476819005C1FE2 /* HomeViewController */ = {
 			isa = PBXGroup;
 			children = (
+				B3D26E0E21589CE60093FE42 /* HeaderView */,
 				F00DED8B2153804B0089F54D /* HomeViewCell */,
 				B374DB4A21476819005C1FE2 /* HomeViewController.xib */,
 				B374DB4B21476819005C1FE2 /* HomeViewController.swift */,
@@ -532,6 +539,16 @@
 				B3D26DCC21535C580093FE42 /* CourseCellViewModel.swift */,
 			);
 			path = CourseCell;
+			sourceTree = "<group>";
+		};
+		B3D26E0E21589CE60093FE42 /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				B3D26E0F21589D2D0093FE42 /* HeaderView.swift */,
+				B3D26E1121589D400093FE42 /* HeaderView.xib */,
+				B3D26E132158A0C80093FE42 /* HeaderViewModel.swift */,
+			);
+			path = HeaderView;
 			sourceTree = "<group>";
 		};
 		CDE9EE0E21194B9B00298DD0 /* Gif */ = {
@@ -809,6 +826,7 @@
 				ECCCCB161E7A40D00073D923 /* Resources */,
 				E23D44304C718C6164C90A36 /* [CP] Embed Pods Frameworks */,
 				EC01052F1E8F895300CE013D /* Embed Frameworks */,
+				C01667B70A9E706BF4CAD575 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -828,6 +846,7 @@
 				ECCCCB291E7A40D10073D923 /* Frameworks */,
 				ECCCCB2A1E7A40D10073D923 /* Resources */,
 				C5336427CD995EA5A795B11C /* [CP] Embed Pods Frameworks */,
+				1DF9F266C64434806BC59729 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -912,6 +931,7 @@
 				B374DB86214783C0005C1FE2 /* Heebo-Regular.ttf in Resources */,
 				B356BA16214F8A38002955B9 /* PlayfairDisplaySC-Black.otf in Resources */,
 				B374DB87214783C0005C1FE2 /* Heebo-Bold.ttf in Resources */,
+				B3D26E1221589D400093FE42 /* HeaderView.xib in Resources */,
 				B374DB8A214783C0005C1FE2 /* Heebo-Black.ttf in Resources */,
 				B356BA1A214F8A38002955B9 /* PlayfairDisplaySC-BlackItalic.otf in Resources */,
 				B356BA13214F8A38002955B9 /* PlayfairDisplay-BoldItalic.otf in Resources */,
@@ -939,6 +959,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1DF9F266C64434806BC59729 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyApp-MyAppTests/Pods-MyApp-MyAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B0E09827A261C794A6F031AA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -973,6 +1008,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C01667B70A9E706BF4CAD575 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyApp/Pods-MyApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C5336427CD995EA5A795B11C /* [CP] Embed Pods Frameworks */ = {
@@ -1101,6 +1151,7 @@
 				B374DB8C2147A1E1005C1FE2 /* UIButtonExt.swift in Sources */,
 				B3D26DB8215333570093FE42 /* BlogCellViewModel.swift in Sources */,
 				F00DED95215381A70089F54D /* TeacherCollectionViewCell.swift in Sources */,
+				B3D26E142158A0C80093FE42 /* HeaderViewModel.swift in Sources */,
 				F00DED8821537F8A0089F54D /* HomeViewModel.swift in Sources */,
 				B3D26DC3215345AD0093FE42 /* CourseCell.swift in Sources */,
 				B3D26DBD215333A70093FE42 /* BlogViewModel.swift in Sources */,
@@ -1151,6 +1202,7 @@
 				EC5337BE1EF78FEA00ACE038 /* Font.swift in Sources */,
 				ECF23ABB1E9B89B2008C23C1 /* ResponseSerializer.swift in Sources */,
 				ECF23ABE1E9B8A6A008C23C1 /* Error.swift in Sources */,
+				B3D26E1021589D2D0093FE42 /* HeaderView.swift in Sources */,
 				ACB045A3210F0CEB00159503 /* BaseNavigationController.swift in Sources */,
 				EC5337B51EF7845700ACE038 /* Color.swift in Sources */,
 				B3D3564721227A9E00D29B1A /* Key.swift in Sources */,

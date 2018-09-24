@@ -26,15 +26,15 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PGc-H5-DKX">
-                        <rect key="frame" x="0.0" y="5" width="70" height="70"/>
+                        <rect key="frame" x="0.0" y="10" width="70" height="70"/>
                         <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="PGc-H5-DKX" secondAttribute="height" id="N6u-qP-6zN"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVU-oW-teN">
-                        <rect key="frame" x="0.5" y="75" width="70" height="25"/>
-                        <fontDescription key="fontDescription" name="Heebo-Regular" family="Heebo" pointSize="17"/>
+                        <rect key="frame" x="0.5" y="80" width="70" height="20"/>
+                        <fontDescription key="fontDescription" name="Heebo-Regular" family="Heebo" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -47,7 +47,7 @@
                 <constraint firstAttribute="bottom" secondItem="RVU-oW-teN" secondAttribute="bottom" id="I0y-7s-lZp"/>
                 <constraint firstItem="RVU-oW-teN" firstAttribute="leading" secondItem="Dan-uh-b8x" secondAttribute="leading" id="MFQ-sO-jd0"/>
                 <constraint firstItem="RVU-oW-teN" firstAttribute="width" secondItem="Dan-uh-b8x" secondAttribute="width" id="P6M-vE-CrG"/>
-                <constraint firstItem="PGc-H5-DKX" firstAttribute="top" secondItem="Dan-uh-b8x" secondAttribute="top" constant="5" id="ZGz-pg-Zgv"/>
+                <constraint firstItem="PGc-H5-DKX" firstAttribute="top" secondItem="Dan-uh-b8x" secondAttribute="top" constant="10" id="ZGz-pg-Zgv"/>
                 <constraint firstItem="RVU-oW-teN" firstAttribute="top" secondItem="PGc-H5-DKX" secondAttribute="bottom" id="eab-VO-BwC"/>
                 <constraint firstItem="PGc-H5-DKX" firstAttribute="centerX" secondItem="Dan-uh-b8x" secondAttribute="centerX" id="xRS-7X-F5z"/>
             </constraints>
