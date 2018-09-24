@@ -26,13 +26,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_search_history" translatesAutoresizingMaskIntoConstraints="NO" id="dP1-IY-C98">
-                        <rect key="frame" x="0.0" y="8" width="27.5" height="27.5"/>
+                        <rect key="frame" x="10" y="8" width="27.5" height="27.5"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="dP1-IY-C98" secondAttribute="height" multiplier="1:1" id="Brs-5S-fFj"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H14-Uy-hnQ">
-                        <rect key="frame" x="35" y="10.5" width="41.5" height="23"/>
+                        <rect key="frame" x="45" y="10.5" width="41.5" height="23"/>
                         <fontDescription key="fontDescription" name="PlayfairDisplay-Regular" family="Playfair Display" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -42,7 +42,7 @@
                     <constraint firstItem="H14-Uy-hnQ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="2zH-uZ-pCJ"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="H14-Uy-hnQ" secondAttribute="trailing" id="PSu-eo-TSM"/>
                     <constraint firstAttribute="bottom" secondItem="dP1-IY-C98" secondAttribute="bottom" constant="8" id="Ri9-cR-9vU"/>
-                    <constraint firstItem="dP1-IY-C98" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="irG-Y5-F0A"/>
+                    <constraint firstItem="dP1-IY-C98" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="irG-Y5-F0A"/>
                     <constraint firstItem="H14-Uy-hnQ" firstAttribute="leading" secondItem="dP1-IY-C98" secondAttribute="trailing" constant="8" id="vjH-Om-iKx"/>
                     <constraint firstItem="dP1-IY-C98" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="yRP-Pn-c31"/>
                 </constraints>

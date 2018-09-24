@@ -17,5 +17,5 @@ final class HistorySearchCell: TableCell {
         didSet {
             titleLabel.text = viewModel?.title
         }
-    }  
+    }
 }
