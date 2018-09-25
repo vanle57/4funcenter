@@ -30,7 +30,7 @@ final class HomeViewController: BaseViewController {
         super.setupUI()
         title = Define.title
         pageControl.numberOfPages = viewModel.images.count
-        collectionView.register(HomeCollectionViewCell.self)
+        collectionView.register(SlideCollectionCell.self)
         configTableView()
     }
 
@@ -68,7 +68,7 @@ extension HomeViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeue(HomeCollectionViewCell.self, forIndexPath: indexPath)
+        let cell = collectionView.dequeue(SlideCollectionCell.self, forIndexPath: indexPath)
         cell.imageView.image = viewModel.viewModelForCollectionViewCell(indexPath: indexPath)
         return cell
     }

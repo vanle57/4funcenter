@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeCollectionViewCell: UICollectionViewCell {
+class SlideCollectionCell: UICollectionViewCell {
 
     // MARK: - Outlet
     @IBOutlet weak var imageView: UIImageView!
