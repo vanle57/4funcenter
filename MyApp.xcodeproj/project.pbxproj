@@ -88,6 +88,8 @@
 		B3D26E222159CD6F0093FE42 /* HistorySearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D26E1F2159CD6E0093FE42 /* HistorySearchCell.xib */; };
 		B3D26E2B215A158D0093FE42 /* SlideCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26E29215A158C0093FE42 /* SlideCollectionCell.swift */; };
 		B3D26E2C215A158D0093FE42 /* SlideCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D26E2A215A158C0093FE42 /* SlideCollectionCell.xib */; };
+		B3D26E2E215A17D70093FE42 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26E2D215A17D70093FE42 /* Slide.swift */; };
+		B3D26E30215A1FE70093FE42 /* SlideCollectionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26E2F215A1FE70093FE42 /* SlideCollectionCellViewModel.swift */; };
 		B3D3564521227A2100D29B1A /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D3564421227A2100D29B1A /* Session.swift */; };
 		B3D3564721227A9E00D29B1A /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D3564621227A9E00D29B1A /* Key.swift */; };
 		CDE9EE1121194B9B00298DD0 /* gif_eye_vocab.gif in Resources */ = {isa = PBXBuildFile; fileRef = CDE9EE0F21194B9B00298DD0 /* gif_eye_vocab.gif */; };
@@ -238,6 +240,8 @@
 		B3D26E1F2159CD6E0093FE42 /* HistorySearchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistorySearchCell.xib; sourceTree = "<group>"; };
 		B3D26E29215A158C0093FE42 /* SlideCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideCollectionCell.swift; sourceTree = "<group>"; };
 		B3D26E2A215A158C0093FE42 /* SlideCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideCollectionCell.xib; sourceTree = "<group>"; };
+		B3D26E2D215A17D70093FE42 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
+		B3D26E2F215A1FE70093FE42 /* SlideCollectionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideCollectionCellViewModel.swift; sourceTree = "<group>"; };
 		B3D3564421227A2100D29B1A /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		B3D3564621227A9E00D29B1A /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		CDE9EE0F21194B9B00298DD0 /* gif_eye_vocab.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gif_eye_vocab.gif; sourceTree = "<group>"; };
@@ -591,6 +595,7 @@
 			children = (
 				B3D26E29215A158C0093FE42 /* SlideCollectionCell.swift */,
 				B3D26E2A215A158C0093FE42 /* SlideCollectionCell.xib */,
+				B3D26E2F215A1FE70093FE42 /* SlideCollectionCellViewModel.swift */,
 			);
 			path = SlideCollectionCell;
 			sourceTree = "<group>";
@@ -761,6 +766,7 @@
 				B35830192115624500E3E419 /* User.swift */,
 				F00DED89215380080089F54D /* Teacher.swift */,
 				B356BA4F2151FD87002955B9 /* Course.swift */,
+				B3D26E2D215A17D70093FE42 /* Slide.swift */,
 			);
 			path = Schema;
 			sourceTree = "<group>";
@@ -1192,6 +1198,7 @@
 				B3D26E212159CD6F0093FE42 /* HistorySearchCell.swift in Sources */,
 				B3D26E142158A0C80093FE42 /* HeaderViewModel.swift in Sources */,
 				F00DED8821537F8A0089F54D /* HomeViewModel.swift in Sources */,
+				B3D26E30215A1FE70093FE42 /* SlideCollectionCellViewModel.swift in Sources */,
 				B3D26DC3215345AD0093FE42 /* CourseCell.swift in Sources */,
 				B3D26DBD215333A70093FE42 /* BlogViewModel.swift in Sources */,
 				F00DED9A2153826B0089F54D /* TeacherCollectionCellModel.swift in Sources */,
@@ -1206,6 +1213,7 @@
 				629E064E2126EE05004D29E0 /* Errors.swift in Sources */,
 				F00DED9D215382970089F54D /* HomeTableViewCell.swift in Sources */,
 				EC5337B71EF78CD800ACE038 /* App.swift in Sources */,
+				B3D26E2E215A17D70093FE42 /* Slide.swift in Sources */,
 				B374DB5F2147681B005C1FE2 /* HomeViewController.swift in Sources */,
 				625DF8902111BB8B007958F6 /* LoginViewModel.swift in Sources */,
 				B317621D2149F39F005C9D25 /* RegisterViewController.swift in Sources */,

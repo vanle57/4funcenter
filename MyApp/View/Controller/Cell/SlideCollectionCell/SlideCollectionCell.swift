@@ -10,10 +10,15 @@ import UIKit
 
 class SlideCollectionCell: UICollectionViewCell {
 
-    // MARK: - Outlet
+    // MARK: - Outlets
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    var viewModel: SlideCollectionCellViewModel? {
+        didSet {
+            guard let viewModel = viewModel else { return }
+            imageView.image = viewModel.image
+            titleLabel.text = viewModel.title
+        }
     }
 }
