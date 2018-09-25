@@ -54,11 +54,14 @@ class SearchViewController: UIViewController {
         }
     }
 
+    // MARK: - Actions
     @objc func backAction() {
         navigationController?.popViewController(animated: true)
     }
 
     @IBAction func trashButtonTouchUpInside(_ sender: Any) {
+        self.viewModel.deleteHistory()
+        self.historyTableView.reloadData()
     }
 }
 
@@ -109,7 +112,7 @@ extension SearchViewController: UITableViewDataSource {
     }
 }
 
-// MARK: -
+// MARK: - UITableViewDelegate
 extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView == historyTableView {

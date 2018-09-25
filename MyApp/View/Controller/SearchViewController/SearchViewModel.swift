@@ -53,6 +53,11 @@ final class SearchViewModel: ViewModel {
         }
     }
 
+    func deleteHistory() {
+        App.userDefault.removeObject(forKey: App.KeyUserDefault.historySearch)
+        histories = nil
+    }
+
     func search(keyword: String, _ completion: SearchCompletion) {
         saveHistory(keyword: keyword)
 
