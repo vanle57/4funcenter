@@ -13,7 +13,9 @@ final class BlogViewController: BaseViewController {
 
     // MARK: - Outlet
     @IBOutlet weak var tableView: UITableView!
-
+    @IBOutlet weak var collectionView: BJAutoScrollingCollectionView!
+    @IBOutlet weak var pageControl: UIPageControl!
+    
     var viewModel = BlogViewModel()
 
     override func viewDidLoad() {
