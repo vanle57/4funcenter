@@ -68,6 +68,13 @@ final class SideMenuViewController: UIViewController {
             logout()
         }
     }
+
+    @IBAction func homeButtonTouchUpInside(_ sender: Any) {
+        guard let mainViewController = sideMenuController else { return }
+        let navigationController = mainViewController.rootViewController as? UINavigationController
+        mainViewController.hideLeftView()
+        navigationController?.pushViewController(HomeViewController(), animated: true)
+    }
 }
 
 // MARK: - UITableViewDataSource, UITableViewDelegate

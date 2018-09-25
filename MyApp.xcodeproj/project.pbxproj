@@ -80,6 +80,12 @@
 		B3D26E1021589D2D0093FE42 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26E0F21589D2D0093FE42 /* HeaderView.swift */; };
 		B3D26E1221589D400093FE42 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D26E1121589D400093FE42 /* HeaderView.xib */; };
 		B3D26E142158A0C80093FE42 /* HeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26E132158A0C80093FE42 /* HeaderViewModel.swift */; };
+		B3D26E192159CD520093FE42 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26E162159CD510093FE42 /* SearchViewController.swift */; };
+		B3D26E1A2159CD520093FE42 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26E172159CD510093FE42 /* SearchViewModel.swift */; };
+		B3D26E1B2159CD520093FE42 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D26E182159CD510093FE42 /* SearchViewController.xib */; };
+		B3D26E202159CD6F0093FE42 /* HistorySearchCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26E1D2159CD6E0093FE42 /* HistorySearchCellViewModel.swift */; };
+		B3D26E212159CD6F0093FE42 /* HistorySearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26E1E2159CD6E0093FE42 /* HistorySearchCell.swift */; };
+		B3D26E222159CD6F0093FE42 /* HistorySearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D26E1F2159CD6E0093FE42 /* HistorySearchCell.xib */; };
 		B3D3564521227A2100D29B1A /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D3564421227A2100D29B1A /* Session.swift */; };
 		B3D3564721227A9E00D29B1A /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D3564621227A9E00D29B1A /* Key.swift */; };
 		CDE9EE1121194B9B00298DD0 /* gif_eye_vocab.gif in Resources */ = {isa = PBXBuildFile; fileRef = CDE9EE0F21194B9B00298DD0 /* gif_eye_vocab.gif */; };
@@ -224,6 +230,12 @@
 		B3D26E0F21589D2D0093FE42 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		B3D26E1121589D400093FE42 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		B3D26E132158A0C80093FE42 /* HeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewModel.swift; sourceTree = "<group>"; };
+		B3D26E162159CD510093FE42 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		B3D26E172159CD510093FE42 /* SearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		B3D26E182159CD510093FE42 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		B3D26E1D2159CD6E0093FE42 /* HistorySearchCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistorySearchCellViewModel.swift; sourceTree = "<group>"; };
+		B3D26E1E2159CD6E0093FE42 /* HistorySearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistorySearchCell.swift; sourceTree = "<group>"; };
+		B3D26E1F2159CD6E0093FE42 /* HistorySearchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistorySearchCell.xib; sourceTree = "<group>"; };
 		B3D3564421227A2100D29B1A /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		B3D3564621227A9E00D29B1A /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		CDE9EE0F21194B9B00298DD0 /* gif_eye_vocab.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gif_eye_vocab.gif; sourceTree = "<group>"; };
@@ -326,6 +338,7 @@
 		ACB04582210EFF4400159503 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B3D26E152159CD510093FE42 /* SearchViewController */,
 				B356BA1C214F95CE002955B9 /* TeachersViewController */,
 				B33ABCAA214BA7FC00F7FF48 /* Cell */,
 				B33ABC9B214B5E3C00F7FF48 /* SideMenuViewController */,
@@ -362,6 +375,7 @@
 		B33ABCAA214BA7FC00F7FF48 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				B3D26E1C2159CD6E0093FE42 /* HistorySearchCell */,
 				B3D26DC0215344B70093FE42 /* CourseCell */,
 				B356BA5121520C6E002955B9 /* CoverCell */,
 				B3D26DAB215333570093FE42 /* Blog */,
@@ -549,6 +563,26 @@
 				B3D26E132158A0C80093FE42 /* HeaderViewModel.swift */,
 			);
 			path = HeaderView;
+			sourceTree = "<group>";
+		};
+		B3D26E152159CD510093FE42 /* SearchViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B3D26E162159CD510093FE42 /* SearchViewController.swift */,
+				B3D26E172159CD510093FE42 /* SearchViewModel.swift */,
+				B3D26E182159CD510093FE42 /* SearchViewController.xib */,
+			);
+			path = SearchViewController;
+			sourceTree = "<group>";
+		};
+		B3D26E1C2159CD6E0093FE42 /* HistorySearchCell */ = {
+			isa = PBXGroup;
+			children = (
+				B3D26E1D2159CD6E0093FE42 /* HistorySearchCellViewModel.swift */,
+				B3D26E1E2159CD6E0093FE42 /* HistorySearchCell.swift */,
+				B3D26E1F2159CD6E0093FE42 /* HistorySearchCell.xib */,
+			);
+			path = HistorySearchCell;
 			sourceTree = "<group>";
 		};
 		CDE9EE0E21194B9B00298DD0 /* Gif */ = {
@@ -905,6 +939,7 @@
 			files = (
 				B356BA14214F8A38002955B9 /* PlayfairDisplaySC-BoldItalic.otf in Resources */,
 				6238ADEC21116D38003D4B8E /* LoginViewController.xib in Resources */,
+				B3D26E222159CD6F0093FE42 /* HistorySearchCell.xib in Resources */,
 				B356BA1B214F8A38002955B9 /* PlayfairDisplay-Black.otf in Resources */,
 				B3D26DBA215333570093FE42 /* SlideCell.xib in Resources */,
 				CDE9EE1221194B9B00298DD0 /* gif_social_vocab.gif in Resources */,
@@ -921,6 +956,7 @@
 				B356BA20214F95FA002955B9 /* TeacherViewController.xib in Resources */,
 				B3D26DB7215333570093FE42 /* BlogCell.xib in Resources */,
 				F00DED91215380CE0089F54D /* HomeCollectionViewCell.xib in Resources */,
+				B3D26E1B2159CD520093FE42 /* SearchViewController.xib in Resources */,
 				CDE9EE1121194B9B00298DD0 /* gif_eye_vocab.gif in Resources */,
 				F00DED9E215382970089F54D /* HomeTableViewCell.xib in Resources */,
 				B356BA402150E602002955B9 /* RegisterSuccessViewController.xib in Resources */,
@@ -1146,11 +1182,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3D26E1A2159CD520093FE42 /* SearchViewModel.swift in Sources */,
 				B374DB74214775BE005C1FE2 /* BlogViewController.swift in Sources */,
 				B356BA5421520C9E002955B9 /* CoverCell.swift in Sources */,
 				B374DB8C2147A1E1005C1FE2 /* UIButtonExt.swift in Sources */,
 				B3D26DB8215333570093FE42 /* BlogCellViewModel.swift in Sources */,
 				F00DED95215381A70089F54D /* TeacherCollectionViewCell.swift in Sources */,
+				B3D26E212159CD6F0093FE42 /* HistorySearchCell.swift in Sources */,
 				B3D26E142158A0C80093FE42 /* HeaderViewModel.swift in Sources */,
 				F00DED8821537F8A0089F54D /* HomeViewModel.swift in Sources */,
 				B3D26DC3215345AD0093FE42 /* CourseCell.swift in Sources */,
@@ -1171,6 +1209,7 @@
 				625DF8902111BB8B007958F6 /* LoginViewModel.swift in Sources */,
 				B317621D2149F39F005C9D25 /* RegisterViewController.swift in Sources */,
 				ECC5B2CD1EF906CA001A97BC /* BaseViewController.swift in Sources */,
+				B3D26E202159CD6F0093FE42 /* HistorySearchCellViewModel.swift in Sources */,
 				EC5337C31EF793B100ACE038 /* CollectionCell.swift in Sources */,
 				B33ABCA8214B98FD00F7FF48 /* SideMenuViewController.swift in Sources */,
 				B3D26DCD21535C580093FE42 /* CourseCellViewModel.swift in Sources */,
@@ -1206,6 +1245,7 @@
 				ACB045A3210F0CEB00159503 /* BaseNavigationController.swift in Sources */,
 				EC5337B51EF7845700ACE038 /* Color.swift in Sources */,
 				B3D3564721227A9E00D29B1A /* Key.swift in Sources */,
+				B3D26E192159CD520093FE42 /* SearchViewController.swift in Sources */,
 				B3D26DB4215333570093FE42 /* SideMenuCell.swift in Sources */,
 				6252A17621195647009F6F43 /* Speaker.swift in Sources */,
 				B3D26DA42153330D0093FE42 /* DummyData.swift in Sources */,

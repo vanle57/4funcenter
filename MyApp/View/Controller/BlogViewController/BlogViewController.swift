@@ -29,8 +29,15 @@ final class BlogViewController: BaseViewController {
 
     // MARK: - Private functions
     private func configNavigationBar() {
-        let searchButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_search"), style: .plain, target: self, action: nil)
+        let searchButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_search"), style: .plain, target: self, action: #selector(showSearchView))
         navigationItem.rightBarButtonItem = searchButton
+    }
+
+    @objc func showSearchView() {
+        let viewModel = SearchViewModel(type: .entry)
+        let vc = SearchViewController()
+        vc.viewModel = viewModel
+        navigationController?.pushViewController(vc, animated: true)
     }
 
     private func configTableView() {
