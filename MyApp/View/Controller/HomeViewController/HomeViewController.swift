@@ -29,7 +29,7 @@ final class HomeViewController: BaseViewController {
     override func setupUI() {
         super.setupUI()
         title = Define.title
-        pageControl.numberOfPages = viewModel.images.count
+        pageControl.numberOfPages = viewModel.numberOfSlides()
         collectionView.register(SlideCollectionCell.self)
         configTableView()
     }
@@ -63,14 +63,17 @@ final class HomeViewController: BaseViewController {
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        return viewModel.images.count
+        return viewModel.numberOfSlides()
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeue(SlideCollectionCell.self, forIndexPath: indexPath)
-        cell.imageView.image = viewModel.viewModelForCollectionViewCell(indexPath: indexPath)
-        return cell
+        if let viewModel = try? viewModel.viewModelForSlideCell(indexPath: indexPath) {
+            let cell = collectionView.dequeue(SlideCollectionCell.self, forIndexPath: indexPath)
+            cell.viewModel = viewModel
+            return cell
+        }
+        return CollectionCell()
     }
 
 }

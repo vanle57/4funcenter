@@ -15,8 +15,8 @@ final class SlideCollectionCellViewModel {
     var image = UIImage()
 
     // MARK: - init
-    init(title: String, image: UIImage) {
-        self.title = title
-        self.image = image
+    init(slide: Slide) {
+        title = slide.title
+        image = slide.image
     }
 }

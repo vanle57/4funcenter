@@ -11,6 +11,7 @@ import MVVM
 
 final class HomeViewModel: ViewModel {
 
+    // MARK: - enum
     enum SectionType {
         case teacher
         case blog
@@ -30,14 +31,30 @@ final class HomeViewModel: ViewModel {
 
     var sections: [SectionType] = [.blog, .course, .teacher]
 
-    let images: [UIImage] = [#imageLiteral(resourceName: "slide1"), #imageLiteral(resourceName: "slide2"), #imageLiteral(resourceName: "slide3")]
+    /// dummy data
+    var slides: [Slide] = DummyData.fetchSlide()
     var teachers = DummyData.fetchTeachers()
+}
 
-    func viewModelForCollectionViewCell(indexPath: IndexPath) -> UIImage {
-        return images[indexPath.row]
+// MARK: - Collection view
+extension HomeViewModel {
+    func numberOfSlides() -> Int {
+        return slides.count
+    }
+
+    func viewModelForSlideCell(indexPath: IndexPath) throws -> SlideCollectionCellViewModel {
+        let index = indexPath.row
+
+        guard index < slides.count else {
+            throw App.Error.indexOutOfBound
+        }
+
+        let slide = slides[index]
+        return SlideCollectionCellViewModel(slide: slide)
     }
 }
 
+// MARK: - Table view
 extension HomeViewModel {
     func numberOfSections() -> Int {
         return sections.count
@@ -77,6 +94,7 @@ extension HomeViewModel {
     }
 }
 
+// MARK: - Define
 extension HomeViewModel {
     struct Config {
         static let numberOfRow = 1
