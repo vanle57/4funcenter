@@ -41,18 +41,29 @@ final class SearchViewModel: ViewModel {
 
     func saveHistory(keyword: String) {
         histories = App.userDefault.array(forKey: App.KeyUserDefault.historySearch) as? [String]
+
         guard var histories = histories else {
             App.userDefault.set([keyword], forKey: App.KeyUserDefault.historySearch)
             return
         }
-        histories.append(keyword)
-        App.userDefault.set(histories, forKey: App.KeyUserDefault.historySearch)
+
+        if !histories.contains(keyword) {
+            histories.append(keyword)
+            App.userDefault.set(histories, forKey: App.KeyUserDefault.historySearch)
+        }
     }
 
     func search(keyword: String, _ completion: SearchCompletion) {
         saveHistory(keyword: keyword)
-        // TODO: query api to search
-        completion(.success)
+
+        switch type {
+        case .entry:
+             // TODO: query api search blog with keyword
+            completion(.success)
+        case .course:
+            // TODO: query api search course with keyword
+            completion(.success)
+        }
     }
 }
 
@@ -111,5 +122,18 @@ extension SearchViewModel {
 
         let history = histories[index]
         return HistorySearchCellViewModel(history: history)
+    }
+
+    func didSelectHistory(at indexPath: IndexPath) -> String {
+        guard let histories = histories else { return "" }
+
+        let row = indexPath.row
+
+        guard row < histories.count else {
+            return ""
+        }
+
+        let history = histories[row]
+        return history
     }
 }

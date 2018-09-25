@@ -14,6 +14,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var historyTableView: UITableView!
     @IBOutlet weak var resultTableView: UITableView!
+    @IBOutlet weak var historyView: UIView!
 
     var viewModel = SearchViewModel()
 
@@ -37,7 +38,7 @@ class SearchViewController: UIViewController {
     }
 
     private func hiddenHistorySearchView(_ status: Bool = true) {
-        historyTableView.isHidden = status
+        historyView.isHidden = status
     }
 
     private func search(keyword: String) {
@@ -45,6 +46,7 @@ class SearchViewController: UIViewController {
             guard let this = self else { return }
             switch result {
             case .success:
+                this.hiddenHistorySearchView()
                 this.resultTableView.reloadData()
             case .failure(let error):
                 this.alert(error: error)
@@ -103,6 +105,16 @@ extension SearchViewController: UITableViewDataSource {
                     return TableCell()
                 }
             }
+        }
+    }
+}
+
+// MARK: -
+extension SearchViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView == historyTableView {
+            let keyword = viewModel.didSelectHistory(at: indexPath)
+            search(keyword: keyword)
         }
     }
 }

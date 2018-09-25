@@ -19,6 +19,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="MyApp" customModuleProvider="target">
             <connections>
                 <outlet property="historyTableView" destination="UKg-gE-E7y" id="x7X-AC-hEM"/>
+                <outlet property="historyView" destination="CYb-PS-FHt" id="4X5-6Z-3lZ"/>
                 <outlet property="resultTableView" destination="Nfe-tK-0Sg" id="wbo-2U-4VG"/>
                 <outlet property="searchBar" destination="1cV-fG-Zah" id="Gri-6M-ICu"/>
                 <outlet property="view" destination="GdL-1R-VuJ" id="hGf-E5-Nzw"/>
@@ -42,6 +43,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="Fca-P4-bCg"/>
+                        <outlet property="delegate" destination="-1" id="wPE-fr-ZGm"/>
                     </connections>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CYb-PS-FHt">
@@ -59,6 +61,7 @@
                             <inset key="separatorInset" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="aei-Hb-Lsk"/>
+                                <outlet property="delegate" destination="-1" id="iON-vR-wdd"/>
                             </connections>
                         </tableView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Fc-kN-ZQz">
