@@ -30,7 +30,8 @@ final class HomeViewController: BaseViewController {
         super.setupUI()
         title = Define.title
         pageControl.numberOfPages = viewModel.numberOfSlides()
-        collectionView.register(SlideCollectionCell.self)
+        configNavigationBar()
+        configSlide()
         configTableView()
     }
 
@@ -44,12 +45,21 @@ final class HomeViewController: BaseViewController {
         collectionView.startScrolling()
     }
 
+    private func configNavigationBar() {
+        let notificationButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_notification"), style: .plain, target: self, action: nil)
+        navigationItem.rightBarButtonItem = notificationButton
+    }
+
     private func configTableView() {
         tableView.register(HomeTableViewCell.self)
         tableView.register(HeaderView.self)
         tableView.rowHeight = Config.rowHeight * ratio
         tableView.tableFooterView = UIView()
-        tableView.tableHeaderView?.backgroundColor = App.Color.yellowColor
+    }
+
+    private func configSlide() {
+        pageControl.numberOfPages = viewModel.numberOfSlides()
+        collectionView.register(SlideCollectionCell.self)
     }
 
     /// Set page control folow collection View
@@ -59,7 +69,7 @@ final class HomeViewController: BaseViewController {
     }
 }
 
-// MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
+// MARK: - UICollectionViewDataSource
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
@@ -93,7 +103,7 @@ extension HomeViewController: UICollectionViewDelegate {
     }
 }
 
-// MARK: UICollectionViewDelegateFlowLayout
+// MARK: - UICollectionViewDelegateFlowLayout
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,

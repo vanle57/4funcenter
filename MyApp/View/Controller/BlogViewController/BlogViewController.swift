@@ -15,18 +15,20 @@ final class BlogViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: BJAutoScrollingCollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
-    
+
     var viewModel = BlogViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configNavigationBar()
-        configTableView()
+        initCollectionView()
     }
 
     override func setupUI() {
         super.setupUI()
         title = Define.title
+        configNavigationBar()
+        configTableView()
+        configSlide()
     }
 
     // MARK: - Private functions
@@ -35,27 +37,81 @@ final class BlogViewController: BaseViewController {
         navigationItem.rightBarButtonItem = searchButton
     }
 
+    private func configTableView() {
+        tableView.register(BlogCell.self)
+        tableView.dataSource = self
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = Config.estimateRowHeight * ratio
+    }
+
+    private func configSlide() {
+        pageControl.numberOfPages = viewModel.numberOfSlides()
+        collectionView.register(SlideCollectionCell.self)
+    }
+
+    private func initCollectionView() {
+        collectionView.startScrolling()
+    }
+
+    /// Set page control folow collection View
+    private func setCurrentPage() {
+        let pageWidth = collectionView.frame.width
+        pageControl.currentPage = Int(collectionView.contentOffset.x / pageWidth)
+    }
+
     @objc func showSearchView() {
         let viewModel = SearchViewModel(type: .entry)
         let vc = SearchViewController()
         vc.viewModel = viewModel
         navigationController?.pushViewController(vc, animated: true)
     }
+}
 
-    private func configTableView() {
-        tableView.register(BlogCell.self)
-        tableView.register(SlideCell.self)
-        tableView.dataSource = self
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = Config.estimateRowHeight * ratio
+// MARK: - UICollectionViewDataSource
+extension BlogViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
+        return viewModel.numberOfSlides()
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let viewModel = try? viewModel.viewModelForSlideCell(indexPath: indexPath) {
+            let cell = collectionView.dequeue(SlideCollectionCell.self, forIndexPath: indexPath)
+            cell.viewModel = viewModel
+            return cell
+        }
+        return CollectionCell()
+    }
+
+}
+
+// MARK: - UICollectionViewDelegate
+extension BlogViewController: UICollectionViewDelegate {
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        setCurrentPage()
+    }
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        setCurrentPage()
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        setCurrentPage()
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+extension BlogViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }
 }
 
 // MARK: - UITableViewDataSource
 extension BlogViewController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel.numberOfSections()
-    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let numberOfRow = try? viewModel.numberOfItems(inSection: section) {
@@ -65,24 +121,15 @@ extension BlogViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let sectionType = viewModel.sections[indexPath.section]
 
         guard let viewModel = try? viewModel.viewModelForItem(at: indexPath) else {
             return TableCell()
         }
 
-        switch sectionType {
-        case .entry:
-            guard let vm = viewModel as? BlogCellViewModel else { return TableCell() }
-            let cell = tableView.dequeue(BlogCell.self)
-            cell.viewModel = vm
-            return cell
-        case .slide:
-            guard let vm = viewModel as? SlideCellViewModel else { return TableCell() }
-            let cell = tableView.dequeue(SlideCell.self)
-            cell.viewModel = vm
-            return cell
-        }
+        let cell = tableView.dequeue(BlogCell.self)
+        cell.viewModel = viewModel
+        return cell
+
     }
 }
 
