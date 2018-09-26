@@ -69,9 +69,6 @@
 		B3D26DB6215333570093FE42 /* BlogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26DAC215333570093FE42 /* BlogCell.swift */; };
 		B3D26DB7215333570093FE42 /* BlogCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D26DAD215333570093FE42 /* BlogCell.xib */; };
 		B3D26DB8215333570093FE42 /* BlogCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26DAE215333570093FE42 /* BlogCellViewModel.swift */; };
-		B3D26DB9215333570093FE42 /* SlideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26DB0215333570093FE42 /* SlideCell.swift */; };
-		B3D26DBA215333570093FE42 /* SlideCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D26DB1215333570093FE42 /* SlideCell.xib */; };
-		B3D26DBB215333570093FE42 /* SlideCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26DB2215333570093FE42 /* SlideCellViewModel.swift */; };
 		B3D26DBD215333A70093FE42 /* BlogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26DBC215333A70093FE42 /* BlogViewModel.swift */; };
 		B3D26DC3215345AD0093FE42 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26DC1215345AD0093FE42 /* CourseCell.swift */; };
 		B3D26DC4215345AD0093FE42 /* CourseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D26DC2215345AD0093FE42 /* CourseCell.xib */; };
@@ -221,9 +218,6 @@
 		B3D26DAC215333570093FE42 /* BlogCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogCell.swift; sourceTree = "<group>"; };
 		B3D26DAD215333570093FE42 /* BlogCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlogCell.xib; sourceTree = "<group>"; };
 		B3D26DAE215333570093FE42 /* BlogCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogCellViewModel.swift; sourceTree = "<group>"; };
-		B3D26DB0215333570093FE42 /* SlideCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideCell.swift; sourceTree = "<group>"; };
-		B3D26DB1215333570093FE42 /* SlideCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideCell.xib; sourceTree = "<group>"; };
-		B3D26DB2215333570093FE42 /* SlideCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideCellViewModel.swift; sourceTree = "<group>"; };
 		B3D26DBC215333A70093FE42 /* BlogViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogViewModel.swift; sourceTree = "<group>"; };
 		B3D26DC1215345AD0093FE42 /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
 		B3D26DC2215345AD0093FE42 /* CourseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseCell.xib; sourceTree = "<group>"; };
@@ -383,9 +377,8 @@
 				B3D26E1C2159CD6E0093FE42 /* HistorySearchCell */,
 				B3D26DC0215344B70093FE42 /* CourseCell */,
 				B356BA5121520C6E002955B9 /* CoverCell */,
-				B3D26DAB215333570093FE42 /* Blog */,
-				B3D26DA7215333570093FE42 /* SideMenu */,
-				B3D26DAF215333570093FE42 /* SlideCell */,
+				B3D26DAB215333570093FE42 /* BlogCell */,
+				B3D26DA7215333570093FE42 /* SideMenuCell */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -520,34 +513,24 @@
 			path = Heebo;
 			sourceTree = "<group>";
 		};
-		B3D26DA7215333570093FE42 /* SideMenu */ = {
+		B3D26DA7215333570093FE42 /* SideMenuCell */ = {
 			isa = PBXGroup;
 			children = (
 				B3D26DA8215333570093FE42 /* SideMenuCell.xib */,
 				B3D26DA9215333570093FE42 /* SideMenuCell.swift */,
 				B3D26DAA215333570093FE42 /* SideMenuCellViewModel.swift */,
 			);
-			path = SideMenu;
+			path = SideMenuCell;
 			sourceTree = "<group>";
 		};
-		B3D26DAB215333570093FE42 /* Blog */ = {
+		B3D26DAB215333570093FE42 /* BlogCell */ = {
 			isa = PBXGroup;
 			children = (
 				B3D26DAC215333570093FE42 /* BlogCell.swift */,
 				B3D26DAD215333570093FE42 /* BlogCell.xib */,
 				B3D26DAE215333570093FE42 /* BlogCellViewModel.swift */,
 			);
-			path = Blog;
-			sourceTree = "<group>";
-		};
-		B3D26DAF215333570093FE42 /* SlideCell */ = {
-			isa = PBXGroup;
-			children = (
-				B3D26DB0215333570093FE42 /* SlideCell.swift */,
-				B3D26DB1215333570093FE42 /* SlideCell.xib */,
-				B3D26DB2215333570093FE42 /* SlideCellViewModel.swift */,
-			);
-			path = SlideCell;
+			path = BlogCell;
 			sourceTree = "<group>";
 		};
 		B3D26DC0215344B70093FE42 /* CourseCell */ = {
@@ -947,7 +930,6 @@
 				6238ADEC21116D38003D4B8E /* LoginViewController.xib in Resources */,
 				B3D26E222159CD6F0093FE42 /* HistorySearchCell.xib in Resources */,
 				B356BA1B214F8A38002955B9 /* PlayfairDisplay-Black.otf in Resources */,
-				B3D26DBA215333570093FE42 /* SlideCell.xib in Resources */,
 				CDE9EE1221194B9B00298DD0 /* gif_social_vocab.gif in Resources */,
 				B374DB85214783C0005C1FE2 /* Heebo-ExtraBold.ttf in Resources */,
 				B374DB662147681B005C1FE2 /* ProfileViewController.xib in Resources */,
@@ -1239,12 +1221,10 @@
 				B356BA3F2150E602002955B9 /* RegisterSuccessViewController.swift in Sources */,
 				F00DEDA22153837C0089F54D /* BJAutoScrollingCollectionView.swift in Sources */,
 				ECF23AB41E9B869B008C23C1 /* ApiManager.swift in Sources */,
-				B3D26DB9215333570093FE42 /* SlideCell.swift in Sources */,
 				ECEC0C5A1ED44D4100F6760A /* UIViewControllerExt.swift in Sources */,
 				B374DB70214775AC005C1FE2 /* AboutViewController.swift in Sources */,
 				ECEC0C581ED44C5D00F6760A /* String.swift in Sources */,
 				B3D26DCB21535AED0093FE42 /* CoursesViewModel.swift in Sources */,
-				B3D26DBB215333570093FE42 /* SlideCellViewModel.swift in Sources */,
 				B3D26DB6215333570093FE42 /* BlogCell.swift in Sources */,
 				EC5337BE1EF78FEA00ACE038 /* Font.swift in Sources */,
 				ECF23ABB1E9B89B2008C23C1 /* ResponseSerializer.swift in Sources */,
