@@ -8,11 +8,19 @@
 
 import UIKit
 
-class TeacherCollectionCell: UICollectionViewCell {
+class TeacherCollectionCell: CollectionCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    // MARK: - Outlets
+    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var fieldLabel: UILabel!
+
+    var viewModel: TeacherCollectionCellViewModel? {
+        didSet {
+            guard let viewModel = viewModel else { return }
+            avatarImageView.image = viewModel.image
+            nameLabel.text = viewModel.name
+            fieldLabel.text = viewModel.position
+        }
     }
-
 }

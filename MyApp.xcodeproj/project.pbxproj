@@ -63,6 +63,9 @@
 		B38230F0215B445A000C718A /* TeacherTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38230EE215B445A000C718A /* TeacherTableCell.swift */; };
 		B38230F1215B445A000C718A /* TeacherTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B38230EF215B445A000C718A /* TeacherTableCell.xib */; };
 		B38230F3215B46F7000C718A /* TeacherTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38230F2215B46F7000C718A /* TeacherTableCellViewModel.swift */; };
+		B38230F7215B4899000C718A /* TeacherCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38230F5215B4899000C718A /* TeacherCollectionCell.swift */; };
+		B38230F8215B4899000C718A /* TeacherCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B38230F6215B4899000C718A /* TeacherCollectionCell.xib */; };
+		B38230FA215B6525000C718A /* TeacherCollectionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38230F9215B6525000C718A /* TeacherCollectionCellViewModel.swift */; };
 		B3D26DA1215333040093FE42 /* UIScreenExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26D9F215333040093FE42 /* UIScreenExt.swift */; };
 		B3D26DA2215333040093FE42 /* DateExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26DA0215333040093FE42 /* DateExt.swift */; };
 		B3D26DA42153330D0093FE42 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26DA32153330D0093FE42 /* DummyData.swift */; };
@@ -216,6 +219,9 @@
 		B38230EE215B445A000C718A /* TeacherTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherTableCell.swift; sourceTree = "<group>"; };
 		B38230EF215B445A000C718A /* TeacherTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeacherTableCell.xib; sourceTree = "<group>"; };
 		B38230F2215B46F7000C718A /* TeacherTableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherTableCellViewModel.swift; sourceTree = "<group>"; };
+		B38230F5215B4899000C718A /* TeacherCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCollectionCell.swift; sourceTree = "<group>"; };
+		B38230F6215B4899000C718A /* TeacherCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeacherCollectionCell.xib; sourceTree = "<group>"; };
+		B38230F9215B6525000C718A /* TeacherCollectionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCollectionCellViewModel.swift; sourceTree = "<group>"; };
 		B3D26D9F215333040093FE42 /* UIScreenExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreenExt.swift; sourceTree = "<group>"; };
 		B3D26DA0215333040093FE42 /* DateExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExt.swift; sourceTree = "<group>"; };
 		B3D26DA32153330D0093FE42 /* DummyData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
@@ -525,11 +531,22 @@
 		B38230ED215B441A000C718A /* TeacherTableCell */ = {
 			isa = PBXGroup;
 			children = (
+				B38230F4215B482D000C718A /* TeacherCollectionCell */,
 				B38230EE215B445A000C718A /* TeacherTableCell.swift */,
 				B38230EF215B445A000C718A /* TeacherTableCell.xib */,
 				B38230F2215B46F7000C718A /* TeacherTableCellViewModel.swift */,
 			);
 			path = TeacherTableCell;
+			sourceTree = "<group>";
+		};
+		B38230F4215B482D000C718A /* TeacherCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				B38230F5215B4899000C718A /* TeacherCollectionCell.swift */,
+				B38230F6215B4899000C718A /* TeacherCollectionCell.xib */,
+				B38230F9215B6525000C718A /* TeacherCollectionCellViewModel.swift */,
+			);
+			path = TeacherCollectionCell;
 			sourceTree = "<group>";
 		};
 		B3D26DA7215333570093FE42 /* SideMenuCell */ = {
@@ -976,6 +993,7 @@
 				B374DB84214783C0005C1FE2 /* Heebo-Thin.ttf in Resources */,
 				B356BA18214F8A38002955B9 /* PlayfairDisplay-Bold.otf in Resources */,
 				B356BA17214F8A38002955B9 /* PlayfairDisplay-Regular.otf in Resources */,
+				B38230F8215B4899000C718A /* TeacherCollectionCell.xib in Resources */,
 				B33ABCA9214B98FD00F7FF48 /* SideMenuViewController.xib in Resources */,
 				B356BA10214F8A38002955B9 /* PlayfairDisplaySC-Italic.otf in Resources */,
 				B3D26DC4215345AD0093FE42 /* CourseCell.xib in Resources */,
@@ -1197,6 +1215,7 @@
 				B3D26DC3215345AD0093FE42 /* CourseCell.swift in Sources */,
 				B3D26DBD215333A70093FE42 /* BlogViewModel.swift in Sources */,
 				F00DED9A2153826B0089F54D /* TeacherCollectionCellModel.swift in Sources */,
+				B38230F7215B4899000C718A /* TeacherCollectionCell.swift in Sources */,
 				EC5337C11EF7939C00ACE038 /* TableCell.swift in Sources */,
 				ECF23AC31E9B9264008C23C1 /* StringExt.swift in Sources */,
 				B374DB78214775D0005C1FE2 /* CoursesViewController.swift in Sources */,
@@ -1242,6 +1261,7 @@
 				ECEC0C581ED44C5D00F6760A /* String.swift in Sources */,
 				B3D26DCB21535AED0093FE42 /* CoursesViewModel.swift in Sources */,
 				B3D26DB6215333570093FE42 /* BlogCell.swift in Sources */,
+				B38230FA215B6525000C718A /* TeacherCollectionCellViewModel.swift in Sources */,
 				EC5337BE1EF78FEA00ACE038 /* Font.swift in Sources */,
 				ECF23ABB1E9B89B2008C23C1 /* ResponseSerializer.swift in Sources */,
 				ECF23ABE1E9B8A6A008C23C1 /* Error.swift in Sources */,
