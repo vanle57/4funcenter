@@ -12,9 +12,12 @@ final class TeacherViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
+    var viewModel = TeacherViewModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configNavigationBar()
+        configTableView()
     }
 
     override func setupUI() {
@@ -27,17 +30,43 @@ final class TeacherViewController: BaseViewController {
         let searchButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_search"), style: .plain, target: self, action: nil)
         navigationItem.rightBarButtonItem = searchButton
     }
+
+    private func configTableView() {
+        tableView.register(CoverCell.self)
+        tableView.register(TeacherTableCell.self)
+    }
 }
 
+// MARK: - UITableViewDataSource
 extension TeacherViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
+        return viewModel.numberOfSections()
     }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return viewModel.numberOfItems(inSection: section)
     }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return TableCell()
+        let sectionType = viewModel.sections[indexPath.section]
+
+        switch sectionType {
+        case .teachers:
+            guard let vm = try? viewModel.viewModelForItem(at: indexPath) else { return TableCell() }
+            let cell = tableView.dequeue(TeacherTableCell.self)
+            cell.viewModel = vm
+            return cell
+        case .cover:
+            let cell = tableView.dequeue(CoverCell.self)
+            return cell
+        }
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension TeacherViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return viewModel.heightForRowAtIndexPath(indexPath: indexPath)
     }
 }
 
@@ -45,9 +74,5 @@ extension TeacherViewController: UITableViewDataSource {
 extension TeacherViewController {
     struct Define {
         static let title = "Teachers"
-    }
-
-    struct Config {
-        static let estimateRowHeight: CGFloat = 500
     }
 }
