@@ -28,7 +28,7 @@ class CoursesViewController: BaseViewController {
 
     // MARK: - Private functions
     private func configNavigationBar() {
-        let searchButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_search"), style: .plain, target: self, action: nil)
+        let searchButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_search"), style: .plain, target: self, action: #selector(showSearchView))
         navigationItem.rightBarButtonItem = searchButton
     }
 
@@ -38,6 +38,13 @@ class CoursesViewController: BaseViewController {
         tableView.dataSource = self
         tableView.rowHeight = 200
         tableView.estimatedRowHeight = Config.estimateRowHeight * ratio
+    }
+
+    @objc func showSearchView() {
+        let viewModel = SearchViewModel(type: .entry)
+        let vc = SearchViewController()
+        vc.viewModel = viewModel
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
