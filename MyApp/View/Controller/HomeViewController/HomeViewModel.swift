@@ -34,6 +34,15 @@ final class HomeViewModel: ViewModel {
     /// dummy data
     var slides: [Slide] = DummyData.fetchSlide()
     var teachers = DummyData.fetchTeachers()
+
+    func getSectionType(index: Int) throws -> SectionType {
+
+        guard index < sections.count else {
+            throw App.Error.indexOutOfBound
+        }
+
+        return sections[index]
+    }
 }
 
 // MARK: - Collection view
@@ -82,15 +91,7 @@ extension HomeViewModel {
         }
 
         let sectionType = sections[section]
-
-        switch sectionType {
-        case .blog:
-            return HeaderViewModel(title: sectionType.title)
-        case .course:
-            return HeaderViewModel(title: sectionType.title)
-        case .teacher:
-            return HeaderViewModel(title: sectionType.title)
-        }
+        return HeaderViewModel(id: section, title: sectionType.title)
     }
 }
 

@@ -67,6 +67,27 @@ final class HomeViewController: BaseViewController {
         let pageWidth = collectionView.frame.width
         pageControl.currentPage = Int(collectionView.contentOffset.x / pageWidth)
     }
+
+    private func navigateToViewController(index: Int) {
+        guard let sectionType = try? viewModel.getSectionType(index: index) else {
+            return
+        }
+        switch sectionType {
+        case .blog:
+            pushToViewController(viewController: BlogViewController())
+        case .course:
+            pushToViewController(viewController: CoursesViewController())
+        case .teacher:
+            pushToViewController(viewController: TeacherViewController())
+        }
+    }
+
+    private func pushToViewController(viewController: UIViewController) {
+        guard let mainViewController = sideMenuController else { return }
+        let navigationController = mainViewController.rootViewController as? UINavigationController
+        mainViewController.hideLeftView()
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 }
 
 // MARK: - UICollectionViewDataSource
@@ -144,11 +165,22 @@ extension HomeViewController: UITableViewDelegate {
 
         let headerView = tableView.dequeue(HeaderView.self)
         headerView.viewModel = viewModel
+        headerView.delegate = self
         return headerView
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return Config.headerHeight * ratio
+    }
+}
+
+// MARK: - HeaderViewDelegate
+extension HomeViewController: HeaderViewDelegate {
+    func headerView(_ view: HeaderView, needPerform action: HeaderView.Action) {
+        switch action {
+        case .navigatetoViewController(let index):
+            navigateToViewController(index: index)
+        }
     }
 }
 
