@@ -11,6 +11,7 @@ import AlamofireNetworkActivityIndicator
 import IQKeyboardManagerSwift
 import FacebookCore
 import LGSideMenuController
+import RealmSwift
 
 @UIApplicationMain
 final class AppDelegate: UIResponder, UIApplicationDelegate {

@@ -62,7 +62,9 @@ final class RegisterViewController: BaseViewController {
                     this.alert(error: App.Error.unknownError)
                     return
                 }
-                this.alert(title: "ERROR", msg: error.localizedDescription, buttons: ["Agree"], handler: nil)
+                this.alert(title: "ERROR",
+                           msg: error.localizedDescription, buttons: [App.String.ok],
+                           handler: nil)
             }
         }
     }

@@ -51,6 +51,27 @@ DEPENDENCIES:
   - SwiftLint (= 0.25.0)
   - SwiftUtils (= 4.0.1)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireNetworkActivityIndicator
+    - Bolts
+    - FacebookCore
+    - FacebookLogin
+    - FBSDKCoreKit
+    - FBSDKLoginKit
+    - IQKeyboardManagerSwift
+    - Kingfisher
+    - LGSideMenuController
+    - MVVM-Swift
+    - ObjectMapper
+    - Realm
+    - RealmSwift
+    - SkyFloatingLabelTextField
+    - SVProgressHUD
+    - SwiftLint
+    - SwiftUtils
+
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   AlamofireNetworkActivityIndicator: 81e1630e7cfed22a4e4e82a174c59e651dc4f8ca
@@ -73,4 +94,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 3d4baa35b538ab5f2951c23d89101fd568e03cdb
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3

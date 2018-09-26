@@ -56,13 +56,22 @@
                                 <color key="textColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OLO-aW-0AW">
+                                <rect key="frame" x="179" y="170" width="16" height="22"/>
+                                <state key="normal" image="ic_home"/>
+                                <connections>
+                                    <action selector="homeButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="r6I-uh-xZq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="nE7-Jk-6s1" secondAttribute="trailing" id="5J5-tG-HiK"/>
+                            <constraint firstItem="OLO-aW-0AW" firstAttribute="centerX" secondItem="L5B-Zq-2qK" secondAttribute="centerX" id="5bG-JM-cQS"/>
                             <constraint firstItem="xMC-bB-8PR" firstAttribute="centerY" secondItem="L5B-Zq-2qK" secondAttribute="centerY" multiplier="3:4" id="8L3-2C-7f1"/>
                             <constraint firstItem="xMC-bB-8PR" firstAttribute="centerX" secondItem="L5B-Zq-2qK" secondAttribute="centerX" id="Mv3-kc-Xkm"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="EUF-kl-pnH" secondAttribute="trailing" constant="10" id="PSD-0f-a9o"/>
                             <constraint firstItem="xMC-bB-8PR" firstAttribute="width" secondItem="L5B-Zq-2qK" secondAttribute="width" multiplier="85:375" id="VeI-PP-zun"/>
+                            <constraint firstItem="OLO-aW-0AW" firstAttribute="top" secondItem="EUF-kl-pnH" secondAttribute="bottom" constant="7" id="W3k-wR-hUJ"/>
                             <constraint firstAttribute="bottom" secondItem="nE7-Jk-6s1" secondAttribute="bottom" id="cPu-as-mlW"/>
                             <constraint firstItem="EUF-kl-pnH" firstAttribute="top" secondItem="xMC-bB-8PR" secondAttribute="bottom" constant="10" id="nN3-Tj-rxZ"/>
                             <constraint firstItem="nE7-Jk-6s1" firstAttribute="leading" secondItem="L5B-Zq-2qK" secondAttribute="leading" id="rbC-rd-YOP"/>
@@ -91,6 +100,7 @@
         </view>
     </objects>
     <resources>
+        <image name="ic_home" width="16" height="16"/>
         <image name="img_no_avatar" width="250" height="250"/>
     </resources>
 </document>

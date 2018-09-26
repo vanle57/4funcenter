@@ -13,5 +13,6 @@ extension App {
 
     struct KeyUserDefault {
         static let accessToken = "accessToken"
+        static let historySearch = "historySearch"
     }
 }

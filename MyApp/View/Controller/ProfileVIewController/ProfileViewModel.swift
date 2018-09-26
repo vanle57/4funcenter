@@ -10,6 +10,7 @@ import Foundation
 import MVVM
 
 final class ProfileViewModel: MVVM.Model {
+
     enum TypeOfSection {
         case profile
         case changePassword
@@ -40,12 +41,26 @@ final class ProfileViewModel: MVVM.Model {
     }
 
     func numberOfItemInSectin(inSection section: Int) -> Int {
+
         let typeOfsection = typeOfSections[section]
+
         switch typeOfsection {
         case .profile:
             return profileRows.count
         case .changePassword:
             return passwordRows.count
+        }
+    }
+
+    func viewModelOfItem(at indexPath: IndexPath) -> TableCellModel {
+
+        let typeOfSection = typeOfSections[indexPath.section]
+
+        switch typeOfSection {
+        case .profile:
+            return TableCellModel(text: profileRows[indexPath.row].rawValue)
+        case .changePassword:
+            return TableCellModel(text: passwordRows[indexPath.row].rawValue)
         }
     }
 }

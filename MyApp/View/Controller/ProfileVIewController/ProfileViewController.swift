@@ -18,16 +18,15 @@ final class ProfileViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
     override func setupUI() {
         title = "Profile"
         tableView.register(TableViewCell.self)
+        tableView.rowHeight = 60
     }
 
     override func setupData() {
-
     }
 
     override func viewDidLayoutSubviews() {
@@ -37,7 +36,12 @@ final class ProfileViewController: BaseViewController {
 }
 
 extension ProfileViewController: UITableViewDelegate {
-
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let header = view as? UITableViewHeaderFooterView else { return }
+        header.textLabel?.textColor = .black
+        header.textLabel?.font = UIFont(name: "Heebo-Bold", size: 18)
+        header.textLabel?.frame = header.frame
+    }
 }
 
 extension ProfileViewController: UITableViewDataSource {
@@ -54,14 +58,14 @@ extension ProfileViewController: UITableViewDataSource {
             return "CHANGE PASSWORD"
         }
     }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfItemInSectin(inSection: section)
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(TableViewCell.self)
-        let profileRow = viewModel.profileRows[indexPath.row]
-            cell.textField.placeholder = profileRow.rawValue
+        cell.viewModel = viewModel.viewModelOfItem(at: indexPath)
         return cell
     }
 }

@@ -8,6 +8,11 @@
 
 import MVVM
 
-class TableCellModel: Model {
-    
+class TableCellModel: ViewModel {
+
+    var textField = ""
+
+    init(text: String) {
+        self.textField = text
+    }
 }

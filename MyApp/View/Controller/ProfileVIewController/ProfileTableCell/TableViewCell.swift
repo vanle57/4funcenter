@@ -11,10 +11,11 @@ import UIKit
 final class TableViewCell: TableCell {
     @IBOutlet weak var textField: UITextField!
 
-    var viewModel = TableCellModel()
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        textField.text = "abc"
+    var viewModel: TableCellModel? {
+        didSet {
+            guard let viewModel = viewModel else { return }
+            textField.placeholder = viewModel.textField
+            textField.text = ""
+        }
     }
 }
