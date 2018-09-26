@@ -6,8 +6,25 @@
 //  Copyright © 2018 Asian Tech Co., Ltd. All rights reserved.
 //
 
-import Foundation
+import MVVM
 
-final class TeacherTableCellViewModel {
-    
+final class TeacherTableCellViewModel: ViewModel {
+    var teachers = DummyData.fetchTeachers()
+}
+
+extension TeacherTableCellViewModel {
+    func numberOfItems(inSection section: Int) -> Int {
+        return teachers.count
+    }
+
+    func viewModelForItem(at indexPath: IndexPath) throws -> TeacherCollectionCellViewModel {
+        let index = indexPath.row
+
+        guard index < teachers.count else {
+            throw App.Error.indexOutOfBound
+        }
+
+        let teacher = teachers[index]
+        return TeacherCollectionCellViewModel(teacher: teacher)
+    }
 }
