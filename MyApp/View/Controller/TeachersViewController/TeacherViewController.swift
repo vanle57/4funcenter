@@ -8,28 +8,46 @@
 
 import UIKit
 
-class TeacherViewController: UIViewController {
+final class TeacherViewController: BaseViewController {
+
+    @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        configNavigationBar()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func setupUI() {
+        super.setupUI()
+        title = Define.title
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - Private functions
+    private func configNavigationBar() {
+        let searchButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_search"), style: .plain, target: self, action: nil)
+        navigationItem.rightBarButtonItem = searchButton
     }
-    */
+}
 
+extension TeacherViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 0
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return TableCell()
+    }
+}
+
+// MARK: - Define, Config
+extension TeacherViewController {
+    struct Define {
+        static let title = "Teachers"
+    }
+
+    struct Config {
+        static let estimateRowHeight: CGFloat = 500
+    }
 }
