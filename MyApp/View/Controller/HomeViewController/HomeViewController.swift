@@ -29,8 +29,9 @@ final class HomeViewController: BaseViewController {
     override func setupUI() {
         super.setupUI()
         title = Define.title
-        pageControl.numberOfPages = viewModel.images.count
-        collectionView.register(HomeCollectionViewCell.self)
+        pageControl.numberOfPages = viewModel.numberOfSlides()
+        configNavigationBar()
+        configSlide()
         configTableView()
     }
 
@@ -44,12 +45,21 @@ final class HomeViewController: BaseViewController {
         collectionView.startScrolling()
     }
 
+    private func configNavigationBar() {
+        let notificationButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_notification"), style: .plain, target: self, action: nil)
+        navigationItem.rightBarButtonItem = notificationButton
+    }
+
     private func configTableView() {
         tableView.register(HomeTableViewCell.self)
         tableView.register(HeaderView.self)
         tableView.rowHeight = Config.rowHeight * ratio
         tableView.tableFooterView = UIView()
-        tableView.tableHeaderView?.backgroundColor = App.Color.yellowColor
+    }
+
+    private func configSlide() {
+        pageControl.numberOfPages = viewModel.numberOfSlides()
+        collectionView.register(SlideCollectionCell.self)
     }
 
     /// Set page control folow collection View
@@ -57,20 +67,44 @@ final class HomeViewController: BaseViewController {
         let pageWidth = collectionView.frame.width
         pageControl.currentPage = Int(collectionView.contentOffset.x / pageWidth)
     }
+
+    private func navigateToViewController(index: Int) {
+        guard let sectionType = try? viewModel.getSectionType(index: index) else {
+            return
+        }
+        switch sectionType {
+        case .blog:
+            pushToViewController(viewController: BlogViewController())
+        case .course:
+            pushToViewController(viewController: CoursesViewController())
+        case .teacher:
+            pushToViewController(viewController: TeacherViewController())
+        }
+    }
+
+    private func pushToViewController(viewController: UIViewController) {
+        guard let mainViewController = sideMenuController else { return }
+        let navigationController = mainViewController.rootViewController as? UINavigationController
+        mainViewController.hideLeftView()
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 }
 
-// MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
+// MARK: - UICollectionViewDataSource
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        return viewModel.images.count
+        return viewModel.numberOfSlides()
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeue(HomeCollectionViewCell.self, forIndexPath: indexPath)
-        cell.imageView.image = viewModel.viewModelForCollectionViewCell(indexPath: indexPath)
-        return cell
+        if let viewModel = try? viewModel.viewModelForSlideCell(indexPath: indexPath) {
+            let cell = collectionView.dequeue(SlideCollectionCell.self, forIndexPath: indexPath)
+            cell.viewModel = viewModel
+            return cell
+        }
+        return CollectionCell()
     }
 
 }
@@ -90,12 +124,16 @@ extension HomeViewController: UICollectionViewDelegate {
     }
 }
 
-// MARK: UICollectionViewDelegateFlowLayout
+// MARK: - UICollectionViewDelegateFlowLayout
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        pushToViewController(viewController: AboutViewController())
     }
 }
 
@@ -131,11 +169,22 @@ extension HomeViewController: UITableViewDelegate {
 
         let headerView = tableView.dequeue(HeaderView.self)
         headerView.viewModel = viewModel
+        headerView.delegate = self
         return headerView
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return Config.headerHeight * ratio
+    }
+}
+
+// MARK: - HeaderViewDelegate
+extension HomeViewController: HeaderViewDelegate {
+    func headerView(_ view: HeaderView, needPerform action: HeaderView.Action) {
+        switch action {
+        case .navigatetoViewController(let index):
+            navigateToViewController(index: index)
+        }
     }
 }
 

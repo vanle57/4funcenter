@@ -9,9 +9,14 @@
 import Foundation
 
 class HeaderViewModel {
+
+    // MARK: - Properties
+    var id = 0
     var title = ""
 
-    init(title: String) {
+    // MARK: - init
+    init(id: Int, title: String) {
+        self.id = id
         self.title = title
     }
 }

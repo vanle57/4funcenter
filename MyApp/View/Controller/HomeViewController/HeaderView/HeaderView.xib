@@ -53,6 +53,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="moreButton" destination="x6m-Q0-RBq" id="Jtg-UQ-no0"/>
                 <outlet property="titleLabel" destination="nUV-bK-2HM" id="Al0-Dk-9My"/>
             </connections>
             <point key="canvasLocation" x="-179.5" y="-164"/>

@@ -10,9 +10,19 @@ import Foundation
 
 final class DummyData {
     static func fetchEntries() -> [Entry] {
-        let entry1 = Entry(imageUrl: "", title: "Mindfulness", description: "Mindfulness’ is a word we hear a lot these days, but what exactly does it mean? Find out what it is, what the benefits of mindfulness are and how you can start to practise it.", authorName: "Kirk Clean", content: "", dateCreated: Date())
+        let entry1 = Entry(imageUrl: "",
+                           title: "Mindfulness",
+                           description: "Mindfulness’ is a word we hear a lot these days, but what exactly does it mean? Find out what it is, what the benefits of mindfulness are and how you can start to practise it.",
+                           authorName: "Kirk Clean",
+                           content: "",
+                           dateCreated: Date())
 
-        let entry2 = Entry(imageUrl: "", title: "Mindfulness", description: "Mindfulness’ is a word we hear a lot these days, but what exactly does it mean?", authorName: "Kirk Clean", content: "", dateCreated: Date())
+        let entry2 = Entry(imageUrl: "",
+                           title: "Mindfulness",
+                           description: "Mindfulness’ is a word we hear a lot these days, but what exactly does it mean?",
+                           authorName: "Kirk Clean",
+                           content: "",
+                           dateCreated: Date())
         return [entry1, entry1, entry1, entry2]
     }
 
@@ -28,5 +38,12 @@ final class DummyData {
         let teacher3 = Teacher(name: "Ms.Mai", image: #imageLiteral(resourceName: "teacher3"))
         let teacher4 = Teacher(name: "Mr.Hung", image: #imageLiteral(resourceName: "teacher4"))
         return [teacher1, teacher2, teacher3, teacher4, teacher4, teacher4]
+    }
+
+    static func fetchSlide() -> [Slide] {
+        let slide1 = Slide(image: #imageLiteral(resourceName: "slide1"), title: "Education Needs Complete Solutions")
+        let slide2 = Slide(image: #imageLiteral(resourceName: "slide2"), title: "Education Needs Complete Solutions")
+        let slide3 = Slide(image: #imageLiteral(resourceName: "slide3"), title: "Education Needs Complete Solutions")
+        return [slide1, slide2, slide3]
     }
 }
