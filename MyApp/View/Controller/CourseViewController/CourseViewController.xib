@@ -36,12 +36,20 @@
                         <outlet property="delegate" destination="-1" id="gF6-hX-jWM"/>
                     </connections>
                 </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x4n-Nc-gl2">
+                    <rect key="frame" x="0.0" y="60" width="375" height="607"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CwV-SE-gXc" secondAttribute="trailing" id="FvE-ed-XWt"/>
                 <constraint firstItem="CwV-SE-gXc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="MhW-0K-f3k"/>
                 <constraint firstItem="CwV-SE-gXc" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="QVg-lE-9Gt"/>
+                <constraint firstItem="x4n-Nc-gl2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="R0P-q5-f3E"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="x4n-Nc-gl2" secondAttribute="trailing" id="aLz-3d-mLK"/>
+                <constraint firstItem="x4n-Nc-gl2" firstAttribute="top" secondItem="CwV-SE-gXc" secondAttribute="bottom" id="kmG-C7-eCw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="x4n-Nc-gl2" secondAttribute="bottom" id="oDK-gx-oaI"/>
                 <constraint firstItem="CwV-SE-gXc" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="40:667" id="xUd-XK-5Ii"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

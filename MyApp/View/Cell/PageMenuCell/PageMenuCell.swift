@@ -14,15 +14,15 @@ class PageMenuCell: CollectionCell {
 
     var viewModel: PageMenuCellViewModel? {
         didSet {
-            guard let viewModel = viewModel else { return }
-            itemTitleLabel.text = viewModel.title
-            itemTitleLabel.textColor = viewModel.fontColor
-            backgroundColor = viewModel.backgroundColor
+            updateUI()
         }
     }
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func updateUI() {
+        guard let viewModel = viewModel else { return }
+        isSelected = viewModel.isSelected
+        itemTitleLabel.text = viewModel.title
+        itemTitleLabel.textColor = viewModel.fontColor
+        backgroundColor = viewModel.backgroundColor
     }
 }

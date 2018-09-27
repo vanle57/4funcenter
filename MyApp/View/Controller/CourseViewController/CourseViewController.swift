@@ -70,6 +70,18 @@ extension CourseViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return Config.minimumSpacing
     }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? PageMenuCell else { return }
+        cell.viewModel?.isSelected = true
+        cell.updateUI()
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? PageMenuCell else { return }
+        cell.viewModel?.isSelected = false
+        cell.updateUI()
+    }
 }
 
 // MARK: - Config
