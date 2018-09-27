@@ -14,7 +14,10 @@ class PageMenuCell: CollectionCell {
 
     var viewModel: PageMenuCellViewModel? {
         didSet {
-            itemTitleLabel.text = viewModel?.title
+            guard let viewModel = viewModel else { return }
+            itemTitleLabel.text = viewModel.title
+            itemTitleLabel.textColor = viewModel.fontColor
+            backgroundColor = viewModel.backgroundColor
         }
     }
 

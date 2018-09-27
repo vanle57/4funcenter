@@ -17,14 +17,15 @@ final class CourseViewModel: ViewModel {
         var title: String {
             switch self {
             case .detail:
-                return "Detail"
+                return "DETAIL"
             case .comment:
-                return "Comment"
+                return "COMMENT"
             }
         }
     }
 
     var items: [MenuItem] = [.detail, .comment]
+    var currentItem: MenuItem = .detail
 
     var title = ""
     init(course: Course) {
@@ -45,6 +46,12 @@ extension CourseViewModel {
         }
 
         let item = items[index]
-        return PageMenuCellViewModel(title: item.title)
+        switch item {
+        case .detail:
+            return PageMenuCellViewModel(title: item.title, isSelected: true)
+        case .comment:
+            return PageMenuCellViewModel(title: item.title, isSelected: false)
+        }
+
     }
 }
