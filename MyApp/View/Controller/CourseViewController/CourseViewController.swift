@@ -12,6 +12,7 @@ class CourseViewController: BaseViewController {
 
     // MARK: - Outlets
     @IBOutlet weak var pageMenuCollectionView: UICollectionView!
+    @IBOutlet weak var displayView: UIView!
 
     var viewModel: CourseViewModel? {
         didSet {

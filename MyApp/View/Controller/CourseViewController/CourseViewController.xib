@@ -13,6 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CourseViewController" customModule="MyApp" customModuleProvider="target">
             <connections>
+                <outlet property="displayView" destination="x4n-Nc-gl2" id="JTy-ue-EnX"/>
                 <outlet property="pageMenuCollectionView" destination="CwV-SE-gXc" id="LKQ-0L-xTR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
