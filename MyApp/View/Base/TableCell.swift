@@ -22,8 +22,8 @@ class TableCell: UITableViewCell, MVVM.View {
     }
 
     private func configView() {
-        textLabel?.font = App.Font.tableCellTextLabel
-        textLabel?.textColor = UIColor.black
+        textLabel?.font = App.Font.playfairBoldFont
+        textLabel?.textColor = App.Color.blackColor
         backgroundColor = .clear
     }
 }
