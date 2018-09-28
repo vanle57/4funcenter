@@ -32,15 +32,23 @@ final class ProfileViewModel: MVVM.Model {
         case confirmPassword = "Confirm Password"
     }
 
+    // MARK: - Properties
     var typeOfSections: [TypeOfSection] = [.profile, .changePassword]
     var profileRows: [TypeOfProfileRow] = [.userName, .fullName, .gender, .email, .birth, .phoneNumber, .address]
     var passwordRows: [TypeOfChangePasswordRow] = [.oldPassword, .newPassword, .confirmPassword]
 
+    /// Count Sections in profile table View for user display in table view
+    ///
+    /// - Returns: Number of sections display in table view
     func numberOfSection() -> Int {
         return typeOfSections.count
     }
 
-    func numberOfItemInSectin(inSection section: Int) -> Int {
+    /// Count Number of Cell in each section in Profile table view
+    ///
+    /// - Parameter section: Current section
+    /// - Returns: Number of cell in current section display in table view
+    func numberOfItemInSection(inSection section: Int) -> Int {
 
         let typeOfsection = typeOfSections[section]
 
@@ -52,6 +60,10 @@ final class ProfileViewModel: MVVM.Model {
         }
     }
 
+    /// Make view model for Profile TableCellModel
+    ///
+    /// - Parameter indexPath: indexPath of each item in tableView
+    /// - Returns: TableCellModel at indexPath parameter
     func viewModelOfItem(at indexPath: IndexPath) -> TableCellModel {
 
         let typeOfSection = typeOfSections[indexPath.section]
@@ -62,5 +74,9 @@ final class ProfileViewModel: MVVM.Model {
         case .changePassword:
             return TableCellModel(text: passwordRows[indexPath.row].rawValue)
         }
+    }
+
+    func confirmPassword(newPassword: String, confirmPassword: String) -> Bool {
+        return newPassword == confirmPassword
     }
 }
