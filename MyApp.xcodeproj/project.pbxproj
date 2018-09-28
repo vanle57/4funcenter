@@ -73,6 +73,9 @@
 		B3904EDF215D0D650019138E /* CourseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3904EDD215D0D650019138E /* CourseDetailViewController.swift */; };
 		B3904EE0215D0D650019138E /* CourseDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3904EDE215D0D650019138E /* CourseDetailViewController.xib */; };
 		B3904EE2215D0F900019138E /* CourseDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3904EE1215D0F900019138E /* CourseDetailViewModel.swift */; };
+		B3904EE6215D315D0019138E /* CourseDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3904EE4215D315D0019138E /* CourseDetailCell.swift */; };
+		B3904EE7215D315D0019138E /* CourseDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3904EE5215D315D0019138E /* CourseDetailCell.xib */; };
+		B3904EE9215DB5EF0019138E /* CourseDetailCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3904EE8215DB5EF0019138E /* CourseDetailCellViewModel.swift */; };
 		B3D26DA1215333040093FE42 /* UIScreenExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26D9F215333040093FE42 /* UIScreenExt.swift */; };
 		B3D26DA2215333040093FE42 /* DateExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26DA0215333040093FE42 /* DateExt.swift */; };
 		B3D26DA42153330D0093FE42 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26DA32153330D0093FE42 /* DummyData.swift */; };
@@ -238,6 +241,9 @@
 		B3904EDD215D0D650019138E /* CourseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailViewController.swift; sourceTree = "<group>"; };
 		B3904EDE215D0D650019138E /* CourseDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseDetailViewController.xib; sourceTree = "<group>"; };
 		B3904EE1215D0F900019138E /* CourseDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailViewModel.swift; sourceTree = "<group>"; };
+		B3904EE4215D315D0019138E /* CourseDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailCell.swift; sourceTree = "<group>"; };
+		B3904EE5215D315D0019138E /* CourseDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseDetailCell.xib; sourceTree = "<group>"; };
+		B3904EE8215DB5EF0019138E /* CourseDetailCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailCellViewModel.swift; sourceTree = "<group>"; };
 		B3D26D9F215333040093FE42 /* UIScreenExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreenExt.swift; sourceTree = "<group>"; };
 		B3D26DA0215333040093FE42 /* DateExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExt.swift; sourceTree = "<group>"; };
 		B3D26DA32153330D0093FE42 /* DummyData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
@@ -406,6 +412,7 @@
 		B33ABCAA214BA7FC00F7FF48 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				B3904EE3215D31250019138E /* CourseDetailCell */,
 				B3904ED3215CD50A0019138E /* PageMenuCell */,
 				B38230ED215B441A000C718A /* TeacherTableCell */,
 				F00DED8D215380820089F54D /* HomeTableCell */,
@@ -588,6 +595,16 @@
 				B3904EE1215D0F900019138E /* CourseDetailViewModel.swift */,
 			);
 			path = CourseDetailViewController;
+			sourceTree = "<group>";
+		};
+		B3904EE3215D31250019138E /* CourseDetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				B3904EE4215D315D0019138E /* CourseDetailCell.swift */,
+				B3904EE5215D315D0019138E /* CourseDetailCell.xib */,
+				B3904EE8215DB5EF0019138E /* CourseDetailCellViewModel.swift */,
+			);
+			path = CourseDetailCell;
 			sourceTree = "<group>";
 		};
 		B3D26DA7215333570093FE42 /* SideMenuCell */ = {
@@ -1051,6 +1068,7 @@
 				B356BA10214F8A38002955B9 /* PlayfairDisplaySC-Italic.otf in Resources */,
 				B3D26DC4215345AD0093FE42 /* CourseCell.xib in Resources */,
 				B38230F1215B445A000C718A /* TeacherTableCell.xib in Resources */,
+				B3904EE7215D315D0019138E /* CourseDetailCell.xib in Resources */,
 				B3EB05AD215CD41A002957A7 /* CourseViewController.xib in Resources */,
 				B317621E2149F39F005C9D25 /* RegisterViewController.xib in Resources */,
 				B374DB89214783C0005C1FE2 /* Heebo-Medium.ttf in Resources */,
@@ -1260,6 +1278,7 @@
 				B3D26E2B215A158D0093FE42 /* SlideCollectionCell.swift in Sources */,
 				B356BA5421520C9E002955B9 /* CoverCell.swift in Sources */,
 				B374DB8C2147A1E1005C1FE2 /* UIButtonExt.swift in Sources */,
+				B3904EE6215D315D0019138E /* CourseDetailCell.swift in Sources */,
 				B3D26DB8215333570093FE42 /* BlogCellViewModel.swift in Sources */,
 				F00DED95215381A70089F54D /* TeacherCollectionViewCell.swift in Sources */,
 				B3D26E212159CD6F0093FE42 /* HistorySearchCell.swift in Sources */,
@@ -1267,6 +1286,7 @@
 				F00DED8821537F8A0089F54D /* HomeViewModel.swift in Sources */,
 				B3D26E30215A1FE70093FE42 /* SlideCollectionCellViewModel.swift in Sources */,
 				B3D26DC3215345AD0093FE42 /* CourseCell.swift in Sources */,
+				B3904EE9215DB5EF0019138E /* CourseDetailCellViewModel.swift in Sources */,
 				B3904ED9215CD6AD0019138E /* PageMenuCellViewModel.swift in Sources */,
 				B3D26DBD215333A70093FE42 /* BlogViewModel.swift in Sources */,
 				F00DED9A2153826B0089F54D /* TeacherCollectionCellModel.swift in Sources */,

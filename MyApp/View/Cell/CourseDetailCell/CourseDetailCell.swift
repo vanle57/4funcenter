@@ -14,8 +14,11 @@ class CourseDetailCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    var viewModel: CourseDetailCellViewModel? {
+        didSet {
+            guard let viewModel = viewModel else { return }
+            titleLabel.text = viewModel.title
+            contentLabel.text = viewModel.content
+        }
     }
 }

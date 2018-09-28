@@ -16,7 +16,7 @@ class CourseViewController: BaseViewController {
 
     var viewModel: CourseViewModel? {
         didSet {
-            title = viewModel?.title
+            title = viewModel?.course.name
         }
     }
 
@@ -73,15 +73,41 @@ extension CourseViewController: UICollectionViewDelegateFlowLayout {
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
         guard let cell = collectionView.cellForItem(at: indexPath) as? PageMenuCell else { return }
         cell.viewModel?.isSelected = true
         cell.updateUI()
+
+        showViewControllerForSelectedItem(at: indexPath)
     }
 
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? PageMenuCell else { return }
         cell.viewModel?.isSelected = false
         cell.updateUI()
+    }
+
+    func showViewControllerForSelectedItem(at indexPath: IndexPath) {
+        guard let viewModel = viewModel else { return }
+
+        if let item = try? viewModel.getItem(at: indexPath), let viewModel = try? viewModel.viewModelForChildView(at: indexPath) {
+            let childVC = CourseDetailViewController()
+            switch item {
+            case .detail:
+                guard let vm = viewModel as? CourseDetailViewModel else { return }
+                childVC.viewModel = vm
+                addChildViewController(childVC)
+                displayView.addSubview(childVC.view)
+                childVC.didMove(toParentViewController: self)
+            case .comment:
+                // Notify the child that it's about to be moved away from its parent
+                childVC.willMove(toParentViewController: nil)
+                // Remove the child
+                childVC.removeFromParentViewController()
+                // Remove the child view controller's view from its parent
+                childVC.view.removeFromSuperview()
+            }
+        }
     }
 }
 

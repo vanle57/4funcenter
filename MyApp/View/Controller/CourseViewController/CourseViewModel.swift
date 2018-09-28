@@ -27,12 +27,13 @@ final class CourseViewModel: ViewModel {
     var items: [MenuItem] = [.detail, .comment]
     var currentItem: MenuItem = .detail
 
-    var title = ""
+    var course: Course = Course()
     init(course: Course) {
-        title = course.name
+        self.course = course
     }
 }
 
+// MARK: - Table view
 extension CourseViewModel {
     func numberOfItems(inSection section: Int) -> Int {
         return items.count
@@ -52,6 +53,33 @@ extension CourseViewModel {
         case .comment:
             return PageMenuCellViewModel(title: item.title, isSelected: false)
         }
+    }
 
+    func viewModelForChildView(at indexPath: IndexPath) throws -> ViewModel {
+        let index = indexPath.row
+
+        guard index < items.count  else {
+            throw App.Error.indexOutOfBound
+        }
+
+        let item = items[index]
+        switch item {
+        case .detail:
+            return CourseDetailViewModel(course: course)
+        case .comment:
+            return CourseDetailViewModel(course: course)
+        }
+    }
+
+
+    func getItem(at indexPath: IndexPath) throws -> MenuItem {
+        let index = indexPath.row
+
+        guard index < items.count  else {
+            throw App.Error.indexOutOfBound
+        }
+
+        let item = items[index]
+        return item
     }
 }
