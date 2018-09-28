@@ -35,7 +35,6 @@ class CoursesViewController: BaseViewController {
     private func configTableView() {
         tableView.register(CourseCell.self)
         tableView.register(CoverCell.self)
-        tableView.dataSource = self
         tableView.rowHeight = 150
         tableView.estimatedRowHeight = Config.estimateRowHeight * ratio
     }
@@ -75,6 +74,16 @@ extension CoursesViewController: UITableViewDataSource {
             let cell = tableView.dequeue(CoverCell.self)
             return cell
         }
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension CoursesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vm = viewModel.didSelectRowAtIndexPath(indexPath: indexPath)
+        let vc = CourseViewController()
+        vc.viewModel = vm
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

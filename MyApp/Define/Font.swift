@@ -40,6 +40,8 @@ extension App {
             return .boldSystemFont(ofSize: 18)
         }
 
+        static var playfairBoldFont = UIFont(name: "PlayfairDisplay-Bold", size: 24)
+
         static var heeboBoldFont = UIFont(name: "Heebo-Medium", size: 15)
 
         static var heeboRegularFont = UIFont(name: "Heebo-Regular", size: 15)

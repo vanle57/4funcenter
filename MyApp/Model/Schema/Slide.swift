@@ -15,7 +15,6 @@ final class Slide {
     var title = ""
     var detail = ""
 
-
     /// this is temporary data to create dummy data. Delete it when you have api
     var image = UIImage()
     init(image: UIImage, title: String) {
