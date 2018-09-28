@@ -26,6 +26,7 @@ final class CourseViewModel: ViewModel {
 
     var items: [MenuItem] = [.detail, .comment]
     var currentItem: MenuItem = .detail
+    var rowSelected = 0
 
     var course: Course = Course()
     init(course: Course) {
@@ -51,10 +52,9 @@ extension CourseViewModel {
         }
 
         let item = items[index]
-        switch item {
-        case .detail:
+        if rowSelected == item.hashValue {
             return PageMenuCellViewModel(title: item.title, isSelected: true)
-        case .comment:
+        } else {
             return PageMenuCellViewModel(title: item.title, isSelected: false)
         }
     }

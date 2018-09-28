@@ -24,7 +24,7 @@ class CourseViewController: BaseViewController {
         super.setupUI()
         configNavigationBar()
         configCollectionView()
-        configDefaultChildView()
+//        configDefaultChildView()
     }
 
     // MARK: - Private functions
@@ -84,10 +84,13 @@ extension CourseViewController: UICollectionViewDelegateFlowLayout {
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
-        guard let cell = collectionView.cellForItem(at: indexPath) as? PageMenuCell else { return }
-        cell.viewModel?.isSelected = true
-        cell.updateUI()
+        guard let viewModel = viewModel else { return }
+        if indexPath.row != viewModel.rowSelected {
+            guard let cell = collectionView.cellForItem(at: indexPath) as? PageMenuCell else { return }
+            viewModel.rowSelected = indexPath.row
+            cell.viewModel?.isSelected = true
+            pageMenuCollectionView.reloadData()
+        }
 
         showViewControllerForSelectedItem(at: indexPath)
     }
