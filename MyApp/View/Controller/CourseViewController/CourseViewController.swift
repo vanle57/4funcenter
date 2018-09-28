@@ -20,10 +20,11 @@ class CourseViewController: BaseViewController {
         }
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func setupUI() {
+        super.setupUI()
         configNavigationBar()
         configCollectionView()
+        configDefaultChildView()
     }
 
     // MARK: - Private functions
@@ -34,6 +35,16 @@ class CourseViewController: BaseViewController {
 
     private func configCollectionView() {
         pageMenuCollectionView.register(PageMenuCell.self)
+    }
+
+    private func configDefaultChildView() {
+        guard let viewModel = viewModel else { return }
+        let vm = viewModel.defaultChildViewModel()
+        let child = CourseDetailViewController()
+        child.viewModel = vm
+        addChildViewController(child)
+        displayView.addSubview(child.view)
+        child.didMove(toParentViewController: self)
     }
 }
 

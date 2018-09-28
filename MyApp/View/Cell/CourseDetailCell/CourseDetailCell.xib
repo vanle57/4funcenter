@@ -49,7 +49,7 @@
                     <constraint firstItem="Bgb-r4-hMP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="Mxi-u7-NUG"/>
                     <constraint firstItem="Coh-WP-Qdu" firstAttribute="leading" secondItem="Bgb-r4-hMP" secondAttribute="trailing" constant="20" id="NiL-oy-Bsw"/>
                     <constraint firstAttribute="bottom" secondItem="Coh-WP-Qdu" secondAttribute="bottom" constant="9" id="cX6-qY-mZQ"/>
-                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Coh-WP-Qdu" secondAttribute="trailing" constant="10" id="j9h-H1-1zR"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Coh-WP-Qdu" secondAttribute="trailing" constant="15" id="j9h-H1-1zR"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

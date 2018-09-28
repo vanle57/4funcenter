@@ -31,6 +31,10 @@ final class CourseViewModel: ViewModel {
     init(course: Course) {
         self.course = course
     }
+
+    func defaultChildViewModel() -> CourseDetailViewModel {
+        return CourseDetailViewModel(course: course)
+    }
 }
 
 // MARK: - Table view
@@ -70,7 +74,6 @@ extension CourseViewModel {
             return CourseDetailViewModel(course: course)
         }
     }
-
 
     func getItem(at indexPath: IndexPath) throws -> MenuItem {
         let index = indexPath.row
