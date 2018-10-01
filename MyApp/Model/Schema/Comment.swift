@@ -9,12 +9,12 @@
 import Foundation
 
 final class Comment {
-    
+
     var user: User = User()
     var content = ""
     var ratingPoint = 0
     var dateCreate: Date = Date()
-    
+
     init(user: User, content: String, ratingPoint: Int, dateCreate: Date) {
         self.user = user
         self.content = content
