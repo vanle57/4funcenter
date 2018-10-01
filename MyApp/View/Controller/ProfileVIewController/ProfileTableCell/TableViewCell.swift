@@ -31,13 +31,13 @@ final class TableViewCell: TableCell {
         }
     }
 
+    // MARK: - Protocol
+    weak var delegate: TableViewCellDelegate?
+
     override func awakeFromNib() {
         super.awakeFromNib()
         textField.delegate = self
     }
-
-    // MARK: - Protocol
-    weak var delegate: TableViewCellDelegate?
 
     // MARK: - Override function
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -48,6 +48,7 @@ final class TableViewCell: TableCell {
 // MARK: - Extension
 extension TableViewCell: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.text = ""
         textField.becomeFirstResponder()
     }
 

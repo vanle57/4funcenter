@@ -53,6 +53,11 @@ extension CoursesViewModel {
         let course = courses[indexPath.row]
         return CourseCellViewModel(course: course)
     }
+
+    func didSelectRowAtIndexPath(indexPath: IndexPath) -> CourseViewModel {
+        let course = courses[indexPath.row]
+        return CourseViewModel(course: course)
+    }
 }
 
 // MARK: - Define

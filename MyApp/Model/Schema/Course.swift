@@ -18,13 +18,19 @@ class Course {
     var imageUrl = ""
     var description = ""
     var detail = ""
+    var time = ""
+    var fee: Double = 0.0
 
     // MARK: init
-    init(name: String, numberOfView: Int, numberOfComment: Int, description: String, detail: String) {
+    init() { }
+
+    init(name: String, numberOfView: Int, numberOfComment: Int, description: String, detail: String, time: String, fee: Double) {
         self.name = name
         self.numberOfView = numberOfView
         self.numberOfComment = numberOfComment
         self.description = description
         self.detail = detail
+        self.time = time
+        self.fee = fee
     }
 }

@@ -37,6 +37,7 @@ final class ProfileViewController: BaseViewController {
         cameraButton.circle()
         image.circle()
     }
+
     func changePassword() {
 
     }
@@ -52,27 +53,30 @@ extension ProfileViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
         let cell = tableView.dequeue(TableViewCell.self)
         let typeOfPassword = viewModel.passwordRows[indexPath.row]
+
         switch typeOfPassword {
         case .newPassword:
             guard let newPass = cell.textField.text else { return }
+            print(newPass)
         case .confirmPassword:
-            guard let confirmPass = cell.textField.text else { return }
+            guard let cPass = cell.textField.text else { return }
+            print(cPass)
             cell.textField.returnKeyType = .done
         case .oldPassword:
-            break
+            cell.textField.returnKeyType = .next
         }
 
         if indexPath.row == viewModel.passwordRows.count - 1 {
-            if viewModel.confirmPassword(newPassword: newPass, confirmPassword: confirmPass) {
+            if viewModel.confirmPassword(newPassword: "", confirmPassword: "") {
                 alert(msg: Define.successMessage, buttons: ["OK"], handler: nil)
             } else {
                 alert(error: NSError(domain: nil, code: 10, message: Define.errorMessage))
             }
         } else {
             print(indexPath.row)
-            //                print(viewModel.passwordRows.count - 1)
         }
     }
 }
@@ -122,7 +126,7 @@ extension ProfileViewController: TableViewCellDelegate {
                 cell?.textField.becomeFirstResponder()
                 tableView.scrollToRow(at: indexPath, at: .middle, animated: true)
             } else {
-//                cell?.textField.returnKeyType = .done
+
             }
         }
     }
