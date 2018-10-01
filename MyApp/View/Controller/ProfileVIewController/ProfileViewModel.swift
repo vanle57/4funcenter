@@ -76,7 +76,7 @@ final class ProfileViewModel: MVVM.Model {
         }
     }
 
-    func confirmPassword(newPassword: String, confirmPassword: String) -> Bool {
+    func confirmPassword(newPassword: String?, confirmPassword: String?) -> Bool {
         return newPassword == confirmPassword
     }
 }

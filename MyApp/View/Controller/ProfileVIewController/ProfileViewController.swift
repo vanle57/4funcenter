@@ -37,7 +37,6 @@ final class ProfileViewController: BaseViewController {
         cameraButton.circle()
         image.circle()
     }
-
     func changePassword() {
 
     }
@@ -50,6 +49,31 @@ extension ProfileViewController: UITableViewDelegate {
         header.textLabel?.textColor = .black
         header.textLabel?.font = UIFont(name: "Heebo-Bold", size: 18)
         header.textLabel?.frame = header.frame
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.dequeue(TableViewCell.self)
+        let typeOfPassword = viewModel.passwordRows[indexPath.row]
+        switch typeOfPassword {
+        case .newPassword:
+            guard let newPass = cell.textField.text else { return }
+        case .confirmPassword:
+            guard let confirmPass = cell.textField.text else { return }
+            cell.textField.returnKeyType = .done
+        case .oldPassword:
+            break
+        }
+
+        if indexPath.row == viewModel.passwordRows.count - 1 {
+            if viewModel.confirmPassword(newPassword: newPass, confirmPassword: confirmPass) {
+                alert(msg: Define.successMessage, buttons: ["OK"], handler: nil)
+            } else {
+                alert(error: NSError(domain: nil, code: 10, message: Define.errorMessage))
+            }
+        } else {
+            print(indexPath.row)
+            //                print(viewModel.passwordRows.count - 1)
+        }
     }
 }
 
@@ -75,38 +99,13 @@ extension ProfileViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(TableViewCell.self)
         let typeOfSection = viewModel.typeOfSections[indexPath.section]
-        var newPass: String? = ""
-        var confirmPass: String? = ""
         cell.viewModel = viewModel.viewModelOfItem(at: indexPath)
         switch typeOfSection {
         case .profile:
             cell.isUserInteractionEnabled = false
         case .changePassword:
             cell.delegate = self
-            cell.textField.text = ""
             cell.textField.isSecureTextEntry = true
-            let typeOfPassword = viewModel.passwordRows[indexPath.row]
-            switch typeOfPassword {
-            case .newPassword:
-                newPass = cell.textField.text
-            case .confirmPassword:
-                confirmPass = cell.textField.text
-            case .oldPassword:
-                break
-            }
-            if indexPath.row == viewModel.passwordRows.count - 1 && newPass?.isEmpty == false {
-                guard let new = newPass else { return UITableViewCell() }
-                guard let confirm = confirmPass else { return UITableViewCell() }
-                cell.textField.returnKeyType = .done
-                if viewModel.confirmPassword(newPassword: new, confirmPassword: confirm) {
-                    alert(msg: Define.successMessage, buttons: ["OK"], handler: nil)
-                } else {
-                    alert(error: NSError(domain: nil, code: 10, message: Define.errorMessage))
-                }
-            } else {
-                print(indexPath.row)
-//                print(viewModel.passwordRows.count - 1)
-            }
         }
         return cell
     }
@@ -123,7 +122,7 @@ extension ProfileViewController: TableViewCellDelegate {
                 cell?.textField.becomeFirstResponder()
                 tableView.scrollToRow(at: indexPath, at: .middle, animated: true)
             } else {
-                cell?.textField.returnKeyType = .done
+//                cell?.textField.returnKeyType = .done
             }
         }
     }
