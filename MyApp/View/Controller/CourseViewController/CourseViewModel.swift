@@ -71,7 +71,7 @@ extension CourseViewModel {
         case .detail:
             return CourseDetailViewModel(course: course)
         case .comment:
-            return CourseDetailViewModel(course: course)
+            return CourseCommentViewModel()
         }
     }
 

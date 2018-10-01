@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CourseViewController: BaseViewController {
+class CourseViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet weak var pageMenuCollectionView: UICollectionView!
@@ -20,17 +20,20 @@ class CourseViewController: BaseViewController {
         }
     }
 
-    override func setupUI() {
-        super.setupUI()
+    override func viewDidLoad() {
+        super.viewDidLoad()
         configNavigationBar()
         configCollectionView()
-//        configDefaultChildView()
+        configDefaultChildView()
     }
 
     // MARK: - Private functions
     private func configNavigationBar() {
-        let backButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_back"), style: .plain, target: self, action: nil)
+        let backButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_back"), style: .plain, target: self, action: #selector(backAction))
         navigationItem.leftBarButtonItem = backButton
+
+        let notificationButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_notification"), style: .plain, target: self, action: nil)
+        navigationItem.rightBarButtonItem = notificationButton
     }
 
     private func configCollectionView() {
@@ -39,12 +42,15 @@ class CourseViewController: BaseViewController {
 
     private func configDefaultChildView() {
         guard let viewModel = viewModel else { return }
-        let vm = viewModel.defaultChildViewModel()
         let child = CourseDetailViewController()
-        child.viewModel = vm
+        child.viewModel = viewModel.defaultChildViewModel()
         addChildViewController(child)
         displayView.addSubview(child.view)
         child.didMove(toParentViewController: self)
+    }
+
+    @objc func backAction() {
+        navigationController?.popViewController(animated: true)
     }
 }
 
@@ -105,21 +111,21 @@ extension CourseViewController: UICollectionViewDelegateFlowLayout {
         guard let viewModel = viewModel else { return }
 
         if let item = try? viewModel.getItem(at: indexPath), let viewModel = try? viewModel.viewModelForChildView(at: indexPath) {
-            let childVC = CourseDetailViewController()
             switch item {
             case .detail:
                 guard let vm = viewModel as? CourseDetailViewModel else { return }
+                let childVC = CourseDetailViewController()
                 childVC.viewModel = vm
                 addChildViewController(childVC)
                 displayView.addSubview(childVC.view)
                 childVC.didMove(toParentViewController: self)
             case .comment:
-                // Notify the child that it's about to be moved away from its parent
-                childVC.willMove(toParentViewController: nil)
-                // Remove the child
-                childVC.removeFromParentViewController()
-                // Remove the child view controller's view from its parent
-                childVC.view.removeFromSuperview()
+                guard let vm = viewModel as? CourseCommentViewModel else { return }
+                let childVC = CourseCommentViewController()
+                childVC.viewModel = vm
+                addChildViewController(childVC)
+                displayView.addSubview(childVC.view)
+                childVC.didMove(toParentViewController: self)
             }
         }
     }

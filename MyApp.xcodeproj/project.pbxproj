@@ -73,6 +73,7 @@
 		B38263782161C0D9009F73FD /* CourseCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B38263762161C0D9009F73FD /* CourseCommentViewController.xib */; };
 		B382637A2161C0F5009F73FD /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38263792161C0F5009F73FD /* Comment.swift */; };
 		B382637C2161C80E009F73FD /* CourseCommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B382637B2161C80E009F73FD /* CourseCommentViewModel.swift */; };
+		B382637E2161D7FD009F73FD /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B382637D2161D7FD009F73FD /* UIViewExt.swift */; };
 		B3904ED6215CD52F0019138E /* PageMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3904ED4215CD52F0019138E /* PageMenuCell.swift */; };
 		B3904ED7215CD52F0019138E /* PageMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3904ED5215CD52F0019138E /* PageMenuCell.xib */; };
 		B3904ED9215CD6AD0019138E /* PageMenuCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3904ED8215CD6AD0019138E /* PageMenuCellViewModel.swift */; };
@@ -248,6 +249,7 @@
 		B38263762161C0D9009F73FD /* CourseCommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CourseCommentViewController.xib; sourceTree = "<group>"; };
 		B38263792161C0F5009F73FD /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		B382637B2161C80E009F73FD /* CourseCommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCommentViewModel.swift; sourceTree = "<group>"; };
+		B382637D2161D7FD009F73FD /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		B3904ED4215CD52F0019138E /* PageMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageMenuCell.swift; sourceTree = "<group>"; };
 		B3904ED5215CD52F0019138E /* PageMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageMenuCell.xib; sourceTree = "<group>"; };
 		B3904ED8215CD6AD0019138E /* PageMenuCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageMenuCellViewModel.swift; sourceTree = "<group>"; };
@@ -936,6 +938,7 @@
 				ECF23AC21E9B9264008C23C1 /* StringExt.swift */,
 				ECEC0C591ED44D4100F6760A /* UIViewControllerExt.swift */,
 				B374DB8B2147A1E1005C1FE2 /* UIButtonExt.swift */,
+				B382637D2161D7FD009F73FD /* UIViewExt.swift */,
 			);
 			path = Ext;
 			sourceTree = "<group>";
@@ -1336,6 +1339,7 @@
 				ECF23AC31E9B9264008C23C1 /* StringExt.swift in Sources */,
 				B374DB78214775D0005C1FE2 /* CoursesViewController.swift in Sources */,
 				B3904ED6215CD52F0019138E /* PageMenuCell.swift in Sources */,
+				B382637E2161D7FD009F73FD /* UIViewExt.swift in Sources */,
 				B33ABC9A214B5D2900F7FF48 /* MainViewController.swift in Sources */,
 				B374DB672147681B005C1FE2 /* ProfileViewController.swift in Sources */,
 				ECEC0C5E1ED44D7700F6760A /* MapperExt.swift in Sources */,
