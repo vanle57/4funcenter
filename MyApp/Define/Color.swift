@@ -19,6 +19,8 @@ extension App {
         static let yellowColor = UIColor.RGB(244, 234, 213)
         static let lightYellowColor = UIColor.RGB(244, 234, 220)
 
+        static let defaultTableViewSeperatorColor = UIColor.RGB(224, 224, 224)
+
         static func button(state: UIControlState) -> UIColor {
             switch state {
             case UIControlState.normal: return .white
