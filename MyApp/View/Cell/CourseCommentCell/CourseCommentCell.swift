@@ -20,6 +20,7 @@ final class CourseCommentCell: TableCell {
     var viewModel: CourseCommentCellViewModel? {
         didSet {
             guard let viewModel = viewModel else { return }
+            usernameLabel.text = "Demi Lovato"
             commentLabel.text = viewModel.content
             dateCreatedLabel.text = viewModel.dateCreate
             ratingLabel.text = viewModel.ratingString

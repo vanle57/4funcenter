@@ -9,14 +9,14 @@
 import UIKit
 
 final class CourseCommentCellViewModel {
-    
+
     // MARK: - Propeties
     var avatar: UIImage = UIImage()
     var username = "demi lovato"
     var content = ""
     var dateCreate = ""
     var ratingPoint = 0
-    
+
     var ratingString: String {
         switch ratingPoint {
         case 1:
@@ -33,7 +33,7 @@ final class CourseCommentCellViewModel {
             return ""
         }
     }
-    
+
     // MARK: - init
     init(comment: Comment) {
 //        self.avatar = comment.user.
@@ -41,5 +41,4 @@ final class CourseCommentCellViewModel {
         dateCreate = comment.dateCreate.string()
         ratingPoint = comment.ratingPoint
     }
-    
 }
