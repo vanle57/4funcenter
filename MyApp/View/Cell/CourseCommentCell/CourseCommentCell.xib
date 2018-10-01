@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Heebo-Regular.ttf">
+            <string>Heebo-Regular</string>
+        </array>
+        <array key="PlayfairDisplay-Regular.otf">
+            <string>PlayfairDisplay-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CourseCommentCell" customModule="MyApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_no_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="QKY-46-hzZ">
+                    <rect key="frame" x="15" y="15" width="62.5" height="62.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="QKY-46-hzZ" secondAttribute="height" id="4XN-v8-OKq"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uor-nK-25u">
+                    <rect key="frame" x="92.5" y="15" width="267.5" height="65"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Xpc-PC-6PT">
+                            <rect key="frame" x="0.0" y="0.0" width="267.5" height="25"/>
+                            <fontDescription key="fontDescription" name="Heebo-Regular" family="Heebo" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubs-St-iCy">
+                            <rect key="frame" x="0.0" y="45" width="267.5" height="20"/>
+                            <fontDescription key="fontDescription" name="PlayfairDisplay-Regular" family="Playfair Display" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Xpc-PC-6PT" secondAttribute="trailing" id="2hA-41-GVT"/>
+                        <constraint firstItem="Ubs-St-iCy" firstAttribute="leading" secondItem="uor-nK-25u" secondAttribute="leading" id="4VU-s9-fcK"/>
+                        <constraint firstItem="Ubs-St-iCy" firstAttribute="top" secondItem="Xpc-PC-6PT" secondAttribute="bottom" constant="20" id="CNQ-Ss-gWy"/>
+                        <constraint firstAttribute="bottom" secondItem="Ubs-St-iCy" secondAttribute="bottom" id="DOM-MK-Mkg"/>
+                        <constraint firstItem="Xpc-PC-6PT" firstAttribute="top" secondItem="uor-nK-25u" secondAttribute="top" id="lvD-8x-5uU"/>
+                        <constraint firstItem="Xpc-PC-6PT" firstAttribute="leading" secondItem="uor-nK-25u" secondAttribute="leading" id="oLs-MW-nrd"/>
+                        <constraint firstAttribute="trailing" secondItem="Ubs-St-iCy" secondAttribute="trailing" id="uGK-qC-zUk"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tfh-st-5fJ">
+                    <rect key="frame" x="15" y="100" width="345" height="24"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9c-hD-U7b">
+                            <rect key="frame" x="0.0" y="2" width="37" height="20"/>
+                            <fontDescription key="fontDescription" name="PlayfairDisplay-Regular" family="Playfair Display" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5c-X0-Oco">
+                            <rect key="frame" x="308" y="0.5" width="37" height="23"/>
+                            <fontDescription key="fontDescription" name="Heebo-Regular" family="Heebo" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Z9c-hD-U7b" firstAttribute="centerY" secondItem="tfh-st-5fJ" secondAttribute="centerY" id="ePg-iZ-MiQ"/>
+                        <constraint firstItem="b5c-X0-Oco" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Z9c-hD-U7b" secondAttribute="trailing" constant="10" id="jlX-j0-gwI"/>
+                        <constraint firstItem="b5c-X0-Oco" firstAttribute="centerY" secondItem="tfh-st-5fJ" secondAttribute="centerY" id="tdd-1h-svg"/>
+                        <constraint firstAttribute="trailing" secondItem="b5c-X0-Oco" secondAttribute="trailing" id="uUY-1P-z2x"/>
+                        <constraint firstItem="Z9c-hD-U7b" firstAttribute="leading" secondItem="tfh-st-5fJ" secondAttribute="leading" id="uor-Lr-lUL"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="tfh-st-5fJ" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="1:5" id="BB7-EV-rJT"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="uor-nK-25u" secondAttribute="trailing" constant="15" id="MMg-h5-Jwf"/>
+                <constraint firstItem="tfh-st-5fJ" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="Xo6-uo-CwD"/>
+                <constraint firstItem="QKY-46-hzZ" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="1:6" id="ajm-2f-E2e"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="tfh-st-5fJ" secondAttribute="trailing" constant="15" id="b6c-ZP-kQN"/>
+                <constraint firstItem="QKY-46-hzZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="fwi-LZ-ahC"/>
+                <constraint firstItem="uor-nK-25u" firstAttribute="top" secondItem="QKY-46-hzZ" secondAttribute="top" id="hnI-0J-mJf"/>
+                <constraint firstItem="tfh-st-5fJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="huY-hC-e3R"/>
+                <constraint firstItem="uor-nK-25u" firstAttribute="leading" secondItem="QKY-46-hzZ" secondAttribute="trailing" constant="15" id="iT7-e3-F6B"/>
+                <constraint firstItem="QKY-46-hzZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="lpt-im-Q6N"/>
+                <constraint firstItem="tfh-st-5fJ" firstAttribute="top" secondItem="uor-nK-25u" secondAttribute="bottom" constant="20" id="poz-jx-c04"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="avtarImageView" destination="QKY-46-hzZ" id="cpn-aX-arA"/>
+                <outlet property="commentLabel" destination="Ubs-St-iCy" id="Kb3-mI-3ua"/>
+                <outlet property="dateCreatedLabel" destination="Z9c-hD-U7b" id="gPg-Ex-nJf"/>
+                <outlet property="ratingLabel" destination="b5c-X0-Oco" id="4yN-iK-PyP"/>
+                <outlet property="usernameLabel" destination="Xpc-PC-6PT" id="3KB-5Z-A6t"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="54"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="img_no_avatar" width="250" height="250"/>
+    </resources>
+</document>
