@@ -21,6 +21,7 @@
             <connections>
                 <outlet property="cancelButton" destination="ff7-A2-Wd5" id="vNs-Hk-5Xo"/>
                 <outlet property="commentTextView" destination="lvd-d5-66q" id="ec1-QL-FF4"/>
+                <outlet property="commentView" destination="23A-aV-QN9" id="6fK-li-G01"/>
                 <outlet property="tableView" destination="9rk-5G-vHA" id="GBP-Ih-CXH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

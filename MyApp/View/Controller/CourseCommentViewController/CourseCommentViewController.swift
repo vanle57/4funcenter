@@ -8,23 +8,30 @@
 
 import UIKit
 
-class CourseCommentViewController: UIViewController {
+final class CourseCommentViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var commentTextView: UITextView!
     @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var commentView: UIView!
 
     var viewModel = CourseCommentViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configTableView()
+        configCommentView()
     }
 
     private func configTableView() {
         tableView.register(CourseCommentCell.self)
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = Config.rowHeight
+    }
+
+    private func configCommentView() {
+        commentView.addBorders(edges: [.top], color: App.Color.defaultTableViewSeperatorColor)
     }
 
     @IBAction func cancelButtonTouchUpInside(_ sender: Any) {

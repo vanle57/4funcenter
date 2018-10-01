@@ -10,7 +10,9 @@ import MVVM
 
 final class CourseCommentViewModel: ViewModel {
 
-    var comments: [Comment] = []
+    var comments: [Comment] = DummyData.fetchComments()
+
+    init() { }
 }
 
 // MARK: - Table view
