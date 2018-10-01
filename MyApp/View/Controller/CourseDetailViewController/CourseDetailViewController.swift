@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CourseDetailViewController: UIViewController {
+final class CourseDetailViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
