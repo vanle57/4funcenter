@@ -29,6 +29,7 @@ final class CourseDetailViewController: UIViewController {
     }
 
     @IBAction func registerButtonTouchUpInside(_ sender: Any) {
+        print("Registered")
     }
 }
 
