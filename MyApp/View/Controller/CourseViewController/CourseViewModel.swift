@@ -52,27 +52,18 @@ extension CourseViewModel {
         }
 
         let item = items[index]
-        if rowSelected == item.hashValue {
-            return PageMenuCellViewModel(title: item.title, isSelected: true)
-        } else {
-            return PageMenuCellViewModel(title: item.title, isSelected: false)
-        }
+        return PageMenuCellViewModel(title: item.title,
+                                     isSelected: rowSelected == item.hashValue)
+    }
+}
+
+extension CourseViewModel {
+    func viewModelForDetailView() -> CourseDetailViewModel {
+        return CourseDetailViewModel(course: course)
     }
 
-    func viewModelForChildView(at indexPath: IndexPath) throws -> ViewModel {
-        let index = indexPath.row
-
-        guard index < items.count  else {
-            throw App.Error.indexOutOfBound
-        }
-
-        let item = items[index]
-        switch item {
-        case .detail:
-            return CourseDetailViewModel(course: course)
-        case .comment:
-            return CourseCommentViewModel()
-        }
+    func viewModelForCommentView() -> CourseCommentViewModel {
+        return CourseCommentViewModel()
     }
 
     func getItem(at indexPath: IndexPath) throws -> MenuItem {

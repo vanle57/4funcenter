@@ -14,6 +14,20 @@ class CourseViewController: UIViewController {
     @IBOutlet weak var pageMenuCollectionView: UICollectionView!
     @IBOutlet weak var displayView: UIView!
 
+    lazy var detailVC: CourseDetailViewController = {
+        let detailVC = CourseDetailViewController()
+        guard let viewModel = viewModel else { return detailVC }
+        detailVC.viewModel = viewModel.viewModelForDetailView()
+        return detailVC
+    }()
+
+    lazy var commentVC: CourseCommentViewController = {
+        let commentVC = CourseCommentViewController()
+        guard let viewModel = viewModel else { return commentVC }
+        commentVC.viewModel = viewModel.viewModelForCommentView()
+        return commentVC
+    }()
+
     var viewModel: CourseViewModel? {
         didSet {
             title = viewModel?.course.name
@@ -34,6 +48,8 @@ class CourseViewController: UIViewController {
 
         let notificationButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_notification"), style: .plain, target: self, action: nil)
         navigationItem.rightBarButtonItem = notificationButton
+
+//        navigationItem.setLeftBarButton(title+ imag, target: , action:)
     }
 
     private func configCollectionView() {
@@ -41,12 +57,8 @@ class CourseViewController: UIViewController {
     }
 
     private func configDefaultChildView() {
-        guard let viewModel = viewModel else { return }
-        let child = CourseDetailViewController()
-        child.viewModel = viewModel.defaultChildViewModel()
-        addChildViewController(child)
-        displayView.addSubview(child.view)
-        child.didMove(toParentViewController: self)
+        displayView.addSubview(commentVC.view)
+        displayView.addSubview(detailVC.view)
     }
 
     @objc func backAction() {
@@ -91,41 +103,25 @@ extension CourseViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let viewModel = viewModel else { return }
-        if indexPath.row != viewModel.rowSelected {
+        if indexPath.row == viewModel.rowSelected {
+            return
+        } else {
             guard let cell = collectionView.cellForItem(at: indexPath) as? PageMenuCell else { return }
             viewModel.rowSelected = indexPath.row
             cell.viewModel?.isSelected = true
             pageMenuCollectionView.reloadData()
         }
 
-        showViewControllerForSelectedItem(at: indexPath)
-    }
+        guard let menuItem = try? viewModel.getItem(at: indexPath) else { return }
 
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        guard let cell = collectionView.cellForItem(at: indexPath) as? PageMenuCell else { return }
-        cell.viewModel?.isSelected = false
-        cell.updateUI()
-    }
-
-    func showViewControllerForSelectedItem(at indexPath: IndexPath) {
-        guard let viewModel = viewModel else { return }
-
-        if let item = try? viewModel.getItem(at: indexPath), let viewModel = try? viewModel.viewModelForChildView(at: indexPath) {
-            switch item {
-            case .detail:
-                guard let vm = viewModel as? CourseDetailViewModel else { return }
-                let childVC = CourseDetailViewController()
-                childVC.viewModel = vm
-                addChildViewController(childVC)
-                displayView.addSubview(childVC.view)
-                childVC.didMove(toParentViewController: self)
-            case .comment:
-                guard let vm = viewModel as? CourseCommentViewModel else { return }
-                let childVC = CourseCommentViewController()
-                childVC.viewModel = vm
-                addChildViewController(childVC)
-                displayView.addSubview(childVC.view)
-                childVC.didMove(toParentViewController: self)
+        switch menuItem {
+        case .detail:
+            for subview in displayView.subviews {
+                subview.isHidden = subview != detailVC.view
+            }
+        case .comment:
+            for subview in displayView.subviews {
+                subview.isHidden = subview != commentVC.view
             }
         }
     }
