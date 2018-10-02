@@ -43,6 +43,8 @@ final class CourseCommentViewController: UIViewController {
     }
 
     @IBAction func sendButtonTouchUpInside(_ sender: Any) {
+        guard !commentTextView.text.isEmpty else { return }
+        viewModel.newComment.content = commentTextView.text
     }
 }
 
@@ -56,6 +58,7 @@ extension CourseCommentViewController: UITableViewDataSource, UITableViewDelegat
         if let vm = try? viewModel.viewModelForItem(at: indexPath) {
             let cell = tableView.dequeue(CourseCommentCell.self)
             cell.viewModel = vm
+            cell.selectionStyle = .none
             return cell
         }
         return TableCell()

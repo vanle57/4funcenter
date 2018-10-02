@@ -78,6 +78,7 @@
                     <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="etO-aV-A1r"/>
+                        <outlet property="delegate" destination="-1" id="X8T-bB-1Bh"/>
                     </connections>
                 </tableView>
             </subviews>

@@ -14,6 +14,8 @@ final class Comment {
     var ratingPoint = 0
     var dateCreate: Date = Date()
 
+    init() { }
+
     init(content: String, ratingPoint: Int, dateCreate: Date) {
         self.content = content
         self.ratingPoint = ratingPoint

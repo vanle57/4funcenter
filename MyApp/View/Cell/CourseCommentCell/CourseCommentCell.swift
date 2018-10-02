@@ -9,14 +9,13 @@
 import UIKit
 
 final class CourseCommentCell: TableCell {
-    
     // MARK: - Outlets
     @IBOutlet weak var avtarImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     @IBOutlet weak var dateCreatedLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
-    
+
     var viewModel: CourseCommentCellViewModel? {
         didSet {
             guard let viewModel = viewModel else { return }

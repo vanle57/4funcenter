@@ -12,7 +12,13 @@ final class CourseCommentViewModel: ViewModel {
 
     var comments: [Comment] = DummyData.fetchComments()
 
+    var newComment: Comment = Comment()
+
     init() { }
+
+    func addNewComment() {
+        
+    }
 }
 
 // MARK: - Table view
