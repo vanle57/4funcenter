@@ -13,15 +13,19 @@ final class CourseCommentViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var commentTextView: UITextView!
+    @IBOutlet weak var commentRatingTextView: UITextView!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var commentView: UIView!
-
+    @IBOutlet weak var ratingView: UIView!
+    
     var viewModel = CourseCommentViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configTableView()
         configCommentView()
+        configRatingView()
+        hiddenRatingView()
     }
 
     // MARK: - Private function
@@ -32,19 +36,36 @@ final class CourseCommentViewController: UIViewController {
     }
 
     private func configCommentView() {
-        commentView.addBorders(edges: [.top], color: App.Color.defaultTableViewSeperatorColor)
+        commentView.addBorders(edges: .top, color: App.Color.defaultTableViewSeperatorColor)
         commentTextView.delegate = self
-        cancelButton.isHidden = true
+    }
+
+    private func configRatingView() {
+        ratingView.addBorders(edges: .top, color: App.Color.defaultTableViewSeperatorColor)
+        commentRatingTextView.delegate = self
+        hiddenCancelButton()
+    }
+
+    private func hiddenRatingView(_ status: Bool = true) {
+        ratingView.isHidden = status
+    }
+
+    private func hiddenCancelButton(_ status: Bool = true) {
+        cancelButton.isHidden = status
     }
 
     // MARK: - Actions
     @IBAction func cancelButtonTouchUpInside(_ sender: Any) {
-        commentTextView.text = ""
+        commentRatingTextView.text = ""
+    }
+
+
+    @IBAction func starButtonTouchUpInside(_ sender: Any) {
     }
 
     @IBAction func sendButtonTouchUpInside(_ sender: Any) {
-        guard !commentTextView.text.isEmpty else { return }
-        viewModel.newComment.content = commentTextView.text
+        guard !commentRatingTextView.text.isEmpty else { return }
+        viewModel.newComment.content = commentRatingTextView.text
     }
 }
 
@@ -72,12 +93,18 @@ extension CourseCommentViewController: UITableViewDataSource, UITableViewDelegat
 // MARK: - UITextViewDelegate
 extension CourseCommentViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
-        commentTextView.text = ""
-        cancelButton.isHidden = false
+        if textView == commentTextView {
+            hiddenRatingView(false)
+        } else if textView == commentRatingTextView {
+            commentRatingTextView.text = ""
+            hiddenCancelButton(false)
+        }
     }
 
     func textViewDidEndEditing(_ textView: UITextView) {
-        cancelButton.isHidden = true
+        if textView == commentRatingTextView {
+            hiddenCancelButton()
+        }
     }
 }
 
