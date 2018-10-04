@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -26,6 +25,11 @@
                 <outlet property="ratingView" destination="li4-G2-8j6" id="L58-b0-rRt"/>
                 <outlet property="tableView" destination="9rk-5G-vHA" id="GBP-Ih-CXH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="starButtons" destination="ny8-rY-VBR" collectionClass="NSMutableArray" id="rsy-1o-lss"/>
+                <outletCollection property="starButtons" destination="e6Z-I0-I0B" collectionClass="NSMutableArray" id="9jQ-Hg-bBU"/>
+                <outletCollection property="starButtons" destination="c2c-6p-2zW" collectionClass="NSMutableArray" id="cH8-5z-9DZ"/>
+                <outletCollection property="starButtons" destination="ODw-tR-A6M" collectionClass="NSMutableArray" id="jMN-xd-rzQ"/>
+                <outletCollection property="starButtons" destination="4Ft-Oy-8vh" collectionClass="NSMutableArray" id="od6-hy-HcH"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

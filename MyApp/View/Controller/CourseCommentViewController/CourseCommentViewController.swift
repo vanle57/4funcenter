@@ -17,7 +17,8 @@ final class CourseCommentViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var commentView: UIView!
     @IBOutlet weak var ratingView: UIView!
-    
+    @IBOutlet var starButtons: [UIButton]!
+
     var viewModel = CourseCommentViewModel()
 
     override func viewDidLoad() {
@@ -60,7 +61,17 @@ final class CourseCommentViewController: UIViewController {
     }
 
 
-    @IBAction func starButtonTouchUpInside(_ sender: Any) {
+    @IBAction func starButtonTouchUpInside(_ sender: UIButton) {
+        switch sender.tag {
+        case 1:
+            <#code#>
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+        default:
+            <#code#>
+        }
     }
 
     @IBAction func sendButtonTouchUpInside(_ sender: Any) {
