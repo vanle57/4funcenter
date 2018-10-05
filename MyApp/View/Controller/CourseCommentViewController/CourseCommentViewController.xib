@@ -84,35 +84,35 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="idU-hu-uVC">
                             <rect key="frame" x="75" y="4" width="197" height="27"/>
                             <subviews>
-                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ny8-rY-VBR">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ny8-rY-VBR">
                                     <rect key="frame" x="20" y="1" width="25" height="25"/>
                                     <state key="normal" image="ic_star_blank"/>
                                     <connections>
                                         <action selector="starButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="1Wt-mf-fXZ"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6Z-I0-I0B">
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6Z-I0-I0B">
                                     <rect key="frame" x="53" y="1" width="25" height="25"/>
                                     <state key="normal" image="ic_star_blank"/>
                                     <connections>
                                         <action selector="starButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="M6g-cT-RV6"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2c-6p-2zW">
+                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2c-6p-2zW">
                                     <rect key="frame" x="86" y="1" width="25" height="25"/>
                                     <state key="normal" image="ic_star_blank"/>
                                     <connections>
                                         <action selector="starButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="Kf8-4h-dhx"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODw-tR-A6M">
+                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODw-tR-A6M">
                                     <rect key="frame" x="119" y="1" width="25" height="25"/>
                                     <state key="normal" image="ic_star_blank"/>
                                     <connections>
                                         <action selector="starButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="cVe-66-soP"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ft-Oy-8vh">
+                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ft-Oy-8vh">
                                     <rect key="frame" x="152" y="1" width="25" height="25"/>
                                     <state key="normal" image="ic_star_blank"/>
                                     <connections>
@@ -139,7 +139,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r2j-7G-RiV">
                             <rect key="frame" x="0.0" y="40" width="375" height="40"/>
                             <subviews>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="Comment" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SSO-bO-8tq">
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="Comment..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SSO-bO-8tq">
                                     <rect key="frame" x="10" y="0.0" width="320" height="35"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" name="PlayfairDisplay-Regular" family="Playfair Display" pointSize="14"/>

@@ -17,7 +17,7 @@ final class CourseCommentViewModel: ViewModel {
     init() { }
 
     func addNewComment() {
-        
+        // TODO: query api
     }
 }
 

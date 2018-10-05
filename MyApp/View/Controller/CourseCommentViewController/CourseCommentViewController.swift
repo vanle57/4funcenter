@@ -60,23 +60,30 @@ final class CourseCommentViewController: UIViewController {
         commentRatingTextView.text = ""
     }
 
-
     @IBAction func starButtonTouchUpInside(_ sender: UIButton) {
-        switch sender.tag {
-        case 1:
-            <#code#>
-        case 2:
-        case 3:
-        case 4:
-        case 5:
-        default:
-            <#code#>
+        for tag in 0...sender.tag {
+            starButtons[tag].setImage(#imageLiteral(resourceName: "ic_star"), for: .normal)
         }
+
+        if sender.tag < starButtons.count - 1 {
+            for tag in (sender.tag + 1)...(starButtons.count - 1) {
+                starButtons[tag].setImage(#imageLiteral(resourceName: "ic_star_blank"), for: .normal)
+            }
+        }
+
+        viewModel.newComment.ratingPoint = sender.tag + 1
     }
 
     @IBAction func sendButtonTouchUpInside(_ sender: Any) {
-        guard !commentRatingTextView.text.isEmpty else { return }
         viewModel.newComment.content = commentRatingTextView.text
+        viewModel.addNewComment()
+        commentTextView.resignFirstResponder()
+        commentRatingTextView.resignFirstResponder()
+        commentRatingTextView.text = "Comment..."
+        for tag in 0...starButtons.count - 1 {
+            starButtons[tag].setImage(#imageLiteral(resourceName: "ic_star_blank"), for: .normal)
+        }
+        hiddenRatingView()
     }
 }
 
@@ -97,7 +104,7 @@ extension CourseCommentViewController: UITableViewDataSource, UITableViewDelegat
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        commentTextView.resignFirstResponder()
+        commentRatingTextView.resignFirstResponder()
     }
 }
 
