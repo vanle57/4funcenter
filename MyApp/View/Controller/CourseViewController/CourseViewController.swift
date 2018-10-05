@@ -8,11 +8,25 @@
 
 import UIKit
 
-class CourseViewController: BaseViewController {
+class CourseViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet weak var pageMenuCollectionView: UICollectionView!
     @IBOutlet weak var displayView: UIView!
+
+    lazy var detailVC: CourseDetailViewController = {
+        let detailVC = CourseDetailViewController()
+        guard let viewModel = viewModel else { return detailVC }
+        detailVC.viewModel = viewModel.viewModelForDetailView()
+        return detailVC
+    }()
+
+    lazy var commentVC: CourseCommentViewController = {
+        let commentVC = CourseCommentViewController()
+        guard let viewModel = viewModel else { return commentVC }
+        commentVC.viewModel = viewModel.viewModelForCommentView()
+        return commentVC
+    }()
 
     var viewModel: CourseViewModel? {
         didSet {
@@ -20,17 +34,22 @@ class CourseViewController: BaseViewController {
         }
     }
 
-    override func setupUI() {
-        super.setupUI()
+    override func viewDidLoad() {
+        super.viewDidLoad()
         configNavigationBar()
         configCollectionView()
-//        configDefaultChildView()
+        configDefaultChildView()
     }
 
     // MARK: - Private functions
     private func configNavigationBar() {
-        let backButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_back"), style: .plain, target: self, action: nil)
+        let backButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_back"), style: .plain, target: self, action: #selector(backAction))
         navigationItem.leftBarButtonItem = backButton
+
+        let notificationButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_notification"), style: .plain, target: self, action: nil)
+        navigationItem.rightBarButtonItem = notificationButton
+
+//        navigationItem.setLeftBarButton(title+ imag, target: , action:)
     }
 
     private func configCollectionView() {
@@ -38,13 +57,12 @@ class CourseViewController: BaseViewController {
     }
 
     private func configDefaultChildView() {
-        guard let viewModel = viewModel else { return }
-        let vm = viewModel.defaultChildViewModel()
-        let child = CourseDetailViewController()
-        child.viewModel = vm
-        addChildViewController(child)
-        displayView.addSubview(child.view)
-        child.didMove(toParentViewController: self)
+        displayView.addSubview(commentVC.view)
+        displayView.addSubview(detailVC.view)
+    }
+
+    @objc func backAction() {
+        navigationController?.popViewController(animated: true)
     }
 }
 
@@ -85,41 +103,25 @@ extension CourseViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let viewModel = viewModel else { return }
-        if indexPath.row != viewModel.rowSelected {
+        if indexPath.row == viewModel.rowSelected {
+            return
+        } else {
             guard let cell = collectionView.cellForItem(at: indexPath) as? PageMenuCell else { return }
             viewModel.rowSelected = indexPath.row
             cell.viewModel?.isSelected = true
             pageMenuCollectionView.reloadData()
         }
 
-        showViewControllerForSelectedItem(at: indexPath)
-    }
+        guard let menuItem = try? viewModel.getItem(at: indexPath) else { return }
 
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        guard let cell = collectionView.cellForItem(at: indexPath) as? PageMenuCell else { return }
-        cell.viewModel?.isSelected = false
-        cell.updateUI()
-    }
-
-    func showViewControllerForSelectedItem(at indexPath: IndexPath) {
-        guard let viewModel = viewModel else { return }
-
-        if let item = try? viewModel.getItem(at: indexPath), let viewModel = try? viewModel.viewModelForChildView(at: indexPath) {
-            let childVC = CourseDetailViewController()
-            switch item {
-            case .detail:
-                guard let vm = viewModel as? CourseDetailViewModel else { return }
-                childVC.viewModel = vm
-                addChildViewController(childVC)
-                displayView.addSubview(childVC.view)
-                childVC.didMove(toParentViewController: self)
-            case .comment:
-                // Notify the child that it's about to be moved away from its parent
-                childVC.willMove(toParentViewController: nil)
-                // Remove the child
-                childVC.removeFromParentViewController()
-                // Remove the child view controller's view from its parent
-                childVC.view.removeFromSuperview()
+        switch menuItem {
+        case .detail:
+            for subview in displayView.subviews {
+                subview.isHidden = subview != detailVC.view
+            }
+        case .comment:
+            for subview in displayView.subviews {
+                subview.isHidden = subview != commentVC.view
             }
         }
     }

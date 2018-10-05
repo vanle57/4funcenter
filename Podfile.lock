@@ -16,9 +16,9 @@ PODS:
     - FacebookCore (~> 0.3.1)
     - FBSDKCoreKit (~> 4.33)
     - FBSDKLoginKit (~> 4.33)
-  - FBSDKCoreKit (4.34.0):
+  - FBSDKCoreKit (4.37.0):
     - Bolts (~> 1.7)
-  - FBSDKLoginKit (4.34.0):
+  - FBSDKLoginKit (4.37.0):
     - FBSDKCoreKit
   - IQKeyboardManagerSwift (5.0.7)
   - Kingfisher (4.8.0)
@@ -38,14 +38,14 @@ PODS:
 DEPENDENCIES:
   - Alamofire (= 4.6.0)
   - AlamofireNetworkActivityIndicator (= 2.2.0)
-  - FacebookCore
-  - FacebookLogin
-  - IQKeyboardManagerSwift
-  - Kingfisher
+  - FacebookCore (= 0.3.1)
+  - FacebookLogin (= 0.3.1)
+  - IQKeyboardManagerSwift (= 5.0.7)
+  - Kingfisher (= 4.8.0)
   - LGSideMenuController (= 2.1.1)
   - MVVM-Swift (= 1.1.0)
   - ObjectMapper (= 3.1.0)
-  - RealmSwift
+  - RealmSwift (= 3.7.4)
   - SkyFloatingLabelTextField (~> 3.0)
   - SVProgressHUD (= 2.2.5)
   - SwiftLint (= 0.25.0)
@@ -57,8 +57,8 @@ SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   FacebookCore: 33078ef1d7d76b73f7e8c990dca7d3ea6db8d22f
   FacebookLogin: 6f15bf4fefd7a8865abbfa8fcd7f3dfd87aa275f
-  FBSDKCoreKit: 0ff57f093b85c8c9d5aba697d3edf68a8960ce78
-  FBSDKLoginKit: 8c78f57a145afb756e4755e69195ebe08a42466e
+  FBSDKCoreKit: fe5f3474499a81963e11e3f3a5c753d0a95ca2b4
+  FBSDKLoginKit: 2f7249686d1e30ce8a5ef5400eedf50b3e3df332
   IQKeyboardManagerSwift: 30fb3a61de1af53a95e02b80fb54ed0a19d5ede5
   Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
   LGSideMenuController: ae40c80983ab8b8801c7cef0a6804d43aaa72d45
@@ -71,6 +71,6 @@ SPEC CHECKSUMS:
   SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
   SwiftUtils: b009d391fb2e285392f114238f8b55d2750b80f0
 
-PODFILE CHECKSUM: 3d4baa35b538ab5f2951c23d89101fd568e03cdb
+PODFILE CHECKSUM: 7f10d9808a8ac5531d0a02e97bdc1273da7ad219
 
 COCOAPODS: 1.4.0

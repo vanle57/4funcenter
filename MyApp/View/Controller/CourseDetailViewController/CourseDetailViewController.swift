@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CourseDetailViewController: UIViewController {
+final class CourseDetailViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -29,6 +29,7 @@ class CourseDetailViewController: UIViewController {
     }
 
     @IBAction func registerButtonTouchUpInside(_ sender: Any) {
+        print("Registered")
     }
 }
 
