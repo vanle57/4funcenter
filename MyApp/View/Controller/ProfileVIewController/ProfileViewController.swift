@@ -20,67 +20,56 @@ final class ProfileViewController: BaseViewController {
     let viewModel = ProfileViewModel()
 
     // MARK: - Override functions
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
     override func setupUI() {
+        super.setupUI()
         title = "Profile"
-        tableView.register(TableViewCell.self)
+        configNavigationBar()
+        tableView.register(ProfileCell.self)
         tableView.rowHeight = 60
     }
 
-    override func setupData() {
-    }
-
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         cameraButton.circle()
         image.circle()
     }
 
-    func changePassword() {
+    private func configNavigationBar() {
+        let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(changePassword))
+        navigationItem.rightBarButtonItem = saveButton
+    }
 
+    @objc func changePassword() {
+        viewModel.changePassword { [weak self] (result) in
+            guard let this = self else { return }
+            switch result {
+            case .success:
+                this.alert(msg: Define.successMessage, buttons: [App.String.ok], handler: nil)
+            case .failure(let error):
+                guard let error = error as? ProfileViewModel.ChangePasswordError else {
+                    this.alert(error: App.Error.unknownError)
+                    return
+                }
+                this.alert(title: "ERROR",
+                           msg: error.localizedDescription, buttons: [App.String.ok],
+                           handler: nil)
+            }
+        }
     }
 }
 
-// MARK: - Extension: UITableViewDelegate, UITableViewDataSource, TableViewCellDelegate
+// MARK: - UITableViewDelegate
 extension ProfileViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         guard let header = view as? UITableViewHeaderFooterView else { return }
+        header.backgroundView?.backgroundColor = .white
         header.textLabel?.textColor = .black
-        header.textLabel?.font = UIFont(name: "Heebo-Bold", size: 18)
+        header.textLabel?.font = UIFont(name: "Heebo-Medium", size: 18)
         header.textLabel?.frame = header.frame
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-        let cell = tableView.dequeue(TableViewCell.self)
-        let typeOfPassword = viewModel.passwordRows[indexPath.row]
-
-        switch typeOfPassword {
-        case .newPassword:
-            guard let newPass = cell.textField.text else { return }
-            print(newPass)
-        case .confirmPassword:
-            guard let cPass = cell.textField.text else { return }
-            print(cPass)
-            cell.textField.returnKeyType = .done
-        case .oldPassword:
-            cell.textField.returnKeyType = .next
-        }
-
-        if indexPath.row == viewModel.passwordRows.count - 1 {
-            if viewModel.confirmPassword(newPassword: "", confirmPassword: "") {
-                alert(msg: Define.successMessage, buttons: ["OK"], handler: nil)
-            } else {
-                alert(error: NSError(domain: nil, code: 10, message: Define.errorMessage))
-            }
-        } else {
-            print(indexPath.row)
-        }
     }
 }
 
+// MARK: - UITableViewDataSource
 extension ProfileViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.numberOfSection()
@@ -101,7 +90,7 @@ extension ProfileViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(TableViewCell.self)
+        let cell = tableView.dequeue(ProfileCell.self)
         let typeOfSection = viewModel.typeOfSections[indexPath.section]
         cell.viewModel = viewModel.viewModelOfItem(at: indexPath)
         switch typeOfSection {
@@ -115,26 +104,44 @@ extension ProfileViewController: UITableViewDataSource {
     }
 }
 
-extension ProfileViewController: TableViewCellDelegate {
-    func profileCell(_ profileCell: TableViewCell, neddPerform action: TableViewCell.Action) {
+// MARK: - TableViewCellDelegate
+extension ProfileViewController: ProfileCellDelegate {
+    func profileCell(_ profileCell: ProfileCell, neddPerform action: ProfileCell.Action) {
         switch action {
         case .shouldBecomeFirstResponder:
             guard var indexPath = tableView.indexPath(for: profileCell) else { return }
-            indexPath.row += 1
-            let cell = tableView.cellForRow(at: indexPath) as? TableViewCell
-            if indexPath.row != viewModel.numberOfItemInSection(inSection: indexPath.section) {
-                cell?.textField.becomeFirstResponder()
-                tableView.scrollToRow(at: indexPath, at: .middle, animated: true)
-            } else {
-
+            if indexPath.row < viewModel.passwordRows.count {
+                guard let cell = tableView.cellForRow(at: indexPath) as? ProfileCell else { return }
+                let rowType = viewModel.getTypeOfPasswordRows(at: indexPath.row)
+                    switch rowType {
+                    case .oldPassword:
+                        guard let text = cell.textField.text else { return }
+                        viewModel.oldPassword = text
+                        indexPath.row += 1
+                        guard let cell = tableView.cellForRow(at: indexPath) as? ProfileCell else { return }
+                        cell.textField.becomeFirstResponder()
+                        tableView.scrollToRow(at: indexPath, at: .middle, animated: true)
+                    case .newPassword:
+                        guard let text = cell.textField.text else { return }
+                        viewModel.newPassword = text
+                        indexPath.row += 1
+                        guard let cell = tableView.cellForRow(at: indexPath) as? ProfileCell else { return }
+                        cell.textField.returnKeyType = .done
+                        cell.textField.becomeFirstResponder()
+                        tableView.scrollToRow(at: indexPath, at: .middle, animated: true)
+                    case .confirmPassword:
+                        guard let text = cell.textField.text else { return }
+                        viewModel.confirmPassword = text
+                        changePassword()
+                    }
             }
         }
     }
 }
 
+// MARK: - Define
 extension ProfileViewController {
     struct Define {
-        static let successMessage = "Bạn đã đổi mật khẩu thành công"
-        static let errorMessage = "Mật khẩu không thể xác thực. Mời bạn nhập lại"
+        static let successMessage = "Change password successfully!"
     }
 }

@@ -23,7 +23,7 @@ final class ProfileCell: TableCell {
     @IBOutlet weak var textField: UITextField!
 
     // MARK: - property
-    var viewModel: TableCellModel? {
+    var viewModel: ProfileCellViewModel? {
         didSet {
             guard let viewModel = viewModel else { return }
             textField.placeholder = viewModel.textField

@@ -84,6 +84,7 @@
 		B3904EE6215D315D0019138E /* CourseDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3904EE4215D315D0019138E /* CourseDetailCell.swift */; };
 		B3904EE7215D315D0019138E /* CourseDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3904EE5215D315D0019138E /* CourseDetailCell.xib */; };
 		B3904EE9215DB5EF0019138E /* CourseDetailCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3904EE8215DB5EF0019138E /* CourseDetailCellViewModel.swift */; };
+		B3969518216B354500D3B8EB /* ProfileCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3969517216B354400D3B8EB /* ProfileCellViewModel.swift */; };
 		B3D26DA1215333040093FE42 /* UIScreenExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26D9F215333040093FE42 /* UIScreenExt.swift */; };
 		B3D26DA2215333040093FE42 /* DateExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26DA0215333040093FE42 /* DateExt.swift */; };
 		B3D26DA42153330D0093FE42 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26DA32153330D0093FE42 /* DummyData.swift */; };
@@ -152,9 +153,8 @@
 		F00DEDA0215382AD0089F54D /* HomeTableCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00DED9F215382AD0089F54D /* HomeTableCellModel.swift */; };
 		F00DEDA22153837C0089F54D /* BJAutoScrollingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00DEDA12153837C0089F54D /* BJAutoScrollingCollectionView.swift */; };
 		F0FEF0E1215A24BB00B7C9A6 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FEF0DF215A24BB00B7C9A6 /* ProfileViewModel.swift */; };
-		F0FEF0F1215A386D00B7C9A6 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FEF0EE215A386D00B7C9A6 /* TableViewCell.swift */; };
-		F0FEF0F2215A386D00B7C9A6 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0FEF0EF215A386D00B7C9A6 /* TableViewCell.xib */; };
-		F0FEF0F3215A386D00B7C9A6 /* TableCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FEF0F0215A386D00B7C9A6 /* TableCellModel.swift */; };
+		F0FEF0F1215A386D00B7C9A6 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FEF0EE215A386D00B7C9A6 /* ProfileCell.swift */; };
+		F0FEF0F2215A386D00B7C9A6 /* ProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0FEF0EF215A386D00B7C9A6 /* ProfileCell.xib */; };
 		F1C6352C1EF141F300D0A1A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1C6352B1EF141F300D0A1A0 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -264,6 +264,7 @@
 		B3904EE4215D315D0019138E /* CourseDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailCell.swift; sourceTree = "<group>"; };
 		B3904EE5215D315D0019138E /* CourseDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseDetailCell.xib; sourceTree = "<group>"; };
 		B3904EE8215DB5EF0019138E /* CourseDetailCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailCellViewModel.swift; sourceTree = "<group>"; };
+		B3969517216B354400D3B8EB /* ProfileCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCellViewModel.swift; sourceTree = "<group>"; };
 		B3D26D9F215333040093FE42 /* UIScreenExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreenExt.swift; sourceTree = "<group>"; };
 		B3D26DA0215333040093FE42 /* DateExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExt.swift; sourceTree = "<group>"; };
 		B3D26DA32153330D0093FE42 /* DummyData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
@@ -335,9 +336,8 @@
 		F00DED9F215382AD0089F54D /* HomeTableCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableCellModel.swift; sourceTree = "<group>"; };
 		F00DEDA12153837C0089F54D /* BJAutoScrollingCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BJAutoScrollingCollectionView.swift; sourceTree = "<group>"; };
 		F0FEF0DF215A24BB00B7C9A6 /* ProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
-		F0FEF0EE215A386D00B7C9A6 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		F0FEF0EF215A386D00B7C9A6 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
-		F0FEF0F0215A386D00B7C9A6 /* TableCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCellModel.swift; sourceTree = "<group>"; };
+		F0FEF0EE215A386D00B7C9A6 /* ProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		F0FEF0EF215A386D00B7C9A6 /* ProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileCell.xib; sourceTree = "<group>"; };
 		F1C6352B1EF141F300D0A1A0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F49F1AB05FCB88523C52A0ED /* Pods_MyApp_MyAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyApp_MyAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA33ABB555FDDC9158D68749 /* Pods-MyApp-MyAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyApp-MyAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyApp-MyAppTests/Pods-MyApp-MyAppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -977,9 +977,9 @@
 		F0FEF0ED215A386D00B7C9A6 /* ProfileTableCell */ = {
 			isa = PBXGroup;
 			children = (
-				F0FEF0EE215A386D00B7C9A6 /* TableViewCell.swift */,
-				F0FEF0EF215A386D00B7C9A6 /* TableViewCell.xib */,
-				F0FEF0F0215A386D00B7C9A6 /* TableCellModel.swift */,
+				F0FEF0EE215A386D00B7C9A6 /* ProfileCell.swift */,
+				F0FEF0EF215A386D00B7C9A6 /* ProfileCell.xib */,
+				B3969517216B354400D3B8EB /* ProfileCellViewModel.swift */,
 			);
 			path = ProfileTableCell;
 			sourceTree = "<group>";
@@ -1006,6 +1006,7 @@
 				ECCCCB161E7A40D00073D923 /* Resources */,
 				E23D44304C718C6164C90A36 /* [CP] Embed Pods Frameworks */,
 				EC01052F1E8F895300CE013D /* Embed Frameworks */,
+				00AD9323D3E68A2693AE39FE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1025,6 +1026,7 @@
 				ECCCCB291E7A40D10073D923 /* Frameworks */,
 				ECCCCB2A1E7A40D10073D923 /* Resources */,
 				C5336427CD995EA5A795B11C /* [CP] Embed Pods Frameworks */,
+				963F8E070682B0E1D71EC734 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1126,7 +1128,7 @@
 				B38230F8215B4899000C718A /* TeacherCollectionCell.xib in Resources */,
 				B33ABCA9214B98FD00F7FF48 /* SideMenuViewController.xib in Resources */,
 				B356BA10214F8A38002955B9 /* PlayfairDisplaySC-Italic.otf in Resources */,
-				F0FEF0F2215A386D00B7C9A6 /* TableViewCell.xib in Resources */,
+				F0FEF0F2215A386D00B7C9A6 /* ProfileCell.xib in Resources */,
 				B3D26DC4215345AD0093FE42 /* CourseCell.xib in Resources */,
 				B38230F1215B445A000C718A /* TeacherTableCell.xib in Resources */,
 				B3904EE7215D315D0019138E /* CourseDetailCell.xib in Resources */,
@@ -1147,6 +1149,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		00AD9323D3E68A2693AE39FE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyApp/Pods-MyApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		963F8E070682B0E1D71EC734 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyApp-MyAppTests/Pods-MyApp-MyAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B0E09827A261C794A6F031AA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1312,7 +1344,7 @@
 				B382637A2161C0F5009F73FD /* Comment.swift in Sources */,
 				B3904EE6215D315D0019138E /* CourseDetailCell.swift in Sources */,
 				B3D26DB8215333570093FE42 /* BlogCellViewModel.swift in Sources */,
-				F0FEF0F1215A386D00B7C9A6 /* TableViewCell.swift in Sources */,
+				F0FEF0F1215A386D00B7C9A6 /* ProfileCell.swift in Sources */,
 				F00DED95215381A70089F54D /* TeacherCollectionViewCell.swift in Sources */,
 				B3D26E212159CD6F0093FE42 /* HistorySearchCell.swift in Sources */,
 				B3D26E142158A0C80093FE42 /* HeaderViewModel.swift in Sources */,
@@ -1340,6 +1372,7 @@
 				F00DED9D215382970089F54D /* HomeTableViewCell.swift in Sources */,
 				EC5337B71EF78CD800ACE038 /* App.swift in Sources */,
 				B3D26E2E215A17D70093FE42 /* Slide.swift in Sources */,
+				B3969518216B354500D3B8EB /* ProfileCellViewModel.swift in Sources */,
 				B374DB5F2147681B005C1FE2 /* HomeViewController.swift in Sources */,
 				625DF8902111BB8B007958F6 /* LoginViewModel.swift in Sources */,
 				B317621D2149F39F005C9D25 /* RegisterViewController.swift in Sources */,
@@ -1377,7 +1410,6 @@
 				ECEC0C581ED44C5D00F6760A /* String.swift in Sources */,
 				B3D26DCB21535AED0093FE42 /* CoursesViewModel.swift in Sources */,
 				B3D26DB6215333570093FE42 /* BlogCell.swift in Sources */,
-				F0FEF0F3215A386D00B7C9A6 /* TableCellModel.swift in Sources */,
 				B38230FA215B6525000C718A /* TeacherCollectionCellViewModel.swift in Sources */,
 				B38263772161C0D9009F73FD /* CourseCommentViewController.swift in Sources */,
 				EC5337BE1EF78FEA00ACE038 /* Font.swift in Sources */,
