@@ -437,6 +437,7 @@
 		B33ABCAA214BA7FC00F7FF48 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				F0FEF0ED215A386D00B7C9A6 /* ProfileCell */,
 				B382636D2161BDFB009F73FD /* CourseCommentCell */,
 				B3904EE3215D31250019138E /* CourseDetailCell */,
 				B3904ED3215CD50A0019138E /* PageMenuCell */,
@@ -534,7 +535,6 @@
 		B374DB552147681A005C1FE2 /* ProfileVIewController */ = {
 			isa = PBXGroup;
 			children = (
-				F0FEF0ED215A386D00B7C9A6 /* ProfileTableCell */,
 				F0FEF0DF215A24BB00B7C9A6 /* ProfileViewModel.swift */,
 				B374DB562147681A005C1FE2 /* ProfileViewController.xib */,
 				B374DB572147681A005C1FE2 /* ProfileViewController.swift */,
@@ -974,14 +974,14 @@
 			path = TeacherCollectionViewOfTableCell;
 			sourceTree = "<group>";
 		};
-		F0FEF0ED215A386D00B7C9A6 /* ProfileTableCell */ = {
+		F0FEF0ED215A386D00B7C9A6 /* ProfileCell */ = {
 			isa = PBXGroup;
 			children = (
 				F0FEF0EE215A386D00B7C9A6 /* ProfileCell.swift */,
 				F0FEF0EF215A386D00B7C9A6 /* ProfileCell.xib */,
 				B3969517216B354400D3B8EB /* ProfileCellViewModel.swift */,
 			);
-			path = ProfileTableCell;
+			path = ProfileCell;
 			sourceTree = "<group>";
 		};
 		F1C6352A1EF141F300D0A1A0 /* LaunchScreen */ = {

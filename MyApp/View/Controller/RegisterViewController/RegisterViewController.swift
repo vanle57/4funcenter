@@ -56,7 +56,7 @@ final class RegisterViewController: BaseViewController {
             guard let this = self else { return }
             switch result {
             case .success:
-                self?.navigationController?.pushViewController(RegisterSuccessViewController(), animated: true)
+                this.navigationController?.pushViewController(RegisterSuccessViewController(), animated: true)
             case .failure(let error):
                 guard let error = error as? RegisterViewModel.RegisterError else {
                     this.alert(error: App.Error.unknownError)
