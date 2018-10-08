@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol TableViewCellDelegate: class {
-    func profileCell(_ profileCell: TableViewCell, neddPerform action: TableViewCell.Action)
+protocol ProfileCellDelegate: class {
+    func profileCell(_ profileCell: ProfileCell, neddPerform action: ProfileCell.Action)
 }
 
-final class TableViewCell: TableCell {
+final class ProfileCell: TableCell {
 
     // MARK: - Enum
     enum Action {
@@ -32,7 +32,7 @@ final class TableViewCell: TableCell {
     }
 
     // MARK: - Protocol
-    weak var delegate: TableViewCellDelegate?
+    weak var delegate: ProfileCellDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,9 +46,8 @@ final class TableViewCell: TableCell {
 }
 
 // MARK: - Extension
-extension TableViewCell: UITextFieldDelegate {
+extension ProfileCell: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.text = ""
         textField.becomeFirstResponder()
     }
 

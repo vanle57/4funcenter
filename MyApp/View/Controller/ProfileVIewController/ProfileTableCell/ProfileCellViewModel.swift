@@ -8,7 +8,7 @@
 
 import MVVM
 
-class TableCellModel: ViewModel {
+final class ProfileCellViewModel: ViewModel {
 
     var textField = ""
 
