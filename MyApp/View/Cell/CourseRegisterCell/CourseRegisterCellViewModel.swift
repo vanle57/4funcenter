@@ -37,6 +37,6 @@ extension CourseRegisterCellViewModel {
         return classesToChoose[index].name
     }
     func didSelectRow(at index: Int) -> String {
-        return classesToChoose[index].
+        return classesToChoose[index].scheduler
     }
 }
