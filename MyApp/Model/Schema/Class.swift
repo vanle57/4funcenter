@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+final class CourseClass {
+    
+    var name = ""
+    var scheduler = ""
+
+    init(name: String, scheduler: String) {
+        self.name = name
+        self.scheduler = scheduler
+    }
+}
