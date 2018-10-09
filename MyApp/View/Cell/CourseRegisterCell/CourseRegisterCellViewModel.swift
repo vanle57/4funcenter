@@ -12,13 +12,12 @@ final class CourseRegisterCellViewModel: ViewModel {
 
     enum TextFieldType {
         case normal
-        case justDisplay
+        case justDisplay(content: String)
         case choose
     }
 
     var title = ""
     var type: TextFieldType = .normal
-    var contentToDisplay = ""
     var classesToChoose: [CourseClass] = DummyData.fetchClasses()
 
     init(title: String, type: TextFieldType) {

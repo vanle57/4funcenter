@@ -21,7 +21,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CourseRegisterViewController" customModule="MyApp" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="7sa-qY-M3R" id="pxW-ua-zTS"/>
+                <outlet property="tableView" destination="7sa-qY-M3R" id="aVa-F7-6PP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -36,10 +36,6 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7sa-qY-M3R">
-                    <rect key="frame" x="0.0" y="103" width="375" height="521"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pnf-Ub-we6">
                     <rect key="frame" x="0.0" y="624" width="375" height="43"/>
                     <subviews>
@@ -79,6 +75,13 @@
                         <constraint firstAttribute="trailing" secondItem="EiM-Tb-945" secondAttribute="trailing" id="z2i-jy-INN"/>
                     </constraints>
                 </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7sa-qY-M3R">
+                    <rect key="frame" x="0.0" y="103" width="375" height="521"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="bx4-hM-csY"/>
+                    </connections>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>

@@ -28,7 +28,7 @@ final class CourseRegisterCell: UITableViewCell {
     }
 
     weak var delegate: CourseRegisterCellDelegate?
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -39,8 +39,9 @@ final class CourseRegisterCell: UITableViewCell {
         titleLabel.text = viewModel.title
         configTextField()
         switch viewModel.type {
-        case .justDisplay:
+        case .justDisplay(let content):
             textField.isEnabled = false
+            textField.text = content
         case .choose:
             textField.rightView = UIImageView(image: #imageLiteral(resourceName: "ic_choose"))
             configPickerView()
