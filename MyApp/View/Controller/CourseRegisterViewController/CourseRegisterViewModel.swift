@@ -44,7 +44,27 @@ final class CourseRegisterViewModel: ViewModel {
     var classRows: [TypeOfClassInforRow] = [.course, .time, .fee, .classes, .scheduler]
     var studentRows: [TypeOfStudentInforRow] = [.fullName, .email, .phoneNumber, .numberOfIdCard, .gender, .address]
     var scheduler = ""
+    var information: RegisterInformationForm = RegisterInformationForm()
 
+    func saveInformationForIndex(index: Int, value: String) throws {
+        let type = studentRows[index]
+        switch type {
+        case .fullName:
+            information.fullName = value
+        case .email:
+            information.email = value
+        case .address:
+            information.address = value
+        case .numberOfIdCard:
+            guard let result = Int(value) else { throw App.Error.invalidNumberFormatError }
+            information.numberOfIdCard = result
+        case .phoneNumber:
+            guard let result = Int(value) else { throw App.Error.invalidNumberFormatError }
+            information.phoneNumber = result
+        case .gender:
+            information.gender = true
+        }
+    }
 }
 
 extension CourseRegisterViewModel {
@@ -98,4 +118,15 @@ extension CourseRegisterViewModel {
             return CourseRegisterCellViewModel(title: rowType.rawValue, type: .justDisplay(content: scheduler))
         }
     }
+}
+
+struct RegisterInformationForm {
+//    var courseId: Int
+//    var classId: Int
+    var fullName: String = ""
+    var email: String = ""
+    var phoneNumber: Int = 0
+    var numberOfIdCard: Int = 0
+    var gender: Bool = false
+    var address: String = ""
 }

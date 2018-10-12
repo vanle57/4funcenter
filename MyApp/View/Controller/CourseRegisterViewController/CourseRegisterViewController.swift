@@ -65,14 +65,20 @@ extension CourseRegisterViewController: UITableViewDataSource {
 
 extension CourseRegisterViewController: CourseRegisterCellDelegate {
     func courseRegisterCell(_ cell: CourseRegisterCell, needPerform action: CourseRegisterCell.Action) {
+        guard var indexPath = tableView.indexPath(for: cell) else { return }
         switch action {
         case .shouldShowScheduler(let scheduler):
-            guard var indexPath = tableView.indexPath(for: cell) else { return }
             indexPath.row += 1
             guard let cell = tableView.cellForRow(at: indexPath) as? CourseRegisterCell else { return }
             viewModel.scheduler = scheduler
             cell.viewModel = viewModel.viewModelForClassInforItem(at: indexPath.row)
             tableView.reloadRows(at: [indexPath], with: .automatic)
+        case .shouldReturnValue(let value):
+            do {
+                try viewModel.saveInformationForIndex(index: indexPath.row, value: value)
+            } catch let error {
+                alert(error: error)
+            }
         }
     }
 }

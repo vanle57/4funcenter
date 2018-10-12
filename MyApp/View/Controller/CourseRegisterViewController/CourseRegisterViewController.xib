@@ -76,7 +76,7 @@
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7sa-qY-M3R">
-                    <rect key="frame" x="0.0" y="83" width="375" height="544"/>
+                    <rect key="frame" x="0.0" y="73" width="375" height="554"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                     <connections>
@@ -88,7 +88,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="7sa-qY-M3R" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="CQl-YK-hUR"/>
-                <constraint firstItem="7sa-qY-M3R" firstAttribute="top" secondItem="9am-Io-j7L" secondAttribute="bottom" constant="30" id="KnZ-q1-GUr"/>
+                <constraint firstItem="7sa-qY-M3R" firstAttribute="top" secondItem="9am-Io-j7L" secondAttribute="bottom" constant="20" id="KnZ-q1-GUr"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Pnf-Ub-we6" secondAttribute="trailing" id="NyE-KF-Wdc"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9am-Io-j7L" secondAttribute="trailing" constant="10" id="Vnc-Em-iMW"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Pnf-Ub-we6" secondAttribute="bottom" id="XRW-EV-EZs"/>

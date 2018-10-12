@@ -29,7 +29,11 @@ extension App {
                                                userInfo: [NSLocalizedDescriptionKey: "Invalid email!"])
 
         static let invalidPasswordError = NSError(domain: "",
-                                               code: 14,
-                                               userInfo: [NSLocalizedDescriptionKey: "Password must have at least 1 uppercase, 1 digit, 1 lowercase, 8 characters total"])
+                                                  code: 14,
+                                                  userInfo: [NSLocalizedDescriptionKey: "Password must have at least 1 uppercase, 1 digit, 1 lowercase, 8 characters total"])
+
+        static let invalidNumberFormatError = NSError(domain: "",
+                                                      code: 15,
+                                                      userInfo: [NSLocalizedDescriptionKey: "Invalid number format!"])
     }
 }

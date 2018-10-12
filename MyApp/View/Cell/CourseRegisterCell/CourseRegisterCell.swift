@@ -11,7 +11,7 @@ import UIKit
 protocol CourseRegisterCellDelegate: class {
     func courseRegisterCell(_ cell: CourseRegisterCell, needPerform action: CourseRegisterCell.Action)
 }
-final class CourseRegisterCell: UITableViewCell {
+final class CourseRegisterCell: TableCell {
 
     // MARK: - Outlets
     @IBOutlet weak var titleLabel: UILabel!
@@ -25,13 +25,14 @@ final class CourseRegisterCell: UITableViewCell {
 
     enum Action {
         case shouldShowScheduler(String)
+        case shouldReturnValue(String)
     }
 
     weak var delegate: CourseRegisterCellDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        textField.delegate = self
     }
 
     private func updateView() {
@@ -43,7 +44,6 @@ final class CourseRegisterCell: UITableViewCell {
             textField.isEnabled = false
             textField.text = content
         case .choose:
-            textField.rightView = UIImageView(image: #imageLiteral(resourceName: "ic_choose"))
             configPickerView()
         case .normal:
             textField.isEnabled = true
@@ -82,5 +82,18 @@ extension CourseRegisterCell: UIPickerViewDataSource, UIPickerViewDelegate {
         textField.text = text
         let scheduler = viewModel.didSelectRow(at: row)
         delegate?.courseRegisterCell(self, needPerform: .shouldShowScheduler(scheduler))
+    }
+}
+
+// MARK: - UITextFieldDelegate
+extension CourseRegisterCell: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.becomeFirstResponder()
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.resignFirstResponder()
+        guard let text = textField.text else { return }
+        delegate?.courseRegisterCell(self, needPerform: .shouldReturnValue(text))
     }
 }
