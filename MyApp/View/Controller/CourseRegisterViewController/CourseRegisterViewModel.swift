@@ -18,31 +18,12 @@ final class CourseRegisterViewModel: ViewModel {
         self.course = course
     }
 
-    enum TypeOfSection: String {
-        case classInfor = "Class information"
-        case studentInfor = "Your information"
-    }
-
-    enum TypeOfClassInforRow: String {
-        case course = "Course"
-        case time = "Time"
-        case fee = "Fee"
-        case classes = "Class"
-        case scheduler = "Scheduler"
-    }
-
-    enum TypeOfStudentInforRow: String {
-        case fullName = "Full Name(*)"
-        case email = "Email(*)"
-        case phoneNumber = "Phone Number(*)"
-        case numberOfIdCard = "Id card(*)"
-        case gender = "Gender"
-        case address = "Address"
-    }
-
+    // MARK: - Properties for table view
     var sections: [TypeOfSection] = [.classInfor, .studentInfor]
     var classRows: [TypeOfClassInforRow] = [.course, .time, .fee, .classes, .scheduler]
     var studentRows: [TypeOfStudentInforRow] = [.fullName, .email, .phoneNumber, .numberOfIdCard, .gender, .address]
+
+    // MARK: - Properties for register
     var scheduler = ""
     var information: RegisterInformationForm = RegisterInformationForm()
 
@@ -65,6 +46,86 @@ final class CourseRegisterViewModel: ViewModel {
             information.gender = true
         }
     }
+
+    func register(_ completion: @escaping RegisterCompletion) {
+        do {
+            try validate()
+
+            // TODO: query api to register
+            completion(.success)
+        } catch let error {
+            completion(.failure(error))
+        }
+    }
+
+    /// this function is used to validate all case of register action
+    /// including: check empty field, valid email and phone number
+    ///
+    /// - Throws: throw register error
+    func validate() throws {
+        if information.fullName.isEmpty || information.email.isEmpty || information.phoneNumber == 0 || information.numberOfIdCard == 0 {
+            throw RegisterError.emptyField
+        }
+
+        if !information.email.isValidEmail() {
+            throw RegisterError.invalidEmail
+        }
+
+        if information.phoneNumber.selfDivide() != 10 {
+            print(information.phoneNumber)
+            print(information.phoneNumber.selfDivide())
+            throw RegisterError.invalidPhoneNumber
+        }
+    }
+}
+
+// MARK: - enum
+extension CourseRegisterViewModel {
+    enum TypeOfSection: String {
+        case classInfor = "Class information"
+        case studentInfor = "Your information"
+    }
+
+    enum TypeOfClassInforRow: String {
+        case course = "Course"
+        case time = "Time"
+        case fee = "Fee"
+        case classes = "Class"
+        case scheduler = "Scheduler"
+    }
+
+    enum TypeOfStudentInforRow: String {
+        case fullName = "Full Name(*)"
+        case email = "Email(*)"
+        case phoneNumber = "Phone Number(*)"
+        case numberOfIdCard = "Id card(*)"
+        case gender = "Gender"
+        case address = "Address"
+    }
+
+    enum RegisterError: Error {
+        case emptyField
+        case invalidEmail
+        case invalidPhoneNumber
+
+        var localizedDescription: String {
+            switch self {
+            case .emptyField:
+                return App.Error.emptyFieldError.localizedDescription
+            case .invalidEmail:
+                return App.Error.invalidEmailError.localizedDescription
+            case .invalidPhoneNumber:
+                return App.Error.invalidPhoneNumberError.localizedDescription
+            }
+        }
+    }
+
+    enum RegisterResult {
+        case success
+        case failure(Error)
+    }
+
+    typealias RegisterCompletion = (RegisterResult) -> Void
 }
 
 // MARK: - Table view

@@ -31,7 +31,21 @@ final class CourseRegisterViewController: UIViewController {
     }
 
     private func register() {
-        print("Register")
+        viewModel.register { [weak self] (result) in
+            guard let this = self else { return }
+            switch result {
+            case .success:
+                this.alert(msg: Define.succesMessage, buttons: [App.String.ok], handler: nil)
+            case .failure(let error):
+                guard let error = error as? CourseRegisterViewModel.RegisterError else {
+                    this.alert(error: App.Error.unknownError)
+                    return
+                }
+                this.alert(title: "ERROR",
+                           msg: error.localizedDescription, buttons: [App.String.ok],
+                           handler: nil)
+            }
+        }
     }
 
     @objc func cancelAction() {
@@ -39,6 +53,7 @@ final class CourseRegisterViewController: UIViewController {
     }
 
     @IBAction func registerButtonTouchUpInside(_ sender: Any) {
+        register()
     }
 
     @IBAction func cancelButtonTouchUpInside(_ sender: Any) {
@@ -104,5 +119,12 @@ extension CourseRegisterViewController: UITableViewDelegate {
         guard let header = view as? UITableViewHeaderFooterView else { return }
         header.textLabel?.font = UIFont(name: "Heebo-Medium", size: 17)
         header.textLabel?.frame = header.frame
+    }
+}
+
+// MARK: - Define
+extension CourseRegisterViewController {
+    struct Define {
+        static let succesMessage = "Register Success!"
     }
 }

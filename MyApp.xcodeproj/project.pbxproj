@@ -14,6 +14,7 @@
 		629E064E2126EE05004D29E0 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629E064D2126EE05004D29E0 /* Errors.swift */; };
 		6C392FC5AF0C61509011C30D /* Pods_MyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E8000CCB9AE328B83764288 /* Pods_MyApp.framework */; };
 		ACB045A3210F0CEB00159503 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB045A2210F0CEB00159503 /* BaseNavigationController.swift */; };
+		B305A31821707BAC008F8570 /* IntExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B305A31721707BAC008F8570 /* IntExt.swift */; };
 		B317621A2148CB65005C9D25 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31762192148CB65005C9D25 /* RegisterViewModel.swift */; };
 		B317621D2149F39F005C9D25 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B317621B2149F39F005C9D25 /* RegisterViewController.swift */; };
 		B317621E2149F39F005C9D25 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B317621C2149F39F005C9D25 /* RegisterViewController.xib */; };
@@ -201,6 +202,7 @@
 		629E064D2126EE05004D29E0 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		7E8000CCB9AE328B83764288 /* Pods_MyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB045A2210F0CEB00159503 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		B305A31721707BAC008F8570 /* IntExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExt.swift; sourceTree = "<group>"; };
 		B31762192148CB65005C9D25 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		B317621B2149F39F005C9D25 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		B317621C2149F39F005C9D25 /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
@@ -986,6 +988,7 @@
 				ECEC0C591ED44D4100F6760A /* UIViewControllerExt.swift */,
 				B374DB8B2147A1E1005C1FE2 /* UIButtonExt.swift */,
 				B382637D2161D7FD009F73FD /* UIViewExt.swift */,
+				B305A31721707BAC008F8570 /* IntExt.swift */,
 			);
 			path = Ext;
 			sourceTree = "<group>";
@@ -1410,6 +1413,7 @@
 				F00DED8A215380080089F54D /* Teacher.swift in Sources */,
 				629E064E2126EE05004D29E0 /* Errors.swift in Sources */,
 				B3D5AA9F216C3D2700EDBAED /* CourseRegisterCell.swift in Sources */,
+				B305A31821707BAC008F8570 /* IntExt.swift in Sources */,
 				F00DED9D215382970089F54D /* HomeTableViewCell.swift in Sources */,
 				EC5337B71EF78CD800ACE038 /* App.swift in Sources */,
 				B3D26E2E215A17D70093FE42 /* Slide.swift in Sources */,

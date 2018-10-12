@@ -35,5 +35,9 @@ extension App {
         static let invalidNumberFormatError = NSError(domain: "",
                                                       code: 15,
                                                       userInfo: [NSLocalizedDescriptionKey: "Invalid number format!"])
+
+        static let invalidPhoneNumberError = NSError(domain: "",
+                                                  code: 16,
+                                                  userInfo: [NSLocalizedDescriptionKey: "Invalid phone number"])
     }
 }
