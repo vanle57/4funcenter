@@ -46,7 +46,7 @@ final class CourseRegisterCell: UITableViewCell {
             textField.rightView = UIImageView(image: #imageLiteral(resourceName: "ic_choose"))
             configPickerView()
         case .normal:
-            break
+            textField.isEnabled = true
         }
     }
 
@@ -78,6 +78,8 @@ extension CourseRegisterCell: UIPickerViewDataSource, UIPickerViewDelegate {
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         guard let viewModel = viewModel else { return }
+        let text = viewModel.titleForRow(at: row)
+        textField.text = text
         let scheduler = viewModel.didSelectRow(at: row)
         delegate?.courseRegisterCell(self, needPerform: .shouldShowScheduler(scheduler))
     }

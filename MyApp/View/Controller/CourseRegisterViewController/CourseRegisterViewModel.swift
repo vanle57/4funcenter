@@ -43,6 +43,7 @@ final class CourseRegisterViewModel: ViewModel {
     var sections: [TypeOfSection] = [.classInfor, .studentInfor]
     var classRows: [TypeOfClassInforRow] = [.course, .time, .fee, .classes, .scheduler]
     var studentRows: [TypeOfStudentInforRow] = [.fullName, .email, .phoneNumber, .numberOfIdCard, .gender, .address]
+    var scheduler = ""
 
 }
 
@@ -51,7 +52,6 @@ extension CourseRegisterViewModel {
     func numberOfSection() -> Int {
         return sections.count
     }
-
 
     func numberOfItemInSection(inSection section: Int) -> Int {
 
@@ -63,6 +63,10 @@ extension CourseRegisterViewModel {
         case .studentInfor:
             return studentRows.count
         }
+    }
+
+    func titleForHeaderInSection(in section: Int) -> String {
+        return sections[section].rawValue
     }
 
     func viewModelForItem(at indexPath: IndexPath) -> CourseRegisterCellViewModel {
@@ -91,7 +95,7 @@ extension CourseRegisterViewModel {
         case .classes:
             return CourseRegisterCellViewModel(title: rowType.rawValue, type: .choose)
         case .scheduler:
-            return CourseRegisterCellViewModel(title: rowType.rawValue, type: .justDisplay(content: ""))
+            return CourseRegisterCellViewModel(title: rowType.rawValue, type: .justDisplay(content: scheduler))
         }
     }
 }

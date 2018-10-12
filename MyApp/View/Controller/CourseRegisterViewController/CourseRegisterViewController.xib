@@ -31,16 +31,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REGISTER COURSE FORM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9am-Io-j7L">
-                    <rect key="frame" x="10" y="50" width="355" height="23"/>
+                    <rect key="frame" x="10" y="30" width="355" height="23"/>
                     <fontDescription key="fontDescription" name="PlayfairDisplay-Bold" family="Playfair Display" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pnf-Ub-we6">
-                    <rect key="frame" x="0.0" y="624" width="375" height="43"/>
+                    <rect key="frame" x="0.0" y="627" width="375" height="40"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byV-hE-pcl">
-                            <rect key="frame" x="0.0" y="0.0" width="187.5" height="43"/>
+                            <rect key="frame" x="0.0" y="0.0" width="187.5" height="40"/>
                             <color key="backgroundColor" red="0.95686274510000002" green="0.91764705879999997" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="Heebo-Medium" family="Heebo" pointSize="17"/>
                             <state key="normal" title="REGISTER">
@@ -51,7 +51,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EiM-Tb-945">
-                            <rect key="frame" x="187.5" y="0.0" width="187.5" height="43"/>
+                            <rect key="frame" x="187.5" y="0.0" width="187.5" height="40"/>
                             <color key="backgroundColor" red="0.1647058824" green="0.16862745100000001" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <state key="normal" title="CANCEL">
                                 <color key="titleColor" red="0.95686274510000002" green="0.91764705879999997" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -68,18 +68,20 @@
                         <constraint firstAttribute="bottom" secondItem="EiM-Tb-945" secondAttribute="bottom" id="LYS-Cu-i1X"/>
                         <constraint firstAttribute="bottom" secondItem="byV-hE-pcl" secondAttribute="bottom" id="b8H-Yn-wXe"/>
                         <constraint firstItem="EiM-Tb-945" firstAttribute="width" secondItem="byV-hE-pcl" secondAttribute="width" id="lYq-Vz-src"/>
-                        <constraint firstAttribute="width" secondItem="Pnf-Ub-we6" secondAttribute="height" multiplier="70:8" id="mDk-BX-XaF"/>
+                        <constraint firstAttribute="width" secondItem="Pnf-Ub-we6" secondAttribute="height" multiplier="75:8" id="mDk-BX-XaF"/>
                         <constraint firstItem="byV-hE-pcl" firstAttribute="width" secondItem="Pnf-Ub-we6" secondAttribute="width" multiplier="1:2" id="rPZ-CR-dso"/>
                         <constraint firstItem="byV-hE-pcl" firstAttribute="top" secondItem="Pnf-Ub-we6" secondAttribute="top" id="wtj-pI-fct"/>
                         <constraint firstItem="EiM-Tb-945" firstAttribute="top" secondItem="Pnf-Ub-we6" secondAttribute="top" id="xdt-Ar-rnC"/>
                         <constraint firstAttribute="trailing" secondItem="EiM-Tb-945" secondAttribute="trailing" id="z2i-jy-INN"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7sa-qY-M3R">
-                    <rect key="frame" x="0.0" y="103" width="375" height="521"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7sa-qY-M3R">
+                    <rect key="frame" x="0.0" y="83" width="375" height="544"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="bx4-hM-csY"/>
+                        <outlet property="delegate" destination="-1" id="mk4-9Z-7d5"/>
                     </connections>
                 </tableView>
             </subviews>
@@ -94,7 +96,7 @@
                 <constraint firstItem="Pnf-Ub-we6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cek-W5-407"/>
                 <constraint firstItem="9am-Io-j7L" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jgg-zB-XSA"/>
                 <constraint firstItem="9am-Io-j7L" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="lHP-Ap-RMC"/>
-                <constraint firstItem="9am-Io-j7L" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="tUe-49-a83"/>
+                <constraint firstItem="9am-Io-j7L" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="tUe-49-a83"/>
                 <constraint firstItem="Pnf-Ub-we6" firstAttribute="top" secondItem="7sa-qY-M3R" secondAttribute="bottom" id="ucz-Bm-sVd"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
