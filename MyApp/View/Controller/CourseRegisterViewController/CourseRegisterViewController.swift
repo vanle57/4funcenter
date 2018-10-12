@@ -30,6 +30,10 @@ final class CourseRegisterViewController: UIViewController {
         navigationItem.leftBarButtonItem = cancelButton
     }
 
+    private func register() {
+        print("Register")
+    }
+
     @objc func cancelAction() {
         navigationController?.popViewController(animated: true)
     }
@@ -42,6 +46,7 @@ final class CourseRegisterViewController: UIViewController {
 
 }
 
+// MARK: - UITableViewDataSource
 extension CourseRegisterViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.numberOfSection()
@@ -63,6 +68,7 @@ extension CourseRegisterViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - CourseRegisterCellDelegate
 extension CourseRegisterViewController: CourseRegisterCellDelegate {
     func courseRegisterCell(_ cell: CourseRegisterCell, needPerform action: CourseRegisterCell.Action) {
         guard var indexPath = tableView.indexPath(for: cell) else { return }
@@ -76,6 +82,14 @@ extension CourseRegisterViewController: CourseRegisterCellDelegate {
         case .shouldReturnValue(let value):
             do {
                 try viewModel.saveInformationForIndex(index: indexPath.row, value: value)
+                indexPath.row += 1
+                if indexPath.row == viewModel.studentRows.count {
+                    register()
+                } else {
+                    guard let cell = tableView.cellForRow(at: indexPath) as? CourseRegisterCell else { return }
+                    cell.textField.becomeFirstResponder()
+                    tableView.scrollToRow(at: indexPath, at: .middle, animated: true)
+                }
             } catch let error {
                 alert(error: error)
             }
@@ -83,13 +97,12 @@ extension CourseRegisterViewController: CourseRegisterCellDelegate {
     }
 }
 
+// MARK: - UITableViewDelegate
 extension CourseRegisterViewController: UITableViewDelegate {
+
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         guard let header = view as? UITableViewHeaderFooterView else { return }
-        header.backgroundView?.backgroundColor = .white
-        header.textLabel?.textColor = .black
         header.textLabel?.font = UIFont(name: "Heebo-Medium", size: 17)
         header.textLabel?.frame = header.frame
     }
-
 }

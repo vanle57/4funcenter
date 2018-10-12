@@ -39,7 +39,7 @@
                         <rect key="frame" x="155" y="15" width="150" height="19.5"/>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" name="Heebo-Regular" family="Heebo" pointSize="16"/>
-                        <textInputTraits key="textInputTraits"/>
+                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
                     </textField>
                 </subviews>
                 <constraints>

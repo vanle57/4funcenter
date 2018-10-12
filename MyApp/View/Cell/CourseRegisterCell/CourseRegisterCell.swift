@@ -96,4 +96,11 @@ extension CourseRegisterCell: UITextFieldDelegate {
         guard let text = textField.text else { return }
         delegate?.courseRegisterCell(self, needPerform: .shouldReturnValue(text))
     }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        guard let text = textField.text else { return false }
+        delegate?.courseRegisterCell(self, needPerform: .shouldReturnValue(text))
+        return true
+    }
 }

@@ -67,6 +67,7 @@ final class CourseRegisterViewModel: ViewModel {
     }
 }
 
+// MARK: - Table view
 extension CourseRegisterViewModel {
 
     func numberOfSection() -> Int {
