@@ -39,7 +39,7 @@ final class RegisterViewModel {
 
     enum RegisterResult {
         case success
-        case failure(Error)
+        case failure(error: Error)
     }
     typealias RegisterCompletion = (RegisterResult) -> Void
 
@@ -71,7 +71,7 @@ final class RegisterViewModel {
             Session.share.accessToken = "accessTokenOfUser"
             completion(.success)
         } catch let error {
-            completion(.failure(error))
+          completion(.failure(error: error))
         }
     }
 

@@ -35,7 +35,7 @@ final class ProfileViewModel: MVVM.Model {
 
     enum ChangePasswordResult {
         case success
-        case failure(Error)
+        case failure(error: Error)
     }
 
     typealias ChangePasswordCompletioon = (ChangePasswordResult) -> Void
@@ -114,7 +114,7 @@ final class ProfileViewModel: MVVM.Model {
             // TODO: query api to change password
             completion(.success)
         } catch let error {
-            completion(.failure(error))
+          completion(.failure(error: error))
         }
     }
 

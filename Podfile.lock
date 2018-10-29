@@ -16,23 +16,23 @@ PODS:
     - FacebookCore (~> 0.3.1)
     - FBSDKCoreKit (~> 4.33)
     - FBSDKLoginKit (~> 4.33)
-  - FBSDKCoreKit (4.37.0):
-    - Bolts (~> 1.7)
-  - FBSDKLoginKit (4.37.0):
+  - FBSDKCoreKit (4.38.0):
+    - Bolts (~> 1.9)
+  - FBSDKLoginKit (4.38.0):
     - FBSDKCoreKit
   - IQKeyboardManagerSwift (5.0.7)
   - Kingfisher (4.8.0)
   - LGSideMenuController (2.1.1)
   - MVVM-Swift (1.1.0)
-  - ObjectMapper (3.1.0)
+  - ObjectMapper (3.3.0)
   - Realm (3.7.4):
     - Realm/Headers (= 3.7.4)
   - Realm/Headers (3.7.4)
   - RealmSwift (3.7.4):
     - Realm (= 3.7.4)
-  - SkyFloatingLabelTextField (3.5.1)
+  - SkyFloatingLabelTextField (3.6.0)
   - SVProgressHUD (2.2.5)
-  - SwiftLint (0.25.0)
+  - SwiftLint (0.27.0)
   - SwiftUtils (4.0.1)
 
 DEPENDENCIES:
@@ -44,11 +44,11 @@ DEPENDENCIES:
   - Kingfisher (= 4.8.0)
   - LGSideMenuController (= 2.1.1)
   - MVVM-Swift (= 1.1.0)
-  - ObjectMapper (= 3.1.0)
+  - ObjectMapper (= 3.3.0)
   - RealmSwift (= 3.7.4)
-  - SkyFloatingLabelTextField (~> 3.0)
+  - SkyFloatingLabelTextField
   - SVProgressHUD (= 2.2.5)
-  - SwiftLint (= 0.25.0)
+  - SwiftLint
   - SwiftUtils (= 4.0.1)
 
 SPEC CHECKSUMS:
@@ -57,20 +57,20 @@ SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   FacebookCore: 33078ef1d7d76b73f7e8c990dca7d3ea6db8d22f
   FacebookLogin: 6f15bf4fefd7a8865abbfa8fcd7f3dfd87aa275f
-  FBSDKCoreKit: fe5f3474499a81963e11e3f3a5c753d0a95ca2b4
-  FBSDKLoginKit: 2f7249686d1e30ce8a5ef5400eedf50b3e3df332
+  FBSDKCoreKit: 2ab7fdbf600dc6b628ba7a49aa29d357a7b4c74e
+  FBSDKLoginKit: 634fa27e72e33620eb6389253337342c03d4a407
   IQKeyboardManagerSwift: 30fb3a61de1af53a95e02b80fb54ed0a19d5ede5
   Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
   LGSideMenuController: ae40c80983ab8b8801c7cef0a6804d43aaa72d45
   MVVM-Swift: 54749cc12bb30af41632f30a2c576a18bf9e4bc8
-  ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
+  ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
   Realm: a469bb59e33f9926102ccaea4349822c53b9117e
   RealmSwift: a45861b21c180f5cf0f122144b9759fa8dde3e9e
-  SkyFloatingLabelTextField: 4cbeece9c3aae97c6019d8fae511cb5b755874f7
+  SkyFloatingLabelTextField: 38164979b79512f9ff9288ad8acfc4bbf5d843e3
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
+  SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
   SwiftUtils: b009d391fb2e285392f114238f8b55d2750b80f0
 
-PODFILE CHECKSUM: 8d799ef4840693f631c75d9a68d9f9326d5b8223
+PODFILE CHECKSUM: 1cda6cad183f4b524a6e04e97699d6b12fa865b4
 
 COCOAPODS: 1.4.0
