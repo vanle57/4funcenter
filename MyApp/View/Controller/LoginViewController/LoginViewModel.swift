@@ -7,41 +7,42 @@
 //
 
 import RealmSwift
+import CommonCrypto
 
 final class LoginViewModel {
-    // MARK: - enum
-    enum LoginResult {
-        case success
-        case failure(Error)
+  // MARK: - enum
+  enum LoginResult {
+    case success
+    case failure(Error)
+  }
+  typealias LoginCompletion = (LoginResult) -> Void
+
+  // MARK: - Properties
+  var email = ""
+  var password = ""
+
+  // MARK: - Puclic function
+
+  /// this function is used to query api to login
+  /// first, check email and password if it is empty, then validate them. finally, call api
+  ///
+  /// - Parameter completion: return closure for view controller
+  func login(_ completion: @escaping LoginCompletion) {
+
+    if email.isEmpty || password.isEmpty {
+      completion(.failure(App.Error.emptyFieldError))
+      return
     }
-    typealias LoginCompletion = (LoginResult) -> Void
 
-    // MARK: - Properties
-    var email = ""
-    var password = ""
-
-    // MARK: - Puclic function
-
-    /// this function is used to query api to login
-    /// first, check email and password if it is empty, then validate them. finally, call api
-    ///
-    /// - Parameter completion: return closure for view controller
-    func login(_ completion: @escaping LoginCompletion) {
-
-        if email.isEmpty || password.isEmpty {
-            completion(.failure(App.Error.emptyFieldError))
-            return
-        }
-        guard email.isValidEmail() else {
-            completion(.failure(App.Error.invalidEmailError))
-            return
-        }
-        guard password.isValidPassword() else {
-            completion(.failure(App.Error.invalidPasswordError))
-            return
-        }
-        //query api
+    let params = Api.User.LoginParams(email: email, password: password.md5())
+    Api.User.login(params: params) { (result) in
+      switch result {
+      case .success:
         Session.share.accessToken = "accessTokenOfUser"
         completion(.success)
+      case .failure(let error):
+        completion(.failure(error))
+      }
     }
+  }
 }

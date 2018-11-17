@@ -35,6 +35,8 @@ final class SideMenuViewController: UIViewController {
     }
 
     private func logout() {
+      Session.share.accessToken = nil
+      AppDelegate.shared.switchRoot(rootType: .notLogin)
     }
 
     // MARK: - Public functions
