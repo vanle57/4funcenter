@@ -46,16 +46,27 @@ final class RegisterViewModel {
   // MARK: - Properties
   var avatar: UIImage = #imageLiteral(resourceName: "img_no_avatar")
   var username = ""
-  var fullName = ""
+  var firstName = ""
+  var lastName = ""
   var email = ""
   var password = ""
   var confirmPassword = ""
   var isChecked = false
 
   init() { }
-  init(avatar: UIImage?, username: String, fullName: String, email: String, password: String, confirmPassword: String, isChecked: Bool) {
+  init(
+    avatar: UIImage?,
+    username: String,
+    firstName: String,
+    lastName: String,
+    email: String,
+    password: String,
+    confirmPassword: String,
+    isChecked: Bool
+    ) {
     self.username = username
-    self.fullName = fullName
+    self.firstName = firstName
+    self.lastName = lastName
     self.email = email
     self.password = password
     self.confirmPassword = confirmPassword
@@ -71,8 +82,8 @@ final class RegisterViewModel {
 
       let params = Api.User.RegisterParams(
         username: username,
-        firstName: fullName,
-        lastName: "aaa",
+        firstName: firstName,
+        lastName: lastName,
         email: email,
         password: password.md5(),
         confirmPassword: confirmPassword.md5(),
@@ -97,7 +108,7 @@ final class RegisterViewModel {
   ///
   /// - Throws: throw register error
   func validate() throws {
-    if username.isEmpty || fullName.isEmpty || email.isEmpty || password.isEmpty || confirmPassword.isEmpty {
+    if username.isEmpty || firstName.isEmpty || lastName.isEmpty || email.isEmpty || password.isEmpty || confirmPassword.isEmpty {
       throw RegisterError.emptyField
     }
 

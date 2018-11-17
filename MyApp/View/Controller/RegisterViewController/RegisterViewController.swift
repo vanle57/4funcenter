@@ -14,7 +14,8 @@ final class RegisterViewController: BaseViewController {
   // MARK: - Outlets
   @IBOutlet weak var avatarImageView: UIImageView!
   @IBOutlet weak var usernameTextField: SkyFloatingLabelTextField!
-  @IBOutlet weak var fullNameTextField: SkyFloatingLabelTextField!
+  @IBOutlet weak var firstNameTextField: SkyFloatingLabelTextField!
+  @IBOutlet weak var lastNameTextField: SkyFloatingLabelTextField!
   @IBOutlet weak var emailTextField: SkyFloatingLabelTextField!
   @IBOutlet weak var passwordTextField: SkyFloatingLabelTextField!
   @IBOutlet weak var confirmPasswordTextField: SkyFloatingLabelTextField!
@@ -26,7 +27,8 @@ final class RegisterViewController: BaseViewController {
     super.setupUI()
     navigationController?.isNavigationBarHidden = true
     usernameTextField.delegate = self
-    fullNameTextField.delegate = self
+    firstNameTextField.delegate = self
+    lastNameTextField.delegate = self
     emailTextField.delegate = self
     passwordTextField.delegate = self
     confirmPasswordTextField.delegate = self
@@ -39,7 +41,8 @@ final class RegisterViewController: BaseViewController {
 
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     usernameTextField.resignFirstResponder()
-    fullNameTextField.resignFirstResponder()
+    firstNameTextField.resignFirstResponder()
+    lastNameTextField.resignFirstResponder()
     emailTextField.resignFirstResponder()
     passwordTextField.resignFirstResponder()
     confirmPasswordTextField.resignFirstResponder()
@@ -48,14 +51,22 @@ final class RegisterViewController: BaseViewController {
   // MARK: - Private functions
   private func register() {
     guard let username = usernameTextField.text,
-      let fullName = fullNameTextField.text,
+      let firstName = firstNameTextField.text,
+      let lastName = lastNameTextField.text,
       let email = emailTextField.text,
       let password = passwordTextField.text,
       let confirmPassword = confirmPasswordTextField.text else {
         alert(error: App.Error.emptyField)
         return
     }
-    viewModel = RegisterViewModel(avatar: viewModel.avatar, username: username, fullName: fullName, email: email, password: password, confirmPassword: confirmPassword, isChecked: viewModel.isChecked)
+    viewModel = RegisterViewModel(avatar: viewModel.avatar,
+                                  username: username,
+                                  firstName: firstName,
+                                  lastName: lastName,
+                                  email: email,
+                                  password: password,
+                                  confirmPassword: confirmPassword,
+                                  isChecked: viewModel.isChecked)
     viewModel.register { [weak self] (result) in
       guard let this = self else { return }
       switch result {
@@ -104,10 +115,14 @@ final class RegisterViewController: BaseViewController {
 extension RegisterViewController: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     if textField == usernameTextField {
-      fullNameTextField.becomeFirstResponder()
+      firstNameTextField.becomeFirstResponder()
       return true
     }
-    if textField == fullNameTextField {
+    if textField == firstNameTextField {
+      lastNameTextField.becomeFirstResponder()
+      return true
+    }
+    if textField == lastNameTextField {
       emailTextField.becomeFirstResponder()
       return true
     }
