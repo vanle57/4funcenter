@@ -21,11 +21,21 @@ extension Api.Path {
   struct User: ApiPath {
     static var path: String { return baseURL }
     var screen = "home"
-    var action = "login"
+    var login = "login"
+    var register = "create-account"
 
     var urlString: String {
-      return User.path / screen / action
+      return User.path / screen
     }
+  
+    var urlLogin: String {
+      return User.path / screen / login
+    }
+  
+    var urlRegister: String {
+      return User.path / screen / register
+    }
+    
   }
 }
 
