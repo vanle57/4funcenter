@@ -30,8 +30,16 @@ final class LoginViewModel {
   func login(_ completion: @escaping LoginCompletion) {
 
     if email.isEmpty || password.isEmpty {
-      completion(.failure(App.Error.emptyFieldError))
+      completion(.failure(App.Error.emptyField))
       return
+    }
+
+    if !email.isValidEmail() {
+      completion(.failure(App.Error.invalidEmail))
+    }
+
+    if !password.isValidPassword() {
+      completion(.failure(App.Error.invalidPassword))
     }
 
     let params = Api.User.LoginParams(email: email, password: password.md5())

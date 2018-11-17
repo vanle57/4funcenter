@@ -49,11 +49,11 @@ final class ProfileViewModel: MVVM.Model {
         var localizedDescription: String {
             switch self {
             case .emptyField:
-                return App.Error.emptyFieldError.localizedDescription
+                return App.Error.emptyField.localizedDescription
             case .oldPasswordIncorrect:
                 return "Incorrect old password"
             case .invalidPassword:
-                return App.Error.invalidPasswordError.localizedDescription
+                return App.Error.invalidPassword.localizedDescription
             case .confirmPasswordNotMatch:
                 return "New password and confirm password does not match"
             }

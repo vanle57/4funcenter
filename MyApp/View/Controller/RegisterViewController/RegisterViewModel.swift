@@ -22,13 +22,13 @@ final class RegisterViewModel {
         var localizedDescription: String {
             switch self {
             case .emptyField:
-                return App.Error.emptyFieldError.localizedDescription
+                return App.Error.emptyField.localizedDescription
             case .userNameTooShort:
                 return "User name must have at least 6 characters!"
             case .invalidEmail:
-                return App.Error.invalidEmailError.localizedDescription
+                return App.Error.invalidEmail.localizedDescription
             case .invalidPassword:
-                return App.Error.invalidPasswordError.localizedDescription
+                return App.Error.invalidPassword.localizedDescription
             case .confirmPasswordNotMatch:
                 return "Password and confirm password does not match"
             case .notAgreeWith4FunTerms:

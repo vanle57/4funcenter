@@ -37,7 +37,7 @@ import Realm
             }
             completion(.success(user))
         } catch {
-            completion(.failure(App.Error.realmError))
+            completion(.failure(App.Error.realm))
         }
     }
 }

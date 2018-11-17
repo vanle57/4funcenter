@@ -48,7 +48,7 @@ final class RegisterViewController: BaseViewController {
             let email = emailTextField.text,
             let password = passwordTextField.text,
             let confirmPassword = confirmPasswordTextField.text else {
-            alert(error: App.Error.emptyFieldError)
+            alert(error: App.Error.emptyField)
             return
         }
         viewModel = RegisterViewModel(avatar: viewModel.avatar, username: username, email: email, password: password, confirmPassword: confirmPassword, isChecked: viewModel.isChecked)
@@ -59,7 +59,7 @@ final class RegisterViewController: BaseViewController {
                 this.navigationController?.pushViewController(RegisterSuccessViewController(), animated: true)
             case .failure(let error):
                 guard let error = error as? RegisterViewModel.RegisterError else {
-                    this.alert(error: App.Error.unknownError)
+                    this.alert(error: App.Error.unknown)
                     return
                 }
                 this.alert(title: "ERROR",
