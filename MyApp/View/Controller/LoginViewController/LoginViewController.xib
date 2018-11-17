@@ -45,7 +45,7 @@
                                     <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Email or Username"/>
-                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Email or phone number"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Email or Username"/>
                                 <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
                                     <color key="value" red="0.16470588235294117" green="0.16862745098039217" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </userDefinedRuntimeAttribute>
