@@ -12,7 +12,6 @@
 		625DF8902111BB8B007958F6 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625DF88F2111BB8B007958F6 /* LoginViewModel.swift */; };
 		629E064E2126EE05004D29E0 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629E064D2126EE05004D29E0 /* Errors.swift */; };
 		6C392FC5AF0C61509011C30D /* Pods_MyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E8000CCB9AE328B83764288 /* Pods_MyApp.framework */; };
-		74DC10CD21959B4E004DFDE3 /* md5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DC10CC21959B4E004DFDE3 /* md5.swift */; };
 		74F1A3C92194555E006E282D /* Api.User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F1A3C82194555E006E282D /* Api.User.swift */; };
 		ACB045A3210F0CEB00159503 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB045A2210F0CEB00159503 /* BaseNavigationController.swift */; };
 		B317621A2148CB65005C9D25 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31762192148CB65005C9D25 /* RegisterViewModel.swift */; };
@@ -192,7 +191,6 @@
 		6238ADD721116D37003D4B8E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		625DF88F2111BB8B007958F6 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		629E064D2126EE05004D29E0 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
-		74DC10CC21959B4E004DFDE3 /* md5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = md5.swift; sourceTree = "<group>"; };
 		74F1A3C82194555E006E282D /* Api.User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.User.swift; sourceTree = "<group>"; };
 		7E8000CCB9AE328B83764288 /* Pods_MyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB045A2210F0CEB00159503 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -392,7 +390,6 @@
 			isa = PBXGroup;
 			children = (
 				B3D26DA32153330D0093FE42 /* DummyData.swift */,
-				74DC10CC21959B4E004DFDE3 /* md5.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1399,7 +1396,6 @@
 				B3D26DA2215333040093FE42 /* DateExt.swift in Sources */,
 				B33ABCB2214F566500F7FF48 /* SideMenuViewModel.swift in Sources */,
 				B358301A2115624500E3E419 /* User.swift in Sources */,
-				74DC10CD21959B4E004DFDE3 /* md5.swift in Sources */,
 				B356BA502151FD87002955B9 /* Course.swift in Sources */,
 				EC332A481EA0A8CB0011DF1E /* Api.swift in Sources */,
 				ECD1C29B1EA725B1000EC989 /* InputViewExt.swift in Sources */,

@@ -34,7 +34,7 @@ final class LoginViewModel {
       return
     }
 
-    let params = Api.User.LoginParams(email: email, password: md5(password))
+    let params = Api.User.LoginParams(email: email, password: password.md5())
     Api.User.login(params: params) { (result) in
       switch result {
       case .success:
@@ -44,18 +44,5 @@ final class LoginViewModel {
         completion(.failure(error))
       }
     }
-  }
-
-  func md5(_ string: String) -> Data {
-    let messageData = string.data(using:.utf8)!
-    var digestData = Data(count: Int(CC_MD5_DIGEST_LENGTH))
-    
-    _ = digestData.withUnsafeMutableBytes {digestBytes in
-      messageData.withUnsafeBytes {messageBytes in
-        CC_MD5(messageBytes, CC_LONG(messageData.count), digestBytes)
-      }
-    }
-    
-    return "\(digestDat)"a
   }
 }
