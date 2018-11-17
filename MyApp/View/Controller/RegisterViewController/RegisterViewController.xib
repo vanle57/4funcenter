@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,10 +22,11 @@
             <connections>
                 <outlet property="avatarImageView" destination="ZKd-v5-eDj" id="osD-aj-GR9"/>
                 <outlet property="checkButton" destination="Voh-tK-2fX" id="c8d-iD-0AU"/>
-                <outlet property="confirmPasswordTextField" destination="x1v-34-fZE" id="aWj-7h-6Sp"/>
-                <outlet property="emailTextField" destination="naP-sz-gl8" id="Mp3-Yd-qXn"/>
-                <outlet property="passwordTextField" destination="NU8-9t-Z59" id="gQc-e4-Y1L"/>
-                <outlet property="usernameTextField" destination="k2T-JO-WaL" id="PXw-Ud-dIh"/>
+                <outlet property="confirmPasswordTextField" destination="Jya-HK-KjO" id="ymo-vf-LIN"/>
+                <outlet property="emailTextField" destination="bJL-8j-eWY" id="lcN-Ti-Y9c"/>
+                <outlet property="fullNameTextField" destination="STO-WC-MA5" id="wru-W2-btd"/>
+                <outlet property="passwordTextField" destination="cyx-WP-kri" id="QEW-jb-QSs"/>
+                <outlet property="usernameTextField" destination="FkI-L6-601" id="YoM-oW-sQu"/>
                 <outlet property="view" destination="Fd7-aL-1Mq" id="22Q-o8-kg2"/>
             </connections>
         </placeholder>
@@ -39,134 +38,18 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="egR-pi-cfX">
                     <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k2T-JO-WaL" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                            <rect key="frame" x="30" y="201.5" width="315" height="30"/>
-                            <color key="tintColor" red="0.41568627450000001" green="0.1058823529" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                    <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter your user name"/>
-                                <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
-                                    <color key="value" red="0.1647058824" green="0.16862745100000001" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
-                                    <color key="value" red="0.95686274510000002" green="0.91764705879999997" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
-                                    <real key="value" value="0.5"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="number" keyPath="selectedLineHeight">
-                                    <real key="value" value="1"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                    <color key="value" cocoaTouchSystemColor="darkTextColor"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Username"/>
-                            </userDefinedRuntimeAttributes>
-                        </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="naP-sz-gl8" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                            <rect key="frame" x="30" y="246.5" width="315" height="30"/>
-                            <color key="tintColor" red="0.41568627450000001" green="0.1058823529" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                    <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter your email"/>
-                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Email"/>
-                                <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
-                                    <color key="value" red="0.1647058824" green="0.16862745100000001" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
-                                    <color key="value" red="0.95686274510000002" green="0.91764705879999997" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
-                                    <real key="value" value="0.5"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="number" keyPath="selectedLineHeight">
-                                    <real key="value" value="1"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                    <color key="value" cocoaTouchSystemColor="darkTextColor"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x1v-34-fZE" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                            <rect key="frame" x="30" y="331.5" width="315" height="49.5"/>
-                            <color key="tintColor" red="0.41568627450000001" green="0.1058823529" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                    <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Confirm password"/>
-                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Confirm pasword"/>
-                                <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
-                                    <color key="value" red="0.1647058824" green="0.16862745100000001" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
-                                    <color key="value" red="0.95686274510000002" green="0.91764705879999997" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
-                                    <real key="value" value="0.5"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="number" keyPath="selectedLineHeight">
-                                    <real key="value" value="1"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                    <color key="value" cocoaTouchSystemColor="darkTextColor"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NU8-9t-Z59" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                            <rect key="frame" x="30" y="291.5" width="315" height="30"/>
-                            <color key="tintColor" red="0.41568627450000001" green="0.1058823529" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                    <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter your pasword"/>
-                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Pasword"/>
-                                <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
-                                    <color key="value" red="0.1647058824" green="0.16862745100000001" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
-                                    <color key="value" red="0.95686274510000002" green="0.91764705879999997" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
-                                    <real key="value" value="0.5"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="number" keyPath="selectedLineHeight">
-                                    <real key="value" value="1"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                    <color key="value" cocoaTouchSystemColor="darkTextColor"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </textField>
                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_camera" translatesAutoresizingMaskIntoConstraints="NO" id="ZKd-v5-eDj">
-                            <rect key="frame" x="129.5" y="65" width="116.5" height="116.5"/>
+                            <rect key="frame" x="129.5" y="50" width="116" height="116.5"/>
                             <color key="backgroundColor" red="0.95686274510000002" green="0.91764705879999997" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="ZKd-v5-eDj" secondAttribute="height" id="VIo-H4-f3C"/>
                             </constraints>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mnc-AK-LjT">
-                            <rect key="frame" x="30" y="589" width="315" height="58"/>
+                            <rect key="frame" x="22.5" y="589" width="330" height="58"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLk-OT-zS8">
-                                    <rect key="frame" x="204.5" y="23" width="33" height="32"/>
+                                    <rect key="frame" x="210" y="22.5" width="33" height="32"/>
                                     <fontDescription key="fontDescription" name="Heebo-Bold" family="Heebo" pointSize="13"/>
                                     <state key="normal" title="Login">
                                         <color key="titleColor" red="0.1647058824" green="0.16862745100000001" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -176,7 +59,7 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="R4m-ws-515">
-                                    <rect key="frame" x="52.5" y="29" width="148" height="19.5"/>
+                                    <rect key="frame" x="58" y="29" width="148" height="19.5"/>
                                     <fontDescription key="fontDescription" name="Heebo-Regular" family="Heebo" pointSize="13"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -191,10 +74,10 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9vG-TH-eni">
-                            <rect key="frame" x="30.5" y="411" width="315" height="25"/>
+                            <rect key="frame" x="22.5" y="476.5" width="330" height="25"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I agree with 4fun terms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GrU-io-bgg">
-                                    <rect key="frame" x="35" y="3" width="133.5" height="19.5"/>
+                                    <rect key="frame" x="35" y="2.5" width="133.5" height="19.5"/>
                                     <fontDescription key="fontDescription" name="Heebo-Regular" family="Heebo" pointSize="13"/>
                                     <color key="textColor" red="0.1647058824" green="0.16862745100000001" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -212,16 +95,16 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GrU-io-bgg" secondAttribute="trailing" id="60n-HX-1zB"/>
                                 <constraint firstItem="Voh-tK-2fX" firstAttribute="centerY" secondItem="9vG-TH-eni" secondAttribute="centerY" id="A5B-Gz-XpC"/>
                                 <constraint firstItem="GrU-io-bgg" firstAttribute="centerY" secondItem="9vG-TH-eni" secondAttribute="centerY" id="FIE-Of-MQd"/>
                                 <constraint firstItem="GrU-io-bgg" firstAttribute="leading" secondItem="Voh-tK-2fX" secondAttribute="trailing" constant="10" id="UYc-5f-aDD"/>
                                 <constraint firstItem="Voh-tK-2fX" firstAttribute="leading" secondItem="9vG-TH-eni" secondAttribute="leading" id="aG0-Cd-pm2"/>
                                 <constraint firstItem="Voh-tK-2fX" firstAttribute="height" secondItem="9vG-TH-eni" secondAttribute="height" id="pga-o8-5e9"/>
-                                <constraint firstAttribute="trailing" secondItem="GrU-io-bgg" secondAttribute="trailing" constant="146.5" id="z1X-do-mCT"/>
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybb-ud-FXB">
-                            <rect key="frame" x="30" y="466" width="315" height="36"/>
+                            <rect key="frame" x="22.5" y="531.5" width="330" height="36"/>
                             <color key="backgroundColor" red="0.1647058824" green="0.16862745100000001" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="Heebo-Bold" family="Heebo" pointSize="16"/>
                             <state key="normal" title="R E G I S T E R">
@@ -232,44 +115,181 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1f-EB-bap">
-                            <rect key="frame" x="129" y="65" width="117" height="117"/>
+                            <rect key="frame" x="129.5" y="50" width="116.5" height="116.5"/>
                             <connections>
                                 <action selector="cameraButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="xd4-PF-vEJ"/>
                             </connections>
                         </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="yV2-0p-Jl7">
+                            <rect key="frame" x="22.5" y="216.5" width="330" height="230"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FkI-L6-601" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                    <rect key="frame" x="0.0" y="0.0" width="330" height="30"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                            <color key="value" red="0.95686274510000002" green="0.91764705879999997" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                            <color key="value" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                            <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                            <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                            <real key="value" value="0.5"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="selectedLineHeight">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter your username"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="Username"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="STO-WC-MA5" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                    <rect key="frame" x="0.0" y="50" width="330" height="30"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                            <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                            <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                            <color key="value" red="0.95686274510000002" green="0.91764705879999997" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                            <color key="value" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                            <real key="value" value="0.5"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="selectedLineHeight">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter your fullname"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="Fullname"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bJL-8j-eWY" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                    <rect key="frame" x="0.0" y="100" width="330" height="30"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                            <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                            <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                            <color key="value" red="0.95686274510000002" green="0.91764705879999997" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                            <color key="value" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                            <real key="value" value="0.5"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="selectedLineHeight">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter your email"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="Email"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cyx-WP-kri" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                    <rect key="frame" x="0.0" y="150" width="330" height="30"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                            <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                            <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                            <color key="value" red="0.95686274510000002" green="0.91764705879999997" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                            <color key="value" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                            <real key="value" value="0.5"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="selectedLineHeight">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter your password"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="Password"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jya-HK-KjO" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                    <rect key="frame" x="0.0" y="200" width="330" height="30"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                            <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                            <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                            <color key="value" red="0.95686274510000002" green="0.91764705879999997" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                            <color key="value" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                            <real key="value" value="0.5"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="selectedLineHeight">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Confirm password"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="confirm password"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="yV2-0p-Jl7" secondAttribute="height" multiplier="33:23" id="YMW-cL-w13"/>
+                            </constraints>
+                        </stackView>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="9vG-TH-eni" firstAttribute="top" secondItem="x1v-34-fZE" secondAttribute="bottom" constant="30" id="1Z5-Gp-4cO"/>
+                        <constraint firstItem="ybb-ud-FXB" firstAttribute="width" secondItem="yV2-0p-Jl7" secondAttribute="width" id="2X8-ju-tvm"/>
                         <constraint firstItem="z1f-EB-bap" firstAttribute="centerY" secondItem="ZKd-v5-eDj" secondAttribute="centerY" id="3Ow-vs-vJ2"/>
                         <constraint firstAttribute="bottom" secondItem="Mnc-AK-LjT" secondAttribute="bottom" id="Ahi-kv-ymy"/>
-                        <constraint firstItem="naP-sz-gl8" firstAttribute="width" secondItem="k2T-JO-WaL" secondAttribute="width" id="E9a-g2-86v"/>
                         <constraint firstItem="z1f-EB-bap" firstAttribute="height" secondItem="ZKd-v5-eDj" secondAttribute="height" id="Hi7-nN-7oS"/>
-                        <constraint firstItem="NU8-9t-Z59" firstAttribute="centerX" secondItem="egR-pi-cfX" secondAttribute="centerX" id="KCs-U0-j0v"/>
-                        <constraint firstItem="9vG-TH-eni" firstAttribute="height" secondItem="x1v-34-fZE" secondAttribute="height" multiplier="1:2" id="KJz-fj-Xsu"/>
                         <constraint firstItem="ZKd-v5-eDj" firstAttribute="centerX" secondItem="egR-pi-cfX" secondAttribute="centerX" id="KTf-eZ-psX"/>
-                        <constraint firstItem="x1v-34-fZE" firstAttribute="top" secondItem="NU8-9t-Z59" secondAttribute="bottom" constant="10" id="LxU-l8-D4M"/>
-                        <constraint firstItem="ybb-ud-FXB" firstAttribute="width" secondItem="k2T-JO-WaL" secondAttribute="width" id="SPa-hM-7ke"/>
-                        <constraint firstItem="ZKd-v5-eDj" firstAttribute="top" secondItem="egR-pi-cfX" secondAttribute="top" constant="65" id="WFm-IP-sti"/>
+                        <constraint firstItem="9vG-TH-eni" firstAttribute="width" secondItem="yV2-0p-Jl7" secondAttribute="width" id="Q3a-eF-NYG"/>
+                        <constraint firstItem="yV2-0p-Jl7" firstAttribute="width" secondItem="egR-pi-cfX" secondAttribute="width" multiplier="330:375" id="R0Z-bC-7Rk"/>
+                        <constraint firstItem="ZKd-v5-eDj" firstAttribute="top" secondItem="egR-pi-cfX" secondAttribute="top" constant="50" id="WFm-IP-sti"/>
+                        <constraint firstItem="yV2-0p-Jl7" firstAttribute="centerX" secondItem="egR-pi-cfX" secondAttribute="centerX" id="Xaa-8L-YEh"/>
                         <constraint firstItem="Mnc-AK-LjT" firstAttribute="centerX" secondItem="egR-pi-cfX" secondAttribute="centerX" id="Xea-Q8-4mh"/>
-                        <constraint firstItem="NU8-9t-Z59" firstAttribute="top" secondItem="naP-sz-gl8" secondAttribute="bottom" constant="15" id="Xhx-1g-ovy"/>
-                        <constraint firstItem="k2T-JO-WaL" firstAttribute="leading" secondItem="egR-pi-cfX" secondAttribute="leading" constant="30" id="Z0z-Al-lYo"/>
-                        <constraint firstItem="k2T-JO-WaL" firstAttribute="top" secondItem="ZKd-v5-eDj" secondAttribute="bottom" constant="20" id="aKf-K3-YQV"/>
                         <constraint firstItem="ZKd-v5-eDj" firstAttribute="height" secondItem="egR-pi-cfX" secondAttribute="height" multiplier="120:667" id="aRP-ti-elQ"/>
-                        <constraint firstItem="x1v-34-fZE" firstAttribute="centerX" secondItem="egR-pi-cfX" secondAttribute="centerX" id="bGB-Op-0xJ"/>
-                        <constraint firstItem="naP-sz-gl8" firstAttribute="top" secondItem="k2T-JO-WaL" secondAttribute="bottom" constant="15" id="bH0-EC-82p"/>
                         <constraint firstItem="Mnc-AK-LjT" firstAttribute="height" secondItem="egR-pi-cfX" secondAttribute="height" multiplier="60:667" id="brD-cL-ujW"/>
                         <constraint firstItem="ZKd-v5-eDj" firstAttribute="leading" secondItem="z1f-EB-bap" secondAttribute="trailing" constant="-116.5" id="d2m-H7-y6C"/>
-                        <constraint firstItem="9vG-TH-eni" firstAttribute="width" secondItem="x1v-34-fZE" secondAttribute="width" id="d9Q-Pw-hyg"/>
-                        <constraint firstAttribute="trailing" secondItem="k2T-JO-WaL" secondAttribute="trailing" constant="30" id="gvI-ec-s7t"/>
+                        <constraint firstItem="9vG-TH-eni" firstAttribute="top" secondItem="yV2-0p-Jl7" secondAttribute="bottom" constant="30" id="fw3-mp-xcI"/>
                         <constraint firstItem="ybb-ud-FXB" firstAttribute="top" secondItem="9vG-TH-eni" secondAttribute="bottom" constant="30" id="ihd-dP-ADA"/>
-                        <constraint firstItem="naP-sz-gl8" firstAttribute="centerX" secondItem="egR-pi-cfX" secondAttribute="centerX" id="ikU-Ud-URE"/>
-                        <constraint firstItem="k2T-JO-WaL" firstAttribute="centerX" secondItem="egR-pi-cfX" secondAttribute="centerX" id="qse-Yd-Etu"/>
-                        <constraint firstItem="NU8-9t-Z59" firstAttribute="width" secondItem="k2T-JO-WaL" secondAttribute="width" id="rjd-jL-qEd"/>
+                        <constraint firstItem="yV2-0p-Jl7" firstAttribute="top" secondItem="ZKd-v5-eDj" secondAttribute="bottom" constant="50" id="mkn-e8-pmw"/>
                         <constraint firstItem="z1f-EB-bap" firstAttribute="width" secondItem="ZKd-v5-eDj" secondAttribute="width" id="sIc-eo-vOC"/>
                         <constraint firstItem="Mnc-AK-LjT" firstAttribute="width" secondItem="ybb-ud-FXB" secondAttribute="width" id="sgw-XK-VQN"/>
                         <constraint firstItem="9vG-TH-eni" firstAttribute="centerX" secondItem="egR-pi-cfX" secondAttribute="centerX" id="vMM-Ee-w65"/>
                         <constraint firstItem="ybb-ud-FXB" firstAttribute="centerX" secondItem="egR-pi-cfX" secondAttribute="centerX" id="wQh-b7-d0O"/>
-                        <constraint firstItem="x1v-34-fZE" firstAttribute="width" secondItem="k2T-JO-WaL" secondAttribute="width" id="wrb-WW-1DR"/>
                     </constraints>
                 </view>
             </subviews>
@@ -281,7 +301,7 @@
                 <constraint firstItem="egR-pi-cfX" firstAttribute="trailing" secondItem="zLQ-YD-IDB" secondAttribute="trailing" id="mBU-PO-nrQ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="zLQ-YD-IDB"/>
-            <point key="canvasLocation" x="-55" y="-533"/>
+            <point key="canvasLocation" x="-55.200000000000003" y="-533.88305847076469"/>
         </view>
     </objects>
     <resources>
