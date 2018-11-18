@@ -11,93 +11,112 @@ import MVVM
 
 final class HomeViewModel: ViewModel {
 
-    // MARK: - enum
-    enum SectionType {
-        case teacher
-        case blog
-        case course
+  // MARK: - enum
+  enum SectionType {
+    case teacher
+    case blog
+    case course
 
-        var title: String {
-            switch self {
-            case .teacher:
-                return "Teacher"
-            case .blog:
-                return "Blog"
-            case .course:
-                return "Course"
-            }
-        }
+    var title: String {
+      switch self {
+      case .teacher:
+        return "Teacher"
+      case .blog:
+        return "Blog"
+      case .course:
+        return "Course"
+      }
+    }
+  }
+
+  enum LoadSlidesCompletion {
+    case success
+    case failure(Error)
+  }
+
+  var sections: [SectionType] = [.blog, .course, .teacher]
+
+  /// dummy data
+  var slides: [Slide] = []
+  var teachers = DummyData.fetchTeachers()
+
+  func getSectionType(index: Int) throws -> SectionType {
+
+    guard index < sections.count else {
+      throw App.Error.indexOutOfBound
     }
 
-    var sections: [SectionType] = [.blog, .course, .teacher]
+    return sections[index]
+  }
 
-    /// dummy data
-    var slides: [Slide] = DummyData.fetchSlide()
-    var teachers = DummyData.fetchTeachers()
-
-    func getSectionType(index: Int) throws -> SectionType {
-
-        guard index < sections.count else {
-            throw App.Error.indexOutOfBound
-        }
-
-        return sections[index]
+  // call api
+  func loadSlides(completion: @escaping (LoadSlidesCompletion) -> Void) {
+    Api.Slide.loadSlides { [weak self] (result) in
+      guard let this = self else { return }
+      switch result {
+      case .success(let slides):
+        this.slides = slides
+        completion(.success)
+      case .failure(let error):
+        completion(.failure(error))
+      }
     }
+  }
 }
 
 // MARK: - Collection view
 extension HomeViewModel {
-    func numberOfSlides() -> Int {
-        return slides.count
+  func numberOfSlides() -> Int {
+    return slides.count
+  }
+
+  func viewModelForSlideCell(indexPath: IndexPath) throws -> SlideCollectionCellViewModel {
+    let index = indexPath.row
+
+    guard index < slides.count else {
+      throw App.Error.indexOutOfBound
     }
 
-    func viewModelForSlideCell(indexPath: IndexPath) throws -> SlideCollectionCellViewModel {
-        let index = indexPath.row
-
-        guard index < slides.count else {
-            throw App.Error.indexOutOfBound
-        }
-
-        let slide = slides[index]
-        return SlideCollectionCellViewModel(slide: slide)
-    }
+    let slide = slides[index]
+    return SlideCollectionCellViewModel(slide: slide)
+  }
 }
 
 // MARK: - Table view
 extension HomeViewModel {
-    func numberOfSections() -> Int {
-        return sections.count
+  func numberOfSections() -> Int {
+    return sections.count
+  }
+
+  func numberOfItems(inSection section: Int) -> Int {
+    return Config.numberOfRow
+  }
+
+  func viewModelForItem(at indexPath: IndexPath) throws -> HomeTableCellModel {
+    let section = indexPath.section
+
+    guard section < sections.count else {
+      throw App.Error.indexOutOfBound
     }
 
-    func numberOfItems(inSection section: Int) -> Int {
-        return Config.numberOfRow
+    let cellModel = HomeTableCellModel()
+    cellModel.teachers = teachers
+    return cellModel
+  }
+
+  func viewModelForHeader(inSection section: Int) throws -> HeaderViewModel {
+    guard section < sections.count else {
+      throw App.Error.indexOutOfBound
     }
 
-    func viewModelForItem(at indexPath: IndexPath) throws -> HomeTableCellModel {
-        let section = indexPath.section
-
-        guard section < sections.count else {
-            throw App.Error.indexOutOfBound
-        }
-
-        let cellModel = HomeTableCellModel()
-        cellModel.teachers = teachers
-        return cellModel
-    }
-
-    func viewModelForHeader(inSection section: Int) throws -> HeaderViewModel {
-        guard section < sections.count else {
-            throw App.Error.indexOutOfBound
-        }
-
-        let sectionType = sections[section]
-        return HeaderViewModel(id: section, title: sectionType.title)
-    }
+    let sectionType = sections[section]
+    return HeaderViewModel(id: section, title: sectionType.title)
+  }
 }
 
 // MARK: - Define
 extension HomeViewModel {
-    struct Config {
-        static let numberOfRow = 1
-    }
+  struct Config {
+    static let numberOfRow = 1
+  }
 }

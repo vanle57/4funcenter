@@ -47,7 +47,7 @@ final class ProfileViewController: BaseViewController {
                 this.alert(msg: Define.successMessage, buttons: [App.String.ok], handler: nil)
             case .failure(let error):
                 guard let error = error as? ProfileViewModel.ChangePasswordError else {
-                    this.alert(error: App.Error.unknownError)
+                    this.alert(error: App.Error.unknown)
                     return
                 }
                 this.alert(title: "ERROR",

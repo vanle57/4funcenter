@@ -116,7 +116,7 @@ extension SearchViewModel {
 
     func viewModelForHistoryItem(at indexPath: IndexPath) throws -> HistorySearchCellViewModel {
         guard let histories = histories else {
-            throw App.Error.unknownError
+            throw App.Error.unknown
         }
 
         let index = indexPath.row
