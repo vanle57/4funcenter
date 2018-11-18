@@ -34,10 +34,6 @@ final class LoginViewModel {
       return
     }
 
-    if !email.isValidEmail() {
-      completion(.failure(App.Error.invalidEmail))
-    }
-
     if !password.isValidPassword() {
       completion(.failure(App.Error.invalidPassword))
     }

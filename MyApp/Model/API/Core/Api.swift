@@ -14,6 +14,8 @@ final class Api {
   }
 
   struct User { }
+
+  struct Slide { }
 }
 
 extension Api.Path {
@@ -27,15 +29,24 @@ extension Api.Path {
     var urlString: String {
       return User.path / screen
     }
-  
+
     var urlLogin: String {
       return User.path / screen / login
     }
-  
+
     var urlRegister: String {
       return User.path / screen / register
     }
+  }
+
+  struct Slide {
+    static var path: String { return baseURL }
+    var screen = "home"
+    var action = "get-slide"
     
+    var urlString: String {
+      return User.path / screen / action
+    }
   }
 }
 
