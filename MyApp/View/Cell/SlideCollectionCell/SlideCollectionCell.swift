@@ -17,7 +17,7 @@ class SlideCollectionCell: UICollectionViewCell {
     var viewModel: SlideCollectionCellViewModel? {
         didSet {
             guard let viewModel = viewModel else { return }
-            imageView.image = viewModel.image
+            imageView.setImage(path: viewModel.imageUrl)
             titleLabel.text = viewModel.title
         }
     }

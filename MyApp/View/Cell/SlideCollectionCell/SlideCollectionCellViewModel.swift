@@ -12,11 +12,11 @@ final class SlideCollectionCellViewModel {
 
     // MARK: - Properties
     var title = ""
-    var image = UIImage()
+    var imageUrl = ""
 
     // MARK: - init
     init(slide: Slide) {
         title = slide.title
-        image = slide.image
+        imageUrl = slide.imageUrl
     }
 }
