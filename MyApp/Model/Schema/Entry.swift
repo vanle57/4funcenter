@@ -6,25 +6,40 @@
 //  Copyright © 2018 Asian Tech Co., Ltd. All rights reserved.
 //
 
-import Foundation
+import ObjectMapper
 
-final class Entry {
+@objcMembers final class Entry: Mappable {
 
-    // MARK: - Properties
-    var imageUrl = ""
-    var title = ""
-    var description = ""
-    var authorName = ""
-    var content = ""
-    var dateCreated: Date = Date()
+  // MARK: - Properties
+  dynamic var imageUrl = ""
+  dynamic var title = ""
+  dynamic var description = ""
+  dynamic var content = ""
+  dynamic var numberOfViews = 0
+  dynamic var numberOfComments = 0
+  dynamic var dateCreated: Date = Date()
 
-    // MARK: - init
-    init(imageUrl: String, title: String, description: String, authorName: String, content: String, dateCreated: Date) {
-        self.imageUrl = imageUrl
-        self.title = title
-        self.description = description
-        self.authorName = authorName
-        self.content = content
-        self.dateCreated = dateCreated
-    }
+  // MARK: - init
+  init() { }
+
+  init(imageUrl: String, title: String, description: String, content: String, dateCreated: Date) {
+    self.imageUrl = imageUrl
+    self.title = title
+    self.description = description
+    self.content = content
+    self.dateCreated = dateCreated
+  }
+
+  required convenience init?(map: Map) {
+    self.init()
+  }
+
+  func mapping(map: Map) {
+    imageUrl <- map["AnhMinhHoa"]
+    title <- map["TieuDe"]
+    description <- map["TomTat"]
+    numberOfViews <- map["SoLuongView"]
+    numberOfComments <- map["SoLuongComment"]
+    dateCreated <- map["NgayDang"]
+  }
 }

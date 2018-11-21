@@ -25,7 +25,7 @@ final class SearchViewModel: ViewModel {
     typealias SearchCompletion = (SearchResult) -> Void
 
     var type: SearchType = .entry
-    var entries: [Entry] = DummyData.fetchEntries()
+    var entries: [Entry] = []
     var courses: [Course] = []
     var histories: [String]?
 

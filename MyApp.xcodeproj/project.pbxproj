@@ -14,6 +14,7 @@
 		6C392FC5AF0C61509011C30D /* Pods_MyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E8000CCB9AE328B83764288 /* Pods_MyApp.framework */; };
 		741A471921A15B6A00728B58 /* Api.Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741A471821A15B6A00728B58 /* Api.Slide.swift */; };
 		741A471B21A16E5900728B58 /* UIImageViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741A471A21A16E5900728B58 /* UIImageViewExt.swift */; };
+		74D8A1A121A3FD0F00A1FAAC /* Api.Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D8A1A021A3FD0F00A1FAAC /* Api.Entry.swift */; };
 		74F1A3C92194555E006E282D /* Api.User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F1A3C82194555E006E282D /* Api.User.swift */; };
 		ACB045A3210F0CEB00159503 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB045A2210F0CEB00159503 /* BaseNavigationController.swift */; };
 		B317621A2148CB65005C9D25 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31762192148CB65005C9D25 /* RegisterViewModel.swift */; };
@@ -195,6 +196,7 @@
 		629E064D2126EE05004D29E0 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		741A471821A15B6A00728B58 /* Api.Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.Slide.swift; sourceTree = "<group>"; };
 		741A471A21A16E5900728B58 /* UIImageViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExt.swift; sourceTree = "<group>"; };
+		74D8A1A021A3FD0F00A1FAAC /* Api.Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.Entry.swift; sourceTree = "<group>"; };
 		74F1A3C82194555E006E282D /* Api.User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.User.swift; sourceTree = "<group>"; };
 		7E8000CCB9AE328B83764288 /* Pods_MyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB045A2210F0CEB00159503 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -917,6 +919,7 @@
 				ECF23AB01E9B869B008C23C1 /* Core */,
 				74F1A3C82194555E006E282D /* Api.User.swift */,
 				741A471821A15B6A00728B58 /* Api.Slide.swift */,
+				74D8A1A021A3FD0F00A1FAAC /* Api.Entry.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1384,6 +1387,7 @@
 				625DF8902111BB8B007958F6 /* LoginViewModel.swift in Sources */,
 				B317621D2149F39F005C9D25 /* RegisterViewController.swift in Sources */,
 				B38230F0215B445A000C718A /* TeacherTableCell.swift in Sources */,
+				74D8A1A121A3FD0F00A1FAAC /* Api.Entry.swift in Sources */,
 				ECC5B2CD1EF906CA001A97BC /* BaseViewController.swift in Sources */,
 				741A471921A15B6A00728B58 /* Api.Slide.swift in Sources */,
 				B3D26E202159CD6F0093FE42 /* HistorySearchCellViewModel.swift in Sources */,
