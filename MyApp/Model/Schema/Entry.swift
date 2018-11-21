@@ -11,6 +11,7 @@ import ObjectMapper
 @objcMembers final class Entry: Mappable {
 
   // MARK: - Properties
+  dynamic var id = ""
   dynamic var imageUrl = ""
   dynamic var title = ""
   dynamic var description = ""
@@ -35,6 +36,7 @@ import ObjectMapper
   }
 
   func mapping(map: Map) {
+    id <- map["Id"]
     imageUrl <- map["AnhMinhHoa"]
     title <- map["TieuDe"]
     description <- map["TomTat"]

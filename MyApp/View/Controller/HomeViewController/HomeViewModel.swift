@@ -38,7 +38,7 @@ final class HomeViewModel: ViewModel {
 
   /// dummy data
   var slides: [Slide] = []
-  var teachers = DummyData.fetchTeachers()
+  var teachers: [Teacher] = []
 
   func getSectionType(index: Int) throws -> SectionType {
 

@@ -16,6 +16,6 @@ final class TeacherCollectionCellModel {
 
     init(teacher: Teacher) {
         self.image = teacher.image
-        self.teacherName = teacher.name
+        self.teacherName = teacher.fullName
     }
 }

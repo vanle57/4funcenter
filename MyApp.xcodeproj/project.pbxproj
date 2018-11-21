@@ -15,6 +15,7 @@
 		741A471921A15B6A00728B58 /* Api.Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741A471821A15B6A00728B58 /* Api.Slide.swift */; };
 		741A471B21A16E5900728B58 /* UIImageViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741A471A21A16E5900728B58 /* UIImageViewExt.swift */; };
 		74D8A1A121A3FD0F00A1FAAC /* Api.Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D8A1A021A3FD0F00A1FAAC /* Api.Entry.swift */; };
+		74DE384421A5613700121CE9 /* Api.Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DE384321A5613700121CE9 /* Api.Teacher.swift */; };
 		74F1A3C92194555E006E282D /* Api.User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F1A3C82194555E006E282D /* Api.User.swift */; };
 		ACB045A3210F0CEB00159503 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB045A2210F0CEB00159503 /* BaseNavigationController.swift */; };
 		B317621A2148CB65005C9D25 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31762192148CB65005C9D25 /* RegisterViewModel.swift */; };
@@ -197,6 +198,7 @@
 		741A471821A15B6A00728B58 /* Api.Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.Slide.swift; sourceTree = "<group>"; };
 		741A471A21A16E5900728B58 /* UIImageViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExt.swift; sourceTree = "<group>"; };
 		74D8A1A021A3FD0F00A1FAAC /* Api.Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.Entry.swift; sourceTree = "<group>"; };
+		74DE384321A5613700121CE9 /* Api.Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.Teacher.swift; sourceTree = "<group>"; };
 		74F1A3C82194555E006E282D /* Api.User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.User.swift; sourceTree = "<group>"; };
 		7E8000CCB9AE328B83764288 /* Pods_MyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB045A2210F0CEB00159503 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -920,6 +922,7 @@
 				74F1A3C82194555E006E282D /* Api.User.swift */,
 				741A471821A15B6A00728B58 /* Api.Slide.swift */,
 				74D8A1A021A3FD0F00A1FAAC /* Api.Entry.swift */,
+				74DE384321A5613700121CE9 /* Api.Teacher.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1369,6 +1372,7 @@
 				B38230F7215B4899000C718A /* TeacherCollectionCell.swift in Sources */,
 				EC5337C11EF7939C00ACE038 /* TableCell.swift in Sources */,
 				ECF23AC31E9B9264008C23C1 /* StringExt.swift in Sources */,
+				74DE384421A5613700121CE9 /* Api.Teacher.swift in Sources */,
 				B374DB78214775D0005C1FE2 /* CoursesViewController.swift in Sources */,
 				F0FEF0E1215A24BB00B7C9A6 /* ProfileViewModel.swift in Sources */,
 				B3904ED6215CD52F0019138E /* PageMenuCell.swift in Sources */,

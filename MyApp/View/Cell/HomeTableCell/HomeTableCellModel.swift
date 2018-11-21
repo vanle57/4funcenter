@@ -22,7 +22,7 @@ final class HomeTableCellModel {
         let teacher = teachers[indexPath.row]
         let teacherCell = TeacherCollectionCellModel(teacher: teacher)
         teacherCell.image = teacher.image
-        teacherCell.teacherName = teacher.name
+        teacherCell.teacherName = teacher.fullName
         return teacherCell
     }
 }

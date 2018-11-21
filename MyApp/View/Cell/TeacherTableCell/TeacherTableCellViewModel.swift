@@ -9,7 +9,7 @@
 import MVVM
 
 final class TeacherTableCellViewModel: ViewModel {
-    var teachers = DummyData.fetchTeachers()
+  var teachers: [Teacher] = []
 }
 
 extension TeacherTableCellViewModel {

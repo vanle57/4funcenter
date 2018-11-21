@@ -17,7 +17,7 @@ final class TeacherCollectionCell: CollectionCell {
     var viewModel: TeacherCollectionCellViewModel? {
         didSet {
             guard let viewModel = viewModel else { return }
-            avatarImageView.image = viewModel.image
+            avatarImageView.setImage(path: viewModel.imageUrl)
             nameLabel.text = viewModel.name
         }
     }
