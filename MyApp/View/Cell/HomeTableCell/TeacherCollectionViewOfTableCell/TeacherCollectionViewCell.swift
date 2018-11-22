@@ -30,7 +30,7 @@ final class TeacherCollectionViewCell: UICollectionViewCell {
     // MARK: - Private Func
     private func updateUI() {
         guard let viewModel = viewModel else { return }
-        imageView.image = viewModel.image
+        imageView.setImage(path: viewModel.imageUrl)
         label.text = viewModel.teacherName
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 final class HomeViewController: BaseViewController {
 
@@ -36,6 +37,7 @@ final class HomeViewController: BaseViewController {
   // MARK: - Setup Data
   override func setupData() {
     super.setupData()
+    SVProgressHUD.show()
     viewModel.loadSlides(completion: { [weak self] (result) in
       guard let this = self else { return }
       switch result {
@@ -47,6 +49,18 @@ final class HomeViewController: BaseViewController {
         this.alert(error: error)
       }
     })
+
+    viewModel.loadTeachers { [weak self] (result) in
+      SVProgressHUD.popActivity()
+      guard let this = self else { return }
+      switch result {
+      case .success:
+        this.tableView.reloadData()
+        NotificationCenter.default.post(name: .reloadData, object: nil)
+      case .failure(let error):
+        this.alert(error: error)
+      }
+    }
   }
 
   // MARK: - Private funcs
@@ -132,7 +146,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     _ collectionView: UICollectionView,
     layout collectionViewLayout: UICollectionViewLayout,
     sizeForItemAt indexPath: IndexPath
-    ) -> CGSize {
+  ) -> CGSize {
     return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
   }
 

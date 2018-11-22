@@ -29,7 +29,7 @@ final class HomeViewModel: ViewModel {
     }
   }
 
-  enum LoadSlidesCompletion {
+  enum LoadDataCompletion {
     case success
     case failure(Error)
   }
@@ -50,12 +50,25 @@ final class HomeViewModel: ViewModel {
   }
 
   // call api
-  func loadSlides(completion: @escaping (LoadSlidesCompletion) -> Void) {
+  func loadSlides(completion: @escaping (LoadDataCompletion) -> Void) {
     Api.Slide.loadSlides { [weak self] (result) in
       guard let this = self else { return }
       switch result {
       case .success(let slides):
         this.slides = slides
+        completion(.success)
+      case .failure(let error):
+        completion(.failure(error))
+      }
+    }
+  }
+
+  func loadTeachers(completion: @escaping (LoadDataCompletion) -> Void) {
+    Api.Teacher.loadTeachers { [weak self] (result) in
+      guard let this = self else { return }
+      switch result {
+      case .success(let teachers):
+        this.teachers = teachers
         completion(.success)
       case .failure(let error):
         completion(.failure(error))

@@ -10,10 +10,10 @@ import Alamofire
 import ObjectMapper
 
 extension Api.Teacher {
-  
+
   @discardableResult
-  static func loadTeahchers(completion: @escaping Completion<[Entry]>) -> Request? {
-    let path = Api.Path.Entry().urlString
+  static func loadTeachers(completion: @escaping Completion<[Teacher]>) -> Request? {
+    let path = Api.Path.Teacher().urlString
     return api.request(method: .get, urlString: path) { (result) in
       DispatchQueue.main.async {
         switch result {
@@ -22,8 +22,8 @@ extension Api.Teacher {
             completion(.failure(Api.Error.json))
             return
           }
-          let entries = Mapper<Entry>().mapArray(JSONArray: data)
-          completion(.success(entries))
+          let teachers = Mapper<Teacher>().mapArray(JSONArray: data)
+          completion(.success(teachers))
         case .failure(let error):
           completion(.failure(error))
         }

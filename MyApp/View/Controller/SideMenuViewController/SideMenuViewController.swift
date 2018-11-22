@@ -51,7 +51,6 @@ final class SideMenuViewController: UIViewController {
             vc = BlogViewController()
         case .course:
             vc = CoursesViewController()
-            vc = AboutViewController()
         case .teacher:
             vc = TeacherViewController()
         }

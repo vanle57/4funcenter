@@ -6,16 +6,13 @@
 //  Copyright © 2018 Asian Tech Co., Ltd. All rights reserved.
 //
 
-import Foundation
-import UIKit
-
 final class TeacherCollectionCellModel {
 
-    var image: UIImage = UIImage()
-    var teacherName: String = ""
+    var imageUrl = ""
+    var teacherName = ""
 
     init(teacher: Teacher) {
-        self.image = teacher.image
+        self.imageUrl = teacher.imageUrl
         self.teacherName = teacher.fullName
     }
 }
