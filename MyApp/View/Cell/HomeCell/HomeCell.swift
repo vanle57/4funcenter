@@ -8,13 +8,13 @@
 
 import UIKit
 
-final class HomeTableViewCell: UITableViewCell {
+final class HomeCell: UITableViewCell {
 
   // MARK: - Outlet
   @IBOutlet weak var collectionView: UICollectionView!
 
   // MARK: - Property
-  var viewModel = HomeTableCellModel()
+  var viewModel = HomeCellViewModel()
 
   // MARK: - func
   override func awakeFromNib() {
@@ -31,7 +31,7 @@ final class HomeTableViewCell: UITableViewCell {
 }
 
 // MARK: - UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
-extension HomeTableViewCell: UICollectionViewDataSource {
+extension HomeCell: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return viewModel.numberOfItem()
   }
@@ -44,7 +44,7 @@ extension HomeTableViewCell: UICollectionViewDataSource {
 
 }
 
-extension HomeTableViewCell: UICollectionViewDelegateFlowLayout {
+extension HomeCell: UICollectionViewDelegateFlowLayout {
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     return CGSize(width: collectionView.frame.height * 0.7, height: collectionView.frame.height)

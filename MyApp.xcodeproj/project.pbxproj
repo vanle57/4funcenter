@@ -152,7 +152,7 @@
 		F00DED95215381A70089F54D /* TeacherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00DED93215381A70089F54D /* TeacherCollectionViewCell.swift */; };
 		F00DED96215381A70089F54D /* TeacherCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F00DED94215381A70089F54D /* TeacherCollectionViewCell.xib */; };
 		F00DED9A2153826B0089F54D /* TeacherCollectionCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00DED992153826B0089F54D /* TeacherCollectionCellModel.swift */; };
-		F00DED9D215382970089F54D /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00DED9B215382970089F54D /* HomeTableViewCell.swift */; };
+		F00DED9D215382970089F54D /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00DED9B215382970089F54D /* HomeCell.swift */; };
 		F00DED9E215382970089F54D /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F00DED9C215382970089F54D /* HomeTableViewCell.xib */; };
 		F00DEDA0215382AD0089F54D /* HomeTableCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00DED9F215382AD0089F54D /* HomeTableCellModel.swift */; };
 		F00DEDA22153837C0089F54D /* BJAutoScrollingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00DEDA12153837C0089F54D /* BJAutoScrollingCollectionView.swift */; };
@@ -339,7 +339,7 @@
 		F00DED93215381A70089F54D /* TeacherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCollectionViewCell.swift; sourceTree = "<group>"; };
 		F00DED94215381A70089F54D /* TeacherCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeacherCollectionViewCell.xib; sourceTree = "<group>"; };
 		F00DED992153826B0089F54D /* TeacherCollectionCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCollectionCellModel.swift; sourceTree = "<group>"; };
-		F00DED9B215382970089F54D /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		F00DED9B215382970089F54D /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		F00DED9C215382970089F54D /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		F00DED9F215382AD0089F54D /* HomeTableCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableCellModel.swift; sourceTree = "<group>"; };
 		F00DEDA12153837C0089F54D /* BJAutoScrollingCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BJAutoScrollingCollectionView.swift; sourceTree = "<group>"; };
@@ -449,7 +449,7 @@
 				B3904EE3215D31250019138E /* CourseDetailCell */,
 				B3904ED3215CD50A0019138E /* PageMenuCell */,
 				B38230ED215B441A000C718A /* TeacherTableCell */,
-				F00DED8D215380820089F54D /* HomeTableCell */,
+				F00DED8D215380820089F54D /* HomeCell */,
 				B3D26E28215A158C0093FE42 /* SlideCollectionCell */,
 				B3D26E1C2159CD6E0093FE42 /* HistorySearchCell */,
 				B3D26DC0215344B70093FE42 /* CourseCell */,
@@ -965,15 +965,15 @@
 			path = Ext;
 			sourceTree = "<group>";
 		};
-		F00DED8D215380820089F54D /* HomeTableCell */ = {
+		F00DED8D215380820089F54D /* HomeCell */ = {
 			isa = PBXGroup;
 			children = (
 				F00DED92215381610089F54D /* TeacherCollectionViewOfTableCell */,
-				F00DED9B215382970089F54D /* HomeTableViewCell.swift */,
+				F00DED9B215382970089F54D /* HomeCell.swift */,
 				F00DED9C215382970089F54D /* HomeTableViewCell.xib */,
 				F00DED9F215382AD0089F54D /* HomeTableCellModel.swift */,
 			);
-			path = HomeTableCell;
+			path = HomeCell;
 			sourceTree = "<group>";
 		};
 		F00DED92215381610089F54D /* TeacherCollectionViewOfTableCell */ = {
@@ -1383,7 +1383,7 @@
 				B317621A2148CB65005C9D25 /* RegisterViewModel.swift in Sources */,
 				F00DED8A215380080089F54D /* Teacher.swift in Sources */,
 				629E064E2126EE05004D29E0 /* Errors.swift in Sources */,
-				F00DED9D215382970089F54D /* HomeTableViewCell.swift in Sources */,
+				F00DED9D215382970089F54D /* HomeCell.swift in Sources */,
 				EC5337B71EF78CD800ACE038 /* App.swift in Sources */,
 				B3D26E2E215A17D70093FE42 /* Slide.swift in Sources */,
 				B3969518216B354500D3B8EB /* ProfileCellViewModel.swift in Sources */,

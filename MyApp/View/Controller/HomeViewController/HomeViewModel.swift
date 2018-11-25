@@ -105,16 +105,16 @@ extension HomeViewModel {
     return Config.numberOfRow
   }
 
-  func viewModelForItem(at indexPath: IndexPath) throws -> HomeTableCellModel {
+  func viewModelForItem(at indexPath: IndexPath) throws -> HomeCellViewModel {
     let section = indexPath.section
 
     guard section < sections.count else {
       throw App.Error.indexOutOfBound
     }
 
-    let cellModel = HomeTableCellModel()
-    cellModel.teachers = teachers
-    return cellModel
+    let vm = HomeCellViewModel()
+    vm.teachers = teachers
+    return vm
   }
 
   func viewModelForHeader(inSection section: Int) throws -> HeaderViewModel {

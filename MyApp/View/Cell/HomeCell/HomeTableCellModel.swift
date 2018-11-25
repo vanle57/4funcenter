@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-final class HomeTableCellModel {
+final class HomeCellViewModel {
     // MARK: - Property
     var teachers: [Teacher] = []
 

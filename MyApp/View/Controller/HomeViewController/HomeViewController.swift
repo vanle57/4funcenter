@@ -70,7 +70,7 @@ final class HomeViewController: BaseViewController {
   }
 
   private func configTableView() {
-    tableView.register(HomeTableViewCell.self)
+    tableView.register(HomeCell.self)
     tableView.register(HeaderView.self)
     tableView.rowHeight = Config.rowHeight * ratio
     tableView.tableFooterView = UIView()
@@ -171,7 +171,7 @@ extension HomeViewController: UITableViewDataSource {
       return TableCell()
     }
 
-    let cell = tableView.dequeue(HomeTableViewCell.self)
+    let cell = tableView.dequeue(HomeCell.self)
     cell.viewModel = viewModel
     return cell
   }
