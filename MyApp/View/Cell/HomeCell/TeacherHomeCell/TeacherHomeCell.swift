@@ -8,14 +8,14 @@
 
 import UIKit
 
-final class TeacherCollectionViewCell: UICollectionViewCell {
+final class TeacherHomeCell: UICollectionViewCell {
 
     // MARK: - Outlets
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var label: UILabel!
 
     // MARK: - Property
-    var viewModel: TeacherCollectionCellModel? {
+    var viewModel: TeacherHomeCellViewModel? {
         didSet {
             updateUI()
         }

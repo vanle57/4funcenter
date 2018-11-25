@@ -18,9 +18,9 @@ final class HomeCellViewModel {
         return teachers.count
     }
 
-    func viewModelForCollectionViewcell(at indexPath: IndexPath) -> TeacherCollectionCellModel {
+    func viewModelForCollectionViewcell(at indexPath: IndexPath) -> TeacherHomeCellViewModel {
         let teacher = teachers[indexPath.row]
-        let teacherCell = TeacherCollectionCellModel(teacher: teacher)
+        let teacherCell = TeacherHomeCellViewModel(teacher: teacher)
         teacherCell.imageUrl = teacher.imageUrl
         teacherCell.teacherName = teacher.fullName
         return teacherCell

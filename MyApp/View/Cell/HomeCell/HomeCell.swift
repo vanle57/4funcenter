@@ -19,7 +19,7 @@ final class HomeCell: UITableViewCell {
   // MARK: - func
   override func awakeFromNib() {
     super.awakeFromNib()
-    collectionView.register(TeacherCollectionViewCell.self)
+    collectionView.register(TeacherHomeCell.self)
     collectionView.dataSource = self
     collectionView.delegate = self
     NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: .reloadData, object: nil)
@@ -37,7 +37,7 @@ extension HomeCell: UICollectionViewDataSource {
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeue(TeacherCollectionViewCell.self, forIndexPath: indexPath)
+    let cell = collectionView.dequeue(TeacherHomeCell.self, forIndexPath: indexPath)
     cell.viewModel = viewModel.viewModelForCollectionViewcell(at: indexPath)
     return cell
   }

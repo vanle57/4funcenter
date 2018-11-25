@@ -149,9 +149,9 @@
 		ECF23AC31E9B9264008C23C1 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF23AC21E9B9264008C23C1 /* StringExt.swift */; };
 		F00DED8821537F8A0089F54D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00DED8721537F8A0089F54D /* HomeViewModel.swift */; };
 		F00DED8A215380080089F54D /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00DED89215380080089F54D /* Teacher.swift */; };
-		F00DED95215381A70089F54D /* TeacherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00DED93215381A70089F54D /* TeacherCollectionViewCell.swift */; };
-		F00DED96215381A70089F54D /* TeacherCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F00DED94215381A70089F54D /* TeacherCollectionViewCell.xib */; };
-		F00DED9A2153826B0089F54D /* TeacherCollectionCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00DED992153826B0089F54D /* TeacherCollectionCellModel.swift */; };
+		F00DED95215381A70089F54D /* TeacherHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00DED93215381A70089F54D /* TeacherHomeCell.swift */; };
+		F00DED96215381A70089F54D /* TeacherHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F00DED94215381A70089F54D /* TeacherHomeCell.xib */; };
+		F00DED9A2153826B0089F54D /* TeacherHomeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00DED992153826B0089F54D /* TeacherHomeCellViewModel.swift */; };
 		F00DED9D215382970089F54D /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00DED9B215382970089F54D /* HomeCell.swift */; };
 		F00DED9E215382970089F54D /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F00DED9C215382970089F54D /* HomeTableViewCell.xib */; };
 		F00DEDA0215382AD0089F54D /* HomeTableCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00DED9F215382AD0089F54D /* HomeTableCellModel.swift */; };
@@ -336,9 +336,9 @@
 		ECF23AC21E9B9264008C23C1 /* StringExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
 		F00DED8721537F8A0089F54D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F00DED89215380080089F54D /* Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
-		F00DED93215381A70089F54D /* TeacherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCollectionViewCell.swift; sourceTree = "<group>"; };
-		F00DED94215381A70089F54D /* TeacherCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeacherCollectionViewCell.xib; sourceTree = "<group>"; };
-		F00DED992153826B0089F54D /* TeacherCollectionCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCollectionCellModel.swift; sourceTree = "<group>"; };
+		F00DED93215381A70089F54D /* TeacherHomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherHomeCell.swift; sourceTree = "<group>"; };
+		F00DED94215381A70089F54D /* TeacherHomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeacherHomeCell.xib; sourceTree = "<group>"; };
+		F00DED992153826B0089F54D /* TeacherHomeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherHomeCellViewModel.swift; sourceTree = "<group>"; };
 		F00DED9B215382970089F54D /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		F00DED9C215382970089F54D /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		F00DED9F215382AD0089F54D /* HomeTableCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableCellModel.swift; sourceTree = "<group>"; };
@@ -968,7 +968,7 @@
 		F00DED8D215380820089F54D /* HomeCell */ = {
 			isa = PBXGroup;
 			children = (
-				F00DED92215381610089F54D /* TeacherCollectionViewOfTableCell */,
+				F00DED92215381610089F54D /* TeacherHomeCell */,
 				F00DED9B215382970089F54D /* HomeCell.swift */,
 				F00DED9C215382970089F54D /* HomeTableViewCell.xib */,
 				F00DED9F215382AD0089F54D /* HomeTableCellModel.swift */,
@@ -976,14 +976,14 @@
 			path = HomeCell;
 			sourceTree = "<group>";
 		};
-		F00DED92215381610089F54D /* TeacherCollectionViewOfTableCell */ = {
+		F00DED92215381610089F54D /* TeacherHomeCell */ = {
 			isa = PBXGroup;
 			children = (
-				F00DED93215381A70089F54D /* TeacherCollectionViewCell.swift */,
-				F00DED94215381A70089F54D /* TeacherCollectionViewCell.xib */,
-				F00DED992153826B0089F54D /* TeacherCollectionCellModel.swift */,
+				F00DED93215381A70089F54D /* TeacherHomeCell.swift */,
+				F00DED94215381A70089F54D /* TeacherHomeCell.xib */,
+				F00DED992153826B0089F54D /* TeacherHomeCellViewModel.swift */,
 			);
-			path = TeacherCollectionViewOfTableCell;
+			path = TeacherHomeCell;
 			sourceTree = "<group>";
 		};
 		F0FEF0ED215A386D00B7C9A6 /* ProfileCell */ = {
@@ -1109,7 +1109,7 @@
 				EC0105521E8F8AE000CE013D /* Assets.xcassets in Resources */,
 				B356BA5521520C9E002955B9 /* CoverCell.xib in Resources */,
 				B374DB88214783C0005C1FE2 /* Heebo-Light.ttf in Resources */,
-				F00DED96215381A70089F54D /* TeacherCollectionViewCell.xib in Resources */,
+				F00DED96215381A70089F54D /* TeacherHomeCell.xib in Resources */,
 				B374DB71214775AC005C1FE2 /* AboutViewController.xib in Resources */,
 				B3D26DB3215333570093FE42 /* SideMenuCell.xib in Resources */,
 				B356BA20214F95FA002955B9 /* TeacherViewController.xib in Resources */,
@@ -1358,7 +1358,7 @@
 				B3904EE6215D315D0019138E /* CourseDetailCell.swift in Sources */,
 				B3D26DB8215333570093FE42 /* BlogCellViewModel.swift in Sources */,
 				F0FEF0F1215A386D00B7C9A6 /* ProfileCell.swift in Sources */,
-				F00DED95215381A70089F54D /* TeacherCollectionViewCell.swift in Sources */,
+				F00DED95215381A70089F54D /* TeacherHomeCell.swift in Sources */,
 				B3D26E212159CD6F0093FE42 /* HistorySearchCell.swift in Sources */,
 				B3D26E142158A0C80093FE42 /* HeaderViewModel.swift in Sources */,
 				B382637C2161C80E009F73FD /* CourseCommentViewModel.swift in Sources */,
@@ -1368,7 +1368,7 @@
 				B3904EE9215DB5EF0019138E /* CourseDetailCellViewModel.swift in Sources */,
 				B3904ED9215CD6AD0019138E /* PageMenuCellViewModel.swift in Sources */,
 				B3D26DBD215333A70093FE42 /* BlogViewModel.swift in Sources */,
-				F00DED9A2153826B0089F54D /* TeacherCollectionCellModel.swift in Sources */,
+				F00DED9A2153826B0089F54D /* TeacherHomeCellViewModel.swift in Sources */,
 				B38230F7215B4899000C718A /* TeacherCollectionCell.swift in Sources */,
 				EC5337C11EF7939C00ACE038 /* TableCell.swift in Sources */,
 				ECF23AC31E9B9264008C23C1 /* StringExt.swift in Sources */,

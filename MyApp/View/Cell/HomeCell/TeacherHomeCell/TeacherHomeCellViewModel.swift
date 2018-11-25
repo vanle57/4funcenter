@@ -6,7 +6,7 @@
 //  Copyright © 2018 Asian Tech Co., Ltd. All rights reserved.
 //
 
-final class TeacherCollectionCellModel {
+final class TeacherHomeCellViewModel {
 
     var imageUrl = ""
     var teacherName = ""
