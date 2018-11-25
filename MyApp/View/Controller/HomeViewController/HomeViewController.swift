@@ -77,7 +77,7 @@ final class HomeViewController: BaseViewController {
   }
 
   private func configSlide() {
-    collectionView.register(SlideCollectionCell.self)
+    collectionView.register(SlideCell.self)
   }
 
   /// Set page control folow collection View
@@ -116,7 +116,7 @@ extension HomeViewController: UICollectionViewDataSource {
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     if let viewModel = try? viewModel.viewModelForSlideCell(indexPath: indexPath) {
-      let cell = collectionView.dequeue(SlideCollectionCell.self, forIndexPath: indexPath)
+      let cell = collectionView.dequeue(SlideCell.self, forIndexPath: indexPath)
       cell.viewModel = viewModel
       return cell
     }

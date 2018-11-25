@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class SlideCollectionCellViewModel {
+final class SlideCellViewModel {
 
     // MARK: - Properties
     var title = ""

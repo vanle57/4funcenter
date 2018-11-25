@@ -59,7 +59,7 @@ final class BlogViewController: BaseViewController {
 
   private func configSlide() {
     pageControl.numberOfPages = viewModel.numberOfSlides()
-    collectionView.register(SlideCollectionCell.self)
+    collectionView.register(SlideCell.self)
   }
 
   private func initCollectionView() {
@@ -90,7 +90,7 @@ extension BlogViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView,
     cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     if let viewModel = try? viewModel.viewModelForSlideCell(indexPath: indexPath) {
-      let cell = collectionView.dequeue(SlideCollectionCell.self, forIndexPath: indexPath)
+      let cell = collectionView.dequeue(SlideCell.self, forIndexPath: indexPath)
       cell.viewModel = viewModel
       return cell
     }

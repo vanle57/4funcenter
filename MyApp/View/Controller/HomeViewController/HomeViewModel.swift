@@ -83,7 +83,7 @@ extension HomeViewModel {
     return slides.count
   }
 
-  func viewModelForSlideCell(indexPath: IndexPath) throws -> SlideCollectionCellViewModel {
+  func viewModelForSlideCell(indexPath: IndexPath) throws -> SlideCellViewModel {
     let index = indexPath.row
 
     guard index < slides.count else {
@@ -91,7 +91,7 @@ extension HomeViewModel {
     }
 
     let slide = slides[index]
-    return SlideCollectionCellViewModel(slide: slide)
+    return SlideCellViewModel(slide: slide)
   }
 }
 

@@ -8,13 +8,13 @@
 
 import UIKit
 
-class SlideCollectionCell: UICollectionViewCell {
+class SlideCell: UICollectionViewCell {
 
     // MARK: - Outlets
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
 
-    var viewModel: SlideCollectionCellViewModel? {
+    var viewModel: SlideCellViewModel? {
         didSet {
             guard let viewModel = viewModel else { return }
             imageView.setImage(path: viewModel.imageUrl)
