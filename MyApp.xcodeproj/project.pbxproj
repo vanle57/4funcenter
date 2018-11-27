@@ -13,6 +13,15 @@
 		629E064E2126EE05004D29E0 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629E064D2126EE05004D29E0 /* Errors.swift */; };
 		6C392FC5AF0C61509011C30D /* Pods_MyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E8000CCB9AE328B83764288 /* Pods_MyApp.framework */; };
 		741A471921A15B6A00728B58 /* Api.Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741A471821A15B6A00728B58 /* Api.Slide.swift */; };
+		741A471B21A16E5900728B58 /* UIImageViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741A471A21A16E5900728B58 /* UIImageViewExt.swift */; };
+		74D445E221ACF4BA007DC1FD /* TeacherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D445E021ACF4BA007DC1FD /* TeacherCell.swift */; };
+		74D445E321ACF4BA007DC1FD /* TeacherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74D445E121ACF4BA007DC1FD /* TeacherCell.xib */; };
+		74D445E521ACF72B007DC1FD /* TeacherCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D445E421ACF72B007DC1FD /* TeacherCellViewModel.swift */; };
+		74D445E921ACFE97007DC1FD /* CourseHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D445E721ACFE97007DC1FD /* CourseHomeCell.swift */; };
+		74D445EA21ACFE97007DC1FD /* CourseHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74D445E821ACFE97007DC1FD /* CourseHomeCell.xib */; };
+		74D445EC21AD394D007DC1FD /* CourseHomeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D445EB21AD394D007DC1FD /* CourseHomeCellViewModel.swift */; };
+		74D8A1A121A3FD0F00A1FAAC /* Api.Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D8A1A021A3FD0F00A1FAAC /* Api.Entry.swift */; };
+		74DE384421A5613700121CE9 /* Api.Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DE384321A5613700121CE9 /* Api.Teacher.swift */; };
 		74F1A3C92194555E006E282D /* Api.User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F1A3C82194555E006E282D /* Api.User.swift */; };
 		ACB045A3210F0CEB00159503 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB045A2210F0CEB00159503 /* BaseNavigationController.swift */; };
 		B317621A2148CB65005C9D25 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31762192148CB65005C9D25 /* RegisterViewModel.swift */; };
@@ -61,12 +70,6 @@
 		B374DB8A214783C0005C1FE2 /* Heebo-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B374DB83214783C0005C1FE2 /* Heebo-Black.ttf */; };
 		B374DB8C2147A1E1005C1FE2 /* UIButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B374DB8B2147A1E1005C1FE2 /* UIButtonExt.swift */; };
 		B38230EC215B386F000C718A /* TeacherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38230EB215B386F000C718A /* TeacherViewModel.swift */; };
-		B38230F0215B445A000C718A /* TeacherTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38230EE215B445A000C718A /* TeacherTableCell.swift */; };
-		B38230F1215B445A000C718A /* TeacherTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B38230EF215B445A000C718A /* TeacherTableCell.xib */; };
-		B38230F3215B46F7000C718A /* TeacherTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38230F2215B46F7000C718A /* TeacherTableCellViewModel.swift */; };
-		B38230F7215B4899000C718A /* TeacherCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38230F5215B4899000C718A /* TeacherCollectionCell.swift */; };
-		B38230F8215B4899000C718A /* TeacherCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B38230F6215B4899000C718A /* TeacherCollectionCell.xib */; };
-		B38230FA215B6525000C718A /* TeacherCollectionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38230F9215B6525000C718A /* TeacherCollectionCellViewModel.swift */; };
 		B38263712161BDFB009F73FD /* CourseCommentCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B382636E2161BDFB009F73FD /* CourseCommentCellViewModel.swift */; };
 		B38263722161BDFB009F73FD /* CourseCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B382636F2161BDFB009F73FD /* CourseCommentCell.xib */; };
 		B38263732161BDFB009F73FD /* CourseCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38263702161BDFB009F73FD /* CourseCommentCell.swift */; };
@@ -110,10 +113,10 @@
 		B3D26E202159CD6F0093FE42 /* HistorySearchCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26E1D2159CD6E0093FE42 /* HistorySearchCellViewModel.swift */; };
 		B3D26E212159CD6F0093FE42 /* HistorySearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26E1E2159CD6E0093FE42 /* HistorySearchCell.swift */; };
 		B3D26E222159CD6F0093FE42 /* HistorySearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D26E1F2159CD6E0093FE42 /* HistorySearchCell.xib */; };
-		B3D26E2B215A158D0093FE42 /* SlideCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26E29215A158C0093FE42 /* SlideCollectionCell.swift */; };
-		B3D26E2C215A158D0093FE42 /* SlideCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D26E2A215A158C0093FE42 /* SlideCollectionCell.xib */; };
+		B3D26E2B215A158D0093FE42 /* SlideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26E29215A158C0093FE42 /* SlideCell.swift */; };
+		B3D26E2C215A158D0093FE42 /* SlideCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D26E2A215A158C0093FE42 /* SlideCell.xib */; };
 		B3D26E2E215A17D70093FE42 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26E2D215A17D70093FE42 /* Slide.swift */; };
-		B3D26E30215A1FE70093FE42 /* SlideCollectionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26E2F215A1FE70093FE42 /* SlideCollectionCellViewModel.swift */; };
+		B3D26E30215A1FE70093FE42 /* SlideCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26E2F215A1FE70093FE42 /* SlideCellViewModel.swift */; };
 		B3D3564521227A2100D29B1A /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D3564421227A2100D29B1A /* Session.swift */; };
 		B3D3564721227A9E00D29B1A /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D3564621227A9E00D29B1A /* Key.swift */; };
 		B3EB05AC215CD41A002957A7 /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EB05AA215CD41A002957A7 /* CourseViewController.swift */; };
@@ -146,12 +149,12 @@
 		ECF23AC31E9B9264008C23C1 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF23AC21E9B9264008C23C1 /* StringExt.swift */; };
 		F00DED8821537F8A0089F54D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00DED8721537F8A0089F54D /* HomeViewModel.swift */; };
 		F00DED8A215380080089F54D /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00DED89215380080089F54D /* Teacher.swift */; };
-		F00DED95215381A70089F54D /* TeacherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00DED93215381A70089F54D /* TeacherCollectionViewCell.swift */; };
-		F00DED96215381A70089F54D /* TeacherCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F00DED94215381A70089F54D /* TeacherCollectionViewCell.xib */; };
-		F00DED9A2153826B0089F54D /* TeacherCollectionCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00DED992153826B0089F54D /* TeacherCollectionCellModel.swift */; };
-		F00DED9D215382970089F54D /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00DED9B215382970089F54D /* HomeTableViewCell.swift */; };
-		F00DED9E215382970089F54D /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F00DED9C215382970089F54D /* HomeTableViewCell.xib */; };
-		F00DEDA0215382AD0089F54D /* HomeTableCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00DED9F215382AD0089F54D /* HomeTableCellModel.swift */; };
+		F00DED95215381A70089F54D /* TeacherHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00DED93215381A70089F54D /* TeacherHomeCell.swift */; };
+		F00DED96215381A70089F54D /* TeacherHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F00DED94215381A70089F54D /* TeacherHomeCell.xib */; };
+		F00DED9A2153826B0089F54D /* TeacherHomeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00DED992153826B0089F54D /* TeacherHomeCellViewModel.swift */; };
+		F00DED9D215382970089F54D /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00DED9B215382970089F54D /* HomeCell.swift */; };
+		F00DED9E215382970089F54D /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F00DED9C215382970089F54D /* HomeCell.xib */; };
+		F00DEDA0215382AD0089F54D /* HomeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00DED9F215382AD0089F54D /* HomeCellViewModel.swift */; };
 		F00DEDA22153837C0089F54D /* BJAutoScrollingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00DEDA12153837C0089F54D /* BJAutoScrollingCollectionView.swift */; };
 		F0FEF0E1215A24BB00B7C9A6 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FEF0DF215A24BB00B7C9A6 /* ProfileViewModel.swift */; };
 		F0FEF0F1215A386D00B7C9A6 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FEF0EE215A386D00B7C9A6 /* ProfileCell.swift */; };
@@ -193,6 +196,15 @@
 		625DF88F2111BB8B007958F6 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		629E064D2126EE05004D29E0 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		741A471821A15B6A00728B58 /* Api.Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.Slide.swift; sourceTree = "<group>"; };
+		741A471A21A16E5900728B58 /* UIImageViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExt.swift; sourceTree = "<group>"; };
+		74D445E021ACF4BA007DC1FD /* TeacherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCell.swift; sourceTree = "<group>"; };
+		74D445E121ACF4BA007DC1FD /* TeacherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeacherCell.xib; sourceTree = "<group>"; };
+		74D445E421ACF72B007DC1FD /* TeacherCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCellViewModel.swift; sourceTree = "<group>"; };
+		74D445E721ACFE97007DC1FD /* CourseHomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHomeCell.swift; sourceTree = "<group>"; };
+		74D445E821ACFE97007DC1FD /* CourseHomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseHomeCell.xib; sourceTree = "<group>"; };
+		74D445EB21AD394D007DC1FD /* CourseHomeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHomeCellViewModel.swift; sourceTree = "<group>"; };
+		74D8A1A021A3FD0F00A1FAAC /* Api.Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.Entry.swift; sourceTree = "<group>"; };
+		74DE384321A5613700121CE9 /* Api.Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.Teacher.swift; sourceTree = "<group>"; };
 		74F1A3C82194555E006E282D /* Api.User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.User.swift; sourceTree = "<group>"; };
 		7E8000CCB9AE328B83764288 /* Pods_MyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB045A2210F0CEB00159503 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -242,12 +254,6 @@
 		B374DB83214783C0005C1FE2 /* Heebo-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Heebo-Black.ttf"; sourceTree = "<group>"; };
 		B374DB8B2147A1E1005C1FE2 /* UIButtonExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExt.swift; sourceTree = "<group>"; };
 		B38230EB215B386F000C718A /* TeacherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherViewModel.swift; sourceTree = "<group>"; };
-		B38230EE215B445A000C718A /* TeacherTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherTableCell.swift; sourceTree = "<group>"; };
-		B38230EF215B445A000C718A /* TeacherTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeacherTableCell.xib; sourceTree = "<group>"; };
-		B38230F2215B46F7000C718A /* TeacherTableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherTableCellViewModel.swift; sourceTree = "<group>"; };
-		B38230F5215B4899000C718A /* TeacherCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCollectionCell.swift; sourceTree = "<group>"; };
-		B38230F6215B4899000C718A /* TeacherCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeacherCollectionCell.xib; sourceTree = "<group>"; };
-		B38230F9215B6525000C718A /* TeacherCollectionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCollectionCellViewModel.swift; sourceTree = "<group>"; };
 		B382636E2161BDFB009F73FD /* CourseCommentCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseCommentCellViewModel.swift; sourceTree = "<group>"; };
 		B382636F2161BDFB009F73FD /* CourseCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CourseCommentCell.xib; sourceTree = "<group>"; };
 		B38263702161BDFB009F73FD /* CourseCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseCommentCell.swift; sourceTree = "<group>"; };
@@ -291,10 +297,10 @@
 		B3D26E1D2159CD6E0093FE42 /* HistorySearchCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistorySearchCellViewModel.swift; sourceTree = "<group>"; };
 		B3D26E1E2159CD6E0093FE42 /* HistorySearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistorySearchCell.swift; sourceTree = "<group>"; };
 		B3D26E1F2159CD6E0093FE42 /* HistorySearchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistorySearchCell.xib; sourceTree = "<group>"; };
-		B3D26E29215A158C0093FE42 /* SlideCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideCollectionCell.swift; sourceTree = "<group>"; };
-		B3D26E2A215A158C0093FE42 /* SlideCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideCollectionCell.xib; sourceTree = "<group>"; };
+		B3D26E29215A158C0093FE42 /* SlideCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideCell.swift; sourceTree = "<group>"; };
+		B3D26E2A215A158C0093FE42 /* SlideCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideCell.xib; sourceTree = "<group>"; };
 		B3D26E2D215A17D70093FE42 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
-		B3D26E2F215A1FE70093FE42 /* SlideCollectionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideCollectionCellViewModel.swift; sourceTree = "<group>"; };
+		B3D26E2F215A1FE70093FE42 /* SlideCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideCellViewModel.swift; sourceTree = "<group>"; };
 		B3D3564421227A2100D29B1A /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		B3D3564621227A9E00D29B1A /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		B3EB05AA215CD41A002957A7 /* CourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
@@ -330,12 +336,12 @@
 		ECF23AC21E9B9264008C23C1 /* StringExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
 		F00DED8721537F8A0089F54D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F00DED89215380080089F54D /* Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
-		F00DED93215381A70089F54D /* TeacherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCollectionViewCell.swift; sourceTree = "<group>"; };
-		F00DED94215381A70089F54D /* TeacherCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeacherCollectionViewCell.xib; sourceTree = "<group>"; };
-		F00DED992153826B0089F54D /* TeacherCollectionCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCollectionCellModel.swift; sourceTree = "<group>"; };
-		F00DED9B215382970089F54D /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
-		F00DED9C215382970089F54D /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
-		F00DED9F215382AD0089F54D /* HomeTableCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableCellModel.swift; sourceTree = "<group>"; };
+		F00DED93215381A70089F54D /* TeacherHomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherHomeCell.swift; sourceTree = "<group>"; };
+		F00DED94215381A70089F54D /* TeacherHomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeacherHomeCell.xib; sourceTree = "<group>"; };
+		F00DED992153826B0089F54D /* TeacherHomeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherHomeCellViewModel.swift; sourceTree = "<group>"; };
+		F00DED9B215382970089F54D /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		F00DED9C215382970089F54D /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
+		F00DED9F215382AD0089F54D /* HomeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellViewModel.swift; sourceTree = "<group>"; };
 		F00DEDA12153837C0089F54D /* BJAutoScrollingCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BJAutoScrollingCollectionView.swift; sourceTree = "<group>"; };
 		F0FEF0DF215A24BB00B7C9A6 /* ProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		F0FEF0EE215A386D00B7C9A6 /* ProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
@@ -396,6 +402,26 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		74D445DF21ACF499007DC1FD /* TeacherCell */ = {
+			isa = PBXGroup;
+			children = (
+				74D445E021ACF4BA007DC1FD /* TeacherCell.swift */,
+				74D445E121ACF4BA007DC1FD /* TeacherCell.xib */,
+				74D445E421ACF72B007DC1FD /* TeacherCellViewModel.swift */,
+			);
+			path = TeacherCell;
+			sourceTree = "<group>";
+		};
+		74D445E621ACFE75007DC1FD /* CourseHomeCell */ = {
+			isa = PBXGroup;
+			children = (
+				74D445E721ACFE97007DC1FD /* CourseHomeCell.swift */,
+				74D445E821ACFE97007DC1FD /* CourseHomeCell.xib */,
+				74D445EB21AD394D007DC1FD /* CourseHomeCellViewModel.swift */,
+			);
+			path = CourseHomeCell;
+			sourceTree = "<group>";
+		};
 		ACB04582210EFF4400159503 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -438,13 +464,13 @@
 		B33ABCAA214BA7FC00F7FF48 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				74D445DF21ACF499007DC1FD /* TeacherCell */,
 				F0FEF0ED215A386D00B7C9A6 /* ProfileCell */,
 				B382636D2161BDFB009F73FD /* CourseCommentCell */,
 				B3904EE3215D31250019138E /* CourseDetailCell */,
 				B3904ED3215CD50A0019138E /* PageMenuCell */,
-				B38230ED215B441A000C718A /* TeacherTableCell */,
-				F00DED8D215380820089F54D /* HomeTableCell */,
-				B3D26E28215A158C0093FE42 /* SlideCollectionCell */,
+				F00DED8D215380820089F54D /* HomeCell */,
+				B3D26E28215A158C0093FE42 /* SlideCell */,
 				B3D26E1C2159CD6E0093FE42 /* HistorySearchCell */,
 				B3D26DC0215344B70093FE42 /* CourseCell */,
 				B356BA5121520C6E002955B9 /* CoverCell */,
@@ -585,27 +611,6 @@
 			path = Heebo;
 			sourceTree = "<group>";
 		};
-		B38230ED215B441A000C718A /* TeacherTableCell */ = {
-			isa = PBXGroup;
-			children = (
-				B38230F4215B482D000C718A /* TeacherCollectionCell */,
-				B38230EE215B445A000C718A /* TeacherTableCell.swift */,
-				B38230EF215B445A000C718A /* TeacherTableCell.xib */,
-				B38230F2215B46F7000C718A /* TeacherTableCellViewModel.swift */,
-			);
-			path = TeacherTableCell;
-			sourceTree = "<group>";
-		};
-		B38230F4215B482D000C718A /* TeacherCollectionCell */ = {
-			isa = PBXGroup;
-			children = (
-				B38230F5215B4899000C718A /* TeacherCollectionCell.swift */,
-				B38230F6215B4899000C718A /* TeacherCollectionCell.xib */,
-				B38230F9215B6525000C718A /* TeacherCollectionCellViewModel.swift */,
-			);
-			path = TeacherCollectionCell;
-			sourceTree = "<group>";
-		};
 		B382636D2161BDFB009F73FD /* CourseCommentCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -716,14 +721,14 @@
 			path = HistorySearchCell;
 			sourceTree = "<group>";
 		};
-		B3D26E28215A158C0093FE42 /* SlideCollectionCell */ = {
+		B3D26E28215A158C0093FE42 /* SlideCell */ = {
 			isa = PBXGroup;
 			children = (
-				B3D26E29215A158C0093FE42 /* SlideCollectionCell.swift */,
-				B3D26E2A215A158C0093FE42 /* SlideCollectionCell.xib */,
-				B3D26E2F215A1FE70093FE42 /* SlideCollectionCellViewModel.swift */,
+				B3D26E29215A158C0093FE42 /* SlideCell.swift */,
+				B3D26E2A215A158C0093FE42 /* SlideCell.xib */,
+				B3D26E2F215A1FE70093FE42 /* SlideCellViewModel.swift */,
 			);
-			path = SlideCollectionCell;
+			path = SlideCell;
 			sourceTree = "<group>";
 		};
 		B3EB05A9215CD400002957A7 /* CourseViewController */ = {
@@ -915,6 +920,8 @@
 				ECF23AB01E9B869B008C23C1 /* Core */,
 				74F1A3C82194555E006E282D /* Api.User.swift */,
 				741A471821A15B6A00728B58 /* Api.Slide.swift */,
+				74D8A1A021A3FD0F00A1FAAC /* Api.Entry.swift */,
+				74DE384321A5613700121CE9 /* Api.Teacher.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -952,29 +959,31 @@
 				ECEC0C591ED44D4100F6760A /* UIViewControllerExt.swift */,
 				B374DB8B2147A1E1005C1FE2 /* UIButtonExt.swift */,
 				B382637D2161D7FD009F73FD /* UIViewExt.swift */,
+				741A471A21A16E5900728B58 /* UIImageViewExt.swift */,
 			);
 			path = Ext;
 			sourceTree = "<group>";
 		};
-		F00DED8D215380820089F54D /* HomeTableCell */ = {
+		F00DED8D215380820089F54D /* HomeCell */ = {
 			isa = PBXGroup;
 			children = (
-				F00DED92215381610089F54D /* TeacherCollectionViewOfTableCell */,
-				F00DED9B215382970089F54D /* HomeTableViewCell.swift */,
-				F00DED9C215382970089F54D /* HomeTableViewCell.xib */,
-				F00DED9F215382AD0089F54D /* HomeTableCellModel.swift */,
+				74D445E621ACFE75007DC1FD /* CourseHomeCell */,
+				F00DED92215381610089F54D /* TeacherHomeCell */,
+				F00DED9B215382970089F54D /* HomeCell.swift */,
+				F00DED9C215382970089F54D /* HomeCell.xib */,
+				F00DED9F215382AD0089F54D /* HomeCellViewModel.swift */,
 			);
-			path = HomeTableCell;
+			path = HomeCell;
 			sourceTree = "<group>";
 		};
-		F00DED92215381610089F54D /* TeacherCollectionViewOfTableCell */ = {
+		F00DED92215381610089F54D /* TeacherHomeCell */ = {
 			isa = PBXGroup;
 			children = (
-				F00DED93215381A70089F54D /* TeacherCollectionViewCell.swift */,
-				F00DED94215381A70089F54D /* TeacherCollectionViewCell.xib */,
-				F00DED992153826B0089F54D /* TeacherCollectionCellModel.swift */,
+				F00DED93215381A70089F54D /* TeacherHomeCell.swift */,
+				F00DED94215381A70089F54D /* TeacherHomeCell.xib */,
+				F00DED992153826B0089F54D /* TeacherHomeCellViewModel.swift */,
 			);
-			path = TeacherCollectionViewOfTableCell;
+			path = TeacherHomeCell;
 			sourceTree = "<group>";
 		};
 		F0FEF0ED215A386D00B7C9A6 /* ProfileCell */ = {
@@ -1100,14 +1109,14 @@
 				EC0105521E8F8AE000CE013D /* Assets.xcassets in Resources */,
 				B356BA5521520C9E002955B9 /* CoverCell.xib in Resources */,
 				B374DB88214783C0005C1FE2 /* Heebo-Light.ttf in Resources */,
-				F00DED96215381A70089F54D /* TeacherCollectionViewCell.xib in Resources */,
+				F00DED96215381A70089F54D /* TeacherHomeCell.xib in Resources */,
 				B374DB71214775AC005C1FE2 /* AboutViewController.xib in Resources */,
 				B3D26DB3215333570093FE42 /* SideMenuCell.xib in Resources */,
 				B356BA20214F95FA002955B9 /* TeacherViewController.xib in Resources */,
 				B3D26DB7215333570093FE42 /* BlogCell.xib in Resources */,
 				B3D26E1B2159CD520093FE42 /* SearchViewController.xib in Resources */,
 				CDE9EE1121194B9B00298DD0 /* gif_eye_vocab.gif in Resources */,
-				F00DED9E215382970089F54D /* HomeTableViewCell.xib in Resources */,
+				F00DED9E215382970089F54D /* HomeCell.xib in Resources */,
 				B356BA402150E602002955B9 /* RegisterSuccessViewController.xib in Resources */,
 				B38263782161C0D9009F73FD /* CourseCommentViewController.xib in Resources */,
 				EC5337BA1EF78E4D00ACE038 /* Localizable.strings in Resources */,
@@ -1123,18 +1132,18 @@
 				B356BA13214F8A38002955B9 /* PlayfairDisplay-BoldItalic.otf in Resources */,
 				B356BA15214F8A38002955B9 /* PlayfairDisplaySC-Regular.otf in Resources */,
 				B3904EE0215D0D650019138E /* CourseDetailViewController.xib in Resources */,
-				B3D26E2C215A158D0093FE42 /* SlideCollectionCell.xib in Resources */,
+				B3D26E2C215A158D0093FE42 /* SlideCell.xib in Resources */,
 				B374DB79214775D0005C1FE2 /* CoursesViewController.xib in Resources */,
 				B374DB84214783C0005C1FE2 /* Heebo-Thin.ttf in Resources */,
 				B356BA18214F8A38002955B9 /* PlayfairDisplay-Bold.otf in Resources */,
 				B356BA17214F8A38002955B9 /* PlayfairDisplay-Regular.otf in Resources */,
-				B38230F8215B4899000C718A /* TeacherCollectionCell.xib in Resources */,
 				B33ABCA9214B98FD00F7FF48 /* SideMenuViewController.xib in Resources */,
 				B356BA10214F8A38002955B9 /* PlayfairDisplaySC-Italic.otf in Resources */,
+				74D445E321ACF4BA007DC1FD /* TeacherCell.xib in Resources */,
 				F0FEF0F2215A386D00B7C9A6 /* ProfileCell.xib in Resources */,
 				B3D26DC4215345AD0093FE42 /* CourseCell.xib in Resources */,
-				B38230F1215B445A000C718A /* TeacherTableCell.xib in Resources */,
 				B3904EE7215D315D0019138E /* CourseDetailCell.xib in Resources */,
+				74D445EA21ACFE97007DC1FD /* CourseHomeCell.xib in Resources */,
 				B3EB05AD215CD41A002957A7 /* CourseViewController.xib in Resources */,
 				B317621E2149F39F005C9D25 /* RegisterViewController.xib in Resources */,
 				B374DB89214783C0005C1FE2 /* Heebo-Medium.ttf in Resources */,
@@ -1341,28 +1350,30 @@
 			files = (
 				B3D26E1A2159CD520093FE42 /* SearchViewModel.swift in Sources */,
 				B374DB74214775BE005C1FE2 /* BlogViewController.swift in Sources */,
-				B3D26E2B215A158D0093FE42 /* SlideCollectionCell.swift in Sources */,
+				B3D26E2B215A158D0093FE42 /* SlideCell.swift in Sources */,
 				74F1A3C92194555E006E282D /* Api.User.swift in Sources */,
 				B356BA5421520C9E002955B9 /* CoverCell.swift in Sources */,
+				74D445E521ACF72B007DC1FD /* TeacherCellViewModel.swift in Sources */,
 				B374DB8C2147A1E1005C1FE2 /* UIButtonExt.swift in Sources */,
 				B382637A2161C0F5009F73FD /* Comment.swift in Sources */,
 				B3904EE6215D315D0019138E /* CourseDetailCell.swift in Sources */,
 				B3D26DB8215333570093FE42 /* BlogCellViewModel.swift in Sources */,
 				F0FEF0F1215A386D00B7C9A6 /* ProfileCell.swift in Sources */,
-				F00DED95215381A70089F54D /* TeacherCollectionViewCell.swift in Sources */,
+				F00DED95215381A70089F54D /* TeacherHomeCell.swift in Sources */,
 				B3D26E212159CD6F0093FE42 /* HistorySearchCell.swift in Sources */,
 				B3D26E142158A0C80093FE42 /* HeaderViewModel.swift in Sources */,
+				74D445E221ACF4BA007DC1FD /* TeacherCell.swift in Sources */,
 				B382637C2161C80E009F73FD /* CourseCommentViewModel.swift in Sources */,
 				F00DED8821537F8A0089F54D /* HomeViewModel.swift in Sources */,
-				B3D26E30215A1FE70093FE42 /* SlideCollectionCellViewModel.swift in Sources */,
+				B3D26E30215A1FE70093FE42 /* SlideCellViewModel.swift in Sources */,
 				B3D26DC3215345AD0093FE42 /* CourseCell.swift in Sources */,
 				B3904EE9215DB5EF0019138E /* CourseDetailCellViewModel.swift in Sources */,
 				B3904ED9215CD6AD0019138E /* PageMenuCellViewModel.swift in Sources */,
 				B3D26DBD215333A70093FE42 /* BlogViewModel.swift in Sources */,
-				F00DED9A2153826B0089F54D /* TeacherCollectionCellModel.swift in Sources */,
-				B38230F7215B4899000C718A /* TeacherCollectionCell.swift in Sources */,
+				F00DED9A2153826B0089F54D /* TeacherHomeCellViewModel.swift in Sources */,
 				EC5337C11EF7939C00ACE038 /* TableCell.swift in Sources */,
 				ECF23AC31E9B9264008C23C1 /* StringExt.swift in Sources */,
+				74DE384421A5613700121CE9 /* Api.Teacher.swift in Sources */,
 				B374DB78214775D0005C1FE2 /* CoursesViewController.swift in Sources */,
 				F0FEF0E1215A24BB00B7C9A6 /* ProfileViewModel.swift in Sources */,
 				B3904ED6215CD52F0019138E /* PageMenuCell.swift in Sources */,
@@ -1373,30 +1384,31 @@
 				B317621A2148CB65005C9D25 /* RegisterViewModel.swift in Sources */,
 				F00DED8A215380080089F54D /* Teacher.swift in Sources */,
 				629E064E2126EE05004D29E0 /* Errors.swift in Sources */,
-				F00DED9D215382970089F54D /* HomeTableViewCell.swift in Sources */,
+				F00DED9D215382970089F54D /* HomeCell.swift in Sources */,
 				EC5337B71EF78CD800ACE038 /* App.swift in Sources */,
 				B3D26E2E215A17D70093FE42 /* Slide.swift in Sources */,
 				B3969518216B354500D3B8EB /* ProfileCellViewModel.swift in Sources */,
 				B374DB5F2147681B005C1FE2 /* HomeViewController.swift in Sources */,
 				625DF8902111BB8B007958F6 /* LoginViewModel.swift in Sources */,
 				B317621D2149F39F005C9D25 /* RegisterViewController.swift in Sources */,
-				B38230F0215B445A000C718A /* TeacherTableCell.swift in Sources */,
+				74D8A1A121A3FD0F00A1FAAC /* Api.Entry.swift in Sources */,
 				ECC5B2CD1EF906CA001A97BC /* BaseViewController.swift in Sources */,
 				741A471921A15B6A00728B58 /* Api.Slide.swift in Sources */,
 				B3D26E202159CD6F0093FE42 /* HistorySearchCellViewModel.swift in Sources */,
 				EC5337C31EF793B100ACE038 /* CollectionCell.swift in Sources */,
+				74D445EC21AD394D007DC1FD /* CourseHomeCellViewModel.swift in Sources */,
 				B33ABCA8214B98FD00F7FF48 /* SideMenuViewController.swift in Sources */,
 				B3904EE2215D0F900019138E /* CourseDetailViewModel.swift in Sources */,
 				B3D26DCD21535C580093FE42 /* CourseCellViewModel.swift in Sources */,
 				ECF23ABA1E9B89B2008C23C1 /* RequestSerializer.swift in Sources */,
-				B38230F3215B46F7000C718A /* TeacherTableCellViewModel.swift in Sources */,
 				B3904EDF215D0D650019138E /* CourseDetailViewController.swift in Sources */,
+				741A471B21A16E5900728B58 /* UIImageViewExt.swift in Sources */,
 				B3D3564521227A2100D29B1A /* Session.swift in Sources */,
 				6238ADED21116D38003D4B8E /* LoginViewController.swift in Sources */,
 				B3D26DA1215333040093FE42 /* UIScreenExt.swift in Sources */,
 				EC0105541E8F8AE000CE013D /* AppDelegate.swift in Sources */,
 				B3904EDB215CDB310019138E /* CourseViewModel.swift in Sources */,
-				F00DEDA0215382AD0089F54D /* HomeTableCellModel.swift in Sources */,
+				F00DEDA0215382AD0089F54D /* HomeCellViewModel.swift in Sources */,
 				B3D26DA2215333040093FE42 /* DateExt.swift in Sources */,
 				B33ABCB2214F566500F7FF48 /* SideMenuViewModel.swift in Sources */,
 				B358301A2115624500E3E419 /* User.swift in Sources */,
@@ -1415,7 +1427,6 @@
 				ECEC0C581ED44C5D00F6760A /* String.swift in Sources */,
 				B3D26DCB21535AED0093FE42 /* CoursesViewModel.swift in Sources */,
 				B3D26DB6215333570093FE42 /* BlogCell.swift in Sources */,
-				B38230FA215B6525000C718A /* TeacherCollectionCellViewModel.swift in Sources */,
 				B38263772161C0D9009F73FD /* CourseCommentViewController.swift in Sources */,
 				EC5337BE1EF78FEA00ACE038 /* Font.swift in Sources */,
 				ECF23ABB1E9B89B2008C23C1 /* ResponseSerializer.swift in Sources */,
@@ -1430,6 +1441,7 @@
 				B38263732161BDFB009F73FD /* CourseCommentCell.swift in Sources */,
 				B3D26DA42153330D0093FE42 /* DummyData.swift in Sources */,
 				B356BA1F214F95FA002955B9 /* TeacherViewController.swift in Sources */,
+				74D445E921ACFE97007DC1FD /* CourseHomeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

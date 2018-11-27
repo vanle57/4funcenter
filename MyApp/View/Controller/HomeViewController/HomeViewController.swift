@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 final class HomeViewController: BaseViewController {
 
@@ -36,6 +37,7 @@ final class HomeViewController: BaseViewController {
   // MARK: - Setup Data
   override func setupData() {
     super.setupData()
+    SVProgressHUD.show()
     viewModel.loadSlides(completion: { [weak self] (result) in
       guard let this = self else { return }
       switch result {
@@ -47,6 +49,18 @@ final class HomeViewController: BaseViewController {
         this.alert(error: error)
       }
     })
+
+    viewModel.loadTeachers { [weak self] (result) in
+      SVProgressHUD.popActivity()
+      guard let this = self else { return }
+      switch result {
+      case .success:
+        this.tableView.reloadData()
+        NotificationCenter.default.post(name: .reloadData, object: nil)
+      case .failure(let error):
+        this.alert(error: error)
+      }
+    }
   }
 
   // MARK: - Private funcs
@@ -56,14 +70,14 @@ final class HomeViewController: BaseViewController {
   }
 
   private func configTableView() {
-    tableView.register(HomeTableViewCell.self)
+    tableView.register(HomeCell.self)
     tableView.register(HeaderView.self)
     tableView.rowHeight = Config.rowHeight * ratio
     tableView.tableFooterView = UIView()
   }
 
   private func configSlide() {
-    collectionView.register(SlideCollectionCell.self)
+    collectionView.register(SlideCell.self)
   }
 
   /// Set page control folow collection View
@@ -102,7 +116,7 @@ extension HomeViewController: UICollectionViewDataSource {
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     if let viewModel = try? viewModel.viewModelForSlideCell(indexPath: indexPath) {
-      let cell = collectionView.dequeue(SlideCollectionCell.self, forIndexPath: indexPath)
+      let cell = collectionView.dequeue(SlideCell.self, forIndexPath: indexPath)
       cell.viewModel = viewModel
       return cell
     }
@@ -132,7 +146,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     _ collectionView: UICollectionView,
     layout collectionViewLayout: UICollectionViewLayout,
     sizeForItemAt indexPath: IndexPath
-    ) -> CGSize {
+  ) -> CGSize {
     return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
   }
 
@@ -157,7 +171,7 @@ extension HomeViewController: UITableViewDataSource {
       return TableCell()
     }
 
-    let cell = tableView.dequeue(HomeTableViewCell.self)
+    let cell = tableView.dequeue(HomeCell.self)
     cell.viewModel = viewModel
     return cell
   }

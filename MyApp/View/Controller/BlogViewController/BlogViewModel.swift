@@ -11,62 +11,82 @@ import MVVM
 
 final class BlogViewModel: MVVM.ViewModel {
 
-    /// dummy data
-    var slides: [Slide] = DummyData.fetchSlide()
-    var entries = DummyData.fetchEntries()
+  // MARK: - enum
+  enum LoadEntriesCompletion {
+    case success
+    case failure(Error)
+  }
+
+  /// dummy data
+  var slides: [Slide] = DummyData.fetchSlide()
+  var entries: [Entry] = []
+
+  // call api
+  func loadEntries(completion: @escaping (LoadEntriesCompletion) -> Void) {
+    Api.Entry.loadEntries { [weak self] (result) in
+      guard let this = self else { return }
+      switch result {
+      case .success(let entries):
+        this.entries = entries
+        completion(.success)
+      case .failure(let error):
+        completion(.failure(error))
+      }
+    }
+  }
 }
 
 // MARK: - Table view
 extension BlogViewModel {
 
-    func numberOfItems(inSection section: Int) throws -> Int {
-        guard section < 1 else {
-            throw App.Error.indexOutOfBound
-        }
-
-        return entries.count
+  func numberOfItems(inSection section: Int) throws -> Int {
+    guard section < 1 else {
+      throw App.Error.indexOutOfBound
     }
 
-    func viewModelForItem(at indexPath: IndexPath) throws -> BlogCellViewModel {
-        let section = indexPath.section
+    return entries.count
+  }
 
-        guard section < 1 else {
-            throw App.Error.indexOutOfBound
-        }
+  func viewModelForItem(at indexPath: IndexPath) throws -> BlogCellViewModel {
+    let section = indexPath.section
 
-        let index = indexPath.row
-
-        guard index < entries.count else {
-            throw App.Error.indexOutOfBound
-        }
-
-        let entry = entries[index]
-        let viewModel = BlogCellViewModel(entry: entry)
-        return viewModel
+    guard section < 1 else {
+      throw App.Error.indexOutOfBound
     }
+
+    let index = indexPath.row
+
+    guard index < entries.count else {
+      throw App.Error.indexOutOfBound
+    }
+
+    let entry = entries[index]
+    let viewModel = BlogCellViewModel(entry: entry)
+    return viewModel
+  }
 }
 
 // MARK: - Collection view
 extension BlogViewModel {
-    func numberOfSlides() -> Int {
-        return slides.count
+  func numberOfSlides() -> Int {
+    return slides.count
+  }
+
+  func viewModelForSlideCell(indexPath: IndexPath) throws -> SlideCellViewModel {
+    let index = indexPath.row
+
+    guard index < slides.count else {
+      throw App.Error.indexOutOfBound
     }
 
-    func viewModelForSlideCell(indexPath: IndexPath) throws -> SlideCollectionCellViewModel {
-        let index = indexPath.row
-
-        guard index < slides.count else {
-            throw App.Error.indexOutOfBound
-        }
-
-        let slide = slides[index]
-        return SlideCollectionCellViewModel(slide: slide)
-    }
+    let slide = slides[index]
+    return SlideCellViewModel(slide: slide)
+  }
 }
 
 // MARK: - Define
 extension BlogViewModel {
-    struct Config {
-        static let numberOfSlide = 1
-    }
+  struct Config {
+    static let numberOfSlide = 1
+  }
 }

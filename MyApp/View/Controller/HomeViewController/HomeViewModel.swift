@@ -29,7 +29,7 @@ final class HomeViewModel: ViewModel {
     }
   }
 
-  enum LoadSlidesCompletion {
+  enum LoadDataCompletion {
     case success
     case failure(Error)
   }
@@ -38,7 +38,7 @@ final class HomeViewModel: ViewModel {
 
   /// dummy data
   var slides: [Slide] = []
-  var teachers = DummyData.fetchTeachers()
+  var teachers: [Teacher] = []
 
   func getSectionType(index: Int) throws -> SectionType {
 
@@ -50,12 +50,25 @@ final class HomeViewModel: ViewModel {
   }
 
   // call api
-  func loadSlides(completion: @escaping (LoadSlidesCompletion) -> Void) {
+  func loadSlides(completion: @escaping (LoadDataCompletion) -> Void) {
     Api.Slide.loadSlides { [weak self] (result) in
       guard let this = self else { return }
       switch result {
       case .success(let slides):
         this.slides = slides
+        completion(.success)
+      case .failure(let error):
+        completion(.failure(error))
+      }
+    }
+  }
+
+  func loadTeachers(completion: @escaping (LoadDataCompletion) -> Void) {
+    Api.Teacher.loadTeachers { [weak self] (result) in
+      guard let this = self else { return }
+      switch result {
+      case .success(let teachers):
+        this.teachers = teachers
         completion(.success)
       case .failure(let error):
         completion(.failure(error))
@@ -70,7 +83,7 @@ extension HomeViewModel {
     return slides.count
   }
 
-  func viewModelForSlideCell(indexPath: IndexPath) throws -> SlideCollectionCellViewModel {
+  func viewModelForSlideCell(indexPath: IndexPath) throws -> SlideCellViewModel {
     let index = indexPath.row
 
     guard index < slides.count else {
@@ -78,7 +91,7 @@ extension HomeViewModel {
     }
 
     let slide = slides[index]
-    return SlideCollectionCellViewModel(slide: slide)
+    return SlideCellViewModel(slide: slide)
   }
 }
 
@@ -92,16 +105,16 @@ extension HomeViewModel {
     return Config.numberOfRow
   }
 
-  func viewModelForItem(at indexPath: IndexPath) throws -> HomeTableCellModel {
+  func viewModelForItem(at indexPath: IndexPath) throws -> HomeCellViewModel {
     let section = indexPath.section
 
     guard section < sections.count else {
       throw App.Error.indexOutOfBound
     }
 
-    let cellModel = HomeTableCellModel()
-    cellModel.teachers = teachers
-    return cellModel
+    let vm = HomeCellViewModel()
+    vm.teachers = teachers
+    return vm
   }
 
   func viewModelForHeader(inSection section: Int) throws -> HeaderViewModel {

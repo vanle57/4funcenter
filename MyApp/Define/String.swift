@@ -21,3 +21,7 @@ extension App {
         static let cancel = "Cancel".localized()
     }
 }
+
+extension Notification.Name {
+  static let reloadData = Notification.Name(rawValue: "reloadData")
+}

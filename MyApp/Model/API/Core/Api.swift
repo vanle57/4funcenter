@@ -16,6 +16,10 @@ final class Api {
   struct User { }
 
   struct Slide { }
+
+  struct Entry { }
+
+  struct Teacher { }
 }
 
 extension Api.Path {
@@ -43,7 +47,27 @@ extension Api.Path {
     static var path: String { return baseURL }
     var screen = "home"
     var action = "get-slide"
-    
+
+    var urlString: String {
+      return User.path / screen / action
+    }
+  }
+
+  struct Entry {
+    static var path: String { return baseURL }
+    var screen = "home"
+    var action = "get-tin-tuc"
+
+    var urlString: String {
+      return User.path / screen / action
+    }
+  }
+
+  struct Teacher {
+    static var path: String { return baseURL }
+    var screen = "home"
+    var action = "get-giang-vien"
+
     var urlString: String {
       return User.path / screen / action
     }

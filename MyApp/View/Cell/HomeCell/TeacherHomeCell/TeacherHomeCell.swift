@@ -8,14 +8,14 @@
 
 import UIKit
 
-final class TeacherCollectionViewCell: UICollectionViewCell {
+final class TeacherHomeCell: UICollectionViewCell {
 
     // MARK: - Outlets
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var label: UILabel!
 
     // MARK: - Property
-    var viewModel: TeacherCollectionCellModel? {
+    var viewModel: TeacherHomeCellViewModel? {
         didSet {
             updateUI()
         }
@@ -30,7 +30,7 @@ final class TeacherCollectionViewCell: UICollectionViewCell {
     // MARK: - Private Func
     private func updateUI() {
         guard let viewModel = viewModel else { return }
-        imageView.image = viewModel.image
+        imageView.setImage(path: viewModel.imageUrl)
         label.text = viewModel.teacherName
     }
 }
