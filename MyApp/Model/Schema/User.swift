@@ -10,34 +10,22 @@ import RealmSwift
 import ObjectMapper
 import Realm
 
-@objcMembers class User: Object, Mappable {
+final class User: Mappable {
 
-    // MARK: - Properties
-    dynamic var userName = ""
-    dynamic var password = ""
+  // MARK: - Properties
+  var id = 0
+  var avatarUrl = ""
+  var userName = ""
+  var password = ""
 
-    // MARK: - init
-    override static func primaryKey() -> String? {
-        return "id"
-    }
+  // MARK: - init
+  required convenience init?(map: Map) {
+    self.init()
+  }
 
-    func mapping(map: Map) {
-        userName <- map["userName"]
-    }
-
-    required convenience init?(map: Map) {
-        self.init()
-    }
-
-    static func saveUserToRealm(user: User, completion: Completion<User>) {
-        do {
-            let realm = try Realm()
-            try realm.write {
-                realm.add(user)
-            }
-            completion(.success(user))
-        } catch {
-            completion(.failure(App.Error.realm))
-        }
-    }
+  func mapping(map: Map) {
+    id <- map["Id"]
+    avatarUrl <- map["Avatar"]
+    userName <- map["userName"]
+  }
 }

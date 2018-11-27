@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import ObjectMapper
 
 extension Api.User {
   struct LoginParams {
@@ -45,27 +46,21 @@ extension Api.User {
   }
 
   @discardableResult
-  static func login(params: LoginParams, completion: @escaping Completion<Bool>) -> Request? {
+  static func login(params: LoginParams, completion: @escaping Completion<User>) -> Request? {
     let path = Api.Path.User().urlLogin
     return api.request(method: .post, urlString: path, parameters: params.toJSON()) { (result) in
       DispatchQueue.main.async {
         switch result {
         case .success(let value):
-//          guard let json = value as? JSObject else {
-//            completion(.failure(Api.Error.json))
-//            return
-//          }
-//          #warning("delete fake user login to return")
-//          guard let fakeUser = User(JSON: ["userName": "aaaa", "password": "aaaa"]) else {
-//            completion(.failure(Api.Error.json))
-//            return
-//          }
-          completion(.success(true))
-//          guard let user = Mapper<User>().map(JSONObject: json) else {
-//            completion(.failure(Api.Error.json))
-//            return
-//          }
-//          User.saveUserToRealm(user: user, completion: completion)
+          guard let json = value as? JSObject else {
+            completion(.failure(Api.Error.json))
+            return
+          }
+          guard let user = Mapper<User>().map(JSONObject: json) else {
+            completion(.failure(Api.Error.json))
+            return
+          }
+          completion(.success(user))
         case .failure(let error):
           completion(.failure(error))
         }
