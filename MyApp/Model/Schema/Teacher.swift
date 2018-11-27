@@ -20,17 +20,7 @@ import ObjectMapper
     return "\(firstName) \(lastName)"
   }
 
-  /// temporary data
-  var image = UIImage()
-
   // MARK: - init
-  init() { }
-
-  init(name: String, image: UIImage) {
-    self.firstName = name
-    self.image = image
-  }
-
   required convenience init?(map: Map) {
     self.init()
   }

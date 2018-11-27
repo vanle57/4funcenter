@@ -16,14 +16,6 @@ final class DummyData {
         return [course1, course1, course1, course2]
     }
 
-//    static func fetchTeachers() -> [Teacher] {
-//        let teacher1 = Teacher(name: "Dr.Tom", image: #imageLiteral(resourceName: "teacher1"), positionName: "TOEIC")
-//        let teacher2 = Teacher(name: "Ms.Hoa", image: #imageLiteral(resourceName: "teahcer2"), positionName: "IELTS")
-//        let teacher3 = Teacher(name: "Ms.Mai", image: #imageLiteral(resourceName: "teacher3"), positionName: "IELTS")
-//        let teacher4 = Teacher(name: "Mr.Hung", image: #imageLiteral(resourceName: "teacher4"), positionName: "Communication")
-//        return [teacher1, teacher2, teacher3, teacher4, teacher4, teacher4]
-//    }
-
     static func fetchSlide() -> [Slide] {
         let slide1 = Slide(image: #imageLiteral(resourceName: "slide1"), title: "Education Needs Complete Solutions")
         let slide2 = Slide(image: #imageLiteral(resourceName: "slide2"), title: "Education Needs Complete Solutions")
