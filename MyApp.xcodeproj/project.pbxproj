@@ -17,6 +17,9 @@
 		74D445E221ACF4BA007DC1FD /* TeacherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D445E021ACF4BA007DC1FD /* TeacherCell.swift */; };
 		74D445E321ACF4BA007DC1FD /* TeacherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74D445E121ACF4BA007DC1FD /* TeacherCell.xib */; };
 		74D445E521ACF72B007DC1FD /* TeacherCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D445E421ACF72B007DC1FD /* TeacherCellViewModel.swift */; };
+		74D445E921ACFE97007DC1FD /* CourseHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D445E721ACFE97007DC1FD /* CourseHomeCell.swift */; };
+		74D445EA21ACFE97007DC1FD /* CourseHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74D445E821ACFE97007DC1FD /* CourseHomeCell.xib */; };
+		74D445EC21AD394D007DC1FD /* CourseHomeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D445EB21AD394D007DC1FD /* CourseHomeCellViewModel.swift */; };
 		74D8A1A121A3FD0F00A1FAAC /* Api.Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D8A1A021A3FD0F00A1FAAC /* Api.Entry.swift */; };
 		74DE384421A5613700121CE9 /* Api.Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DE384321A5613700121CE9 /* Api.Teacher.swift */; };
 		74F1A3C92194555E006E282D /* Api.User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F1A3C82194555E006E282D /* Api.User.swift */; };
@@ -197,6 +200,9 @@
 		74D445E021ACF4BA007DC1FD /* TeacherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCell.swift; sourceTree = "<group>"; };
 		74D445E121ACF4BA007DC1FD /* TeacherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeacherCell.xib; sourceTree = "<group>"; };
 		74D445E421ACF72B007DC1FD /* TeacherCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCellViewModel.swift; sourceTree = "<group>"; };
+		74D445E721ACFE97007DC1FD /* CourseHomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHomeCell.swift; sourceTree = "<group>"; };
+		74D445E821ACFE97007DC1FD /* CourseHomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseHomeCell.xib; sourceTree = "<group>"; };
+		74D445EB21AD394D007DC1FD /* CourseHomeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHomeCellViewModel.swift; sourceTree = "<group>"; };
 		74D8A1A021A3FD0F00A1FAAC /* Api.Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.Entry.swift; sourceTree = "<group>"; };
 		74DE384321A5613700121CE9 /* Api.Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.Teacher.swift; sourceTree = "<group>"; };
 		74F1A3C82194555E006E282D /* Api.User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.User.swift; sourceTree = "<group>"; };
@@ -404,6 +410,16 @@
 				74D445E421ACF72B007DC1FD /* TeacherCellViewModel.swift */,
 			);
 			path = TeacherCell;
+			sourceTree = "<group>";
+		};
+		74D445E621ACFE75007DC1FD /* CourseHomeCell */ = {
+			isa = PBXGroup;
+			children = (
+				74D445E721ACFE97007DC1FD /* CourseHomeCell.swift */,
+				74D445E821ACFE97007DC1FD /* CourseHomeCell.xib */,
+				74D445EB21AD394D007DC1FD /* CourseHomeCellViewModel.swift */,
+			);
+			path = CourseHomeCell;
 			sourceTree = "<group>";
 		};
 		ACB04582210EFF4400159503 /* Controller */ = {
@@ -951,6 +967,7 @@
 		F00DED8D215380820089F54D /* HomeCell */ = {
 			isa = PBXGroup;
 			children = (
+				74D445E621ACFE75007DC1FD /* CourseHomeCell */,
 				F00DED92215381610089F54D /* TeacherHomeCell */,
 				F00DED9B215382970089F54D /* HomeCell.swift */,
 				F00DED9C215382970089F54D /* HomeCell.xib */,
@@ -1126,6 +1143,7 @@
 				F0FEF0F2215A386D00B7C9A6 /* ProfileCell.xib in Resources */,
 				B3D26DC4215345AD0093FE42 /* CourseCell.xib in Resources */,
 				B3904EE7215D315D0019138E /* CourseDetailCell.xib in Resources */,
+				74D445EA21ACFE97007DC1FD /* CourseHomeCell.xib in Resources */,
 				B3EB05AD215CD41A002957A7 /* CourseViewController.xib in Resources */,
 				B317621E2149F39F005C9D25 /* RegisterViewController.xib in Resources */,
 				B374DB89214783C0005C1FE2 /* Heebo-Medium.ttf in Resources */,
@@ -1378,6 +1396,7 @@
 				741A471921A15B6A00728B58 /* Api.Slide.swift in Sources */,
 				B3D26E202159CD6F0093FE42 /* HistorySearchCellViewModel.swift in Sources */,
 				EC5337C31EF793B100ACE038 /* CollectionCell.swift in Sources */,
+				74D445EC21AD394D007DC1FD /* CourseHomeCellViewModel.swift in Sources */,
 				B33ABCA8214B98FD00F7FF48 /* SideMenuViewController.swift in Sources */,
 				B3904EE2215D0F900019138E /* CourseDetailViewModel.swift in Sources */,
 				B3D26DCD21535C580093FE42 /* CourseCellViewModel.swift in Sources */,
@@ -1422,6 +1441,7 @@
 				B38263732161BDFB009F73FD /* CourseCommentCell.swift in Sources */,
 				B3D26DA42153330D0093FE42 /* DummyData.swift in Sources */,
 				B356BA1F214F95FA002955B9 /* TeacherViewController.swift in Sources */,
+				74D445E921ACFE97007DC1FD /* CourseHomeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
