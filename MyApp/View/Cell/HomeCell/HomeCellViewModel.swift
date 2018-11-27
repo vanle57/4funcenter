@@ -15,7 +15,6 @@ final class HomeCellViewModel {
 
   // MARK: - Functions
   func numberOfItem() -> Int {
-    print(teachers.count)
     return teachers.count
   }
 

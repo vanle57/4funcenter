@@ -28,7 +28,7 @@ final class TeacherViewController: BaseViewController {
 
   override func setupData() {
     super.setupData()
-    
+
     SVProgressHUD.show()
     viewModel.loadTeachers { [weak self] (result) in
       SVProgressHUD.popActivity()
@@ -51,7 +51,8 @@ final class TeacherViewController: BaseViewController {
 
   private func configTableView() {
     tableView.register(CoverCell.self)
-    tableView.register(TeacherTableCell.self)
+    tableView.register(TeacherCell.self)
+    tableView.tableFooterView = UIView()
   }
 }
 
@@ -71,7 +72,7 @@ extension TeacherViewController: UITableViewDataSource {
     switch sectionType {
     case .teachers:
       guard let vm = try? viewModel.viewModelForItem(at: indexPath) else { return TableCell() }
-      let cell = tableView.dequeue(TeacherTableCell.self)
+      let cell = tableView.dequeue(TeacherCell.self)
       cell.viewModel = vm
       return cell
     case .cover:

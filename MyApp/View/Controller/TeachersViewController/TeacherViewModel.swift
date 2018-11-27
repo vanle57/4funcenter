@@ -24,7 +24,7 @@ final class TeacherViewModel: ViewModel {
   // MARK: - Properties
   var sections: [SectionType] = [.cover, .teachers]
   var teachers: [Teacher] = []
-  
+
   func loadTeachers(completion: @escaping (LoadTeacherCompletion) -> Void) {
     Api.Teacher.loadTeachers { [weak self] (result) in
       guard let this = self else { return }
@@ -47,18 +47,23 @@ extension TeacherViewModel {
   }
 
   func numberOfItems(inSection section: Int) -> Int {
-    return Config.numberOfRows
+    let sectionType = sections[section]
+    switch sectionType {
+    case .cover:
+      return Config.numberOfRows
+    case .teachers:
+      return teachers.count
+    }
   }
 
-  func viewModelForItem(at indexPath: IndexPath) throws -> TeacherTableCellViewModel {
+  func viewModelForItem(at indexPath: IndexPath) throws -> TeacherCellViewModel {
     let section = indexPath.section
 
     guard section < sections.count else {
       throw App.Error.indexOutOfBound
     }
 
-    let cellViewModel = TeacherTableCellViewModel()
-    cellViewModel.teachers = teachers
+    let cellViewModel = TeacherCellViewModel(teacher: teachers[indexPath.row])
     return cellViewModel
   }
 
@@ -85,6 +90,6 @@ extension TeacherViewModel {
   struct Config {
     static let numberOfRows = 1
     static let heightOfCover: CGFloat = 150 * ratio
-    static let heightOfCollection: CGFloat = (667 - 150) * ratio
+    static let heightOfCollection: CGFloat = 70 * ratio
   }
 }
