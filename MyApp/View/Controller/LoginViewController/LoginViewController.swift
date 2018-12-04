@@ -37,7 +37,7 @@ final class LoginViewController: BaseViewController {
     // MARK: - Private function
     private func login() {
         guard let email = emailTextField.text, let password = passwordTextField.text else {
-            alert(error: App.Error.emptyFieldError)
+            alert(error: App.Error.emptyField)
             return
         }
         viewModel.email = email

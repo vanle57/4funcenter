@@ -9,21 +9,23 @@
 import Foundation
 import MVVM
 
-class BlogCellViewModel: ViewModel {
+final class BlogCellViewModel: ViewModel {
 
-    // MARK: - Properties
-    var imageUrl = ""
-    var title = ""
-    var authorName = ""
-    var description = ""
-    var dateCreated = ""
+  // MARK: - Properties
+  var imageUrl = ""
+  var title = ""
+  var numberOfView = 0
+  var numberOfComment = 0
+  var description = ""
+  var dateCreated = ""
 
-    // MARK: - init
-    init(entry: Entry) {
-        imageUrl = entry.imageUrl
-        title = entry.title
-        authorName = "\(entry.authorName) -"
-        description = entry.description
-        dateCreated = entry.dateCreated.string()
-    }
+  // MARK: - init
+  init(entry: Entry) {
+    imageUrl = entry.imageUrl
+    title = entry.title
+    numberOfView = entry.numberOfViews
+    numberOfComment = entry.numberOfComments
+    description = entry.description
+    dateCreated = entry.dateCreated.string()
+  }
 }

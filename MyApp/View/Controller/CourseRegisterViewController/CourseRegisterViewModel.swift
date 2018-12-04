@@ -37,10 +37,10 @@ final class CourseRegisterViewModel: ViewModel {
         case .address:
             information.address = value
         case .numberOfIdCard:
-            guard let result = Int(value) else { throw App.Error.invalidNumberFormatError }
+          guard let result = Int(value) else { throw App.Error.invalidNumberFormat }
             information.numberOfIdCard = result
         case .phoneNumber:
-            guard let result = Int(value) else { throw App.Error.invalidNumberFormatError }
+          guard let result = Int(value) else { throw App.Error.invalidNumberFormat }
             information.phoneNumber = result
         case .gender:
             information.gender = true
@@ -111,11 +111,11 @@ extension CourseRegisterViewModel {
         var localizedDescription: String {
             switch self {
             case .emptyField:
-                return App.Error.emptyFieldError.localizedDescription
+                return App.Error.emptyField.localizedDescription
             case .invalidEmail:
-                return App.Error.invalidEmailError.localizedDescription
+                return App.Error.invalidEmail.localizedDescription
             case .invalidPhoneNumber:
-                return App.Error.invalidPhoneNumberError.localizedDescription
+                return App.Error.invalidPhoneNumber.localizedDescription
             }
         }
     }

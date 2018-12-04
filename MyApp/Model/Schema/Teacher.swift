@@ -6,24 +6,39 @@
 //  Copyright © 2018 Asian Tech Co., Ltd. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import ObjectMapper
 
-class Teacher {
+@objcMembers final class Teacher: Mappable {
 
-    // MARK: - Properties
-    var id = 0
-    var name = ""
-    var imageUrl = ""
-    var positionName = ""
+  // MARK: - Properties
+  dynamic var idUser = 0
+  dynamic var firstName = ""
+  dynamic var lastName = ""
+  dynamic var imageUrl = ""
+  var fullName: String {
+    return "\(firstName) \(lastName)"
+  }
 
-    /// temporary data
-    var image = UIImage()
+  /// temporary data
+  var image = UIImage()
 
-    // MARK: - init
-    init(name: String, image: UIImage, positionName: String) {
-        self.name = name
-        self.image = image
-        self.positionName = positionName
-    }
+  // MARK: - init
+  init() { }
+
+  init(name: String, image: UIImage) {
+    self.firstName = name
+    self.image = image
+  }
+
+  required convenience init?(map: Map) {
+    self.init()
+  }
+
+  func mapping(map: Map) {
+    idUser <- map["IdUser"]
+    imageUrl <- map["Avatar"]
+    firstName <- map["Ho"]
+    lastName <- map["Ten"]
+  }
 }

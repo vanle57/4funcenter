@@ -35,6 +35,8 @@ final class SideMenuViewController: UIViewController {
     }
 
     private func logout() {
+      Session.share.accessToken = nil
+      AppDelegate.shared.switchRoot(rootType: .notLogin)
     }
 
     // MARK: - Public functions
@@ -49,8 +51,6 @@ final class SideMenuViewController: UIViewController {
             vc = BlogViewController()
         case .course:
             vc = CoursesViewController()
-        case .about:
-            vc = AboutViewController()
         case .teacher:
             vc = TeacherViewController()
         }
@@ -106,6 +106,9 @@ extension SideMenuViewController: UITableViewDataSource, UITableViewDelegate {
             switch sectionType {
             case .main:
                 switchToViewController(at: indexPath.row)
+            case .url:
+              guard let url = URL(string: "https://google.com") else { return }
+              UIApplication.shared.open(url)
             case .profileItem:
                 switchToProfileItemOrLogout(at: indexPath.row)
             }

@@ -25,7 +25,7 @@ final class SearchViewModel: ViewModel {
     typealias SearchCompletion = (SearchResult) -> Void
 
     var type: SearchType = .entry
-    var entries: [Entry] = DummyData.fetchEntries()
+    var entries: [Entry] = []
     var courses: [Course] = []
     var histories: [String]?
 
@@ -116,7 +116,7 @@ extension SearchViewModel {
 
     func viewModelForHistoryItem(at indexPath: IndexPath) throws -> HistorySearchCellViewModel {
         guard let histories = histories else {
-            throw App.Error.unknownError
+            throw App.Error.unknown
         }
 
         let index = indexPath.row

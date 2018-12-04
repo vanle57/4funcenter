@@ -13,7 +13,7 @@ import Realm
 @objcMembers class User: Object, Mappable {
 
     // MARK: - Properties
-    dynamic var email = ""
+    dynamic var userName = ""
     dynamic var password = ""
 
     // MARK: - init
@@ -22,7 +22,7 @@ import Realm
     }
 
     func mapping(map: Map) {
-        email <- map["email"]
+        userName <- map["userName"]
     }
 
     required convenience init?(map: Map) {
@@ -37,7 +37,7 @@ import Realm
             }
             completion(.success(user))
         } catch {
-            completion(.failure(App.Error.realmError))
+            completion(.failure(App.Error.realm))
         }
     }
 }

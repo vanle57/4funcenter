@@ -23,10 +23,12 @@ extension UIView {
             border.backgroundColor = color
             border.translatesAutoresizingMaskIntoConstraints = false
             addSubview(border)
-            addConstraints(formats.flatMap {NSLayoutConstraint.constraints(withVisualFormat: $0,
-                                            options: [],
-                                            metrics: ["inset": inset, "thickness": thickness],
-                                            views: ["border": border]) })
+            addConstraints(formats.flatMap {NSLayoutConstraint.constraints(
+              withVisualFormat: $0,
+              options: [],
+              metrics: ["inset": inset, "thickness": thickness],
+              views: ["border": border])
+            })
             borders.append(border)
             return border
         }

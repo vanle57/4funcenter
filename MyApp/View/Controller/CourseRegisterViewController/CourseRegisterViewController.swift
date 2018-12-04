@@ -38,7 +38,7 @@ final class CourseRegisterViewController: UIViewController {
                 this.alert(msg: Define.succesMessage, buttons: [App.String.ok], handler: nil)
             case .failure(let error):
                 guard let error = error as? CourseRegisterViewModel.RegisterError else {
-                    this.alert(error: App.Error.unknownError)
+                    this.alert(error: App.Error.unknown)
                     return
                 }
                 this.alert(title: "ERROR",

@@ -7,18 +7,30 @@
 //
 
 import UIKit
+import ObjectMapper
 
-final class Slide {
+@objcMembers final class Slide: Mappable {
 
-    var id = 0
-    var imageUrl = ""
-    var title = ""
-    var detail = ""
+  dynamic var imageUrl = ""
+  dynamic var title = ""
+  dynamic var detail = ""
 
-    /// this is temporary data to create dummy data. Delete it when you have api
-    var image = UIImage()
-    init(image: UIImage, title: String) {
-        self.image = image
-        self.title = title
-    }
+  /// this is temporary data to create dummy data. Delete it when you have api
+  var image = UIImage()
+  init() { }
+
+  init(image: UIImage, title: String) {
+    self.image = image
+    self.title = title
+  }
+
+  required convenience init?(map: Map) {
+    self.init()
+  }
+
+  func mapping(map: Map) {
+    imageUrl <- map["LinkAnh"]
+    title <- map["TieuDe"]
+    detail <- map["ChiTiet"]
+  }
 }

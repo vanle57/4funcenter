@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -45,49 +45,64 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="pVA-XE-s0h"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="PlayfairDisplay-Bold" family="Playfair Display" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="PlayfairDisplay-Bold" family="Playfair Display" pointSize="20"/>
                                 <color key="textColor" red="0.16470588235294117" green="0.16862745098039217" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SLU-Yf-p4U">
-                                <rect key="frame" x="0.0" y="85.5" width="278" height="17.5"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y7J-r1-lWZ">
+                                <rect key="frame" x="0.0" y="88.5" width="278" height="22.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asdasdasdsaas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coN-wI-mmc">
-                                        <rect key="frame" x="0.0" y="0.0" width="203" height="17.5"/>
-                                        <fontDescription key="fontDescription" name="Heebo-Medium" family="Heebo" pointSize="13"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 18-09-2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXa-bn-FvA">
-                                        <rect key="frame" x="203" y="0.0" width="75" height="17.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="75" id="uB2-sf-quu"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="PlayfairDisplay-Regular" family="Playfair Display" pointSize="13"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="SLU-Yf-p4U">
+                                        <rect key="frame" x="0.0" y="0.0" width="278" height="22.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coN-wI-mmc">
+                                                <rect key="frame" x="0.0" y="0.0" width="92.5" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="Heebo-Medium" family="Heebo" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VoR-hi-Ver">
+                                                <rect key="frame" x="92.5" y="0.0" width="93" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="Heebo-Medium" family="Heebo" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 18-09-2018" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXa-bn-FvA">
+                                                <rect key="frame" x="185.5" y="0.0" width="92.5" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="PlayfairDisplay-Regular" family="Playfair Display" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
-                            </stackView>
+                                <color key="backgroundColor" red="0.15686" green="0.15686" blue="0.15686" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="SLU-Yf-p4U" secondAttribute="bottom" id="ABB-nc-Ovp"/>
+                                    <constraint firstItem="SLU-Yf-p4U" firstAttribute="leading" secondItem="Y7J-r1-lWZ" secondAttribute="leading" id="Cog-66-FvR"/>
+                                    <constraint firstAttribute="trailing" secondItem="SLU-Yf-p4U" secondAttribute="trailing" id="Nqa-EC-VjL"/>
+                                    <constraint firstItem="SLU-Yf-p4U" firstAttribute="top" secondItem="Y7J-r1-lWZ" secondAttribute="top" id="av9-2o-a0G"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4uu-xx-kwt">
-                                <rect key="frame" x="0.0" y="41" width="278" height="29.5"/>
+                                <rect key="frame" x="0.0" y="41" width="278" height="37.5"/>
                                 <string key="text">ashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfja</string>
-                                <fontDescription key="fontDescription" name="PlayfairDisplay-Regular" family="Playfair Display" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="PlayfairDisplay-Regular" family="Playfair Display" pointSize="16"/>
                                 <color key="textColor" red="0.1647058824" green="0.16862745100000001" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="4uu-xx-kwt" secondAttribute="trailing" id="5hE-1Q-AbE"/>
+                            <constraint firstAttribute="trailing" secondItem="Y7J-r1-lWZ" secondAttribute="trailing" id="6ow-4h-MDi"/>
                             <constraint firstItem="4uu-xx-kwt" firstAttribute="leading" secondItem="5fv-kj-c0Z" secondAttribute="leading" id="9bL-IS-yCx"/>
-                            <constraint firstAttribute="trailing" secondItem="SLU-Yf-p4U" secondAttribute="trailing" id="AnK-17-dAF"/>
                             <constraint firstAttribute="trailing" secondItem="koT-7j-0Be" secondAttribute="trailing" id="CSk-0W-wFD"/>
-                            <constraint firstItem="SLU-Yf-p4U" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4uu-xx-kwt" secondAttribute="bottom" constant="15" id="Dks-UD-dRs"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Y7J-r1-lWZ" secondAttribute="bottom" constant="2" id="GJk-7w-nYD"/>
                             <constraint firstItem="4uu-xx-kwt" firstAttribute="top" secondItem="koT-7j-0Be" secondAttribute="bottom" constant="10" id="JfF-hy-Sd7"/>
                             <constraint firstItem="koT-7j-0Be" firstAttribute="leading" secondItem="5fv-kj-c0Z" secondAttribute="leading" id="TaZ-dh-toU"/>
-                            <constraint firstItem="SLU-Yf-p4U" firstAttribute="leading" secondItem="5fv-kj-c0Z" secondAttribute="leading" id="V0p-sf-gtx"/>
-                            <constraint firstAttribute="bottom" secondItem="SLU-Yf-p4U" secondAttribute="bottom" constant="10" id="VUN-rb-evW"/>
+                            <constraint firstItem="Y7J-r1-lWZ" firstAttribute="top" secondItem="4uu-xx-kwt" secondAttribute="bottom" constant="10" id="The-ew-Y1N"/>
                             <constraint firstItem="koT-7j-0Be" firstAttribute="top" secondItem="5fv-kj-c0Z" secondAttribute="top" constant="10" id="k2U-W4-xvB"/>
+                            <constraint firstItem="Y7J-r1-lWZ" firstAttribute="leading" secondItem="5fv-kj-c0Z" secondAttribute="leading" id="xCD-CW-BI3"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -106,13 +121,14 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="wVU-3E-B6j"/>
             <connections>
-                <outlet property="authorNameLabel" destination="coN-wI-mmc" id="qIF-fw-Nx0"/>
+                <outlet property="commentLabel" destination="VoR-hi-Ver" id="u1j-3m-GTU"/>
                 <outlet property="dateCreateLabel" destination="EXa-bn-FvA" id="KIQ-rr-QLS"/>
                 <outlet property="descriptionLabel" destination="4uu-xx-kwt" id="lCZ-ZF-aTe"/>
                 <outlet property="entryImageView" destination="Fu2-nx-6MD" id="bYm-bN-gLj"/>
                 <outlet property="entryTitleLabel" destination="koT-7j-0Be" id="VDV-Ls-7D4"/>
+                <outlet property="viewLabel" destination="coN-wI-mmc" id="WVI-qt-bsD"/>
             </connections>
-            <point key="canvasLocation" x="860" y="58"/>
+            <point key="canvasLocation" x="859.20000000000005" y="57.121439280359823"/>
         </tableViewCell>
     </objects>
     <resources>
