@@ -7,30 +7,34 @@
 //
 
 import Foundation
+import ObjectMapper
 
-class Course {
+@objcMembers final class Course: Mappable {
 
-    // MARK: - Properties
-    var id = 0
-    var name = ""
-    var numberOfView = 0
-    var numberOfComment = 0
-    var imageUrl = ""
-    var description = ""
-    var detail = ""
-    var time = ""
-    var fee: Double = 0.0
+  // MARK: - Properties
+  dynamic var id = 0
+  dynamic var name = ""
+  dynamic var numberOfView = 0
+  dynamic var numberOfComment = 0
+  dynamic var imageUrl = ""
+  dynamic var detail = ""
+  dynamic var openingDate = ""
+  dynamic var fee: Double = 0.0
 
-    // MARK: init
-    init() { }
+  // MARK: init
+  init() { }
 
-    init(name: String, numberOfView: Int, numberOfComment: Int, description: String, detail: String, time: String, fee: Double) {
-        self.name = name
-        self.numberOfView = numberOfView
-        self.numberOfComment = numberOfComment
-        self.description = description
-        self.detail = detail
-        self.time = time
-        self.fee = fee
-    }
+  required convenience init?(map: Map) {
+    self.init()
+  }
+
+  func mapping(map: Map) {
+    id <- map["BeautyId"]
+    name <- map["TenKhoaHoc"]
+    numberOfView <- map["SoLuongView"]
+    numberOfComment <- map["SoLuongComment"]
+    imageUrl <- map["AnhMinhHoa"]
+    detail <- map["TomTat"]
+    openingDate <- map["NgayKhaiGiang"]
+  }
 }
