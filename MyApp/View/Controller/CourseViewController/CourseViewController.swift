@@ -48,8 +48,6 @@ class CourseViewController: UIViewController {
 
         let notificationButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_notification"), style: .plain, target: self, action: nil)
         navigationItem.rightBarButtonItem = notificationButton
-
-//        navigationItem.setLeftBarButton(title+ imag, target: , action:)
     }
 
     private func configCollectionView() {

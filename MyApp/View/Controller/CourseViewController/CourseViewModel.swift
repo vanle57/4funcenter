@@ -53,7 +53,7 @@ extension CourseViewModel {
 
         let item = items[index]
         return PageMenuCellViewModel(title: item.title,
-                                     isSelected: rowSelected == item.hashValue)
+                                     isSelected: rowSelected == index)
     }
 }
 
