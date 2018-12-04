@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Heebo-Medium.ttf">
+            <string>Heebo-Medium</string>
+        </array>
+        <array key="PlayfairDisplay-Bold.otf">
+            <string>PlayfairDisplay-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CourseRegisterViewController" customModule="MyApp" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="7sa-qY-M3R" id="aVa-F7-6PP"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REGISTER COURSE FORM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9am-Io-j7L">
+                    <rect key="frame" x="10" y="30" width="355" height="23"/>
+                    <fontDescription key="fontDescription" name="PlayfairDisplay-Bold" family="Playfair Display" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pnf-Ub-we6">
+                    <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byV-hE-pcl">
+                            <rect key="frame" x="0.0" y="0.0" width="187.5" height="40"/>
+                            <color key="backgroundColor" red="0.95686274510000002" green="0.91764705879999997" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Heebo-Medium" family="Heebo" pointSize="17"/>
+                            <state key="normal" title="REGISTER">
+                                <color key="titleColor" red="0.1647058824" green="0.16862745100000001" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="registerButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="2vW-iB-Xr5"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EiM-Tb-945">
+                            <rect key="frame" x="187.5" y="0.0" width="187.5" height="40"/>
+                            <color key="backgroundColor" red="0.1647058824" green="0.16862745100000001" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="CANCEL">
+                                <color key="titleColor" red="0.95686274510000002" green="0.91764705879999997" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="cancelButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="ca9-RE-nh0"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="byV-hE-pcl" firstAttribute="leading" secondItem="Pnf-Ub-we6" secondAttribute="leading" id="6MH-xJ-3uT"/>
+                        <constraint firstItem="EiM-Tb-945" firstAttribute="leading" secondItem="byV-hE-pcl" secondAttribute="trailing" id="B4M-9T-3T7"/>
+                        <constraint firstAttribute="bottom" secondItem="EiM-Tb-945" secondAttribute="bottom" id="LYS-Cu-i1X"/>
+                        <constraint firstAttribute="bottom" secondItem="byV-hE-pcl" secondAttribute="bottom" id="b8H-Yn-wXe"/>
+                        <constraint firstItem="EiM-Tb-945" firstAttribute="width" secondItem="byV-hE-pcl" secondAttribute="width" id="lYq-Vz-src"/>
+                        <constraint firstAttribute="width" secondItem="Pnf-Ub-we6" secondAttribute="height" multiplier="75:8" id="mDk-BX-XaF"/>
+                        <constraint firstItem="byV-hE-pcl" firstAttribute="width" secondItem="Pnf-Ub-we6" secondAttribute="width" multiplier="1:2" id="rPZ-CR-dso"/>
+                        <constraint firstItem="byV-hE-pcl" firstAttribute="top" secondItem="Pnf-Ub-we6" secondAttribute="top" id="wtj-pI-fct"/>
+                        <constraint firstItem="EiM-Tb-945" firstAttribute="top" secondItem="Pnf-Ub-we6" secondAttribute="top" id="xdt-Ar-rnC"/>
+                        <constraint firstAttribute="trailing" secondItem="EiM-Tb-945" secondAttribute="trailing" id="z2i-jy-INN"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7sa-qY-M3R">
+                    <rect key="frame" x="0.0" y="73" width="375" height="554"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="bx4-hM-csY"/>
+                        <outlet property="delegate" destination="-1" id="mk4-9Z-7d5"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="7sa-qY-M3R" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="CQl-YK-hUR"/>
+                <constraint firstItem="7sa-qY-M3R" firstAttribute="top" secondItem="9am-Io-j7L" secondAttribute="bottom" constant="20" id="KnZ-q1-GUr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Pnf-Ub-we6" secondAttribute="trailing" id="NyE-KF-Wdc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9am-Io-j7L" secondAttribute="trailing" constant="10" id="Vnc-Em-iMW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Pnf-Ub-we6" secondAttribute="bottom" id="XRW-EV-EZs"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7sa-qY-M3R" secondAttribute="trailing" id="aUj-9y-5yO"/>
+                <constraint firstItem="Pnf-Ub-we6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cek-W5-407"/>
+                <constraint firstItem="9am-Io-j7L" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jgg-zB-XSA"/>
+                <constraint firstItem="9am-Io-j7L" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="lHP-Ap-RMC"/>
+                <constraint firstItem="9am-Io-j7L" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="tUe-49-a83"/>
+                <constraint firstItem="Pnf-Ub-we6" firstAttribute="top" secondItem="7sa-qY-M3R" secondAttribute="bottom" id="ucz-Bm-sVd"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="59.5" y="59.5"/>
+        </view>
+    </objects>
+</document>
