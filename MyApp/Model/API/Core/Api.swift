@@ -20,7 +20,7 @@ final class Api {
   struct Entry { }
 
   struct Teacher { }
-  
+
   struct Course { }
 }
 
@@ -74,12 +74,12 @@ extension Api.Path {
       return User.path / screen / action
     }
   }
-  
+
   struct Course {
     static var path: String { return baseURL }
     var screen = "home"
     var action = "get-khoa-hoc"
-    
+
     var urlString: String {
       return User.path / screen / action
     }

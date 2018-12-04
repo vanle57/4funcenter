@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CourseCell: TableCell {
+final class CourseCell: TableCell {
 
   // MARK: - Outlets
   @IBOutlet weak var courseImageView: UIImageView!

@@ -25,7 +25,7 @@ final class CoursesViewModel: ViewModel {
   // MARK: - Properties
   var sections: [SectionType] = [.cover, .course]
   var courses: [Course] = []
-  
+
   func loadCourses(completion: @escaping (LoadCourseCompletion) -> Void) {
     Api.Course.loadCourses { [weak self] (result) in
       guard let this = self else { return }
