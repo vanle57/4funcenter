@@ -15,7 +15,7 @@ final class TeacherViewModel: ViewModel {
     case cover
     case teachers
   }
-  
+
   enum LoadTeacherCompletion {
     case success
     case failure(Error)

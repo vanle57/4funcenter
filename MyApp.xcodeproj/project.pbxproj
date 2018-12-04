@@ -55,8 +55,6 @@
 		B374DB5F2147681B005C1FE2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B374DB4B21476819005C1FE2 /* HomeViewController.swift */; };
 		B374DB662147681B005C1FE2 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B374DB562147681A005C1FE2 /* ProfileViewController.xib */; };
 		B374DB672147681B005C1FE2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B374DB572147681A005C1FE2 /* ProfileViewController.swift */; };
-		B374DB70214775AC005C1FE2 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B374DB6E214775AC005C1FE2 /* AboutViewController.swift */; };
-		B374DB71214775AC005C1FE2 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B374DB6F214775AC005C1FE2 /* AboutViewController.xib */; };
 		B374DB74214775BE005C1FE2 /* BlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B374DB72214775BE005C1FE2 /* BlogViewController.swift */; };
 		B374DB75214775BE005C1FE2 /* BlogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B374DB73214775BE005C1FE2 /* BlogViewController.xib */; };
 		B374DB78214775D0005C1FE2 /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B374DB76214775D0005C1FE2 /* CoursesViewController.swift */; };
@@ -239,8 +237,6 @@
 		B374DB4B21476819005C1FE2 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B374DB562147681A005C1FE2 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		B374DB572147681A005C1FE2 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		B374DB6E214775AC005C1FE2 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		B374DB6F214775AC005C1FE2 /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		B374DB72214775BE005C1FE2 /* BlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogViewController.swift; sourceTree = "<group>"; };
 		B374DB73214775BE005C1FE2 /* BlogViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlogViewController.xib; sourceTree = "<group>"; };
 		B374DB76214775D0005C1FE2 /* CoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
@@ -437,7 +433,6 @@
 				B374DB552147681A005C1FE2 /* ProfileVIewController */,
 				B374DB582147681B005C1FE2 /* BlogViewController */,
 				B374DB522147681A005C1FE2 /* RegisterViewController */,
-				B374DB5B2147681B005C1FE2 /* AboutViewController */,
 				6238ADD521116D37003D4B8E /* LoginViewController */,
 			);
 			path = Controller;
@@ -577,15 +572,6 @@
 				B374DB73214775BE005C1FE2 /* BlogViewController.xib */,
 			);
 			path = BlogViewController;
-			sourceTree = "<group>";
-		};
-		B374DB5B2147681B005C1FE2 /* AboutViewController */ = {
-			isa = PBXGroup;
-			children = (
-				B374DB6E214775AC005C1FE2 /* AboutViewController.swift */,
-				B374DB6F214775AC005C1FE2 /* AboutViewController.xib */,
-			);
-			path = AboutViewController;
 			sourceTree = "<group>";
 		};
 		B374DB7B21478357005C1FE2 /* Fonts */ = {
@@ -1110,7 +1096,6 @@
 				B356BA5521520C9E002955B9 /* CoverCell.xib in Resources */,
 				B374DB88214783C0005C1FE2 /* Heebo-Light.ttf in Resources */,
 				F00DED96215381A70089F54D /* TeacherHomeCell.xib in Resources */,
-				B374DB71214775AC005C1FE2 /* AboutViewController.xib in Resources */,
 				B3D26DB3215333570093FE42 /* SideMenuCell.xib in Resources */,
 				B356BA20214F95FA002955B9 /* TeacherViewController.xib in Resources */,
 				B3D26DB7215333570093FE42 /* BlogCell.xib in Resources */,
@@ -1423,7 +1408,6 @@
 				F00DEDA22153837C0089F54D /* BJAutoScrollingCollectionView.swift in Sources */,
 				ECF23AB41E9B869B008C23C1 /* ApiManager.swift in Sources */,
 				ECEC0C5A1ED44D4100F6760A /* UIViewControllerExt.swift in Sources */,
-				B374DB70214775AC005C1FE2 /* AboutViewController.swift in Sources */,
 				ECEC0C581ED44C5D00F6760A /* String.swift in Sources */,
 				B3D26DCB21535AED0093FE42 /* CoursesViewModel.swift in Sources */,
 				B3D26DB6215333570093FE42 /* BlogCell.swift in Sources */,

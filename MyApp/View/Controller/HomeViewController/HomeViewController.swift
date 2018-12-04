@@ -151,7 +151,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
   }
 
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    pushToViewController(viewController: AboutViewController())
+//    pushToViewController(viewController: AboutViewController())
   }
 }
 
