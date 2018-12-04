@@ -29,7 +29,9 @@ final class CourseDetailViewController: UIViewController {
     }
 
     @IBAction func registerButtonTouchUpInside(_ sender: Any) {
-        print("Registered")
+        let vc = CourseRegisterViewController()
+        vc.viewModel = viewModel.viewModelForRegisterView()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
