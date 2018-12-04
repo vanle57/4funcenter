@@ -34,15 +34,14 @@ final class LoginViewModel {
       return
     }
 
-    if !password.isValidPassword() {
-      completion(.failure(App.Error.invalidPassword))
-    }
+//    if !password.isValidPassword() {
+//      completion(.failure(App.Error.invalidPassword))
+//    }
 
     let params = Api.User.LoginParams(email: email, password: password.md5())
     Api.User.login(params: params) { (result) in
       switch result {
       case .success:
-        Session.share.accessToken = "accessTokenOfUser"
         completion(.success)
       case .failure(let error):
         completion(.failure(error))

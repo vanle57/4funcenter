@@ -10,17 +10,17 @@ import Foundation
 
 final class Session {
 
-    // MARK: - Singleton
-    public static var share: Session = {
-        let session = Session()
-        return session
-    }()
+  // MARK: - Singleton
+  public static var share: Session = {
+    let session = Session()
+    return session
+  }()
 
-    private init() { }
+  private init() { }
 
-    var accessToken: String? = App.userDefault.string(forKey: App.KeyUserDefault.accessToken) {
-        didSet {
-            App.userDefault.set(accessToken, forKey: App.KeyUserDefault.accessToken)
-        }
+  var accessToken: String? = App.userDefault.string(forKey: App.KeyUserDefault.accessToken) {
+    didSet {
+      App.userDefault.set(accessToken, forKey: App.KeyUserDefault.accessToken)
     }
+  }
 }

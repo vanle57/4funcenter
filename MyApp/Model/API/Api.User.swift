@@ -56,11 +56,23 @@ extension Api.User {
             completion(.failure(Api.Error.json))
             return
           }
-          guard let user = Mapper<User>().map(JSONObject: json) else {
+          if let error = json["MsgError"] as? String, let code = json["Code"] as? Int {
+            let error = NSError(domain: "", code: code, userInfo: [NSLocalizedDescriptionKey: error])
+            completion(.failure(error))
+            return
+          }
+          guard let data = json["Data"] as? JSObject,
+            let accessToken = data["Token"] as? String else {
             completion(.failure(Api.Error.json))
             return
           }
-          completion(.success(user))
+          Session.share.accessToken = accessToken
+          guard let userData = data["User"] as? JSObject,
+            let user = Mapper<User>().map(JSONObject: userData) else {
+            completion(.failure(Api.Error.json))
+            return
+          }
+          User.saveUserToRealm(user: user, completion: completion)
         case .failure(let error):
           completion(.failure(error))
         }
