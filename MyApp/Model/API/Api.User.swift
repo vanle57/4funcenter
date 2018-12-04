@@ -67,7 +67,7 @@ extension Api.User {
             return
           }
           Session.share.accessToken = accessToken
-          guard let userData = data["User"] as? JSObject,
+          guard let userData = data["Profile"] as? JSObject,
             let user = Mapper<User>().map(JSONObject: userData) else {
             completion(.failure(Api.Error.json))
             return
