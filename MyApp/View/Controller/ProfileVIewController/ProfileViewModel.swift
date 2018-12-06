@@ -12,25 +12,14 @@ import MVVM
 final class ProfileViewModel: MVVM.Model {
 
   // MARK: - enum
-  enum TypeOfSection {
-    case profile
-    case changePassword
-  }
-
-  enum TypeOfProfileRow: String {
+  enum RowType: String {
     case fullName = "Your Name"
     case gender = "Gender"
     case email = "Email"
-    case birth = "Birth"
+    case birth = "Birthday"
     case phoneNumber = "Phone Number"
     case address = "Address"
     case idCardNumber = "Identify card"
-  }
-
-  enum TypeOfChangePasswordRow: String {
-    case oldPassword = "Old Password"
-    case newPassword = "New Password"
-    case confirmPassword = "Confirm Password"
   }
 
   enum ChangePasswordResult {
@@ -61,10 +50,8 @@ final class ProfileViewModel: MVVM.Model {
   }
 
   // MARK: - Properties
-  var typeOfSections: [TypeOfSection] = [.profile, .changePassword]
-  var profileRows: [TypeOfProfileRow] = [.fullName, .gender, .email, .birth, .phoneNumber, .address, .idCardNumber]
+  var profileRows: [RowType] = [.fullName, .gender, .email, .birth, .phoneNumber, .address, .idCardNumber]
   var user: User = User()
-  var passwordRows: [TypeOfChangePasswordRow] = [.oldPassword, .newPassword, .confirmPassword]
   var oldPassword = ""
   var newPassword = ""
   var confirmPassword = ""
@@ -76,27 +63,8 @@ final class ProfileViewModel: MVVM.Model {
     }
   }
 
-  /// Count Sections in profile table View for user display in table view
-  ///
-  /// - Returns: Number of sections display in table view
-  func numberOfSection() -> Int {
-    return typeOfSections.count
-  }
-
-  /// Count Number of Cell in each section in Profile table view
-  ///
-  /// - Parameter section: Current section
-  /// - Returns: Number of cell in current section display in table view
   func numberOfItemInSection(inSection section: Int) -> Int {
-
-    let typeOfsection = typeOfSections[section]
-
-    switch typeOfsection {
-    case .profile:
-      return profileRows.count
-    case .changePassword:
-      return passwordRows.count
-    }
+    return profileRows.count
   }
 
   /// Make view model for Profile TableCellModel
@@ -104,24 +72,15 @@ final class ProfileViewModel: MVVM.Model {
   /// - Parameter indexPath: indexPath of each item in tableView
   /// - Returns: TableCellModel at indexPath parameter
   func viewModelOfItem(at indexPath: IndexPath) -> ProfileCellViewModel {
-
-    let typeOfSection = typeOfSections[indexPath.section]
-
-    switch typeOfSection {
-    case .profile:
-      let item = profileRows[indexPath.row]
-      switch item {
-      case .fullName: return ProfileCellViewModel(title: item.rawValue, text: user.fullName)
-      case .address: return ProfileCellViewModel(title: item.rawValue, text: user.address)
-      case .birth: return ProfileCellViewModel(title: item.rawValue, text: user.birthDay)
-      case .email: return ProfileCellViewModel(title: item.rawValue, text: user.email)
-      case .gender: return ProfileCellViewModel(title: item.rawValue, text: user.gender ? "Female" : "Male")
-      case .phoneNumber: return ProfileCellViewModel(title: item.rawValue, text: user.phoneNumber)
-      case .idCardNumber: return ProfileCellViewModel(title: item.rawValue, text: user.idCardNumber)
-      }
-
-    case .changePassword:
-      return ProfileCellViewModel(title: passwordRows[indexPath.row].rawValue, text: "")
+    let item = profileRows[indexPath.row]
+    switch item {
+    case .fullName: return ProfileCellViewModel(title: item.rawValue, text: user.fullName)
+    case .address: return ProfileCellViewModel(title: item.rawValue, text: user.address)
+    case .birth: return ProfileCellViewModel(title: item.rawValue, text: user.birthDay)
+    case .email: return ProfileCellViewModel(title: item.rawValue, text: user.email)
+    case .gender: return ProfileCellViewModel(title: item.rawValue, text: user.gender ? "Female" : "Male")
+    case .phoneNumber: return ProfileCellViewModel(title: item.rawValue, text: user.phoneNumber)
+    case .idCardNumber: return ProfileCellViewModel(title: item.rawValue, text: user.idCardNumber)
     }
   }
 
@@ -153,9 +112,5 @@ final class ProfileViewModel: MVVM.Model {
     if !newPassword.isValidPassword() {
       throw ChangePasswordError.invalidPassword
     }
-  }
-
-  func getTypeOfPasswordRows(at index: Int) -> TypeOfChangePasswordRow {
-    return passwordRows[index]
   }
 }

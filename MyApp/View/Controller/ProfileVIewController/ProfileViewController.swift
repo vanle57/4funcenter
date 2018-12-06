@@ -25,7 +25,8 @@ final class ProfileViewController: BaseViewController {
     title = "Profile"
     configNavigationBar()
     tableView.register(ProfileCell.self)
-    tableView.rowHeight = 60
+    tableView.tableFooterView = UIView()
+    tableView.rowHeight = 75
   }
 
   override func setupData() {
@@ -80,19 +81,6 @@ extension ProfileViewController: UITableViewDelegate {
 
 // MARK: - UITableViewDataSource
 extension ProfileViewController: UITableViewDataSource {
-  func numberOfSections(in tableView: UITableView) -> Int {
-    return viewModel.numberOfSection()
-  }
-
-  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    let typeOfSection = viewModel.typeOfSections[section]
-    switch typeOfSection {
-    case .profile:
-      return "PROFILE"
-    case .changePassword:
-      return "CHANGE PASSWORD"
-    }
-  }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return viewModel.numberOfItemInSection(inSection: section)
@@ -100,15 +88,7 @@ extension ProfileViewController: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeue(ProfileCell.self)
-    let typeOfSection = viewModel.typeOfSections[indexPath.section]
     cell.viewModel = viewModel.viewModelOfItem(at: indexPath)
-    switch typeOfSection {
-    case .profile:
-      cell.isUserInteractionEnabled = false
-    case .changePassword:
-      cell.delegate = self
-      cell.textField.isSecureTextEntry = true
-    }
     return cell
   }
 }
@@ -118,32 +98,33 @@ extension ProfileViewController: ProfileCellDelegate {
   func profileCell(_ profileCell: ProfileCell, neddPerform action: ProfileCell.Action) {
     switch action {
     case .shouldBecomeFirstResponder:
-      guard var indexPath = tableView.indexPath(for: profileCell) else { return }
-      if indexPath.row < viewModel.passwordRows.count {
-        guard let cell = tableView.cellForRow(at: indexPath) as? ProfileCell else { return }
-        let rowType = viewModel.getTypeOfPasswordRows(at: indexPath.row)
-        switch rowType {
-        case .oldPassword:
-          guard let text = cell.textField.text else { return }
-          viewModel.oldPassword = text
-          indexPath.row += 1
-          guard let cell = tableView.cellForRow(at: indexPath) as? ProfileCell else { return }
-          cell.textField.becomeFirstResponder()
-          tableView.scrollToRow(at: indexPath, at: .middle, animated: true)
-        case .newPassword:
-          guard let text = cell.textField.text else { return }
-          viewModel.newPassword = text
-          indexPath.row += 1
-          guard let cell = tableView.cellForRow(at: indexPath) as? ProfileCell else { return }
-          cell.textField.returnKeyType = .done
-          cell.textField.becomeFirstResponder()
-          tableView.scrollToRow(at: indexPath, at: .middle, animated: true)
-        case .confirmPassword:
-          guard let text = cell.textField.text else { return }
-          viewModel.confirmPassword = text
-          changePassword()
-        }
-      }
+      break
+//      guard var indexPath = tableView.indexPath(for: profileCell) else { return }
+//      if indexPath.row < viewModel.passwordRows.count {
+//        guard let cell = tableView.cellForRow(at: indexPath) as? ProfileCell else { return }
+//        let rowType = viewModel.getTypeOfPasswordRows(at: indexPath.row)
+//        switch rowType {
+//        case .oldPassword:
+//          guard let text = cell.textField.text else { return }
+//          viewModel.oldPassword = text
+//          indexPath.row += 1
+//          guard let cell = tableView.cellForRow(at: indexPath) as? ProfileCell else { return }
+//          cell.textField.becomeFirstResponder()
+//          tableView.scrollToRow(at: indexPath, at: .middle, animated: true)
+//        case .newPassword:
+//          guard let text = cell.textField.text else { return }
+//          viewModel.newPassword = text
+//          indexPath.row += 1
+//          guard let cell = tableView.cellForRow(at: indexPath) as? ProfileCell else { return }
+//          cell.textField.returnKeyType = .done
+//          cell.textField.becomeFirstResponder()
+//          tableView.scrollToRow(at: indexPath, at: .middle, animated: true)
+//        case .confirmPassword:
+//          guard let text = cell.textField.text else { return }
+//          viewModel.confirmPassword = text
+//          changePassword()
+//        }
+//      }
     }
   }
 }
