@@ -39,5 +39,9 @@ extension App {
     static let invalidPhoneNumber = NSError(domain: "",
       code: 16,
       userInfo: [NSLocalizedDescriptionKey: "Invalid phone number"])
+
+    static let registerCourse = NSError(domain: "",
+      code: 17,
+      userInfo: [NSLocalizedDescriptionKey: "Please update your profile in advance!"])
   }
 }
