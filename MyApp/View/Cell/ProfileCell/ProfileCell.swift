@@ -10,14 +10,14 @@ import UIKit
 import SkyFloatingLabelTextField
 
 protocol ProfileCellDelegate: class {
-  func profileCell(_ profileCell: ProfileCell, neddPerform action: ProfileCell.Action)
+  func profileCell(_ profileCell: ProfileCell, needPerform action: ProfileCell.Action)
 }
 
 final class ProfileCell: TableCell {
 
   // MARK: - Enum
   enum Action {
-    case shouldBecomeFirstResponder
+    case shouldReturnValue(String)
   }
 
   // MARK: - Outlet
@@ -55,9 +55,14 @@ extension ProfileCell: UITextFieldDelegate {
 
   func textFieldDidEndEditing(_ textField: UITextField) {
     textField.resignFirstResponder()
+    guard let text = textField.text else { return }
+    delegate?.profileCell(self, needPerform: .shouldReturnValue(text))
   }
+
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    delegate?.profileCell(self, neddPerform: .shouldBecomeFirstResponder)
+    textField.resignFirstResponder()
+    guard let text = textField.text else { return false }
+    delegate?.profileCell(self, needPerform: .shouldReturnValue(text))
     return true
   }
 }

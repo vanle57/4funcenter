@@ -33,6 +33,7 @@ final class ProfileViewController: BaseViewController {
     super.setupData()
     do {
       try viewModel.loadUserFromRealm()
+      tableView.reloadData()
     } catch {
       alert(error: App.Error.realm)
     }
@@ -45,26 +46,28 @@ final class ProfileViewController: BaseViewController {
   }
 
   private func configNavigationBar() {
-    let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(changePassword))
+    let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(showAlertUpdateProfile))
     navigationItem.rightBarButtonItem = saveButton
   }
 
-  @objc func changePassword() {
-    viewModel.changePassword { [weak self] (result) in
+  @objc func updateProfile() {
+    viewModel.updateProfile { [weak self] (result) in
       guard let this = self else { return }
       switch result {
       case .success:
         this.alert(msg: Define.successMessage, buttons: [App.String.ok], handler: nil)
+        this.setupData()
       case .failure(let error):
-        guard let error = error as? ProfileViewModel.ChangePasswordError else {
-          this.alert(error: App.Error.unknown)
-          return
-        }
-        this.alert(title: "ERROR",
-          msg: error.localizedDescription, buttons: [App.String.ok],
-          handler: nil)
+        this.alert(error: error)
       }
     }
+  }
+
+  @objc private func showAlertUpdateProfile() {
+    let agreeAction: (UIAlertAction) -> Void = { (action) in
+      self.updateProfile()
+    }
+    alertManyActions(msg: Define.alertMessage, buttons: [Define.agree, Define.cancel], handler: [agreeAction, nil])
   }
 }
 
@@ -89,42 +92,30 @@ extension ProfileViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeue(ProfileCell.self)
     cell.viewModel = viewModel.viewModelOfItem(at: indexPath)
+    cell.delegate = self
     return cell
   }
 }
 
 // MARK: - TableViewCellDelegate
 extension ProfileViewController: ProfileCellDelegate {
-  func profileCell(_ profileCell: ProfileCell, neddPerform action: ProfileCell.Action) {
+  func profileCell(_ profileCell: ProfileCell, needPerform action: ProfileCell.Action) {
+    guard var indexPath = tableView.indexPath(for: profileCell) else { return }
     switch action {
-    case .shouldBecomeFirstResponder:
-      break
-//      guard var indexPath = tableView.indexPath(for: profileCell) else { return }
-//      if indexPath.row < viewModel.passwordRows.count {
-//        guard let cell = tableView.cellForRow(at: indexPath) as? ProfileCell else { return }
-//        let rowType = viewModel.getTypeOfPasswordRows(at: indexPath.row)
-//        switch rowType {
-//        case .oldPassword:
-//          guard let text = cell.textField.text else { return }
-//          viewModel.oldPassword = text
-//          indexPath.row += 1
-//          guard let cell = tableView.cellForRow(at: indexPath) as? ProfileCell else { return }
-//          cell.textField.becomeFirstResponder()
-//          tableView.scrollToRow(at: indexPath, at: .middle, animated: true)
-//        case .newPassword:
-//          guard let text = cell.textField.text else { return }
-//          viewModel.newPassword = text
-//          indexPath.row += 1
-//          guard let cell = tableView.cellForRow(at: indexPath) as? ProfileCell else { return }
-//          cell.textField.returnKeyType = .done
-//          cell.textField.becomeFirstResponder()
-//          tableView.scrollToRow(at: indexPath, at: .middle, animated: true)
-//        case .confirmPassword:
-//          guard let text = cell.textField.text else { return }
-//          viewModel.confirmPassword = text
-//          changePassword()
-//        }
-//      }
+    case .shouldReturnValue(let value):
+      do {
+        try viewModel.saveInformationForIndex(index: indexPath.row, value: value)
+        indexPath.row += 1
+        if indexPath.row == viewModel.profileRows.count {
+          showAlertUpdateProfile()
+        } else {
+          guard let cell = tableView.cellForRow(at: indexPath) as? ProfileCell else { return }
+          cell.textField.becomeFirstResponder()
+          tableView.scrollToRow(at: indexPath, at: .middle, animated: true)
+        }
+      } catch let error {
+        alert(error: error)
+      }
     }
   }
 }
@@ -132,6 +123,9 @@ extension ProfileViewController: ProfileCellDelegate {
 // MARK: - Define
 extension ProfileViewController {
   struct Define {
-    static let successMessage = "Change password successfully!"
+    static let successMessage = "Update profile successfully!"
+    static let alertMessage = "Do you want to update your profile?"
+    static let agree = "Agree"
+    static let cancel = " Cancel"
   }
 }

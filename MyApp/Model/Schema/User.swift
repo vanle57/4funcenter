@@ -56,4 +56,27 @@ import Realm
       completion(.failure(App.Error.realm))
     }
   }
+
+  static func updateUserInRealm(user: User, completion: Completion<User>) {
+
+    do {
+      let realm = try Realm()
+      let users = realm.objects(User.self)
+      if let userRealm = users.first {
+        try realm.write {
+          userRealm.firstName = user.firstName
+          userRealm.lastName = user.lastName
+          userRealm.gender = user.gender
+          userRealm.birthDay = user.birthDay
+          userRealm.email = user.email
+          userRealm.address = user.address
+          userRealm.phoneNumber = user.phoneNumber
+          userRealm.idCardNumber = user.idCardNumber
+        }
+        completion(.success(user))
+      }
+    } catch {
+      completion(.failure(App.Error.realm))
+    }
+  }
 }

@@ -13,53 +13,42 @@ final class ProfileViewModel: MVVM.Model {
 
   // MARK: - enum
   enum RowType: String {
-    case fullName = "Your Name"
+    case firstName = "First Name(*)"
+    case lastName = "Last Name(*)"
     case gender = "Gender"
-    case email = "Email"
+    case email = "Email(*)"
     case birth = "Birthday"
-    case phoneNumber = "Phone Number"
-    case address = "Address"
-    case idCardNumber = "Identify card"
+    case phoneNumber = "Phone Number(*)"
+    case address = "Address(*)"
+    case idCardNumber = "Identify card(*)"
   }
 
-  enum ChangePasswordResult {
+  enum UpdateResult {
     case success
     case failure(error: Error)
   }
 
-  typealias ChangePasswordCompletioon = (ChangePasswordResult) -> Void
-
-  enum ChangePasswordError: Error {
-    case emptyField
-    case oldPasswordIncorrect
-    case invalidPassword
-    case confirmPasswordNotMatch
-
-    var localizedDescription: String {
-      switch self {
-      case .emptyField:
-        return App.Error.emptyField.localizedDescription
-      case .oldPasswordIncorrect:
-        return "Incorrect old password"
-      case .invalidPassword:
-        return App.Error.invalidPassword.localizedDescription
-      case .confirmPasswordNotMatch:
-        return "New password and confirm password does not match"
-      }
-    }
-  }
+  typealias UpdateCompletioon = (UpdateResult) -> Void
 
   // MARK: - Properties
-  var profileRows: [RowType] = [.fullName, .gender, .email, .birth, .phoneNumber, .address, .idCardNumber]
+  var profileRows: [RowType] = [.firstName, .lastName, .gender, .email, .birth, .phoneNumber, .address, .idCardNumber]
   var user: User = User()
-  var oldPassword = ""
-  var newPassword = ""
-  var confirmPassword = ""
+  var userUpdate: User = User()
 
   func loadUserFromRealm() throws {
     let realm = try Realm()
     if let user = realm.objects(User.self).last {
       self.user = user
+      userUpdate.id = user.id
+      userUpdate.address = user.address
+      userUpdate.avatarUrl = user.avatarUrl
+      userUpdate.birthDay = user.birthDay
+      userUpdate.email = user.email
+      userUpdate.firstName = user.firstName
+      userUpdate.lastName = user.lastName
+      userUpdate.gender = user.gender
+      userUpdate.idCardNumber = user.idCardNumber
+      userUpdate.phoneNumber = user.phoneNumber
     }
   }
 
@@ -74,7 +63,8 @@ final class ProfileViewModel: MVVM.Model {
   func viewModelOfItem(at indexPath: IndexPath) -> ProfileCellViewModel {
     let item = profileRows[indexPath.row]
     switch item {
-    case .fullName: return ProfileCellViewModel(title: item.rawValue, text: user.fullName)
+    case .firstName: return ProfileCellViewModel(title: item.rawValue, text: user.firstName)
+    case .lastName: return ProfileCellViewModel(title: item.rawValue, text: user.lastName)
     case .address: return ProfileCellViewModel(title: item.rawValue, text: user.address)
     case .birth: return ProfileCellViewModel(title: item.rawValue, text: user.birthDay)
     case .email: return ProfileCellViewModel(title: item.rawValue, text: user.email)
@@ -84,12 +74,18 @@ final class ProfileViewModel: MVVM.Model {
     }
   }
 
-  func changePassword(completion: ChangePasswordCompletioon) {
+  func updateProfile(completion: @escaping UpdateCompletioon) {
     do {
       try validate()
 
-      // TODO: query api to change password
-      completion(.success)
+      Api.User.update(user: userUpdate) { (result) in
+        switch result {
+        case .success:
+          completion(.success)
+        case .failure(let error):
+          completion(.failure(error: error))
+        }
+      }
     } catch let error {
       completion(.failure(error: error))
     }
@@ -99,18 +95,45 @@ final class ProfileViewModel: MVVM.Model {
   ///
   /// - Throws: throw change password error
   func validate() throws {
-    if oldPassword.isEmpty || newPassword.isEmpty || confirmPassword.isEmpty {
-      throw ChangePasswordError.emptyField
+    if userUpdate.firstName.isEmpty || userUpdate.lastName.isEmpty ||
+      userUpdate.email.isEmpty || userUpdate.idCardNumber.isEmpty ||
+      userUpdate.phoneNumber.isEmpty || userUpdate.address.isEmpty {
+      throw App.Error.emptyField
     }
 
-    // TODO: call api check whether old password is correct or not
-
-    if newPassword != confirmPassword {
-      throw ChangePasswordError.confirmPasswordNotMatch
+    if !userUpdate.email.isValidEmail() {
+      throw App.Error.invalidEmail
     }
 
-    if !newPassword.isValidPassword() {
-      throw ChangePasswordError.invalidPassword
+    if Int(userUpdate.phoneNumber) == nil || Int(userUpdate.idCardNumber) == nil {
+      throw App.Error.invalidNumberFormat
+    }
+  }
+
+  func saveInformationForIndex(index: Int, value: String) throws {
+    let type = profileRows[index]
+    switch type {
+    case .firstName:
+      guard !value.isEmpty else { throw App.Error.emptyField }
+      userUpdate.firstName = value
+    case .lastName:
+      guard !value.isEmpty else { throw App.Error.emptyField }
+      userUpdate.lastName = value
+    case .email:
+      guard value.isValidEmail() else { throw App.Error.invalidEmail }
+      userUpdate.email = value
+    case .address:
+      userUpdate.address = value
+    case .idCardNumber:
+      guard Int(value) != nil else { throw App.Error.invalidNumberFormat }
+      userUpdate.idCardNumber = value
+    case .phoneNumber:
+      guard Int(value) != nil else { throw App.Error.invalidNumberFormat }
+      userUpdate.phoneNumber = value
+    case .gender:
+      userUpdate.gender = true
+    case .birth:
+      break
     }
   }
 }
