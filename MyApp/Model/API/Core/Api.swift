@@ -22,7 +22,7 @@ final class Api {
   struct Teacher { }
 
   struct Course { }
-  
+
   struct Comment { }
 }
 
@@ -91,19 +91,19 @@ extension Api.Path {
       return User.path / screen / action
     }
   }
-  
+
   struct Comment {
     static var path: String { return baseURL }
     var category = "khoahoc"
     var api = "api"
     var action = "get-list-comment"
-    
+
     var id: Int
-    
+
     var urlString: String {
       return User.path / category / api / action / id
     }
-    
+
     init(id: Int) {
       self.id = id
     }
