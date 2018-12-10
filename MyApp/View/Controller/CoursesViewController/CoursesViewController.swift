@@ -53,6 +53,7 @@ final class CoursesViewController: BaseViewController {
     tableView.register(CourseCell.self)
     tableView.register(CoverCell.self)
     tableView.rowHeight = 150
+    tableView.tableFooterView = UIView()
     tableView.estimatedRowHeight = Config.estimateRowHeight * ratio
   }
 

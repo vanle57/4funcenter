@@ -10,30 +10,54 @@ import MVVM
 
 final class CourseCommentViewModel: ViewModel {
 
-    var comments: [Comment] = DummyData.fetchComments()
+  // MARK: - enum
+  enum LoadCommentCompletion {
+    case success
+    case failure(Error)
+  }
 
-    var newComment: Comment = Comment()
+  // MARK: - Properties
+  var idCourse = 0
+  var comments: [Comment] = []
+  var newComment: Comment = Comment()
 
-    init() { }
+  init() { }
 
-    func addNewComment() {
-        // TODO: query api
+  init(idCourse: Int) {
+    self.idCourse = idCourse
+  }
+
+  func addNewComment() {
+    // TODO: query api
+  }
+
+  func loadTeachers(completion: @escaping (LoadCommentCompletion) -> Void) {
+    Api.Comment.loadComments(id: idCourse) { [weak self] (result) in
+      guard let this = self else { return }
+      switch result {
+      case .success(let comments):
+        this.comments = comments
+        completion(.success)
+      case .failure(let error):
+        completion(.failure(error))
+      }
     }
+  }
 }
 
 // MARK: - Table view
 extension CourseCommentViewModel {
-    func numberOfItems(inSection section: Int) -> Int {
-        return comments.count
+  func numberOfItems(inSection section: Int) -> Int {
+    return comments.count
+  }
+
+  func viewModelForItem(at indexPath: IndexPath) throws -> CourseCommentCellViewModel {
+    let index = indexPath.row
+    guard index < comments.count else {
+      throw App.Error.indexOutOfBound
     }
 
-    func viewModelForItem(at indexPath: IndexPath) throws -> CourseCommentCellViewModel {
-        let index = indexPath.row
-        guard index < comments.count else {
-            throw App.Error.indexOutOfBound
-        }
-
-        let comment = comments[index]
-        return CourseCommentCellViewModel(comment: comment)
-    }
+    let comment = comments[index]
+    return CourseCommentCellViewModel(comment: comment)
+  }
 }

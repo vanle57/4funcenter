@@ -30,7 +30,7 @@ class CourseViewController: UIViewController {
 
     var viewModel: CourseViewModel? {
         didSet {
-            title = viewModel?.course.name
+          title = viewModel?.course.name
         }
     }
 

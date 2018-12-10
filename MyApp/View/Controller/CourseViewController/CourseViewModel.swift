@@ -63,7 +63,7 @@ extension CourseViewModel {
     }
 
     func viewModelForCommentView() -> CourseCommentViewModel {
-        return CourseCommentViewModel()
+        return CourseCommentViewModel(idCourse: course.id)
     }
 
     func getItem(at indexPath: IndexPath) throws -> MenuItem {
