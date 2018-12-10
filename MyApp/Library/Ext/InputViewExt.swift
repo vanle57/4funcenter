@@ -10,11 +10,14 @@ import UIKit
 import SwiftUtils
 
 extension UITextView {
-
-    var string: String { return text ?? "" }
+  var string: String { return text }
 }
 
 extension UITextField {
-
-    var string: String { return text ?? "" }
+    var string: String {
+      if let text = text {
+        return text
+      }
+      return ""
+  }
 }

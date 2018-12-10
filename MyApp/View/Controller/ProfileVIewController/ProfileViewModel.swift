@@ -6,138 +6,134 @@
 //  Copyright © 2018 Asian Tech Co., Ltd. All rights reserved.
 //
 
-import Foundation
+import RealmSwift
 import MVVM
 
 final class ProfileViewModel: MVVM.Model {
 
-    // MARK: - enum
-    enum TypeOfSection {
-        case profile
-        case changePassword
+  // MARK: - enum
+  enum RowType: String {
+    case firstName = "First Name(*)"
+    case lastName = "Last Name(*)"
+    case gender = "Gender"
+    case email = "Email(*)"
+    case birth = "Birthday"
+    case phoneNumber = "Phone Number(*)"
+    case address = "Address(*)"
+    case idCardNumber = "Identify card(*)"
+  }
+
+  enum UpdateResult {
+    case success
+    case failure(error: Error)
+  }
+
+  typealias UpdateCompletioon = (UpdateResult) -> Void
+
+  // MARK: - Properties
+  var profileRows: [RowType] = [.firstName, .lastName, .gender, .email, .birth, .phoneNumber, .address, .idCardNumber]
+  var user: User = User()
+  var userUpdate: User = User()
+
+  func loadUserFromRealm() throws {
+    let realm = try Realm()
+    if let user = realm.objects(User.self).last {
+      self.user = user
+      userUpdate.id = user.id
+      userUpdate.address = user.address
+      userUpdate.avatarUrl = user.avatarUrl
+      userUpdate.birthDay = user.birthDay
+      userUpdate.email = user.email
+      userUpdate.firstName = user.firstName
+      userUpdate.lastName = user.lastName
+      userUpdate.gender = user.gender
+      userUpdate.idCardNumber = user.idCardNumber
+      userUpdate.phoneNumber = user.phoneNumber
     }
+  }
 
-    enum TypeOfProfileRow: String {
-        case userName = "User Name"
-        case fullName = "Your Name"
-        case gender = "Gender"
-        case email = "Email"
-        case birth = "Birth"
-        case phoneNumber = "Phone Number"
-        case address = "Address"
+  func numberOfItemInSection(inSection section: Int) -> Int {
+    return profileRows.count
+  }
+
+  /// Make view model for Profile TableCellModel
+  ///
+  /// - Parameter indexPath: indexPath of each item in tableView
+  /// - Returns: TableCellModel at indexPath parameter
+  func viewModelOfItem(at indexPath: IndexPath) -> ProfileCellViewModel {
+    let item = profileRows[indexPath.row]
+    switch item {
+    case .firstName: return ProfileCellViewModel(title: item.rawValue, text: user.firstName)
+    case .lastName: return ProfileCellViewModel(title: item.rawValue, text: user.lastName)
+    case .address: return ProfileCellViewModel(title: item.rawValue, text: user.address)
+    case .birth: return ProfileCellViewModel(title: item.rawValue, text: user.birthDay)
+    case .email: return ProfileCellViewModel(title: item.rawValue, text: user.email)
+    case .gender: return ProfileCellViewModel(title: item.rawValue, text: user.gender ? "Female" : "Male")
+    case .phoneNumber: return ProfileCellViewModel(title: item.rawValue, text: user.phoneNumber)
+    case .idCardNumber: return ProfileCellViewModel(title: item.rawValue, text: user.idCardNumber)
     }
+  }
 
-    enum TypeOfChangePasswordRow: String {
-        case oldPassword = "Old Password"
-        case newPassword = "New Password"
-        case confirmPassword = "Confirm Password"
-    }
+  func updateProfile(completion: @escaping UpdateCompletioon) {
+    do {
+      try validate()
 
-    enum ChangePasswordResult {
-        case success
-        case failure(error: Error)
-    }
-
-    typealias ChangePasswordCompletioon = (ChangePasswordResult) -> Void
-
-    enum ChangePasswordError: Error {
-        case emptyField
-        case oldPasswordIncorrect
-        case invalidPassword
-        case confirmPasswordNotMatch
-
-        var localizedDescription: String {
-            switch self {
-            case .emptyField:
-                return App.Error.emptyField.localizedDescription
-            case .oldPasswordIncorrect:
-                return "Incorrect old password"
-            case .invalidPassword:
-                return App.Error.invalidPassword.localizedDescription
-            case .confirmPasswordNotMatch:
-                return "New password and confirm password does not match"
-            }
-        }
-    }
-
-    // MARK: - Properties
-    var typeOfSections: [TypeOfSection] = [.profile, .changePassword]
-    var profileRows: [TypeOfProfileRow] = [.userName, .fullName, .gender, .email, .birth, .phoneNumber, .address]
-    var passwordRows: [TypeOfChangePasswordRow] = [.oldPassword, .newPassword, .confirmPassword]
-    var oldPassword = ""
-    var newPassword = ""
-    var confirmPassword = ""
-
-    /// Count Sections in profile table View for user display in table view
-    ///
-    /// - Returns: Number of sections display in table view
-    func numberOfSection() -> Int {
-        return typeOfSections.count
-    }
-
-    /// Count Number of Cell in each section in Profile table view
-    ///
-    /// - Parameter section: Current section
-    /// - Returns: Number of cell in current section display in table view
-    func numberOfItemInSection(inSection section: Int) -> Int {
-
-        let typeOfsection = typeOfSections[section]
-
-        switch typeOfsection {
-        case .profile:
-            return profileRows.count
-        case .changePassword:
-            return passwordRows.count
-        }
-    }
-
-    /// Make view model for Profile TableCellModel
-    ///
-    /// - Parameter indexPath: indexPath of each item in tableView
-    /// - Returns: TableCellModel at indexPath parameter
-    func viewModelOfItem(at indexPath: IndexPath) -> ProfileCellViewModel {
-
-        let typeOfSection = typeOfSections[indexPath.section]
-
-        switch typeOfSection {
-        case .profile:
-            return ProfileCellViewModel(text: profileRows[indexPath.row].rawValue)
-        case .changePassword:
-            return ProfileCellViewModel(text: passwordRows[indexPath.row].rawValue)
-        }
-    }
-
-    func changePassword(completion: ChangePasswordCompletioon) {
-        do {
-            try validate()
-
-            // TODO: query api to change password
-            completion(.success)
-        } catch let error {
+      Api.User.update(user: userUpdate) { (result) in
+        switch result {
+        case .success:
+          completion(.success)
+        case .failure(let error):
           completion(.failure(error: error))
         }
+      }
+    } catch let error {
+      completion(.failure(error: error))
+    }
+  }
+
+  /// this function is used to validate all case of change password action
+  ///
+  /// - Throws: throw change password error
+  func validate() throws {
+    if userUpdate.firstName.isEmpty || userUpdate.lastName.isEmpty ||
+      userUpdate.email.isEmpty || userUpdate.idCardNumber.isEmpty ||
+      userUpdate.phoneNumber.isEmpty || userUpdate.address.isEmpty {
+      throw App.Error.emptyField
     }
 
-    /// this function is used to validate all case of change password action
-    ///
-    /// - Throws: throw change password error
-    func validate() throws {
-        if oldPassword.isEmpty || newPassword.isEmpty || confirmPassword.isEmpty {
-            throw ChangePasswordError.emptyField
-        }
-
-        // TODO: call api check whether old password is correct or not
-
-        if newPassword != confirmPassword {
-            throw ChangePasswordError.confirmPasswordNotMatch
-        }
-
-        if !newPassword.isValidPassword() {
-            throw ChangePasswordError.invalidPassword
-        }
+    if !userUpdate.email.isValidEmail() {
+      throw App.Error.invalidEmail
     }
 
-    func getTypeOfPasswordRows(at index: Int) -> TypeOfChangePasswordRow {
-        return passwordRows[index]
+    if Int(userUpdate.phoneNumber) == nil || Int(userUpdate.idCardNumber) == nil {
+      throw App.Error.invalidNumberFormat
     }
+  }
+
+  func saveInformationForIndex(index: Int, value: String) throws {
+    let type = profileRows[index]
+    switch type {
+    case .firstName:
+      guard !value.isEmpty else { throw App.Error.emptyField }
+      userUpdate.firstName = value
+    case .lastName:
+      guard !value.isEmpty else { throw App.Error.emptyField }
+      userUpdate.lastName = value
+    case .email:
+      guard value.isValidEmail() else { throw App.Error.invalidEmail }
+      userUpdate.email = value
+    case .address:
+      userUpdate.address = value
+    case .idCardNumber:
+      guard Int(value) != nil else { throw App.Error.invalidNumberFormat }
+      userUpdate.idCardNumber = value
+    case .phoneNumber:
+      guard Int(value) != nil else { throw App.Error.invalidNumberFormat }
+      userUpdate.phoneNumber = value
+    case .gender:
+      userUpdate.gender = true
+    case .birth:
+      break
+    }
+  }
 }

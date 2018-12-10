@@ -46,6 +46,10 @@ final class CourseDetailViewModel: ViewModel {
     init(course: Course) {
         self.course = course
     }
+
+    func viewModelForRegisterView() -> CourseRegisterViewModel {
+        return CourseRegisterViewModel(course: course)
+    }
 }
 
 extension CourseDetailViewModel {

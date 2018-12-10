@@ -31,6 +31,7 @@ extension Api.Path {
     var screen = "home"
     var login = "login"
     var register = "create-account"
+    var profile = "profile"
 
     var urlString: String {
       return User.path / screen
@@ -42,6 +43,10 @@ extension Api.Path {
 
     var urlRegister: String {
       return User.path / screen / register
+    }
+
+    var urlProfile: String {
+      return User.path / screen / profile
     }
   }
 

@@ -57,6 +57,7 @@ class CourseViewController: UIViewController {
     private func configDefaultChildView() {
         displayView.addSubview(commentVC.view)
         displayView.addSubview(detailVC.view)
+        addChildViewController(detailVC)
     }
 
     @objc func backAction() {

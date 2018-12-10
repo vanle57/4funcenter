@@ -25,6 +25,7 @@
 		74DE384421A5613700121CE9 /* Api.Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DE384321A5613700121CE9 /* Api.Teacher.swift */; };
 		74F1A3C92194555E006E282D /* Api.User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F1A3C82194555E006E282D /* Api.User.swift */; };
 		ACB045A3210F0CEB00159503 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB045A2210F0CEB00159503 /* BaseNavigationController.swift */; };
+		B305A31821707BAC008F8570 /* IntExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B305A31721707BAC008F8570 /* IntExt.swift */; };
 		B317621A2148CB65005C9D25 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31762192148CB65005C9D25 /* RegisterViewModel.swift */; };
 		B317621D2149F39F005C9D25 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B317621B2149F39F005C9D25 /* RegisterViewController.swift */; };
 		B317621E2149F39F005C9D25 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B317621C2149F39F005C9D25 /* RegisterViewController.xib */; };
@@ -118,6 +119,13 @@
 		B3D26E30215A1FE70093FE42 /* SlideCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D26E2F215A1FE70093FE42 /* SlideCellViewModel.swift */; };
 		B3D3564521227A2100D29B1A /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D3564421227A2100D29B1A /* Session.swift */; };
 		B3D3564721227A9E00D29B1A /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D3564621227A9E00D29B1A /* Key.swift */; };
+		B3D5AA9A216C385900EDBAED /* CourseRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D5AA98216C385900EDBAED /* CourseRegisterViewController.swift */; };
+		B3D5AA9B216C385900EDBAED /* CourseRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D5AA99216C385900EDBAED /* CourseRegisterViewController.xib */; };
+		B3D5AA9F216C3D2700EDBAED /* CourseRegisterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D5AA9D216C3D2700EDBAED /* CourseRegisterCell.swift */; };
+		B3D5AAA0216C3D2700EDBAED /* CourseRegisterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D5AA9E216C3D2700EDBAED /* CourseRegisterCell.xib */; };
+		B3D5AAA2216C4E8C00EDBAED /* CourseRegisterCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D5AAA1216C4E8C00EDBAED /* CourseRegisterCellViewModel.swift */; };
+		B3D5AAA4216C50C400EDBAED /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D5AAA3216C50C400EDBAED /* Class.swift */; };
+		B3D5AAA6216C5E0D00EDBAED /* CourseRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D5AAA5216C5E0D00EDBAED /* CourseRegisterViewModel.swift */; };
 		B3EB05AC215CD41A002957A7 /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EB05AA215CD41A002957A7 /* CourseViewController.swift */; };
 		B3EB05AD215CD41A002957A7 /* CourseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3EB05AB215CD41A002957A7 /* CourseViewController.xib */; };
 		CDE9EE1121194B9B00298DD0 /* gif_eye_vocab.gif in Resources */ = {isa = PBXBuildFile; fileRef = CDE9EE0F21194B9B00298DD0 /* gif_eye_vocab.gif */; };
@@ -208,6 +216,7 @@
 		74F1A3C82194555E006E282D /* Api.User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.User.swift; sourceTree = "<group>"; };
 		7E8000CCB9AE328B83764288 /* Pods_MyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB045A2210F0CEB00159503 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		B305A31721707BAC008F8570 /* IntExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExt.swift; sourceTree = "<group>"; };
 		B31762192148CB65005C9D25 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		B317621B2149F39F005C9D25 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		B317621C2149F39F005C9D25 /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
@@ -301,6 +310,13 @@
 		B3D26E2F215A1FE70093FE42 /* SlideCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideCellViewModel.swift; sourceTree = "<group>"; };
 		B3D3564421227A2100D29B1A /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		B3D3564621227A9E00D29B1A /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
+		B3D5AA98216C385900EDBAED /* CourseRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseRegisterViewController.swift; sourceTree = "<group>"; };
+		B3D5AA99216C385900EDBAED /* CourseRegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseRegisterViewController.xib; sourceTree = "<group>"; };
+		B3D5AA9D216C3D2700EDBAED /* CourseRegisterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseRegisterCell.swift; sourceTree = "<group>"; };
+		B3D5AA9E216C3D2700EDBAED /* CourseRegisterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseRegisterCell.xib; sourceTree = "<group>"; };
+		B3D5AAA1216C4E8C00EDBAED /* CourseRegisterCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseRegisterCellViewModel.swift; sourceTree = "<group>"; };
+		B3D5AAA3216C50C400EDBAED /* Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
+		B3D5AAA5216C5E0D00EDBAED /* CourseRegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseRegisterViewModel.swift; sourceTree = "<group>"; };
 		B3EB05AA215CD41A002957A7 /* CourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
 		B3EB05AB215CD41A002957A7 /* CourseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseViewController.xib; sourceTree = "<group>"; };
 		CDE9EE0F21194B9B00298DD0 /* gif_eye_vocab.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gif_eye_vocab.gif; sourceTree = "<group>"; };
@@ -423,6 +439,7 @@
 		ACB04582210EFF4400159503 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B3D5AA97216C379400EDBAED /* CourseRegisterViewController */,
 				B38263742161C0D9009F73FD /* CourseCommentViewController */,
 				B3904EDC215D0D1F0019138E /* CourseDetailViewController */,
 				B3EB05A9215CD400002957A7 /* CourseViewController */,
@@ -463,6 +480,7 @@
 			children = (
 				74D445DF21ACF499007DC1FD /* TeacherCell */,
 				F0FEF0ED215A386D00B7C9A6 /* ProfileCell */,
+				B3D5AA9C216C3CD400EDBAED /* CourseRegisterCell */,
 				B382636D2161BDFB009F73FD /* CourseCommentCell */,
 				B3904EE3215D31250019138E /* CourseDetailCell */,
 				B3904ED3215CD50A0019138E /* PageMenuCell */,
@@ -719,6 +737,26 @@
 			path = SlideCell;
 			sourceTree = "<group>";
 		};
+		B3D5AA97216C379400EDBAED /* CourseRegisterViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B3D5AA98216C385900EDBAED /* CourseRegisterViewController.swift */,
+				B3D5AA99216C385900EDBAED /* CourseRegisterViewController.xib */,
+				B3D5AAA5216C5E0D00EDBAED /* CourseRegisterViewModel.swift */,
+			);
+			path = CourseRegisterViewController;
+			sourceTree = "<group>";
+		};
+		B3D5AA9C216C3CD400EDBAED /* CourseRegisterCell */ = {
+			isa = PBXGroup;
+			children = (
+				B3D5AA9D216C3D2700EDBAED /* CourseRegisterCell.swift */,
+				B3D5AA9E216C3D2700EDBAED /* CourseRegisterCell.xib */,
+				B3D5AAA1216C4E8C00EDBAED /* CourseRegisterCellViewModel.swift */,
+			);
+			path = CourseRegisterCell;
+			sourceTree = "<group>";
+		};
 		B3EB05A9215CD400002957A7 /* CourseViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -898,6 +936,7 @@
 				F00DED89215380080089F54D /* Teacher.swift */,
 				B356BA4F2151FD87002955B9 /* Course.swift */,
 				B3D26E2D215A17D70093FE42 /* Slide.swift */,
+				B3D5AAA3216C50C400EDBAED /* Class.swift */,
 			);
 			path = Schema;
 			sourceTree = "<group>";
@@ -948,6 +987,7 @@
 				ECEC0C591ED44D4100F6760A /* UIViewControllerExt.swift */,
 				B374DB8B2147A1E1005C1FE2 /* UIButtonExt.swift */,
 				B382637D2161D7FD009F73FD /* UIViewExt.swift */,
+				B305A31721707BAC008F8570 /* IntExt.swift */,
 				741A471A21A16E5900728B58 /* UIImageViewExt.swift */,
 			);
 			path = Ext;
@@ -1104,6 +1144,8 @@
 				B3D26DB7215333570093FE42 /* BlogCell.xib in Resources */,
 				B3D26E1B2159CD520093FE42 /* SearchViewController.xib in Resources */,
 				CDE9EE1121194B9B00298DD0 /* gif_eye_vocab.gif in Resources */,
+				B3D5AAA0216C3D2700EDBAED /* CourseRegisterCell.xib in Resources */,
+				F00DED9E215382970089F54D /* HomeTableViewCell.xib in Resources */,
 				F00DED9E215382970089F54D /* HomeCell.xib in Resources */,
 				B356BA402150E602002955B9 /* RegisterSuccessViewController.xib in Resources */,
 				B38263782161C0D9009F73FD /* CourseCommentViewController.xib in Resources */,
@@ -1125,6 +1167,8 @@
 				B374DB84214783C0005C1FE2 /* Heebo-Thin.ttf in Resources */,
 				B356BA18214F8A38002955B9 /* PlayfairDisplay-Bold.otf in Resources */,
 				B356BA17214F8A38002955B9 /* PlayfairDisplay-Regular.otf in Resources */,
+				B3D5AA9B216C385900EDBAED /* CourseRegisterViewController.xib in Resources */,
+				B38230F8215B4899000C718A /* TeacherCollectionCell.xib in Resources */,
 				B33ABCA9214B98FD00F7FF48 /* SideMenuViewController.xib in Resources */,
 				B356BA10214F8A38002955B9 /* PlayfairDisplaySC-Italic.otf in Resources */,
 				74D445E321ACF4BA007DC1FD /* TeacherCell.xib in Resources */,
@@ -1356,6 +1400,7 @@
 				F00DED8821537F8A0089F54D /* HomeViewModel.swift in Sources */,
 				B3D26E30215A1FE70093FE42 /* SlideCellViewModel.swift in Sources */,
 				B3D26DC3215345AD0093FE42 /* CourseCell.swift in Sources */,
+				B3D5AAA6216C5E0D00EDBAED /* CourseRegisterViewModel.swift in Sources */,
 				B3904EE9215DB5EF0019138E /* CourseDetailCellViewModel.swift in Sources */,
 				B3904ED9215CD6AD0019138E /* PageMenuCellViewModel.swift in Sources */,
 				B3D26DBD215333A70093FE42 /* BlogViewModel.swift in Sources */,
@@ -1373,6 +1418,9 @@
 				B317621A2148CB65005C9D25 /* RegisterViewModel.swift in Sources */,
 				F00DED8A215380080089F54D /* Teacher.swift in Sources */,
 				629E064E2126EE05004D29E0 /* Errors.swift in Sources */,
+				B3D5AA9F216C3D2700EDBAED /* CourseRegisterCell.swift in Sources */,
+				B305A31821707BAC008F8570 /* IntExt.swift in Sources */,
+				F00DED9D215382970089F54D /* HomeTableViewCell.swift in Sources */,
 				F00DED9D215382970089F54D /* HomeCell.swift in Sources */,
 				EC5337B71EF78CD800ACE038 /* App.swift in Sources */,
 				B3D26E2E215A17D70093FE42 /* Slide.swift in Sources */,
@@ -1400,6 +1448,7 @@
 				F00DEDA0215382AD0089F54D /* HomeCellViewModel.swift in Sources */,
 				B3D26DA2215333040093FE42 /* DateExt.swift in Sources */,
 				B33ABCB2214F566500F7FF48 /* SideMenuViewModel.swift in Sources */,
+				B3D5AA9A216C385900EDBAED /* CourseRegisterViewController.swift in Sources */,
 				B358301A2115624500E3E419 /* User.swift in Sources */,
 				B356BA502151FD87002955B9 /* Course.swift in Sources */,
 				EC332A481EA0A8CB0011DF1E /* Api.swift in Sources */,
@@ -1410,11 +1459,14 @@
 				B356BA3F2150E602002955B9 /* RegisterSuccessViewController.swift in Sources */,
 				B3EB05AC215CD41A002957A7 /* CourseViewController.swift in Sources */,
 				F00DEDA22153837C0089F54D /* BJAutoScrollingCollectionView.swift in Sources */,
+				B3D5AAA2216C4E8C00EDBAED /* CourseRegisterCellViewModel.swift in Sources */,
 				ECF23AB41E9B869B008C23C1 /* ApiManager.swift in Sources */,
 				ECEC0C5A1ED44D4100F6760A /* UIViewControllerExt.swift in Sources */,
 				ECEC0C581ED44C5D00F6760A /* String.swift in Sources */,
 				B3D26DCB21535AED0093FE42 /* CoursesViewModel.swift in Sources */,
 				B3D26DB6215333570093FE42 /* BlogCell.swift in Sources */,
+				B38230FA215B6525000C718A /* TeacherCollectionCellViewModel.swift in Sources */,
+				B3D5AAA4216C50C400EDBAED /* Class.swift in Sources */,
 				B38263772161C0D9009F73FD /* CourseCommentViewController.swift in Sources */,
 				EC5337BE1EF78FEA00ACE038 /* Font.swift in Sources */,
 				ECF23ABB1E9B89B2008C23C1 /* ResponseSerializer.swift in Sources */,
