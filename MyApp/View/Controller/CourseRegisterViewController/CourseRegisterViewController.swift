@@ -37,13 +37,7 @@ final class CourseRegisterViewController: UIViewController {
             case .success:
                 this.alert(msg: Define.succesMessage, buttons: [App.String.ok], handler: nil)
             case .failure(let error):
-                guard let error = error as? CourseRegisterViewModel.RegisterError else {
-                    this.alert(error: App.Error.unknown)
-                    return
-                }
-                this.alert(title: "ERROR",
-                           msg: error.localizedDescription, buttons: [App.String.ok],
-                           handler: nil)
+                this.alert(error: error)
             }
         }
     }
@@ -57,6 +51,7 @@ final class CourseRegisterViewController: UIViewController {
     }
 
     @IBAction func cancelButtonTouchUpInside(_ sender: Any) {
+      navigationController?.popViewController(animated: true)
     }
 
 }

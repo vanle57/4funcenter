@@ -9,7 +9,7 @@
 import Kingfisher
 
 extension UIImageView {
-  
+
   func setImage(path: String) {
     let url = URL(string: path)
     kf.indicatorType = .activity

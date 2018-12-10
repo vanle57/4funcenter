@@ -10,9 +10,11 @@ import MVVM
 
 final class ProfileCellViewModel: ViewModel {
 
-    var textField = ""
+  var title = ""
+  var text = ""
 
-    init(text: String) {
-        self.textField = text
-    }
+  init(title: String, text: String) {
+    self.title = title
+    self.text = text
+  }
 }
