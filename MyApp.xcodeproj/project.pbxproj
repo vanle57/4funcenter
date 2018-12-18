@@ -451,7 +451,7 @@
 				B33ABC98214B5D0800F7FF48 /* MainViewController */,
 				B374DB4921476819005C1FE2 /* HomeViewController */,
 				B374DB4F2147681A005C1FE2 /* CoursesViewController */,
-				B374DB552147681A005C1FE2 /* ProfileVIewController */,
+				B374DB552147681A005C1FE2 /* ProfileViewController */,
 				B374DB582147681B005C1FE2 /* BlogViewController */,
 				B374DB522147681A005C1FE2 /* RegisterViewController */,
 				6238ADD521116D37003D4B8E /* LoginViewController */,
@@ -576,14 +576,14 @@
 			path = RegisterViewController;
 			sourceTree = "<group>";
 		};
-		B374DB552147681A005C1FE2 /* ProfileVIewController */ = {
+		B374DB552147681A005C1FE2 /* ProfileViewController */ = {
 			isa = PBXGroup;
 			children = (
 				F0FEF0DF215A24BB00B7C9A6 /* ProfileViewModel.swift */,
 				B374DB562147681A005C1FE2 /* ProfileViewController.xib */,
 				B374DB572147681A005C1FE2 /* ProfileViewController.swift */,
 			);
-			path = ProfileVIewController;
+			path = ProfileViewController;
 			sourceTree = "<group>";
 		};
 		B374DB582147681B005C1FE2 /* BlogViewController */ = {

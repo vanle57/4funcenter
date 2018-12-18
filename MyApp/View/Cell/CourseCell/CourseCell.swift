@@ -18,7 +18,7 @@ final class CourseCell: TableCell {
   @IBOutlet weak var numberOfCommentLabel: UILabel!
 
   var viewModel: CourseCellViewModel!
-  
+
   func updateView(with viewModel: CourseCellViewModel) {
     self.viewModel = viewModel
     courseImageView.setImage(path: viewModel.imageUrl)

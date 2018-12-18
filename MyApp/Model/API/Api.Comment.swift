@@ -11,7 +11,7 @@ import ObjectMapper
 
 extension Api.Comment {
   @discardableResult
-  static func loadComments(id: Int,completion: @escaping Completion<[Comment]>) -> Request? {
+  static func loadComments(id: Int, completion: @escaping Completion<[Comment]>) -> Request? {
     let path = Api.Path.Comment(id: id).urlString
     return api.request(method: .get, urlString: path) { (result) in
       DispatchQueue.main.async {
