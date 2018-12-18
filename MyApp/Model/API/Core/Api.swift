@@ -24,6 +24,8 @@ final class Api {
   struct Course { }
 
   struct Comment { }
+  
+  struct RegisterCourse { }
 }
 
 extension Api.Path {
@@ -106,6 +108,16 @@ extension Api.Path {
 
     init(id: Int) {
       self.id = id
+    }
+  }
+  
+  struct RegisterCourse {
+    static var path: String { return baseURL }
+    var category = "course"
+    var action = "register-course"
+    
+    var urlString: String {
+      return User.path / category / action
     }
   }
 }

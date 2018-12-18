@@ -38,8 +38,16 @@ final class CourseRegisterViewModel: ViewModel {
     do {
       try validate()
 
-      // TODO: query api to register
-      completion(.success)
+      guard let token = Session.share.accessToken else { return }
+      let params = Api.RegisterCourse.RegisterParams(id: course.id, token: token)
+      Api.RegisterCourse.register(params: params) { (result) in
+        switch result {
+        case .success:
+          completion(.success)
+        case .failure(let error):
+          completion(.failure(error))
+        }
+      }
     } catch let error {
       completion(.failure(error))
     }

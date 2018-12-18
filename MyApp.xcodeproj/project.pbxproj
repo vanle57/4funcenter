@@ -24,6 +24,7 @@
 		74D445EC21AD394D007DC1FD /* CourseHomeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D445EB21AD394D007DC1FD /* CourseHomeCellViewModel.swift */; };
 		74D8A1A121A3FD0F00A1FAAC /* Api.Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D8A1A021A3FD0F00A1FAAC /* Api.Entry.swift */; };
 		74DE384421A5613700121CE9 /* Api.Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DE384321A5613700121CE9 /* Api.Teacher.swift */; };
+		74E69CE321C8B3F0002CDE73 /* Api.RegisterCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E69CE221C8B3F0002CDE73 /* Api.RegisterCourse.swift */; };
 		74F1A3C92194555E006E282D /* Api.User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F1A3C82194555E006E282D /* Api.User.swift */; };
 		ACB045A3210F0CEB00159503 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB045A2210F0CEB00159503 /* BaseNavigationController.swift */; };
 		B305A31821707BAC008F8570 /* IntExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B305A31721707BAC008F8570 /* IntExt.swift */; };
@@ -215,6 +216,7 @@
 		74D445EB21AD394D007DC1FD /* CourseHomeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHomeCellViewModel.swift; sourceTree = "<group>"; };
 		74D8A1A021A3FD0F00A1FAAC /* Api.Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.Entry.swift; sourceTree = "<group>"; };
 		74DE384321A5613700121CE9 /* Api.Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.Teacher.swift; sourceTree = "<group>"; };
+		74E69CE221C8B3F0002CDE73 /* Api.RegisterCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.RegisterCourse.swift; sourceTree = "<group>"; };
 		74F1A3C82194555E006E282D /* Api.User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.User.swift; sourceTree = "<group>"; };
 		7E8000CCB9AE328B83764288 /* Pods_MyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB045A2210F0CEB00159503 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -953,6 +955,7 @@
 				74DE384321A5613700121CE9 /* Api.Teacher.swift */,
 				7408CFAC21B66481001E840B /* Api.Course.swift */,
 				74C1D07021BE291800B4B50E /* Api.Comment.swift */,
+				74E69CE221C8B3F0002CDE73 /* Api.RegisterCourse.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1394,6 +1397,7 @@
 				B3D26DB8215333570093FE42 /* BlogCellViewModel.swift in Sources */,
 				F0FEF0F1215A386D00B7C9A6 /* ProfileCell.swift in Sources */,
 				F00DED95215381A70089F54D /* TeacherHomeCell.swift in Sources */,
+				74E69CE321C8B3F0002CDE73 /* Api.RegisterCourse.swift in Sources */,
 				B3D26E212159CD6F0093FE42 /* HistorySearchCell.swift in Sources */,
 				B3D26E142158A0C80093FE42 /* HeaderViewModel.swift in Sources */,
 				74D445E221ACF4BA007DC1FD /* TeacherCell.swift in Sources */,
