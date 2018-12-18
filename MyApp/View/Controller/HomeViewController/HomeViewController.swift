@@ -186,7 +186,7 @@ extension HomeViewController: UITableViewDelegate {
     }
 
     let headerView = tableView.dequeue(HeaderView.self)
-    headerView.viewModel = viewModel
+    headerView.updateView(with: viewModel)
     headerView.delegate = self
     return headerView
   }

@@ -16,7 +16,16 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var resultTableView: UITableView!
     @IBOutlet weak var historyView: UIView!
 
-    var viewModel = SearchViewModel()
+  var viewModel: SearchViewModel!
+
+  init(viewModel: SearchViewModel) {
+    self.viewModel = viewModel
+    super.init(nibName: nil, bundle: nil)
+  }
+
+  required convenience init?(coder aDecoder: NSCoder) {
+    self.init(coder: aDecoder)
+  }
 
     override func viewDidLoad() {
         super.viewDidLoad()

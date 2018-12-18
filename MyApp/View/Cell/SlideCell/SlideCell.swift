@@ -17,11 +17,7 @@ final class SlideCell: UICollectionViewCell {
   var viewModel: SlideCellViewModel? {
     didSet {
       guard let viewModel = viewModel else { return }
-      if !viewModel.imageUrl.isEmpty {
-        imageView.setImage(path: viewModel.imageUrl)
-      } else {
-        imageView.image = viewModel.image
-      }
+      imageView.setImage(path: viewModel.imageUrl, placerholder: viewModel.image)
       titleLabel.text = viewModel.title
     }
   }

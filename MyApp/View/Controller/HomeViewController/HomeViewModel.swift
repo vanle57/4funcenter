@@ -112,8 +112,7 @@ extension HomeViewModel {
       throw App.Error.indexOutOfBound
     }
 
-    let vm = HomeCellViewModel()
-    vm.teachers = teachers
+    let vm = HomeCellViewModel(teachers: teachers)
     return vm
   }
 

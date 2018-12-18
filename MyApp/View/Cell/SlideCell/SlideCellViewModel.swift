@@ -9,13 +9,12 @@
 import UIKit
 
 final class SlideCellViewModel {
-
+  
   // MARK: - Properties
-  var title = ""
-  var imageUrl = ""
-
-  var image: UIImage = UIImage()
-
+  let title: String
+  let imageUrl: String
+  let image: UIImage
+  
   // MARK: - init
   init(slide: Slide) {
     title = slide.title

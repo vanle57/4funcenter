@@ -18,18 +18,17 @@ final class CoursesViewController: BaseViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    configNavigationBar()
-    configTableView()
   }
 
   override func setupUI() {
     super.setupUI()
     title = Define.title
+    configNavigationBar()
+    configTableView()
   }
 
   override func setupData() {
     super.setupData()
-
     SVProgressHUD.show()
     viewModel.loadCourses { [weak self] (result) in
       SVProgressHUD.popActivity()
@@ -59,8 +58,7 @@ final class CoursesViewController: BaseViewController {
 
   @objc func showSearchView() {
     let viewModel = SearchViewModel(type: .entry)
-    let vc = SearchViewController()
-    vc.viewModel = viewModel
+    let vc = SearchViewController(viewModel: viewModel)
     navigationController?.pushViewController(vc, animated: true)
   }
 }
@@ -84,9 +82,9 @@ extension CoursesViewController: UITableViewDataSource {
 
     switch sectionType {
     case .course:
-      guard let vm = try? viewModel.viewModelForItem(at: indexPath) else { return TableCell() }
+      guard let cellVM = try? viewModel.viewModelForItem(at: indexPath) else { return TableCell() }
       let cell = tableView.dequeue(CourseCell.self)
-      cell.viewModel = vm
+      cell.updateView(with: cellVM)
       return cell
     case .cover:
       let cell = tableView.dequeue(CoverCell.self)

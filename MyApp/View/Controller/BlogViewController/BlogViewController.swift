@@ -74,8 +74,7 @@ final class BlogViewController: BaseViewController {
 
   @objc func showSearchView() {
     let viewModel = SearchViewModel(type: .entry)
-    let vc = SearchViewController()
-    vc.viewModel = viewModel
+    let vc = SearchViewController(viewModel: viewModel)
     navigationController?.pushViewController(vc, animated: true)
   }
 }

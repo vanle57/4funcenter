@@ -11,7 +11,11 @@ import UIKit
 
 final class HomeCellViewModel {
   // MARK: - Property
-  var teachers: [Teacher] = []
+  private let teachers: [Teacher]
+
+  init(teachers: [Teacher] = []) {
+    self.teachers = teachers
+  }
 
   // MARK: - Functions
   func numberOfItem() -> Int {

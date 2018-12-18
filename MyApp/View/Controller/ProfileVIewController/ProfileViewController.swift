@@ -65,7 +65,7 @@ final class ProfileViewController: BaseViewController {
   }
 
   @objc private func showAlertUpdateProfile() {
-    let agreeAction: (UIAlertAction) -> Void = { (action) in
+    let agreeAction: (UIAlertAction) -> Void = { (_) in
       self.updateProfile()
     }
     alertManyActions(msg: Define.alertMessage, buttons: [Define.agree, Define.cancel], handler: [agreeAction, nil])

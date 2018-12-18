@@ -10,9 +10,13 @@ import Kingfisher
 
 extension UIImageView {
 
-  func setImage(path: String) {
+  func setImage(path: String, placerholder: UIImage = UIImage()) {
     let url = URL(string: path)
     kf.indicatorType = .activity
-    kf.setImage(with: url)
+    if path.isEmpty {
+      self.image = placerholder
+    } else {
+      kf.setImage(with: url)
+    }
   }
 }
