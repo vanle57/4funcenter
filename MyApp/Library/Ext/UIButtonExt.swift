@@ -10,11 +10,11 @@ import UIKit
 
 extension UIButton {
     func underline() {
-        guard let text = self.titleLabel?.text else { return }
-
+        guard let text = titleLabel?.text else { return }
         let attributedString = NSMutableAttributedString(string: text)
-        attributedString.addAttribute(NSAttributedStringKey.underlineStyle, value: NSUnderlineStyle.styleSingle.rawValue, range: NSRange(location: 0, length: text.count))
-
-        self.setAttributedTitle(attributedString, for: .normal)
+        attributedString.addAttribute(.underlineStyle,
+                                      value: NSUnderlineStyle.styleSingle.rawValue,
+                                      range: NSRange(location: 0, length: text.count))
+        setAttributedTitle(attributedString, for: .normal)
     }
 }

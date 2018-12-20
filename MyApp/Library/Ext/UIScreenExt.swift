@@ -7,7 +7,7 @@
 
 import UIKit
 
-let ratio = Ratio.horizontal
+let ratio = screenSize.width / DeviceType.iPhone6.size.width
 let screenSize = UIScreen.main.bounds.size
 
 public enum DeviceType {
@@ -36,7 +36,7 @@ public enum DeviceType {
     ///
     /// - Returns: Name of the current screen
     static func currentDevice() -> DeviceType {
-        switch kScreenSize {
+        switch screenSize {
         case DeviceType.iPhone4.size: return .iPhone4
         case DeviceType.iPhone5.size: return .iPhone5
         case DeviceType.iPhone6.size: return .iPhone6
@@ -47,11 +47,6 @@ public enum DeviceType {
     }
 }
 
-struct Ratio {
-    static let horizontal = kScreenSize.width / DeviceType.iPhone6.size.width
-    static let vertical = kScreenSize.height / DeviceType.iPhone6.size.height
-}
-
 extension UIScreen {
 
     public static var widthIphone6: CGFloat {
@@ -59,11 +54,10 @@ extension UIScreen {
     }
 }
 
-public let kScreenSize = UIScreen.main.bounds.size
 public let iPhone = (UIDevice.current.userInterfaceIdiom == .phone)
 public let iPad = (UIDevice.current.userInterfaceIdiom == .pad)
-public let iPhone4 = (iPhone && DeviceType.iPhone4.size == kScreenSize)
-public let iPhone5 = (iPhone && DeviceType.iPhone5.size == kScreenSize)
-public let iPhone6 = (iPhone && DeviceType.iPhone6.size == kScreenSize)
-public let iPhone6p = (iPhone && DeviceType.iPhone6p.size == kScreenSize)
-public let iPhoneX = (iPhone && DeviceType.iPhoneX.size == kScreenSize)
+public let iPhone4 = (iPhone && DeviceType.iPhone4.size == screenSize)
+public let iPhone5 = (iPhone && DeviceType.iPhone5.size == screenSize)
+public let iPhone6 = (iPhone && DeviceType.iPhone6.size == screenSize)
+public let iPhone6p = (iPhone && DeviceType.iPhone6p.size == screenSize)
+public let iPhoneX = (iPhone && DeviceType.iPhoneX.size == screenSize)

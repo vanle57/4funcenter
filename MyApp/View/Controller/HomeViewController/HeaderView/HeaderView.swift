@@ -11,7 +11,7 @@ protocol HeaderViewDelegate: class {
     func headerView(_ view: HeaderView, needPerform action: HeaderView.Action)
 }
 
-class HeaderView: UITableViewHeaderFooterView {
+final class HeaderView: UITableViewHeaderFooterView {
 
     enum Action {
         case navigatetoViewController(index: Int)
@@ -21,13 +21,13 @@ class HeaderView: UITableViewHeaderFooterView {
     @IBOutlet weak var moreButton: UIButton!
     weak var delegate: HeaderViewDelegate?
 
-    var viewModel: HeaderViewModel? {
-        didSet {
-            guard let viewModel = viewModel else { return }
-            moreButton.tag = viewModel.id
-            titleLabel.text = viewModel.title
-        }
-    }
+    var viewModel: HeaderViewModel!
+
+  func updateView(with viewModel: HeaderViewModel) {
+    self.viewModel = viewModel
+    moreButton.tag = viewModel.id
+    titleLabel.text = viewModel.title
+  }
 
     @IBAction func moreButtonTouchUpInside(_ sender: UIButton) {
         delegate?.headerView(self, needPerform: .navigatetoViewController(index: sender.tag))

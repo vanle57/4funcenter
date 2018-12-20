@@ -15,11 +15,7 @@ final class TeacherHomeCell: UICollectionViewCell {
     @IBOutlet private weak var label: UILabel!
 
     // MARK: - Property
-    var viewModel: TeacherHomeCellViewModel? {
-        didSet {
-            updateUI()
-        }
-    }
+    var viewModel: TeacherHomeCellViewModel!
 
     // MARK: - override
     override func layoutSubviews() {
@@ -28,9 +24,9 @@ final class TeacherHomeCell: UICollectionViewCell {
     }
 
     // MARK: - Private Func
-    private func updateUI() {
-        guard let viewModel = viewModel else { return }
-        imageView.setImage(path: viewModel.imageUrl)
-        label.text = viewModel.teacherName
-    }
+  func updateView(with viewModel: TeacherHomeCellViewModel) {
+    self.viewModel = viewModel
+    imageView.setImage(path: viewModel.imageUrl)
+    label.text = viewModel.teacherName
+  }
 }

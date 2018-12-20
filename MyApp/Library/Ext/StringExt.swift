@@ -16,24 +16,10 @@ enum Process {
 }
 
 extension String {
-
-  var trimmed: String {
-    return trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-  }
-
-  func base64(_ method: Process) -> String? {
-    switch method {
-    case .encode:
-      guard let data = data(using: .utf8) else { return nil }
-      return data.base64EncodedString()
-    case .decode:
-      guard let data = Data(base64Encoded: self) else { return nil }
-      return String(data: data, encoding: .utf8)
-    }
-  }
   func capitalizingFirstLetter() -> String {
     return prefix(1).uppercased() + dropFirst()
   }
+
   mutating func capitalizeFirstLetter() {
     self = self.capitalizingFirstLetter()
   }

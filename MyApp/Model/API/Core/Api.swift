@@ -10,7 +10,7 @@ import Foundation
 
 final class Api {
   struct Path {
-    static let baseURL = "http://178.128.114.26:8080/api"
+    static let baseURL = "http://178.128.114.26:8080"
   }
 
   struct User { }
@@ -20,12 +20,19 @@ final class Api {
   struct Entry { }
 
   struct Teacher { }
+
+  struct Course { }
+
+  struct Comment { }
+
+  struct RegisterCourse { }
 }
 
 extension Api.Path {
 
   struct User: ApiPath {
     static var path: String { return baseURL }
+    var api = "api"
     var screen = "home"
     var login = "login"
     var register = "create-account"
@@ -36,45 +43,86 @@ extension Api.Path {
     }
 
     var urlLogin: String {
-      return User.path / screen / login
+      return User.path / api / screen / login
     }
 
     var urlRegister: String {
-      return User.path / screen / register
+      return User.path / api / screen / register
     }
 
     var urlProfile: String {
-      return User.path / screen / profile
+      return User.path / api / screen / profile
     }
   }
 
   struct Slide {
     static var path: String { return baseURL }
+    var api = "api"
     var screen = "home"
     var action = "get-slide"
 
     var urlString: String {
-      return User.path / screen / action
+      return User.path / api / screen / action
     }
   }
 
   struct Entry {
     static var path: String { return baseURL }
+    var api = "api"
     var screen = "home"
     var action = "get-tin-tuc"
 
     var urlString: String {
-      return User.path / screen / action
+      return User.path / api / screen / action
     }
   }
 
   struct Teacher {
     static var path: String { return baseURL }
+    var api = "api"
     var screen = "home"
     var action = "get-giang-vien"
 
     var urlString: String {
-      return User.path / screen / action
+      return User.path / api / screen / action
+    }
+  }
+
+  struct Course {
+    static var path: String { return baseURL }
+    var api = "api"
+    var screen = "home"
+    var action = "get-khoa-hoc"
+
+    var urlString: String {
+      return User.path / api / screen / action
+    }
+  }
+
+  struct Comment {
+    static var path: String { return baseURL }
+    var screen = "khoahoc"
+    var api = "api"
+    var action = "get-list-comment"
+
+    var id: Int
+
+    var urlString: String {
+      return User.path / screen / api / action / id
+    }
+
+    init(id: Int) {
+      self.id = id
+    }
+  }
+
+  struct RegisterCourse {
+    static var path: String { return baseURL }
+    var category = "course"
+    var action = "register-course"
+
+    var urlString: String {
+      return User.path / category / action
     }
   }
 }

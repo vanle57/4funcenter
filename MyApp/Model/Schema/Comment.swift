@@ -6,19 +6,24 @@
 //  Copyright © 2018 Asian Tech Co., Ltd. All rights reserved.
 //
 
-import Foundation
+import ObjectMapper
 
-final class Comment {
+final class Comment: Mappable {
 
-    var content = ""
-    var ratingPoint = 0
-    var dateCreate: Date = Date()
+  var imageUrl = ""
+  var username = ""
+  var content = ""
+  var ratingPoint = 0
+  var dateCreate = ""
 
-    init() { }
+  required convenience init?(map: Map) {
+    self.init()
+  }
 
-    init(content: String, ratingPoint: Int, dateCreate: Date) {
-        self.content = content
-        self.ratingPoint = ratingPoint
-        self.dateCreate = dateCreate
-    }
+  func mapping(map: Map) {
+    imageUrl <- map["Avatar"]
+    username <- map["HoTen"]
+    content <- map["NoiDung"]
+    dateCreate <- map["ThoiGianCmt"]
+  }
 }

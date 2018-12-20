@@ -33,6 +33,8 @@ final class ProfileViewController: BaseViewController {
     super.setupData()
     do {
       try viewModel.loadUserFromRealm()
+      image.setImage(path: viewModel.user.avatarUrl)
+      nameLabel.text = viewModel.user.fullName
       tableView.reloadData()
     } catch {
       alert(error: App.Error.realm)
@@ -42,7 +44,6 @@ final class ProfileViewController: BaseViewController {
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
     cameraButton.circle()
-    image.circle()
   }
 
   private func configNavigationBar() {
@@ -64,7 +65,7 @@ final class ProfileViewController: BaseViewController {
   }
 
   @objc private func showAlertUpdateProfile() {
-    let agreeAction: (UIAlertAction) -> Void = { (action) in
+    let agreeAction: (UIAlertAction) -> Void = { (_) in
       self.updateProfile()
     }
     alertManyActions(msg: Define.alertMessage, buttons: [Define.agree, Define.cancel], handler: [agreeAction, nil])

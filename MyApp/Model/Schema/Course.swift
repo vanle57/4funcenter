@@ -7,30 +7,40 @@
 //
 
 import Foundation
+import ObjectMapper
 
-class Course {
+final class Course: Mappable {
 
-    // MARK: - Properties
-    var id = 0
-    var name = ""
-    var numberOfView = 0
-    var numberOfComment = 0
-    var imageUrl = ""
-    var description = ""
-    var detail = ""
-    var time = ""
-    var fee: Double = 0.0
+  // MARK: - Properties
+  var id = 0
+  var beautyId = ""
+  var name = ""
+  var numberOfView = 0
+  var numberOfComment = 0
+  var imageUrl = ""
+  var detail = ""
+  var openingDate = ""
+  var fee: Int = 100_000
 
-    // MARK: init
-    init() { }
+  // MARK: init
+  init() { }
 
-    init(name: String, numberOfView: Int, numberOfComment: Int, description: String, detail: String, time: String, fee: Double) {
-        self.name = name
-        self.numberOfView = numberOfView
-        self.numberOfComment = numberOfComment
-        self.description = description
-        self.detail = detail
-        self.time = time
-        self.fee = fee
+  required convenience init?(map: Map) {
+    self.init()
+  }
+
+  func mapping(map: Map) {
+    beautyId <- map["BeautyId"]
+    let range = beautyId.index(beautyId.startIndex, offsetBy: 9)..<beautyId.endIndex
+    let idStr = beautyId[range]
+    if let id = Int("\(idStr)") {
+      self.id = id
     }
+    name <- map["TenKhoaHoc"]
+    numberOfView <- map["SoLuongView"]
+    numberOfComment <- map["SoLuongComment"]
+    imageUrl <- map["AnhMinhHoa"]
+    detail <- map["TomTat"]
+    openingDate <- map["NgayKhaiGiang"]
+  }
 }

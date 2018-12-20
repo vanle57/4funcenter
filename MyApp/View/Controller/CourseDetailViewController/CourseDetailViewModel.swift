@@ -83,7 +83,7 @@ extension CourseDetailViewModel {
         let rowType = rows[index]
         switch rowType {
         case .time:
-            return CourseDetailCellViewModel(title: rowType.title, content: course.time)
+            return CourseDetailCellViewModel(title: rowType.title, content: course.openingDate)
         case .fee:
             return CourseDetailCellViewModel(title: rowType.title, content: "\(course.fee)")
         case .detail:

@@ -74,21 +74,18 @@ final class BlogViewController: BaseViewController {
 
   @objc func showSearchView() {
     let viewModel = SearchViewModel(type: .entry)
-    let vc = SearchViewController()
-    vc.viewModel = viewModel
+    let vc = SearchViewController(viewModel: viewModel)
     navigationController?.pushViewController(vc, animated: true)
   }
 }
 
 // MARK: - UICollectionViewDataSource
 extension BlogViewController: UICollectionViewDataSource {
-  func collectionView(_ collectionView: UICollectionView,
-    numberOfItemsInSection section: Int) -> Int {
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return viewModel.numberOfSlides()
   }
 
-  func collectionView(_ collectionView: UICollectionView,
-    cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     if let viewModel = try? viewModel.viewModelForSlideCell(indexPath: indexPath) {
       let cell = collectionView.dequeue(SlideCell.self, forIndexPath: indexPath)
       cell.viewModel = viewModel
@@ -116,9 +113,7 @@ extension BlogViewController: UICollectionViewDelegate {
 
 // MARK: - UICollectionViewDelegateFlowLayout
 extension BlogViewController: UICollectionViewDelegateFlowLayout {
-  func collectionView(_ collectionView: UICollectionView,
-    layout collectionViewLayout: UICollectionViewLayout,
-    sizeForItemAt indexPath: IndexPath) -> CGSize {
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
   }
 }

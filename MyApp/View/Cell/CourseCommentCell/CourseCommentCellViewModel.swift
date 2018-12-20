@@ -10,35 +10,36 @@ import UIKit
 
 final class CourseCommentCellViewModel {
 
-    // MARK: - Propeties
-    var avatar: UIImage = UIImage()
-    var username = "demi lovato"
-    var content = ""
-    var dateCreate = ""
-    var ratingPoint = 0
+  // MARK: - Propeties
+  var imageUrl = ""
+  var username = ""
+  var content = ""
+  var dateCreate = ""
+  var ratingPoint = 0
 
-    var ratingString: String {
-        switch ratingPoint {
-        case 1:
-            return "★"
-        case 2:
-            return "★★"
-        case 3:
-            return "★★★"
-        case 4:
-            return "★★★★"
-        case 5:
-            return "★★★★★"
-        default:
-            return ""
-        }
+  var ratingString: String {
+    switch ratingPoint {
+    case 1:
+      return "★"
+    case 2:
+      return "★★"
+    case 3:
+      return "★★★"
+    case 4:
+      return "★★★★"
+    case 5:
+      return "★★★★★"
+    default:
+      return ""
     }
+  }
 
-    // MARK: - init
-    init(comment: Comment) {
-//        self.avatar = comment.user.
-        content = comment.content
-        dateCreate = comment.dateCreate.string()
-        ratingPoint = comment.ratingPoint
-    }
+  // MARK: - init
+  init(comment: Comment) {
+    imageUrl = comment.imageUrl
+    username = comment.username
+    content = comment.content
+    dateCreate = comment.dateCreate
+    ratingPoint = comment.ratingPoint
+  }
 }

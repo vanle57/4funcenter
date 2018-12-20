@@ -24,8 +24,6 @@ final class SideMenuViewModel: MVVM.ViewModel {
   }
 
   enum ProfileItemRowType: String {
-    case myCourses = "my courses"
-    case results = "results"
     case me = "me"
     case logout = "log out"
   }
@@ -33,7 +31,7 @@ final class SideMenuViewModel: MVVM.ViewModel {
   // MARK: - Properties
   var sections: [SectionType] = [.main, .url, .profileItem]
   var categories: [CategoryRowType] = [.blog, .course, .teacher]
-  var profileItem: [ProfileItemRowType] = [.myCourses, .results, .me, .logout]
+  var profileItem: [ProfileItemRowType] = [.me, .logout]
 }
 
 // MARK: - Table view

@@ -64,7 +64,7 @@ final class SideMenuViewController: UIViewController {
         let navigationController = mainViewController.rootViewController as? UINavigationController
         let rowType = viewModel.profileItem[index]
         switch rowType {
-        case .me, .myCourses, .results:
+        case .me:
             mainViewController.hideLeftView()
             navigationController?.pushViewController(ProfileViewController(), animated: true)
         case .logout:

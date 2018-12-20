@@ -15,7 +15,7 @@ extension UIView {
                     inset: CGFloat = 0.0,
                     thickness: CGFloat = 0.2) -> [UIView] {
 
-        var borders = [UIView]()
+      var borders: [UIView] = []
 
         @discardableResult
         func addBorder(formats: String...) -> UIView {
@@ -23,7 +23,7 @@ extension UIView {
             border.backgroundColor = color
             border.translatesAutoresizingMaskIntoConstraints = false
             addSubview(border)
-            addConstraints(formats.flatMap {NSLayoutConstraint.constraints(
+            addConstraints(formats.flatMap { NSLayoutConstraint.constraints(
               withVisualFormat: $0,
               options: [],
               metrics: ["inset": inset, "thickness": thickness],

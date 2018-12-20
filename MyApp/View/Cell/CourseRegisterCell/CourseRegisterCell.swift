@@ -25,7 +25,6 @@ final class CourseRegisterCell: TableCell {
 
     enum Action {
         case shouldShowScheduler(String)
-        case shouldReturnValue(String)
     }
 
     weak var delegate: CourseRegisterCellDelegate?
@@ -93,14 +92,10 @@ extension CourseRegisterCell: UITextFieldDelegate {
 
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.resignFirstResponder()
-        guard let text = textField.text else { return }
-        delegate?.courseRegisterCell(self, needPerform: .shouldReturnValue(text))
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        guard let text = textField.text else { return false }
-        delegate?.courseRegisterCell(self, needPerform: .shouldReturnValue(text))
         return true
     }
 }

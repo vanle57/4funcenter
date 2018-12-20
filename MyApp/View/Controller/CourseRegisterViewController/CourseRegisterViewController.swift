@@ -89,20 +89,6 @@ extension CourseRegisterViewController: CourseRegisterCellDelegate {
             viewModel.scheduler = scheduler
             cell.viewModel = viewModel.viewModelForClassInforItem(at: indexPath.row)
             tableView.reloadRows(at: [indexPath], with: .automatic)
-        case .shouldReturnValue(let value):
-            do {
-                try viewModel.saveInformationForIndex(index: indexPath.row, value: value)
-                indexPath.row += 1
-                if indexPath.row == viewModel.studentRows.count {
-                    register()
-                } else {
-                    guard let cell = tableView.cellForRow(at: indexPath) as? CourseRegisterCell else { return }
-                    cell.textField.becomeFirstResponder()
-                    tableView.scrollToRow(at: indexPath, at: .middle, animated: true)
-                }
-            } catch let error {
-                alert(error: error)
-            }
         }
     }
 }

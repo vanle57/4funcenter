@@ -53,7 +53,7 @@ extension CourseViewModel {
 
         let item = items[index]
         return PageMenuCellViewModel(title: item.title,
-                                     isSelected: rowSelected == item.hashValue)
+                                     isSelected: rowSelected == index)
     }
 }
 
@@ -63,7 +63,7 @@ extension CourseViewModel {
     }
 
     func viewModelForCommentView() -> CourseCommentViewModel {
-        return CourseCommentViewModel()
+        return CourseCommentViewModel(idCourse: course.id)
     }
 
     func getItem(at indexPath: IndexPath) throws -> MenuItem {

@@ -22,7 +22,7 @@ final class CourseCellViewModel: ViewModel {
     init(course: Course) {
         imageUrl = course.imageUrl
         name = course.name
-        description = course.description
+        description = course.detail
         numberOfView = "\(course.numberOfView)"
         numberOfComment = "\(course.numberOfComment)"
     }

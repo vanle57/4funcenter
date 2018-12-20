@@ -7,16 +7,9 @@
 //
 
 import MVVM
+import RealmSwift
 
 final class CourseRegisterViewModel: ViewModel {
-
-  var course: Course = Course()
-
-  init() { }
-
-  init(course: Course) {
-    self.course = course
-  }
 
   // MARK: - Properties for table view
   var sections: [TypeOfSection] = [.classInfor, .studentInfor]
@@ -24,26 +17,20 @@ final class CourseRegisterViewModel: ViewModel {
   var studentRows: [TypeOfStudentInforRow] = [.fullName, .email, .phoneNumber, .numberOfIdCard, .gender, .address]
 
   // MARK: - Properties for register
+  var course: Course = Course()
   var scheduler = ""
-  var information: RegisterInformationForm = RegisterInformationForm()
+  var user: User = User()
 
-  func saveInformationForIndex(index: Int, value: String) throws {
-    let type = studentRows[index]
-    switch type {
-    case .fullName:
-      information.fullName = value
-    case .email:
-      information.email = value
-    case .address:
-      information.address = value
-    case .numberOfIdCard:
-      guard let result = Int(value) else { throw App.Error.invalidNumberFormat }
-      information.numberOfIdCard = result
-    case .phoneNumber:
-      guard let result = Int(value) else { throw App.Error.invalidNumberFormat }
-      information.phoneNumber = result
-    case .gender:
-      information.gender = true
+  init() { }
+
+  init(course: Course) {
+    self.course = course
+  }
+
+  func loadUserFromRealm() throws {
+    let realm = try Realm()
+    if let user = realm.objects(User.self).last {
+      self.user = user
     }
   }
 
@@ -51,19 +38,27 @@ final class CourseRegisterViewModel: ViewModel {
     do {
       try validate()
 
-      // TODO: query api to register
-      completion(.success)
+      guard let token = Session.share.accessToken else { return }
+      let params = Api.RegisterCourse.RegisterParams(id: course.id, token: token)
+      Api.RegisterCourse.register(params: params) { (result) in
+        switch result {
+        case .success:
+          completion(.success)
+        case .failure(let error):
+          completion(.failure(error))
+        }
+      }
     } catch let error {
       completion(.failure(error))
     }
   }
 
   /// this function is used to validate all case of register action
-  /// including: check empty field, valid email and phone number
+  /// including: check empty field
   ///
   /// - Throws: throw register error
   func validate() throws {
-    if information.fullName.isEmpty || information.email.isEmpty || information.phoneNumber == 0 || information.numberOfIdCard == 0 {
+    if user.fullName.isEmpty || user.email.isEmpty || user.phoneNumber.isEmpty || user.idCardNumber.isEmpty {
       throw App.Error.registerCourse
     }
   }
@@ -132,8 +127,7 @@ extension CourseRegisterViewModel {
     case .classInfor:
       return viewModelForClassInforItem(at: indexPath.row)
     case .studentInfor:
-      let rowType = studentRows[indexPath.row]
-      return CourseRegisterCellViewModel(title: rowType.rawValue, type: .normal)
+      return viewModelForStudentInforItem(at: indexPath.row)
     }
   }
 
@@ -144,7 +138,7 @@ extension CourseRegisterViewModel {
     case .course:
       return CourseRegisterCellViewModel(title: rowType.rawValue, type: .justDisplay(content: course.name))
     case .time:
-      return CourseRegisterCellViewModel(title: rowType.rawValue, type: .justDisplay(content: course.time))
+      return CourseRegisterCellViewModel(title: rowType.rawValue, type: .justDisplay(content: course.openingDate))
     case .fee:
       return CourseRegisterCellViewModel(title: rowType.rawValue, type: .justDisplay(content: "\(course.fee)"))
     case .classes:
@@ -153,15 +147,23 @@ extension CourseRegisterViewModel {
       return CourseRegisterCellViewModel(title: rowType.rawValue, type: .justDisplay(content: scheduler))
     }
   }
-}
 
-struct RegisterInformationForm {
-//    var courseId: Int
-//    var classId: Int
-  var fullName: String = ""
-  var email: String = ""
-  var phoneNumber: Int = 0
-  var numberOfIdCard: Int = 0
-  var gender: Bool = false
-  var address: String = ""
+  func viewModelForStudentInforItem(at row: Int) -> CourseRegisterCellViewModel {
+    let rowType = studentRows[row]
+
+    switch rowType {
+    case .fullName:
+      return CourseRegisterCellViewModel(title: rowType.rawValue, type: .justDisplay(content: user.fullName))
+    case .email:
+      return CourseRegisterCellViewModel(title: rowType.rawValue, type: .justDisplay(content: user.email))
+    case .phoneNumber:
+      return CourseRegisterCellViewModel(title: rowType.rawValue, type: .justDisplay(content: user.phoneNumber))
+    case .numberOfIdCard:
+      return CourseRegisterCellViewModel(title: rowType.rawValue, type: .justDisplay(content: user.idCardNumber))
+    case .gender:
+      return CourseRegisterCellViewModel(title: rowType.rawValue, type: .justDisplay(content: user.gender ? "Female" : "Male"))
+    case .address:
+      return CourseRegisterCellViewModel(title: rowType.rawValue, type: .justDisplay(content: user.address))
+    }
+  }
 }
