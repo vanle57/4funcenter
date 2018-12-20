@@ -9,17 +9,18 @@
 import Foundation
 import ObjectMapper
 
-@objcMembers final class Course: Mappable {
+final class Course: Mappable {
 
   // MARK: - Properties
-  dynamic var id = 0
-  dynamic var name = ""
-  dynamic var numberOfView = 0
-  dynamic var numberOfComment = 0
-  dynamic var imageUrl = ""
-  dynamic var detail = ""
-  dynamic var openingDate = ""
-  dynamic var fee: Double = 0.0
+  var id = 0
+  var beautyId = ""
+  var name = ""
+  var numberOfView = 0
+  var numberOfComment = 0
+  var imageUrl = ""
+  var detail = ""
+  var openingDate = ""
+  var fee: Int = 100_000
 
   // MARK: init
   init() { }
@@ -29,7 +30,12 @@ import ObjectMapper
   }
 
   func mapping(map: Map) {
-    id <- map["BeautyId"]
+    beautyId <- map["BeautyId"]
+    let range = beautyId.index(beautyId.startIndex, offsetBy: 9)..<beautyId.endIndex
+    let idStr = beautyId[range]
+    if let id = Int("\(idStr)") {
+      self.id = id
+    }
     name <- map["TenKhoaHoc"]
     numberOfView <- map["SoLuongView"]
     numberOfComment <- map["SoLuongComment"]
