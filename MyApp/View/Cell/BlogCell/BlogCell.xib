@@ -45,7 +45,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="pVA-XE-s0h"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="PlayfairDisplay-Bold" family="Playfair Display" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="PlayfairDisplay-Bold" family="Playfair Display" pointSize="18"/>
                                 <color key="textColor" red="0.16470588235294117" green="0.16862745098039217" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -87,7 +87,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4uu-xx-kwt">
                                 <rect key="frame" x="0.0" y="41" width="278" height="7.5"/>
                                 <string key="text">ashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfja</string>
-                                <fontDescription key="fontDescription" name="PlayfairDisplay-Regular" family="Playfair Display" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="PlayfairDisplay-Regular" family="Playfair Display" pointSize="14"/>
                                 <color key="textColor" red="0.1647058824" green="0.16862745100000001" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>

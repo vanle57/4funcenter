@@ -18,11 +18,11 @@ extension Api.Entry {
       DispatchQueue.main.async {
         switch result {
         case .success(let value):
-          guard let data = value as? JSArray else {
+          guard let data = value as? JSObject, let entryData = data["Data"] as? JSArray else {
             completion(.failure(Api.Error.json))
             return
           }
-          let entries = Mapper<Entry>().mapArray(JSONArray: data)
+          let entries = Mapper<Entry>().mapArray(JSONArray: entryData)
           completion(.success(entries))
         case .failure(let error):
           completion(.failure(error))
