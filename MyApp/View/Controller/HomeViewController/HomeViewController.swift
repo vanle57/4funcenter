@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SVProgressHUD
 
 final class HomeViewController: BaseViewController {
 
@@ -37,7 +36,6 @@ final class HomeViewController: BaseViewController {
   // MARK: - Setup Data
   override func setupData() {
     super.setupData()
-    SVProgressHUD.show()
     viewModel.loadSlides(completion: { [weak self] (result) in
       guard let this = self else { return }
       switch result {
@@ -51,7 +49,6 @@ final class HomeViewController: BaseViewController {
     })
 
     viewModel.loadTeachers { [weak self] (result) in
-      SVProgressHUD.popActivity()
       guard let this = self else { return }
       switch result {
       case .success:
