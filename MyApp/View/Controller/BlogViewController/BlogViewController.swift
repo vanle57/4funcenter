@@ -148,6 +148,6 @@ extension BlogViewController {
   }
 
   struct Config {
-    static let estimateRowHeight: CGFloat = 303
+    static let estimateRowHeight: CGFloat = 315
   }
 }
