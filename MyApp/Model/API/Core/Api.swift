@@ -28,6 +28,8 @@ final class Api {
   struct RegisterCourse { }
 
   struct CourseDetail { }
+
+  struct CourseComment { }
 }
 
 extension Api.Path {
@@ -143,6 +145,17 @@ extension Api.Path {
 
     init(beautyId: String) {
       self.beautyId = beautyId
+    }
+  }
+
+  struct CourseComment {
+    static var path: String { return baseURL }
+    var api = "api"
+    var screen = "khoahoc"
+    var action = "comment-reply"
+
+    var urlString: String {
+      return User.path / screen / api / action
     }
   }
 }

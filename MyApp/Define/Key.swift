@@ -9,10 +9,11 @@
 import Foundation
 
 extension App {
-    static let userDefault = UserDefaults.standard
+  static let userDefault = UserDefaults.standard
 
-    struct KeyUserDefault {
-        static let accessToken = "accessToken"
-        static let historySearch = "historySearch"
-    }
+  struct KeyUserDefault {
+    static let accessToken = "accessToken"
+    static let historySearch = "historySearch"
+    static let idUser = "idUser"
+  }
 }

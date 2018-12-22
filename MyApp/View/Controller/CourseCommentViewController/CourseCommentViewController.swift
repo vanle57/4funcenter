@@ -72,6 +72,20 @@ final class CourseCommentViewController: UIViewController {
     }
   }
 
+  private func comment() {
+    guard let viewModel = viewModel else { return }
+    viewModel.addNewComment { [weak self] (result) in
+      guard let this = self else { return }
+      switch result {
+      case .success:
+        this.alert(msg: Define.successMessage, buttons: [App.String.ok], handler: nil)
+        this.setupData()
+      case .failure(let error):
+        this.alert(error: error)
+      }
+    }
+  }
+
   // MARK: - Actions
   @IBAction func cancelButtonTouchUpInside(_ sender: Any) {
     commentRatingTextView.text = ""
@@ -95,7 +109,6 @@ final class CourseCommentViewController: UIViewController {
   @IBAction func sendButtonTouchUpInside(_ sender: Any) {
     guard let viewModel = viewModel else { return }
     viewModel.newComment.content = commentRatingTextView.text
-    viewModel.addNewComment()
     commentTextView.resignFirstResponder()
     commentRatingTextView.resignFirstResponder()
     commentRatingTextView.text = "Comment..."
@@ -103,6 +116,7 @@ final class CourseCommentViewController: UIViewController {
       starButtons[tag].setImage(#imageLiteral(resourceName: "ic_star_blank"), for: .normal)
     }
     hiddenRatingView()
+    comment()
   }
 }
 
@@ -148,6 +162,11 @@ extension CourseCommentViewController: UITextViewDelegate {
 }
 
 extension CourseCommentViewController {
+  struct Define {
+    static let successMessage = "Comment successfully!"
+    static let agree = "Agree"
+  }
+
   struct Config {
     static let rowHeight = 130 * ratio
   }
