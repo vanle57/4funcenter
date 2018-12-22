@@ -18,7 +18,7 @@ extension Api.Course {
       DispatchQueue.main.async {
         switch result {
         case .success(let value):
-          guard let data = value as? JSObject, let courseData = data["DanhSachKhoaHoc"] as? JSArray else {
+          guard let data = value as? JSObject, let courseData = data["Data"] as? JSArray else {
             completion(.failure(Api.Error.json))
             return
           }

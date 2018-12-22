@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,26 +31,26 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_blog_background" translatesAutoresizingMaskIntoConstraints="NO" id="Fu2-nx-6MD">
-                        <rect key="frame" x="21" y="21" width="278" height="150"/>
+                        <rect key="frame" x="21" y="21" width="278" height="180"/>
                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="150" id="1EL-IS-9On"/>
+                            <constraint firstAttribute="height" constant="180" id="1EL-IS-9On"/>
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5fv-kj-c0Z">
-                        <rect key="frame" x="21" y="179" width="278" height="113"/>
+                        <rect key="frame" x="21" y="209" width="278" height="83"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koT-7j-0Be">
                                 <rect key="frame" x="0.0" y="10" width="278" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="pVA-XE-s0h"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="PlayfairDisplay-Bold" family="Playfair Display" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="PlayfairDisplay-Bold" family="Playfair Display" pointSize="18"/>
                                 <color key="textColor" red="0.16470588235294117" green="0.16862745098039217" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y7J-r1-lWZ">
-                                <rect key="frame" x="0.0" y="88.5" width="278" height="22.5"/>
+                                <rect key="frame" x="0.0" y="58.5" width="278" height="22.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="SLU-Yf-p4U">
                                         <rect key="frame" x="0.0" y="0.0" width="278" height="22.5"/>
@@ -85,9 +85,9 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4uu-xx-kwt">
-                                <rect key="frame" x="0.0" y="41" width="278" height="37.5"/>
+                                <rect key="frame" x="0.0" y="41" width="278" height="7.5"/>
                                 <string key="text">ashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfjaashjashfjahfhafhashfahfashfjashfja</string>
-                                <fontDescription key="fontDescription" name="PlayfairDisplay-Regular" family="Playfair Display" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="PlayfairDisplay-Regular" family="Playfair Display" pointSize="14"/>
                                 <color key="textColor" red="0.1647058824" green="0.16862745100000001" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>

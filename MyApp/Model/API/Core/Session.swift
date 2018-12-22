@@ -23,4 +23,10 @@ final class Session {
       App.userDefault.set(accessToken, forKey: App.KeyUserDefault.accessToken)
     }
   }
+
+  var idUser: Int? = App.userDefault.integer(forKey: App.KeyUserDefault.idUser) {
+    didSet {
+      App.userDefault.set(accessToken, forKey: App.KeyUserDefault.idUser)
+    }
+  }
 }

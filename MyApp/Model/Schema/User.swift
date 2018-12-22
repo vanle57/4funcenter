@@ -46,6 +46,7 @@ import Realm
   }
 
   static func saveUserToRealm(user: User, completion: Completion<User>) {
+    Session.share.idUser = user.id
     do {
       let realm = try Realm()
       try realm.write {

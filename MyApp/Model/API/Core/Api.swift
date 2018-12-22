@@ -26,6 +26,10 @@ final class Api {
   struct Comment { }
 
   struct RegisterCourse { }
+
+  struct CourseDetail { }
+
+  struct CourseComment { }
 }
 
 extension Api.Path {
@@ -69,11 +73,11 @@ extension Api.Path {
   struct Entry {
     static var path: String { return baseURL }
     var api = "api"
-    var screen = "home"
-    var action = "get-tin-tuc"
+    var screen = "tintuc"
+    var action = "danh-sach-tin-tuc"
 
     var urlString: String {
-      return User.path / api / screen / action
+      return User.path / screen / api / action
     }
   }
 
@@ -91,11 +95,11 @@ extension Api.Path {
   struct Course {
     static var path: String { return baseURL }
     var api = "api"
-    var screen = "home"
-    var action = "get-khoa-hoc"
+    var screen = "khoahoc"
+    var action = "danh-sach-khoa-hoc"
 
     var urlString: String {
-      return User.path / api / screen / action
+      return User.path / screen / api / action
     }
   }
 
@@ -118,11 +122,40 @@ extension Api.Path {
 
   struct RegisterCourse {
     static var path: String { return baseURL }
+    var api = "api"
     var category = "course"
     var action = "register-course"
 
     var urlString: String {
-      return User.path / category / action
+      return User.path / api / category / action
+    }
+  }
+
+  struct CourseDetail {
+    static var path: String { return baseURL }
+    var screen = "khoahoc"
+    var api = "api"
+    var category = "khoa-hoc"
+
+    var beautyId: String
+
+    var urlString: String {
+      return User.path / screen / api / category / beautyId
+    }
+
+    init(beautyId: String) {
+      self.beautyId = beautyId
+    }
+  }
+
+  struct CourseComment {
+    static var path: String { return baseURL }
+    var api = "api"
+    var screen = "khoahoc"
+    var action = "comment-reply"
+
+    var urlString: String {
+      return User.path / screen / api / action
     }
   }
 }

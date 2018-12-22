@@ -55,6 +55,7 @@ extension CourseDetailViewController: UITableViewDataSource {
             case .name:
                 let cell = tableView.dequeue(TableCell.self)
                 cell.textLabel?.text = viewModel.course.name
+                cell.textLabel?.minimumScaleFactor = 0.5
                 return cell
             case .infor:
                 if let vm = try? viewModel.viewModelForItem(at: indexPath) {

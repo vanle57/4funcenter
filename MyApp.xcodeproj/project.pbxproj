@@ -13,6 +13,8 @@
 		629E064E2126EE05004D29E0 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629E064D2126EE05004D29E0 /* Errors.swift */; };
 		6C392FC5AF0C61509011C30D /* Pods_MyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E8000CCB9AE328B83764288 /* Pods_MyApp.framework */; };
 		7408CFAD21B66481001E840B /* Api.Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7408CFAC21B66481001E840B /* Api.Course.swift */; };
+		740E1C5321CCCAC400E200D4 /* Api.Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740E1C5221CCCAC400E200D4 /* Api.Detail.swift */; };
+		740E1C5521CCF0B200E200D4 /* Api.CourseComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740E1C5421CCF0B200E200D4 /* Api.CourseComment.swift */; };
 		741A471921A15B6A00728B58 /* Api.Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741A471821A15B6A00728B58 /* Api.Slide.swift */; };
 		741A471B21A16E5900728B58 /* UIImageViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741A471A21A16E5900728B58 /* UIImageViewExt.swift */; };
 		74C1D07121BE291800B4B50E /* Api.Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C1D07021BE291800B4B50E /* Api.Comment.swift */; };
@@ -205,6 +207,8 @@
 		625DF88F2111BB8B007958F6 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		629E064D2126EE05004D29E0 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		7408CFAC21B66481001E840B /* Api.Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.Course.swift; sourceTree = "<group>"; };
+		740E1C5221CCCAC400E200D4 /* Api.Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.Detail.swift; sourceTree = "<group>"; };
+		740E1C5421CCF0B200E200D4 /* Api.CourseComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.CourseComment.swift; sourceTree = "<group>"; };
 		741A471821A15B6A00728B58 /* Api.Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.Slide.swift; sourceTree = "<group>"; };
 		741A471A21A16E5900728B58 /* UIImageViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExt.swift; sourceTree = "<group>"; };
 		74C1D07021BE291800B4B50E /* Api.Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.Comment.swift; sourceTree = "<group>"; };
@@ -956,6 +960,8 @@
 				7408CFAC21B66481001E840B /* Api.Course.swift */,
 				74C1D07021BE291800B4B50E /* Api.Comment.swift */,
 				74E69CE221C8B3F0002CDE73 /* Api.RegisterCourse.swift */,
+				740E1C5221CCCAC400E200D4 /* Api.Detail.swift */,
+				740E1C5421CCF0B200E200D4 /* Api.CourseComment.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1401,6 +1407,7 @@
 				B3D26E212159CD6F0093FE42 /* HistorySearchCell.swift in Sources */,
 				B3D26E142158A0C80093FE42 /* HeaderViewModel.swift in Sources */,
 				74D445E221ACF4BA007DC1FD /* TeacherCell.swift in Sources */,
+				740E1C5521CCF0B200E200D4 /* Api.CourseComment.swift in Sources */,
 				B382637C2161C80E009F73FD /* CourseCommentViewModel.swift in Sources */,
 				7408CFAD21B66481001E840B /* Api.Course.swift in Sources */,
 				F00DED8821537F8A0089F54D /* HomeViewModel.swift in Sources */,
@@ -1479,6 +1486,7 @@
 				ECF23ABE1E9B8A6A008C23C1 /* Error.swift in Sources */,
 				B3D26E1021589D2D0093FE42 /* HeaderView.swift in Sources */,
 				ACB045A3210F0CEB00159503 /* BaseNavigationController.swift in Sources */,
+				740E1C5321CCCAC400E200D4 /* Api.Detail.swift in Sources */,
 				EC5337B51EF7845700ACE038 /* Color.swift in Sources */,
 				B3D3564721227A9E00D29B1A /* Key.swift in Sources */,
 				B38263712161BDFB009F73FD /* CourseCommentCellViewModel.swift in Sources */,

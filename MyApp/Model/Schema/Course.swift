@@ -31,11 +31,7 @@ final class Course: Mappable {
 
   func mapping(map: Map) {
     beautyId <- map["BeautyId"]
-    let range = beautyId.index(beautyId.startIndex, offsetBy: 9)..<beautyId.endIndex
-    let idStr = beautyId[range]
-    if let id = Int("\(idStr)") {
-      self.id = id
-    }
+    id <- map["Id"]
     name <- map["TenKhoaHoc"]
     numberOfView <- map["SoLuongView"]
     numberOfComment <- map["SoLuongComment"]

@@ -27,8 +27,20 @@ final class CourseCommentViewModel: ViewModel {
     self.idCourse = idCourse
   }
 
-  func addNewComment() {
-    // TODO: query api
+  func addNewComment(_ completion: @escaping (LoadCommentCompletion) -> Void) {
+    let params = Api.CourseComment.CommentParams(idParent: 0,
+                                                 content: newComment.content,
+                                                 idCourse: idCourse,
+                                                 rating: newComment.ratingPoint,
+                                                 idUser: Session.share.idUser ?? 0)
+    Api.CourseComment.comment(params: params) { (result) in
+      switch result {
+      case .success:
+        completion(.success)
+      case .failure(let error):
+        completion(.failure(error))
+      }
+    }
   }
 
   func loadTeachers(completion: @escaping (LoadCommentCompletion) -> Void) {
